@@ -18,5 +18,24 @@
 [[endif]]
 /*БАНЕР*/
 
+/*БАНЕР*/
+[[if baner20]]
+<div>
+	<br/>
+	<p>
+		[[if baner20.url]]
+			<noindex>
+			<a rel="nofollow" target="_blank" href="{baner20.url}">
+				{baner_obj.showBanerId(baner20.id,baner20.picture,baner20.format)|raw}
+			</a>
+			</noindex>
+		[[else]]
+			{baner_obj.showBanerId(baner20.id,baner20.picture,baner20.format)|raw}
+		[[endif]]
+	</p>
+</div>
+[[endif]]
+/*БАНЕР*/
+
 [[set news_no_images = 1]]
 [[ include TEMPLATE_PATH ~ "news/right_block.tpl"]]
