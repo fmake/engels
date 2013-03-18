@@ -11,7 +11,7 @@
 					<div class="img">
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
 						<div class="annotation"><div>{item.dop_params.anons|raw}</div></div>
-						<img src="/{news_obj.fileDirectory}{item.id}/406__{item.picture}" alt="" />
+						<img src="/{site_obj.isFile(item.id, 744)}" alt="" />
 					</div>
 				[[endif]]
 				<div class="cl"></div>

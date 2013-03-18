@@ -717,6 +717,30 @@ function getBreadCrumbs($id)
 		$this->addParam('picture', $name);
 		$this->update();
 	}
+	/**
+	 * 
+	 * добавление файла
+	 * @param integer $id
+	 * @param integer $width
+	 * @param integer $height
+	 */
+	function isFile($id, $width = false, $height = false){
+		//$dirs = explode("/", $this->fileDirectory . $id);
+		//$dirname = ROOT . "/";
+		$dirname = $this->fileDirectory.$id."/";
+		$fmake = new fmakeSiteModule();
+		$fmake->setId($id);
+		$info = $fmake->getInfo();
+		$name = $info['picture'];
+		if (is_file($dirname."{$width}_{$height}_{$name}")){
+			$src = $dirname."{$width}_{$height}_{$name}";
+		}
+		else{
+			$this->addFileIdParams($id, $width, $height, false);
+			$src = $dirname."{$width}_{$height}_{$name}";
+		}
+		return $src;
+	}
 	
 	/**
 	 * 
