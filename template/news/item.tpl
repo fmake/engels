@@ -10,7 +10,11 @@
 				[[if item.picture]]
 					<div class="img">
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
-						<div class="annotation"><div>{item.dop_params.anons|raw}</div></div>
+						[[if item.dop_params.anons]]
+							<div class="annotation">
+								<div>{item.dop_params.anons|raw}</div>
+							</div>
+						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" />
 					</div>
 				[[endif]]
