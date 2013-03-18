@@ -54,7 +54,7 @@ if ($configs->site_on_off == '1' ){
 	}
 }
 
-echo "1111";
+//echo "1111";
 
 /*---------курс валют----------*/
 $cache = new cacheValue();
