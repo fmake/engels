@@ -1,0 +1,31 @@
+<?php
+
+$modulNameSpace = array(
+    'mod_text' => 'Текстовая',
+	'mod_text_no_news' => 'Текстовая без новостей',
+	'mod_tags' => 'Теги',
+    'mod_main' => 'Главная',
+	'mod_main_test' => 'Главная тестовая',
+    'business_news' => 'Бизнес новости',
+    'education_news' => 'Новости образования',
+    'news' => 'Новости',
+	'project' => 'Проекты',
+    'incidents' => 'Происшествия',
+    'meets' => 'События',
+	'places' => 'Места',
+    'photo_reports' => 'Фоторепортажи',
+	'advert' => 'Объявления',
+	'intervu' => 'Интервью',
+	'mod_reg'=> 'Регистрация',
+	'mod_input_site'=> 'Вход на сайт',
+	'mod_form_news_read'=> 'Форма новости от читателей',
+	'all_comments'=>'Все комментарии',
+	'manual'=> 'Справочник',
+	'immovables'=> 'Недвижимость',
+	'mod_weather'=> 'Погода',
+	'search'=> 'Поиск',
+	'mod_edit_user_param'=> 'Личный кабинет',
+	'mod_expert'=> 'Эксперт',
+	'mod_vote' => 'Голосования',
+);
+?>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+   <!--<script src="/js/jquery.masonry.min.js" type="text/javascript"></script>-->
+    <script src="/js/fieldFocus.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- PAGE START-->
+<div id="page">
+    <!-- HEADER START -->
+    <div id="header">
+            <div id="menu_top">
+                <div class="page-container">
+                    <div id="version">
+                        <a href="#" class="active">Полная версия</a>
+                        <a href="#">Мобильная версия</a>
+                    </div>
+                    <div id="time">
+                        <span>Сегодня <b>11 Февраля</b></span>
+                        <img src="/images/icons/time_header.png" alt="Время"/>
+                        <span class="time">12:03</span>
+                    </div>
+                    <div id="sky" onclick="location.href='#';">
+                        <span>За окном</span>
+                        <img src="/images/icons/sky_header.png" alt="Погода"/>
+                        <span class="temp">+2</span>
+                    </div>
+                    <div id="money_rate">
+                        <span>Курс валют:</span>
+                        <img src="/images/icons/euro_header.png" alt="Евро"/>
+                        <a href="#"><span class="euro">40.77</span></a>
+                        <img src="/images/icons/baks_header.png" alt="Доллар USA"/>
+                        <a href="#"><span class="baks">32.11</span></a>
+                    </div>
+                    <div class="login">
+                        <button><span><span><span>Войти</span></span></span></button>
+                        <button><span><span><span>Регистрация</span></span></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cl"></div>
+            <div id="menu_center">
+                <div class="page-container">
+                    <div class="nav">
+                        <ul>
+                            <li><a href="#" class="active">Главная</a></li>
+                            <li><a href="#">Места</a></li>
+                            <li><a href="#">Афиша</a></li>
+                            <li><a href="#">Фоторепортажи</a></li>
+                            <li><a href="#">Объявления</a></li>
+                            <li class="lc"><a href="#">Справочник</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <div class="sh">
+                            <div class="b-s" onclick="location.href='#';"></div>
+                            <form>
+                                <input type="text" name="search" class="fieldfocus" title="Поиск новостей"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu_down">
+                <div class="page-container">
+                    <img src="/images/logo/logo_header.png" alt="Логотип"/>
+                    <div class="mininews">
+                        <ul>
+                            <li class="block_purple"><a href="#">Нападение на худрука</a></li>
+                            <li class="block_blue"><a href="#">Зима в городе</a></li>
+                            <li class="block_red"><a href="#">Убийство деда Хасана</a></li>
+                            <li class="block_green"><a href="#">Купи билетик</a></li>
+                            <li class="block_grey"><a href="#">Комунисты</a></li>
+                            <li class="block_yellow"><a href="#">Телевизор</a></li>
+                            <li class="block_orange"><a href="#">Афиша</a></li>
+                        </ul>
+                    </div>
+                    <div class="warning_news">
+                        <div class="warning_text">В Энгельсе режим поликлиник остался прежним, но медикам рекомендовали больных с жалобами на высокую те...</div>
+                    </div>
+                </div>
+                <div class="shadow">
+                        <div class="shadow_img"></div>
+                </div>
+            </div>
+    </div>
+    <!-- HEADER END -->
+    <!-- TAPE NEWS START -->
+    <div class="cl"></div>
+    <div id="block_news">
+        <div class="page-container">
+            <!--PERSON START-->
+
+            <div id="person">
+                <div class="interview">
+                    <h1>Мнение</h1>
+                    <div class="item">
+                        <div class="img_h">
+                            <div class="hidden_title">
+                                <a href="#" class="bell">Сергей Саратовский - психолог</a>
+                            </div>
+                            <a href="#"> <img src="/images/tmp/person.png" alt=""/></a>
+                        </div>
+                        <a href="#">Задай вопрос психологу</a>
+                    </div>
+                    <div class="item lc">
+                        <div class="img_h">
+                            <div class="hidden_title">
+                                <a href="#" class="bell">Максим Григорьев </a>
+                            </div>
+                            <a href="#"> <img src="/images/tmp/peson_1.png" alt=""/></a>
+                        </div>
+                        <a href="#">«Тренерская работа – мое хобби»</a>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+                <div class="ap">
+                    <img src="/images/tmp/nash_otdih.png" alt=""/>
+                </div>
+                <div class="cl"></div>
+                <div class="guest">
+                    <h1>Гости</h1>
+                    <div class="item">
+                        <div class="img">
+                            <a href="#"><img src="/images/tmp/person.png" alt=""/></a>
+                        </div>
+                        <a href="#">Сергей Саратовский. Задай вопрос психологу</a>
+                    </div>
+                    <div class="item lc">
+                        <div class="img">
+                            <a href="#"><img src="/images/tmp/peson_1.png" alt=""/></a>
+                        </div>
+                        <a href="#">Максим Григорьев «Тренерская работа – мое хобби»</a>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+                <div class="guest">
+                    <h1>Гости</h1>
+                    <div class="item">
+                        <div class="img">
+                            <a href="#"><img src="/images/tmp/person.png" alt=""/></a>
+                        </div>
+                        <a href="#">Сергей Саратовский. Задай вопрос психологу</a>
+                    </div>
+                    <div class="item lc">
+                        <div class="img">
+                            <a href="#"><img src="/images/tmp/peson_1.png" alt=""/></a>
+                        </div>
+                        <a href="#">Максим Григорьев «Тренерская работа – мое хобби»</a>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+            </div>
+            <!--PERSON END-->
+            <div id="tape">
+                <h1>Лента новостей</h1>
+                <div class="nav">
+                    <ul>
+                        <li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
+                        <li><span><span><span><a href="#">Саратов</a></span></span></span></li>
+                        <li><span><span><span><a href="#">Все новости</a></span></span></span></li>
+                    </ul>
+                </div>
+                <div class="news">
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/></a><a href="#"><img src="/images/bg/camera.png" alt="" title="Видео"/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" title="Фото" alt=""/></a><a href="#"><img src="/images/bg/camera.png" title="Видео" alt=""/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt=""/></a><a href="#"><img src="/images/bg/camera.png" alt=""/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt=""/></a><a href="#"><img src="/images/bg/camera.png" alt=""/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                    <img src="/images/tmp/otdih2.png" alt="">
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt=""/></a><a href="#"><img src="/images/bg/camera.png" alt=""/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Дорога:</span><a href="#">В дорожной аварии в Объединенных Арабских Эмиратах погибли 22 человека</a><span class="comments">[6]</span></div>
+                    </div>
+                    <div class="item">
+                        <div class="time">19:18</div>
+                        <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt=""/></a><a href="#"><img src="/images/bg/camera.png" alt=""/></a></div>
+                        <div class="cl"></div>
+                        <div class="note"><span class="title">Аэропорт:</span><a href="#">В «Шереметьево» и «Внуково» из-за погоды задерживают рейсы</a><span class="comments">[600]</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- TAPE NEWS END -->
+            <div id="block_main">
+                <h1>Главное</h1>
+                <div class="slaider">
+                    <div class="caption_top">
+                        <h2>Снегопад в столице спровоцировал увеличение числа мелких ДТП</h2>
+                    </div>
+                    <div class="caption_down">
+                        <span>Из-за сильного снегопада и гололедицы в городе в четыре раза выросло количество мелких аварий. За прошедшие сутки столичная Госавтоинспекция зарегистрировала более 3,4 тысяч столкновений.</span>
+                    </div>
+                    <div class="arrow-left">
+                        <img src="/images/bg/left-arrow.png" alt=""/>
+                    </div>
+                    <div class="arrow-right">
+                        <img src="/images/bg/right-arrow.png" alt=""/>
+                    </div>
+                    <div class="slaider_nav">
+                        <a href="#" class="slaiderlink active">1</a>
+                        <a href="#" class="slaiderlink">2</a>
+                        <a href="#" class="slaiderlink">3</a>
+                    </div>
+                    <img src="/images/tmp/slider.png" alt=""/>
+                </div>
+                <div class="news-foto">
+                    <div class="news-bar">
+                        <div class="rb">
+                            <div class="inside">
+                                <div class="link">
+                                    <a href="#" class="active" id="rad"><div>Новости +2</div></a>
+                                    <a href="#"><div>Обзоры</div></a>
+                                    <a href="#"><div>Проекты</div></a>
+                                    <a href="#"><div>Комментарии</div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cl"></div>
+                    <div class="items">
+                        <a href="#" class="img">
+                            <img src="/images/tmp/foto-news.png" alt=""/>
+                            <div class="text"><div class="title">Криминал</div><div class="time">05.02.2013 16:13</div><div class="caption">Незаконная вырубка леса под Татищевоищево</div></div>
+                        </a>
+                        <div class="item">
+                            <ul>
+                                <li><a href="#"><span class="time">19:00</span><span class="text">В дорожной аварии в Объединенных Арабских Эмиратах</span></a></li>
+                                <li><a href="#"><span class="time">19:00</span><span class="text">В дорожной аварии в Объединенных Арабских Эмиратах</span></a></li>
+                                <li><a href="#"><span class="time">19:00</span><span class="text">В дорожной аварии в Объединенных Арабских Эмиратах</span></a></li>
+                                <li><a href="#"><span class="time">19:00</span><span class="text">В дорожной аварии в Объединенных Арабских Эмиратах</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fotorep">
+                    <h1>Фоторепортажи</h1>
+                    <a href="#" class="fotolink">Все фото</a>
+                    <div class="cl"></div>
+                    <!--FOTO TOLLBAR START-->
+                    <div id="f-toolbar">
+                        <div class="item">
+                        <div class="hidden_item">
+                            <div class="hidden_link">
+                                <div class="time">23.01.2013</div>
+                                <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                <div class="cl"></div>
+                                <a href="#" class="d-l">Линк этой новости...</a>
+                            </div>
+                            <a href="#"><img src="/images/tmp/1.gif" width="200" alt="" /></a>
+                        </div>
+                        <img src="/images/tmp/1.gif" alt=""/>
+                    </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/2.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/2.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/3.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/3.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/1.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/1.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/2.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/2.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/3.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/3.gif" alt="" />
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/1.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/1.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/2.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/2.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/3.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/3.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/1.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/1.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/2.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/2.gif" alt=""/>
+                        </div>
+                        <div class="item">
+                            <div class="hidden_item">
+                                <div class="hidden_link">
+                                    <div class="time">23.01.2013</div>
+                                    <div class="icons"><a href="#"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/>[600]</a></div>
+                                    <div class="cl"></div>
+                                    <a href="#" class="d-l">Линк этой новости...</a>
+                                </div>
+                                <a href="#"><img src="/images/tmp/3.gif" width="200" alt="" /></a>
+                            </div>
+                            <img src="/images/tmp/3.gif" alt=""/>
+                        </div>
+                    </div>
+                    <!--FOTO TOLLBAR END-->
+                </div>
+            </div>
+            <div class="cl"></div>
+            <div class="niz_ap">
+                <img src="/images/tmp/novii_god.png" alt="" />
+            </div>
+        </div>
+        <div class="cl"></div>
+    </div>
+    <div class="cl"></div>
+<!--BLOCK NEWS END-->
+<!-- JOURNAL START -->
+<div id="journal">
+        <div class="shadow_img top"></div>
+    <div class="page-container">
+        <div id="afish">
+            <h1>Афиша</h1>
+            <div class="nav">
+                <ul>
+                    <li class="active"><span><span><span><a href="#">Все события</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Концерты</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Театр</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Кино</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Спорт</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Мероприятия</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Клубы</a></span></span></span></li>
+                </ul>
+            </div>
+            <div class="foto-menu">
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                        Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                        Тепло наших тел</a>
+                </div>
+                <div class="item ls">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                        Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                        Тепло наших тел</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                        Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item ls">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                        Тепло наших тел</a>
+                </div>
+            </div>
+            </div>
+        <div id="place">
+            <h1>Места</h1>
+            <div class="nav">
+                <ul>
+                    <li class="active"><span><span><span><a href="#">Все события</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Концерты</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Театр</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Кино</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Спорт</a></span></span></span></li>
+                    <li><span><span><span><a href="#">Мероприятия</a></span></span></span></li>
+                    <li id="show_all"><span><span><span><a href="#">Ещё</a></span></span></span>
+                        <div class="hidden_show_all">
+                            <div class="top_im triangle"></div>
+                            <div class="item"><a href="#">Авто</a></div>
+                            <div class="item"><a href="#">Афиша</a></div>
+                            <div class="item"><a href="#">Деньги</a></div>
+                            <div class="item"><a href="#">Диск</a></div>
+                            <div class="item"><a href="#">Авто</a></div>
+                            <div class="item"><a href="#">Афиша</a></div>
+                            <div class="item"><a href="#">Деньги</a></div>
+                            <div class="item"><a href="#">Диск</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="foto-menu">
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                   Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                    Тепло наших тел</a>
+                </div>
+                <div class="item ls">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                   Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                    Тепло наших тел</a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="/images/tmp/f2.png" alt=""/>
+                   Выставка живописи Сергея Сакова</a>
+                </div>
+                <div class="item ls">
+                    <a href="#"><img src="/images/tmp/f1.png" alt=""/>
+                    Тепло наших тел</a>
+                </div>
+            </div>
+        </div>
+        <div class="cl"></div>
+        <div class="menu_day">
+            <div class="news-bar">
+                <div class="rb">
+                    <div class="inside">
+                        <div class="link">
+                            <a href="#" class="arrow l"><img src="/images/icons/left_nav_bar.png" alt="" /></a>
+                            <div class="js-toolbar">
+                                <div class="hidden_tape">
+                                    <a href="#" class="active a-bottom"><div>06 Ср</div></a>
+                                    <a href="#"><div>07 Чт</div></a>
+                                    <a href="#"><div>08 Пт</div></a>
+                                    <a href="#"><div>09 Сб</div></a>
+                                    <a href="#"><div>10 Вс</div></a>
+                                    <a href="#"><div>11 Пн</div></a>
+                                    <a href="#"><div>12 Вт</div></a>
+                                    <a href="#"><div>13 Ср</div></a>
+                                    <a href="#"><div>14 Чт</div></a>
+                                </div>
+                            </div>
+                            <a href="#" class="arrow r"><img src="/images/icons/right_nav_bar.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <div class="map">
+            <a href="#"><img src="images/icons/google_map.png" alt=""/></a>
+            <a href="#" class="f16">Посмотреть на интерактивной карте</a>
+        </div>
+        <div class="cl"></div>
+        <div id="pointer">
+            <h1>Журнал в теме</h1>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item lc">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+                <div class="item lc">
+                    <div class="img"><img src="/images/tmp/ona.png" alt="" /></div>
+                    <div class="title"><a href="#" class="f14">"Музейный гид"</a></div>
+                    <div class="text">Внимание, найден новый вариант разрешения вечной тайны нашего с вами</div>
+                </div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="cl"></div>
+    <div class="shadow">
+        <div class="shadow_img"></div>
+    </div>
+</div>
+<!-- JOURNAL END-->
+<!-- FORMS START-->
+<div id="forms">
+    <div class=page-container>
+        <img src="/images/tmp/mi_s_tovoy.png" alt=""/>
+    <!-- СПРАВОЧНИК START -->
+        <div class="asks">
+            <h1>Справочник</h1>
+            <button><span><span><span>Добавить компанию</span></span></span></button>
+            <div class="cl"></div>
+            <div class="desk">
+                <div class="page-container">
+                    <div class="item">
+                        <div class="title"><a href="#">Кафель Никовъ</a></div>
+                        <div class="text">Керамическая плитка, керамогранит, мозайка, искуственный камень,тротуарная </div>
+                    </div>
+                    <div class="item ap"></div>
+                    <div class="item">
+                        <div class="title"><a href="#">Кафель Никовъ</a></div>
+                        <div class="text">Керамическая плитка, керамогранит, мозайка, искуственный камень,тротуарная </div>
+                    </div>
+                </div>
+                <div class="page-container">
+                    <div class="item">
+                        <div class="title"><a href="#">Диагностикат дизельных систем</a></div>
+                        <div class="text">Диагностика любого авто (Ваз,Газ, Уаз, Иномарок) диагностика и ремонт топливной аппаратуры </div>
+                    </div>
+                    <div class="item">
+                        <div class="title"><a href="#">GIRAFFE</a></div>
+                        <div class="text">Мебель иностранных производителей и предметы интерьера.Эксклюзивные люстры для коттеджей и квартир, квартир, квартир</div>
+                    </div>
+                    <div class="item">
+                        <div class="title"><a href="#">Диагностикат дизельных систем</a></div>
+                        <div class="text">Диагностика любого авто (Ваз,Газ, Уаз, Иномарок) диагностика и ремонт топливной аппаратуры </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- СПРАВОЧНИК END -->
+    <!-- НЕДВИЖИМОСТЬ START -->
+        <div class="asks2">
+            <div class="buyplace">
+                <h1>Недвижимость</h1>
+                <button><span><span><span>Добавлить недвижимость</span></span></span></button>
+                <div class="cl"></div>
+                <div class="desk">
+                    <div class="page-container">
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                    </div>
+                    <div class="page-container">
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                        <div class="item">
+                            <a href="#">Тельмана ул , комнат : 3</a><span>2150000 руб.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cl"></div>
+            <div class="tasks">
+                <h1>Объявления</h1>
+                <button><span><span><span>Добавлить Объявления</span></span></span></button>
+                <div class="cl"></div>
+                <div class="desk">
+                    <div class="page-container">
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.</a><span></span>
+                        </div>
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">Ремонт квартир</a><span>договорная</span>
+                        </div>
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">Ремонт квартир</a><span>договорная</span>
+                        </div>
+                    </div>
+                    <div class="page-container">
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">Ремонт квартир</a><span>договорная</span>
+                        </div>
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">Ремонт квартир</a><span>договорная</span>
+                        </div>
+                        <div class="item">
+                            <div class="title">Услуги</div>
+                            <a href="#">Продаю женскую норкувую шубу с капюшеном</a><span>договорная</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- НЕДВИЖИМОСТЬ END -->
+        <div class="cl"></div>
+        <div id="votes">
+            <h1>Голосование</h1>
+            <div class="vote">
+                <div class="title">Каких мест отдыха не хватает Энгельсу?</div>
+                <form>
+                    <input type="radio" name="vote_1" value="1"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="2"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="3"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="4"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="5"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="6"/>Кинотеатр<br/>
+                    <button class="butt"><span><span><span>Проголосовать</span></span></span></button>
+                </form>
+            </div>
+            <div class="vote">
+                <div class="title">Каких мест отдыха не хватает Энгельсу?</div>
+                <form>
+                    <input type="radio" name="vote_1" value="1"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="2"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="3"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="4"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="5"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="6"/>Кинотеатр<br/>
+                    <button class="butt"><span><span><span>Проголосовать</span></span></span></button>
+                </form>
+            </div>
+            <div class="vote">
+                <div class="title">Каких мест отдыха не хватает Энгельсу?</div>
+                <form>
+                    <input type="radio" name="vote_1" value="1"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="2"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="3"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="4"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="5"/>Кинотеатр<br/>
+                    <input type="radio" name="vote_1" value="6"/>Кинотеатр<br/>
+                    <button class="butt"><span><span><span>Проголосовать</span></span></span></button>
+                </form>
+            </div>
+            <div class="result">
+                <div class="title">Прошлые результаты</div>
+                <div class="caption">Нравится новый сайт?</div>
+                <div class="vote-res">
+                    <div class="var"><div class="value">Да</div><div class="color"></div><div class="number">43%</div>
+                    <div class="cl"></div></div>
+                    <div class="var"><div class="value">Нет</div><div class="color" style="background: #0d44a0; width: 90px"></div><div class="number">32%</div>
+                    <div class="cl"></div></div>
+                    <div class="var"><div class="value">Новый сайт? Не, не слышал</div><div class="color" style="background: #68a332; width: 24px"></div><div class="number">7%</div>
+                    <div class="cl"></div></div>
+                    <div class="var"><div class="value">Где я?</div><div class="color" style="background: #6438c8; width: 44px"></div><div class="number">22%</div>
+                    <div class="cl"></div></div>
+                    <button class="butt"><span><span><span>Архив голосований</span></span></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cl"></div>
+    <div class="shadow">
+        <div class="shadow_img"></div>
+    </div>
+</div>
+<div class="cl"></div>
+<!-- FORMS END-->
+    <div id="down">
+        <div class="page-container">
+            <div class="menu">
+                <div class="logo">
+                    <img src="/images/logo/footer_logo_header.png" alt=""/>
+                    <img class="i14" src="/images/icons/14+.png" alt="" />
+                </div>
+                <div class="nav">
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Места</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Объявления</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Справочник</div></div></div></a>
+                    <a href="#"  class="d-n" ><div class="rr"><div class="ll"><div class="cc">Новости</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Город</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Саратов</div></div></div></a>
+                    <div class="cl"></div>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Места</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Объявления</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Справочник</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Новости</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Город</div></div></div></a>
+                    <a href="#"  class="d-n"><div class="rr"><div class="ll"><div class="cc">Саратов</div></div></div></a>
+                    <div class="cl"></div>
+                    <div class="info">
+                        <div class="float-left"><a href="#">info@engels.bz</a>, 8 (8452) 34-77-90, 8 (905) 384-77-90</div>
+                        <div class="float-right"><span>Engels.bz в социальных сетях:</span><img alt="" src="/images/icons/social_butt.png" class="mr"/></div>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="cl"></div>
+            <div class="all">
+                <div class="f-t-r">
+                    УЧРЕДИТЕЛЬ И РЕДАКЦИЯ: ЗАО «ИД «Комсомольская правда».<br/>
+                    Сетевое издание (сайт) зарегистрировано Роскомнадзором, свидетельство Эл№ФC77-50166 от 15 июня 2012.<br/>
+                    Главный редактор - Сунгоркин В.Н.<br/>
+                    Шеф-редактор сайта - Носова О.В.<br/>
+                </div>
+                <div class="f-t">
+                    125993, Москва, Старый Петровско-Разумовский проезд, 1/23, стр. 1. Тел. +7 (495) 777-02-82.<br/>
+                    Исключительные права на материалы, размещённые на интернет-сайте www.kp.ru, в соответствии с законодательством Российской Федерации об охране результатов интеллектуальной деятельности принадлежат
+                </div>
+            </div>
+            <div class="cl"></div>
+            <div class="corypting">
+                Copyright © Энгельс bz - городской портал - свидетельство о регистрации ЭЛ№ФС77-52410<br/>
+                Свидетельство выдано 28 декабря 2012 года Федеральной службой по надзору за соблюдением законодательства в сфере массовых коммуникаций и охране культурного наследия. При использовании материалов сайта - гиперссылка обязательна | Замечания и предложения направляйте по адресу <a href="mailto:info@engels.bz">info@engels.bz</a>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <div class="cl">
+        </div>
+    </div>
+    <div id="footer">
+        <div class="page-container">
+            <div class="task1">
+                <img src="/images/icons/task1.png" alt="" />
+            </div>
+            <div class="task2">
+                <img src="/images/icons/task1.png" alt="" />
+            </div>
+            <div class="create">
+                <div class="ques">
+                    <a href="#">Реклама на сайте</a>
+                </div>
+                <div class="company">
+                    <a href="#">Создание сайтов</a> - Future
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="cl"></div>
+</div>
+</body>
+</html>
