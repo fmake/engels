@@ -28,7 +28,7 @@
 							[[if item.dop_params.text_expert and item.dop_params.active_mnenie]]
 								<div class="quot" id="quot">
 									[[if item.dop_params.expert_picture]]
-										<img src="/images/users/{item.id}/expert/113_75{item.dop_params.expert_picture}" alt="" width="113px" />
+										<img src="/{site_obj.fileDirectory}{item.id}/expert/113_75{item.dop_params.expert_picture}" alt="" width="113px" />
 									[[endif]]
 									<img src="/images/icons/apostrof.png" alt="" />
 									[[if item.dop_params.expert]]

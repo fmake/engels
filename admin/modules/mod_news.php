@@ -146,13 +146,14 @@ switch ($request->action) {
                 $fmakeSiteModulRelation->setPageRelation($_POST['parent'], $absitem->id);
                 
                 $_POST['id'] = $absitem->id;
+                //$_POST['expert_picture'] = "0";
                 foreach ($_POST as $key => $value){
                     //$absitem->addParam($key, mysql_real_escape_string($value));
 					$absitem_dop->addParam($key, $value);
 				}
 							
                 $absitem_dop->newItem();
-                
+            
 				/*теги*/
 				$tags->addTags($_POST['tags'],$absitem -> id) ;
 				/*теги*/
@@ -164,7 +165,9 @@ switch ($request->action) {
 				//addExpertFile;
 				if ($_FILES['expert_picture']['tmp_name']) {
 					$absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->setId($absitem->id);
 					$absitem_dop->addParam('expert_picture', $_FILES['expert_picture']['name']);
+					//echo $absitem_dop->id;
 					$absitem_dop->update();
 				}
                 break;
