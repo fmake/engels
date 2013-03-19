@@ -30,9 +30,11 @@
 						[[for ekspert in items_news_exp]]
 						<div class="item [[if loop.index == 2]]lc[[endif]]">
 							<div class="img_h">
+								[[if ekspert.expert]]
 									<div class="hidden_title">
-										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.name_expert}</a>
+										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
 									</div>
+								[[endif]]
 									<a href="{ekspert.full_url}#quot">
 										[[if ekspert.picture_expert]]
 											<img width="133" alt="{ekspert.caption}" src="/images/users/{ekspert.id_expert}/112_169_{ekspert.picture_expert}" />
