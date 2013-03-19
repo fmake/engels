@@ -118,7 +118,12 @@ switch ($request->action) {
 					$_POST['active'] = 1;
 				else
 					$_POST['active'] = 0;
-					
+				#мнение
+				if ($_POST['active_mnenie'])
+					$_POST['active_mnenie'] = 1;
+				else
+					$_POST['active_mnenie'] = 0;
+				#мнение
 				if($_POST['main'])
 					$_POST['main'] = 1;
 				else
@@ -156,6 +161,12 @@ switch ($request->action) {
 					if ($_POST['wantermark_false']) $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name'],false);
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
 				}
+				//addExpertFile;
+				if ($_FILES['expert_picture']['tmp_name']) {
+					$absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->addParam('expert_picture', $_FILES['expert_picture']['name']);
+					$absitem_dop->update();
+				}
                 break;
 
             case 'update': // Переписать
@@ -174,7 +185,12 @@ switch ($request->action) {
 					$_POST['active'] = 1;
 				else
 					$_POST['active'] = 0;
-					
+				#мнение
+				if ($_POST['active_mnenie'])
+					$_POST['active_mnenie'] = 1;
+				else
+					$_POST['active_mnenie'] = 0;
+				#мнение	
 				if($_POST['main'])
 					$_POST['main'] = 1;
 				else
@@ -210,6 +226,11 @@ switch ($request->action) {
                 if ($_FILES['picture']['tmp_name']) {
 					if ($_POST['wantermark_false']) $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name'],false);
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
+				}
+				if ($_FILES['expert_picture']['tmp_name']) {
+					$absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->addParam('expert_picture', $_FILES['expert_picture']['name']);
+					$absitem_dop->update();
 				}
                 break;
 
@@ -304,9 +325,13 @@ switch ($request->action) {
         #Эксперт
         $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         $form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
+        if($item_dop['expert_picture'])
+        	$form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/expert/{$items['expert_picture']}' /></td></tr>");
+        $form->addFile("Аватарка: ", "expert_picture", $text=false);
         $form->addVarchar("<i>Имя эксперта</i>", "expert", $items_dop["expert"]);
         $form->addTextAreaMini("Комментарий эксперта", "text_expert", $items_dop["text_expert"]);
         #Эксперт внезапно закончился
+
         /*
         $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         #селектор экспертов

@@ -164,6 +164,19 @@ class fmakeNews extends fmakeSiteModule {
 		}
 		return $str;
 	}
+	function addExpertFile($tempName, $name){
+		$dirs = explode("/", $this->fileDirectory . '/' . $this->id.'/expert');
+		$dirname = ROOT . "/";
+		foreach ($dirs as $dir) {
+			$dirname = $dirname . $dir . "/";
+			if (!is_dir($dirname))
+				mkdir($dirname);
+		}
+		$images = new imageMaker($name);
+		$images->imagesData = $tempName;
+		$images->resize(false,false, false, $dirname, 'original_', false);
+		$images->resize(113, 75, true, $dirname, '113_75', false);
+	}
 }
 
 ?>
