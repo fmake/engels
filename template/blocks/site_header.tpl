@@ -1,7 +1,7 @@
 <div align="center" style="background: none repeat scroll 0 0 #FFFFFF;">
 	/*БАНЕР*/
 	[[if baner0]]
-		<p class="floatright" style="width: 722px; height: 95px;">
+		<p class="floatright" style="height: 95px;">
 			[[if baner0.url]]
 				<noindex>
 				<a rel="nofollow" target="_blank" href="{baner0.url}">
