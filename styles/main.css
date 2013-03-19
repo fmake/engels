@@ -502,7 +502,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 .news-foto .items .img .time, .news-foto .items .img .time a{font-size: 10px; color:#878787; float: left; padding-top: 1px; }
 .news-foto .items .time, .news-foto .items .time a{font-size: 12px; color:#878787;  padding-right: 5px;}
-.news-foto .items .img .title, .news-foto .items .img .title a {font-size: 11px; color:#878787; float: left; text-decoration: none;width: auto;}
+.news-foto .items .img .title, .news-foto .items .img .title a {font-size: 11px; color:#878787; float: left; text-decoration: none;width: auto; padding-right: 5px;}
 .news-foto .items .img .caption, .news-foto .items .img .caption a{float: left; color:#000; text-decoration: none;}
 .news-foto .items .img .caption a:hover{text-decoration: underline;}
 .news-foto .items .item ul {float: left; width: 230px; padding-left: 10px;}
