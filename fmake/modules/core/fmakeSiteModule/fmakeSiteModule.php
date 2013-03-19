@@ -680,7 +680,7 @@ function getBreadCrumbs($id)
 	function addFile($tempName, $name, $iswantermark = true) {
 		$dirs = explode("/", $this->fileDirectory . '/' . $this->id);
 		$dirname = ROOT . "/";
-
+		$name = $this->imgtransliter($name);
 		foreach ($dirs as $dir) {
 			$dirname = $dirname . $dir . "/";
 			if (!is_dir($dirname))
