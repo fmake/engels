@@ -2,6 +2,8 @@
 ~*
 template/cache/*
 images/*
+robots.txt
+git-hook.php
 admin/includes/tinymce/upload-files/*
 phpMyAdmin/*
 admin/pThumb*
