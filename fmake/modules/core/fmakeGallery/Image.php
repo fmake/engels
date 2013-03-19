@@ -120,7 +120,7 @@ class fmakeGallery_Image extends fmakeSiteModule implements fmakeSiteModule_Exte
 		
 		$dirs = explode("/", $this->imgFolder.$id_gal);
 		$dirname = ROOT."/";
-		
+		$name = $this->imgtransliter($file['name']);
 		$wantermark = ROOT.'/images/wantermark2.png';
 		
 		foreach($dirs as $dir){
@@ -129,9 +129,9 @@ class fmakeGallery_Image extends fmakeSiteModule implements fmakeSiteModule_Exte
 		}
 		if(!is_dir($dirname."/thumbs/")) mkdir($dirname."/thumbs/");
 		//echo $dirname;
-		$images = new imageMaker($file['name']);
+		$images = new imageMaker($name);
 		$images->imagesData = $file['tmp_name'];
-		copy($file['tmp_name'],$dirname.$file['name']);
+		copy($file['tmp_name'],$dirname.$name);
 		//$images->resize(800,false,false,$dirname.'/','',false);
 		$images->resize(140,111,true,$dirname.'/thumbs/','',false);
 		$images->resize(175,116,true,$dirname.'/thumbs/','175_116_',false);

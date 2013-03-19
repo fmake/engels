@@ -264,7 +264,7 @@
 	function addFile($tempName, $name) {
 		$dirs = explode("/", $this->fileDirectory . '/' . $this->id);
 		$dirname = ROOT . "/";
-
+		$name = $this->imgtransliter($name);
 		foreach ($dirs as $dir) {
 			$dirname = $dirname . $dir . "/";
 			if (!is_dir($dirname))

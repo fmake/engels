@@ -164,9 +164,9 @@ switch ($request->action) {
 				}
 				//addExpertFile;
 				if ($_FILES['expert_picture']['tmp_name']) {
-					$absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
 					$absitem_dop->setId($absitem->id);
-					$absitem_dop->addParam('expert_picture', $_FILES['expert_picture']['name']);
+					$absitem_dop->addParam('expert_picture', $name);
 					//echo $absitem_dop->id;
 					$absitem_dop->update();
 				}
@@ -231,8 +231,8 @@ switch ($request->action) {
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
 				}
 				if ($_FILES['expert_picture']['tmp_name']) {
-					$absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
-					$absitem_dop->addParam('expert_picture', $_FILES['expert_picture']['name']);
+					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->addParam('expert_picture', $name);
 					$absitem_dop->update();
 				}
                 break;
