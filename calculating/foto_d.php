@@ -37,4 +37,4 @@ $item_foto_this_day = $fmakeSiteFotoDay->getByPageAdmin($id, false, false,
 
 #массив фоток с средним рейтингом, типо для меню или еще чего
 $item_foto_this_day_middle = $fmakeSiteFotoDay->getByPageAdmin($id, $limit_midle, false, 
-	" a.`file` = 'item_foto_day' and b.`date` > $start and b.`date` < $end and b.`active` = '1' and b.`rating` > {$top} ");
+	" a.`file` = 'item_foto_day' and b.`date` > $start and b.`date` < $end and b.`active` = '1' and b.`rating` > {$top} and b.`rating` < {$top_down}");
