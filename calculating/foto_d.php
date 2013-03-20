@@ -27,6 +27,8 @@ $limit_midle = 11;
 $fmakeSiteFotoDay = new fmakeSiteFotoDay();
 $fmakeSiteFotoDay->order = "b.rating DESC, a.id"; # по ratingu
 
+$fmakeSiteFotoDayTags = new fmakeSiteFotoDayTags(); #ajax
+
 # массив самых крутых фоток
 $top_item_foto = $fmakeSiteFotoDay->getByPageAdmin($id, $limit_one, $page_one,
 	"a.`file` = 'item_foto_day' and b.`date` > $start and b.`date` < $end and b.`active` = '1'",true);
