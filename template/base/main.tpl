@@ -186,10 +186,10 @@
 							</div>
 						</div>
 						[[if loop.index == loop.last]]
-							qqq
+							[[set lastID = item.id]]
 						[[endif]]
 					[[endfor]]
-					<div class="arrow niz"></div>
+					<div class="arrow niz" rel="{lastID}"></div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
