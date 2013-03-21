@@ -185,7 +185,9 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-			
+						[[if loop.index == loop.last]]
+							qqq
+						[[endif]]
 					[[endfor]]
 					<div class="arrow niz"></div>
 					</div>
