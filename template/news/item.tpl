@@ -22,7 +22,10 @@
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" />
 					</div>
+					[[else]]
+						<h1>{item.caption}</h1>
 				[[endif]]
+
 				<div class="cl"></div>
 				<div class="text">
 					[[if item.dop_params.autor]]<span class="avtor">Автор: {item.dop_params.autor}</span>[[endif]]
