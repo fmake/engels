@@ -73,6 +73,7 @@ $(document).ready(function(){
 			
 		}
 	);
+
 	$(".menu_day .arrow.l").hide();
 	$(".menu_day .arrow.r").on('click',function(){
 		var margin_left = parseInt($("#spisok-items-week-date").css('margin-left'))-51;
@@ -132,6 +133,10 @@ $(document).ready(function(){
 	});
 	$('#tape .niz').click(function(){
 		xajax_TapeWave($('#last_id').html());
+		$('#tape .news').css('margin-top')-= 200
+	});
+	$("#tape .arrow").click(function(){
+		$('#tape .news').css('margin-top')+= 200;
 	});
 	/*answer*/
 	$('.expert_answer').live('click',function(){

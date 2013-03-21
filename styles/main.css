@@ -292,6 +292,12 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     width: 20px;
     cursor: pointer;
 }
+#is_tape{
+    margin-top: 20px;
+    padding-left: 10px;
+    overflow: hidden;
+    height: 800px;
+}
 #tape .arrow.niz{
     background: url("/images/bg/vniz.png") no-repeat;
     margin-top: 5px;
