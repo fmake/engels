@@ -132,10 +132,10 @@ $(document).ready(function(){
 		$(".form_add_sms_mailer").toggle();
 	});
 	$('#tape .niz').click(function(){
-		xajax_TapeWave($('#last_id').html());
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
+		xajax_TapeWave($('#last_id').html());
 	});
-	$("#tape .arrow").click(function(){
+	$("#tape .verh").click(function(){
 		var m;
 		m = parseInt($('#tape .news').css('margin-top')) + 189;
 		$('#tape .news').css({'margin-top': m});
