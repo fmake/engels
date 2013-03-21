@@ -504,7 +504,9 @@
 				<div class="cl"></div>
 
 				<div class="tasks">
-					<h1>Объявления</h1>
+					<a href = "{site_obj.getLinkPage(796)}" class = "h1">
+						<h1>Объявления</h1>
+					</a>
 					<button onclick="location.href ='{site_obj.getLinkPage(796)}?form=add_advert';">
 						<span><span><span>Добавлить Объявления</span></span></span>
 					</button>
