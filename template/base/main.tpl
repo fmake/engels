@@ -186,10 +186,10 @@
 							</div>
 						</div>
 					
-							[[set tape = 13 ]]
+							[[set tapes = 13 ]]
 				
 					[[endfor]]
-					<div class="arrow niz" rel = "{tape}"></div>
+					<div class="arrow niz" rel = "{tapes}"></div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
