@@ -249,6 +249,7 @@ function SubmitFormVote(id){
 }
 /*места*/
 $('.arrow.niz').click(function(){
+	alert("11");
 	xajax_TapeWave($('#last_id').html());
 });
 function showInputsParams(array_all,array){
