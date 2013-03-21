@@ -1022,7 +1022,9 @@ a:hover h1{
     color: #fff;
     display: block;
 }
-
+.buyplace{
+    margin-bottom: 5px; 
+}
 /*NEWS*/
 /*ITEM NEWS*/
 .breadscrubs{
