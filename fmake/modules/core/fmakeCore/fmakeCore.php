@@ -512,11 +512,15 @@ class fmakeCore extends fmakeWhereSelector{
 			"a","b","v","g","d","e","e","zh","z","i","y","k","l","m","n","o","p","r","s","t","u","f","h","c","ch","sh","sh","","y","","e","u","ya","-",
 			"a","b","v","g","d","e","e","zh","z","i","y","k","l","m","n","o","p","r","s","t","u","f","h","c","ch","sh","sh","","y","","e","u","ya","","","","."
 		);
-		
-		$result = str_replace($rus, $eng, $str);
+		#берем строку $str и обрезаем ее до нужного символа а именно точки.
+		$str_new = substr($str, 0, strrpos($str, '.'));
+		$str_type = substr($str, strrpos($str, '.'), strlen($str));
+
+		$result = str_replace($rus, $eng, $str_new);
 		for($i=0;$i<strlen($result);$i++){
 			if(in_array($result{$i},$eng)) $tmp_result.=$result{$i};
 		}
+		$tmp_result.= $str_type;
 		return $tmp_result;
 	}
 }
