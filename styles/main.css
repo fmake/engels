@@ -1042,6 +1042,7 @@ a:hover h1{
     padding: 1px 3px;
     margin: 5px;
     font-size: 9px;
+    margin-top: 20px;
     background: url('/images/bg/slider_news_item.png');
 }
 #item_new .img .annotation{
