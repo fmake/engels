@@ -132,11 +132,8 @@ $(document).ready(function(){
 		$(".form_add_sms_mailer").toggle();
 	});
 	$('#tape .niz').click(function(){
-		var mn;
 		xajax_TapeWave($('#last_id').html());
-		mn = parseInt($('#tape .news').css('margin-top')) - 189;
-		//alert(mn);
-		$('#tape .news').css({'margin-top': mn});
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
 	});
 	$("#tape .arrow").click(function(){
 		var m;
