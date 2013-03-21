@@ -186,7 +186,7 @@
 							</div>
 						</div>
 						[[if loop.index == 3 ]]
-							[[set tape = item.id ]]
+							[[set tape = 13 ]]
 						[[endif]]
 					[[endfor]]
 					<div class="arrow niz" rel = "{tape}"></div>
