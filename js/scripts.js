@@ -137,7 +137,7 @@ $(document).ready(function(){
 		$(this).attr('id','x_tape_item'+index);
 	});
 
-	$('#tape .niz').click(function(){
+	$('#tape .niz').live('click', function(){
 		var height = 0;
 		xajax_TapeWave($('#last_id').html());
 		for (var i = 1; i < 4; i++, end_item++, start_item++) {
@@ -146,8 +146,10 @@ $(document).ready(function(){
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 
-	if ($('#tape .news').css('margin-top') <= 0)
+	if ($('#tape .news').css('margin-top') > 0){
+		$('#tape .news').css({'margin-top': 0 });
 		$("#tape .verh").hide();
+	}
 
 	$("#tape .verh").click(function(){
 		var height = 0;
