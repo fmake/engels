@@ -1032,6 +1032,7 @@ a:hover h1{
     width: 744px;
     position: relative;
     float: left;
+    min-height: 500px;
 }
 #item_new{margin-bottom: 20px;}
 #item_new .img{color: #fff;float: left; position: relative; margin-bottom: 3px;}

@@ -1,6 +1,8 @@
 <div id="right_news">
 	<div class="right_item_news">
-		<h1>Новости</h1>
+		<a href = "{site_obj.getLinkPage(2)}" class = "h1">
+			<h1>Новости</h1>
+		</a>
 		<div class="news">
 			[[for item in news_right_block]]
 				<div class="item">
