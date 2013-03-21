@@ -130,69 +130,67 @@
 					</div>
 					*/
 					<div class="arrow"></div>
-					<div class="news">
-						<div id="x_tape" >
-						[[for item in items_news_lent]]
-							[[if loop.index == 4]]
-								/*БАНЕР*/
-								[[if baner16]]
-								<div style="">
-										[[if baner16.url]]
-											<noindex>
-											<a rel="nofollow" target="_blank" href="{baner16.url}">
-												{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
-											</a>
-											</noindex>
-										[[else]]
+					<div class="news" id="x_tape">
+					[[for item in items_news_lent]]
+						[[if loop.index == 4]]
+							/*БАНЕР*/
+							[[if baner16]]
+							<div style="">
+									[[if baner16.url]]
+										<noindex>
+										<a rel="nofollow" target="_blank" href="{baner16.url}">
 											{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
-										[[endif]]
-								</div>
-								[[endif]]
-								/*БАНЕР*/
-							[[endif]]
-							[[if loop.index == 6]]
-								/*БАНЕР*/
-								[[if baner17]]
-								<div style="">
-										[[if baner17.url]]
-											<noindex>
-											<a rel="nofollow" target="_blank" href="{baner17.url}">
-												{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
-											</a>
-											</noindex>
-										[[else]]
-											{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
-										[[endif]]
-								</div>
-								[[endif]]
-								/*БАНЕР*/
-							[[endif]]
-							<div class="item">
-								<div class="time">
-									[[if item.date > to_date]]
-										{df('date','H:i',item.date)}
+										</a>
+										</noindex>
 									[[else]]
-										{df('date','H:i d.m.Y',item.date)}
+										{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
 									[[endif]]
-								</div>
-								<div class="icons">
-									[[if item.picture]]<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/></a>[[endif]]
-									[[if item.video]]<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="Видео"/></a>[[endif]]
-								</div>
-								<div class="cl"></div>
-								<div class="note">
-									<a href="{news_obj.getLinkPage(item.parent)}"><span class="title">{item.name_category}</span></a>
-									<a href="{news_obj.getLinkPage(item.id)}">{item.caption}</a>
-									[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
-								</div>
 							</div>
-							[[if loop.index == loop.last]]
-								<div id="last_id" hidden>{item.id}</div>
 							[[endif]]
+							/*БАНЕР*/
+						[[endif]]
+						[[if loop.index == 6]]
+							/*БАНЕР*/
+							[[if baner17]]
+							<div style="">
+									[[if baner17.url]]
+										<noindex>
+										<a rel="nofollow" target="_blank" href="{baner17.url}">
+											{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
+										</a>
+										</noindex>
+									[[else]]
+										{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
+									[[endif]]
+							</div>
+							[[endif]]
+							/*БАНЕР*/
+						[[endif]]
+						<div class="item">
+							<div class="time">
+								[[if item.date > to_date]]
+									{df('date','H:i',item.date)}
+								[[else]]
+									{df('date','H:i d.m.Y',item.date)}
+								[[endif]]
+							</div>
+							<div class="icons">
+								[[if item.picture]]<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="Фото"/></a>[[endif]]
+								[[if item.video]]<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="Видео"/></a>[[endif]]
+							</div>
+							<div class="cl"></div>
+							<div class="note">
+								<a href="{news_obj.getLinkPage(item.parent)}"><span class="title">{item.name_category}</span></a>
+								<a href="{news_obj.getLinkPage(item.id)}">{item.caption}</a>
+								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
+							</div>
+						</div>
+						[[if loop.index == loop.last]]
+							<div id="last_id" hidden>{item.id}</div>
+						[[endif]]
 					[[endfor]]
-					<div>
-					<div class="arrow niz"></div>
 					</div>
+					<div class="arrow niz"></div>
 				</div>
 				<!-- TAPE NEWS END -->
 				[[raw]]
