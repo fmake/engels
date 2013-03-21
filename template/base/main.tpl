@@ -185,7 +185,8 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-					[[endfor]] 
+					[[endfor]]
+					<div class="arrow niz"></div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
