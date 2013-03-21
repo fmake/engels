@@ -166,7 +166,7 @@ if($_GET['debug']==1){
 
 /*--------меню с самыми посещяемыми новостями--------*/
 $static = new fmakeCount();
-$short_news = $static->getShortNameNews(7);
+$short_news = $static->getShortNameNews(4);
 $globalTemplateParam->set('short_news',$short_news);
 /*--------меню с самыми посещяемыми новостями--------*/
 
