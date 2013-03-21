@@ -146,7 +146,7 @@ $(document).ready(function(){
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 
-	if ($('#tape .news').css('margin-top') > 0){
+	if (parseInt($('#tape .news').css('margin-top')) > 0){
 		$('#tape .news').css({'margin-top': 0 });
 		$("#tape .verh").hide();
 	}
