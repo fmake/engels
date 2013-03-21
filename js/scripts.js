@@ -131,8 +131,8 @@ $(document).ready(function(){
 	});
 
 	// Лента новостей Аякс
-	var start_item = 1 ;
-	var end_item = 13;
+	var start_item = 0;
+	var end_item = 12;
 	$('#x_tape .item').each(function(index){
 		$(this).attr('id','x_tape_item'+index);
 	});
@@ -290,7 +290,11 @@ function showInputsParams(array_all,array){
 		return true;
 	}
 }
-
+function newstape(){
+	$('#x_tape .item').each(function(index){
+		$(this).attr('id','x_tape_item'+index);
+	});
+}
 function showInputs(id){
 	try{
 		/*'caption','addres','date_work','phone','email','web','wifi','bron_cherez_engels','kitchen','average_chek','business_lunch','banket','more_services','capacity','steam','pool','restroom','music','residents','num_dance_flors','num_track','type_billiards','num_tables'*/
