@@ -3,9 +3,6 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
-    $('.arrow.niz').click(function(){
-    	xajax_TapeWave($('#last_id').html());
-    });
     //$( "#datepicker" ).datepicker();
 	$('#show_all').hover(function(){
 		var sh_width = 0;
@@ -251,6 +248,9 @@ function SubmitFormVote(id){
 	xajax_getMainVote(xajax.getFormValues('QuestionFormRight'+id));
 }
 /*места*/
+$('.arrow.niz').click(function(){
+	xajax_TapeWave($('#last_id').html());
+});
 function showInputsParams(array_all,array){
 	try{
 		var str = "parent,caption,addres,date_work,phone,email,web,wifi,bron_cherez_engels,text";
