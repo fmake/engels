@@ -503,6 +503,22 @@
 				</div>
 				<div class="cl"></div>
 
+				/*БАНЕР*/
+					[[if baner21]]
+					<div style="">
+					  [[if baner21.url]]
+					   <noindex>
+					   <a rel="nofollow" target="_blank" href="{baner21.url}">
+					    {baner_obj.showBanerId(baner21.id,baner21.picture,baner21.format)|raw}
+					   </a>
+					   </noindex>
+					  [[else]]
+					   {baner_obj.showBanerId(baner21.id,baner21.picture,baner21.format)|raw}
+					  [[endif]]
+					</div>
+					[[endif]]
+				/*БАНЕР*/
+
 				<div class="tasks">
 					<a href = "{site_obj.getLinkPage(796)}" class = "h1">
 						<h1>Объявления</h1>
