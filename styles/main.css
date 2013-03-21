@@ -1035,14 +1035,13 @@ a:hover h1{
     min-height: 500px;
 }
 #item_new{margin-bottom: 20px;}
-#item_new .img{color: #fff;float: left; position: relative; margin-bottom: 3px;}
+#item_new .img{color: #fff;margin-top: 20px;float: left; position: relative; margin-bottom: 3px;}
 #item_new .img .avtor_foto{
     position: absolute;
     right: 2px;
     padding: 1px 3px;
     margin: 5px;
     font-size: 9px;
-    margin-top: 20px;
     background: url('/images/bg/slider_news_item.png');
 }
 #item_new .img .annotation{
