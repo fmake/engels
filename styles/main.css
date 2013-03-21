@@ -603,7 +603,6 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #person .lc{padding-right: 0}
 .guest {padding-top: 10px;}
 .guest .img {
-    max-height: 134px;
     overflow: hidden;
     margin-bottom: 5px;
 }
