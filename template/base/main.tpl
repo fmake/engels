@@ -120,7 +120,7 @@
 				<!--PERSON END-->
 				<div id="tape">
 					<h1>Лента новостей</h1>
-					<!--
+					/*
 					<div class="nav">
 						<ul>
 							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
@@ -128,9 +128,9 @@
 							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
 						</ul>
 					</div>
-					-->
+					*/
 					<div class="arrow"></div>
-					<div class="news">
+					<div class="news" id="x_tape">
 					[[for item in items_news_lent]]
 						[[if loop.index == 4]]
 							/*БАНЕР*/
@@ -185,8 +185,11 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
+						[[if loop.last]]
+							[[Set l_tape = item.id]]
+						[[endif]]
 					[[endfor]]
-					<div class="arrow niz"></div>
+					<div class="arrow niz" rel = "{l_tape}"></div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
