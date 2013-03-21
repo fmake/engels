@@ -133,9 +133,9 @@ $(document).ready(function(){
 	});
 	$('#tape .niz').click(function(){
 		xajax_TapeWave($('#last_id').html());
-		m = parseInt($('#tape .news').css('margin-top')) - 189;
-		//alert(m);
-		$('#tape .news').css({'margin-top': m});
+		mn = parseInt($('#tape .news').css('margin-top')) - 189;
+		//alert(mn);
+		$('#tape .news').css({'margin-top': mn});
 	});
 	$("#tape .arrow").click(function(){
 		m = parseInt($('#tape .news').css('margin-top')) + 189;
