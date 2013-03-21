@@ -129,6 +129,7 @@
 						</ul>
 					</div>
 					-->
+					<div class="arrow"></div>
 					<div class="news">
 					[[for item in items_news_lent]]
 						[[if loop.index == 4]]
