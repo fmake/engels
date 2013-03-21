@@ -248,7 +248,7 @@ function SubmitFormVote(id){
 	xajax_getMainVote(xajax.getFormValues('QuestionFormRight'+id));
 }
 /*места*/
-$('.arrow.niz').click(function(){
+$('#tape .niz').click(function(){
 	alert("11");
 	xajax_TapeWave($('#last_id').html());
 });
