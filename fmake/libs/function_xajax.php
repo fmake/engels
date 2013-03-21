@@ -38,7 +38,8 @@ function TapeWave($lastID){
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
-	//$objResponse->script("alert({$last})");
+	$script = "newstape()";
+	$objResponse->script($script);
 	return $objResponse;
 }
 function SiteCount($id){
