@@ -186,7 +186,7 @@
 							</div>
 						</div>
 						[[if loop.last]]
-							[[Set l_tape = item.id]]
+							[[set l_tape = item.id]]
 						[[endif]]
 					[[endfor]]
 					<div class="arrow niz" rel = "{l_tape}"></div>
