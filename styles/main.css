@@ -207,7 +207,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     margin-right: 1px;
     padding: 0 9px;
     height: 22px;
-	width: 159px;
+	width: 157px;
     text-align: center;
 }
 #menu_down .mininews ul li a{
@@ -215,6 +215,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     text-decoration: none;
     display: block;
     padding-top: 3px;
+    overflow: hidden;
 	line-height: 16px;
 }
 #menu_down .mininews ul li a:hover{
