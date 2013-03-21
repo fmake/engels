@@ -185,8 +185,8 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-						[[if loop.last]]
-							[[set l_tape = item.id]]
+						[[if loop.index = loop.last]]
+							[[set l_tape = item.id ]]
 						[[endif]]
 					[[endfor]]
 					<div class="arrow niz" rel = "{l_tape}"></div>
