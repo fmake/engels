@@ -185,9 +185,9 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-						[[if loop.index == 3 ]]
+					
 							[[set tape = 13 ]]
-						[[endif]]
+				
 					[[endfor]]
 					<div class="arrow niz" rel = "{tape}"></div>
 					</div>
