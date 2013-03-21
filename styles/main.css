@@ -294,6 +294,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 #tape .arrow.niz{
     background: url("/images/bg/vniz.png") no-repeat;
+    margin-top: 5px;
 }
 #tape .news{float: left}
 #tape .nav ul li{
