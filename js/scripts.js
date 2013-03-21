@@ -129,16 +129,22 @@ $(document).ready(function(){
 	$('.add_sms_mailer').live('click',function(){
 		$(".form_add_sms_mailer").toggle();
 	});
+
+	// Лента новостей Аякс
+	$('#x_tape').live('each', function(index){
+			$(this).attr('id','x_tape_item'+index);
+		};
+	);
 	$('#tape .niz').click(function(){
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
 		xajax_TapeWave($('#last_id').html());
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
 	});
 	$("#tape .verh").click(function(){
-		var m;
-		m = parseInt($('#tape .news').css('margin-top')) + 189;
-		$('#tape .news').css({'margin-top': m});
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + 189});
 	});
 	$('#is_tape').height($('#x_tape').height());
+	// Конец аякса ленты новостей 
+
 	/*answer*/
 	$('.expert_answer').live('click',function(){
 		$(this).next('.answer_expert').toggle();
