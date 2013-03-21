@@ -185,11 +185,11 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-					
-							[[set tapes = 13 ]]
-				
+						[[if loop.last]]
+						{item.id}
+						[[endif]]
 					[[endfor]]
-					<div class="arrow niz" rel = "{tapes}"></div>
+					<div class="arrow niz"</div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
