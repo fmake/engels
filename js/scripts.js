@@ -130,8 +130,10 @@ $(document).ready(function(){
 	$('.add_sms_mailer').live('click',function(){
 		$(".form_add_sms_mailer").toggle();
 	});
-	
-	
+	$('#tape .niz').click(function(){
+		alert("11");
+		xajax_TapeWave($('#last_id').html());
+	});
 	/*answer*/
 	$('.expert_answer').live('click',function(){
 		$(this).next('.answer_expert').toggle();
@@ -248,10 +250,6 @@ function SubmitFormVote(id){
 	xajax_getMainVote(xajax.getFormValues('QuestionFormRight'+id));
 }
 /*места*/
-$('#tape .niz').click(function(){
-	alert("11");
-	xajax_TapeWave($('#last_id').html());
-});
 function showInputsParams(array_all,array){
 	try{
 		var str = "parent,caption,addres,date_work,phone,email,web,wifi,bron_cherez_engels,text";
