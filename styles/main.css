@@ -284,12 +284,14 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     position: relative;
 }
 #tape .arrow{
-    background: url("/images/bg/vniz.png");
+    background: url("/images/bg/vniz.png") no-repeat;
     position: absolute;
-    right: 100%;
+    right: 10%;
     height: 20px;
     width: 20px;
+    cursor: pointer;
 }
+
 #tape .news{float: left}
 #tape .nav ul li{
     display: block;
