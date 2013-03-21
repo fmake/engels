@@ -3,6 +3,9 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
+    $('.arrow.niz').click(function(){
+    	xajax_TapeWave($('#last_id').html());
+    });
     //$( "#datepicker" ).datepicker();
 	$('#show_all').hover(function(){
 		var sh_width = 0;
