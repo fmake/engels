@@ -284,9 +284,10 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     position: relative;
 }
 #tape .arrow{
-    background: url("/images/bg/vniz.png") no-repeat;
-    position: absolute;
-    right: 10%;
+    background: url("/images/bg/vverh.png") no-repeat;
+    position: relative;
+    right: 15%;
+    float:right;
     height: 20px;
     width: 20px;
     cursor: pointer;
