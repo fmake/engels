@@ -131,7 +131,6 @@ $(document).ready(function(){
 		$(".form_add_sms_mailer").toggle();
 	});
 	$('#tape .niz').click(function(){
-		alert("11");
 		xajax_TapeWave($('#last_id').html());
 	});
 	/*answer*/
