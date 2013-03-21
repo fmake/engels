@@ -186,10 +186,10 @@
 							</div>
 						</div>
 						[[if loop.index = loop.last]]
-							[[set l_tape = item.id ]]
+							[[set tape = item.id ]]
 						[[endif]]
 					[[endfor]]
-					<div class="arrow niz" rel = "{l_tape}"></div>
+					<div class="arrow niz" rel = "{tape}"></div>
 					</div>
 				</div>
 				<!-- TAPE NEWS END -->
