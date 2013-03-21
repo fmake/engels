@@ -185,7 +185,7 @@
 								[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 							</div>
 						</div>
-						[[if loop.last ]]
+						[[if loop.index == 3 ]]
 							[[set tape = item.id ]]
 						[[endif]]
 					[[endfor]]
