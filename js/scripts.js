@@ -133,7 +133,7 @@ $(document).ready(function(){
 	// Лента новостей Аякс
 	$('#x_tape').live('each', function(index){
 			$(this).attr('id','x_tape_item'+index);
-		};
+		}
 	);
 	$('#tape .niz').click(function(){
 		xajax_TapeWave($('#last_id').html());
