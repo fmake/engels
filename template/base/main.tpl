@@ -147,6 +147,7 @@
 											{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
 										[[endif]]
 								</div>
+								<div class="cl"></div>
 								[[endif]]
 								/*БАНЕР*/
 							[[endif]]
@@ -164,6 +165,7 @@
 											{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
 										[[endif]]
 								</div>
+								<div class="cl"></div>
 								[[endif]]
 								/*БАНЕР*/
 							[[endif]]
@@ -186,11 +188,14 @@
 									[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 								</div>
 							</div>
+							<div class="cl"></div>
 							[[if loop.index == loop.last]]
 								<div id="last_id" hidden>{item.id}</div>
 							[[endif]]
 						[[endfor]]
+							<div class="cl"></div>
 						</div>
+						<div class="cl"></div>
 					</div>
 					<div class="arrow niz"></div>
 				</div>
