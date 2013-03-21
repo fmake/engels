@@ -6,7 +6,7 @@
 	<div class="new_news">
 		<div id="item_news">
 			<div id="item_new">
-				<h1>{item.caption}</h1>
+				/*<h1>{item.caption}</h1>*/
 				[[if item.picture]]
 					<div class="img">
 						[[if item.caption]]
