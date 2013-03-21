@@ -131,16 +131,31 @@ $(document).ready(function(){
 	});
 
 	// Лента новостей Аякс
-	$('#x_tape').live('each', function(index){
+	var start_item = 1 ;
+	var end_item = 13;
+	$('#x_tape .item').live('each', function(index){
 			$(this).attr('id','x_tape_item'+index);
 		}
 	);
+
 	$('#tape .niz').click(function(){
+		var height = 0;
 		xajax_TapeWave($('#last_id').html());
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
+		for (var i = 1; i < 4; i++, end_item++, start_item++) {
+			height += $('#x_tape_item'+end_item).height();
+		};
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
+
+	if $('#tape .news').css('margin-top') <= 0
+		$("#tape .verh").hide();
+
 	$("#tape .verh").click(function(){
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + 189});
+		var height = 0;
+		for (var i = 1; i < 4; i++, start_item--) {
+			height += $('#x_tape_item'+start_item).height();
+		};
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
 	$('#is_tape').height($('#x_tape').height());
 	// Конец аякса ленты новостей 
