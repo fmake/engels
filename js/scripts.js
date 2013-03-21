@@ -69,9 +69,7 @@ $(document).ready(function(){
 			$(this).addClass("active");
 			$("li."+rel+"").show();
 		}, 
-		function () {
-			
-		}
+		function () {}
 	);
 
 	$(".menu_day .arrow.l").hide();
@@ -140,6 +138,7 @@ $(document).ready(function(){
 		m = parseInt($('#tape .news').css('margin-top')) + 189;
 		$('#tape .news').css({'margin-top': m});
 	});
+	$('#is_tape').height($('#x_tape').height());
 	/*answer*/
 	$('.expert_answer').live('click',function(){
 		$(this).next('.answer_expert').toggle();
