@@ -133,7 +133,9 @@ $(document).ready(function(){
 	});
 	$('#tape .niz').click(function(){
 		xajax_TapeWave($('#last_id').html());
-		$('#tape .news').css({'margin-top':"parseInt($('#tape .news').css('margin-top')) - 200"});
+		m = parseInt($('#tape .news').css('margin-top')) - 200;
+		alert(m);
+		$('#tape .news').css({'margin-top': m});
 	});
 	$("#tape .arrow").click(function(){
 		$('#tape .news').css({'margin-top':"parseInt($('#tape .news').css('margin-top')) + 200"});
