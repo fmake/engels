@@ -133,10 +133,9 @@ $(document).ready(function(){
 	// Лента новостей Аякс
 	var start_item = 1 ;
 	var end_item = 13;
-	$('#x_tape .item').live('each', function(index){
-			$(this).attr('id','x_tape_item'+index);
-		}
-	);
+	$('#x_tape .item').each(function(index){
+		$(this).attr('id','x_tape_item'+index);
+	});
 
 	$('#tape .niz').click(function(){
 		var height = 0;
