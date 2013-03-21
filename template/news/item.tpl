@@ -9,6 +9,11 @@
 				<h1>{item.caption}</h1>
 				[[if item.picture]]
 					<div class="img">
+						[[if item.caption]]
+							<div class="caption_top">
+								{item.caption}
+							</div>
+						[[endif]]
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
 						[[if item.dop_params.anons]]
 							<div class="annotation">
