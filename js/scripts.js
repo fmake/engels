@@ -131,37 +131,35 @@ $(document).ready(function(){
 	});
 
 	// Лента новостей Аякс
-	var start_item = 0;
-	var end_item = 12;
+
 	$('#x_tape .pre_item').each(function(index){
 		$(this).attr('id',index + 'x_tape_item');
 	});
 
 	$('#tape .niz').live('click', function(){
-		xajax_TapeWave($('#last_id').html());
-		//var m = 30; //margit-top 3 элементов
-		//for (var i = 1; i < 4; i++) {
-			//start_item++;
-			//end_item++;
-			//m = m + parseInt($('#x_tape_item'+end_item).height());
-			//alert(parseInt($('#x_tape_item13').height()));
-			//alert(m);
-		//}
-		//alert(height);
-		//$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
-	});
-
-	if (parseInt($('#tape .news').css('margin-top')) > 0){
-		$('#tape .news').css({'margin-top': 0 });
-		$("#tape .verh").hide();
-	}
-
-	$("#tape .verh").click(function(){
-		var height = 30;
+		xajax_TapeWave($('#last_id').html());	
+		if (parseInt($('#tape .news').css('margin-top')) < 0){
+			$("#tape .verh").show();
+		};
+		var height = 0;
 		for (var i = 1; i < 4; i++) {
-			start_item--;
-			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
+			height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
+		};
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+	});
+	
+	$("#tape .verh").hide();
+
+	$("#tape .verh").live('click', function(){
+		var height = 0;
+		var start_element = parseInt($('.pre-item').attr('id'));
+		for (var i = 1; i < 4; i++) {
+			height = parseInt(height) + parseInt($('#' + start_element +'x_tape_item').height());
 		}
+		if (parseInt($('#tape .news').css('margin-top')) >= 0){
+			$("#tape .verh").show();
+			$('#tape .news').css('margin-top')) = 0;
+		};
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
 	$('#is_tape').height($('#x_tape').height());

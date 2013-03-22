@@ -326,7 +326,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #tape .nav ul li:hover a,  #tape .nav .active span a{border: none; color:#000;}
 #tape .news .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
 #tape .news .item:hover {border: 1px solid #bababa; box-shadow: 0 0 5px #bababa}
-#tape .news .item:first-child {margin-top: 10px;}
+/*#tape .news .item:first-child {margin-top: 10px;}*/
 #tape .time, #tape .comments, #tape .title{color: #878787;}
 #tape .news .item a{text-decoration: none}
 #tape .news .item .note a:hover{text-decoration: underline}
