@@ -42,7 +42,7 @@ function TapeWave($lastID){
 	$script .= 
 	"var height = 30;
 	for (var i = 1; i < 4; i++) {
-		height = parseInt(height) + $('#x_tape_item' + parseInt($('.pre_item:last').attr('id'))).hight();
+		height = parseInt(height) + $(( + parseInt($('.pre_item:last').attr('id'))) + '#x_tape_item').hight();
 	};
 	$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	alert(height);";
