@@ -139,7 +139,6 @@ $(document).ready(function(){
 	$('#tape .niz').live('click', function(){
 		if (true){
 			xajax_TapeWave($('#last_id').html());
-			$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - parseInt($('#x_tape').height())});
 		}
 		else{	
 			var height = 0;
