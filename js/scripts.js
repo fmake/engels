@@ -293,7 +293,7 @@ function showInputsParams(array_all,array){
 	}
 }
 function newstape(){
-	$('#x_tape .item').each(function(index){
+	$('#x_tape .pre_item').each(function(index){
 		$(this).attr('id','x_tape_item'+index);
 	});
 }
