@@ -138,14 +138,14 @@ $(document).ready(function(){
 	});
 
 	$('#tape .niz').live('click', function(){
-		var height = 30; //margit-top 3 элементов
+		var m = 30; //margit-top 3 элементов
 		xajax_TapeWave($('#last_id').html());
 		for (var i = 1; i < 4; i++) {
 			start_item++;
 			end_item++;
-			height = height + parseInt($('#x_tape_item'+end_item).height());
-			alert(parseInt($('#x_tape_item'+end_item).height());
-			alert(height);
+			m = m + parseInt($('#x_tape_item'+end_item).height());
+			alert(parseInt($('#x_tape_item'+end_item).height()));
+			alert(m);
 		}
 		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
