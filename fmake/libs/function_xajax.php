@@ -36,11 +36,13 @@ function TapeWave($lastID){
 	}
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
-	$script .= "alert($('.pre_item:last'));";
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
-	$script .= "newstape();";
-	$script .= "alert($('.pre_item:last'));";
+	$script = "newstape();";
+	$script .= 
+	"var height = 30; for (var i = 1; i < 4; i++) {
+			height = parseInt(height) + $('#x_tape_item' + parseInt($('.pre_item:last').attr('id'))).hight();
+		}; alert(height);"
 	$objResponse->script($script);
 	return $objResponse;
 }
