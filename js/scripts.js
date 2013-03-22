@@ -161,11 +161,11 @@ $(document).ready(function(){
 		for (var i = 1; i < 4; i++) {
 			height = parseInt(height) + parseInt($('#' + start_element +'x_tape_item').height());
 		}
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 		if (parseInt($('#tape .news').css('margin-top')) >= 0){
-			$("#tape .verh").show();
+			$("#tape .verh").hide();
 			$('#tape .news').css({'margin-top': '0'});
 		};
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
 	$('#is_tape').height($('#x_tape').height());
 	// Конец аякса ленты новостей 
