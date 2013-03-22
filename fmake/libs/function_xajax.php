@@ -40,9 +40,12 @@ function TapeWave($lastID){
 	$objResponse->append("x_tape", "innerHTML", $text);
 	$script = "newstape();";
 	$script .= 
-	"var height = 30; for (var i = 1; i < 4; i++) {
-			height = parseInt(height) + $('#x_tape_item' + parseInt($('.pre_item:last').attr('id'))).hight();
-		}; alert(height);"
+	"var height = 30;
+	for (var i = 1; i < 4; i++) {
+		height = parseInt(height) + $('#x_tape_item' + parseInt($('.pre_item:last').attr('id'))).hight();
+	};
+	$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+	alert(height);";
 	$objResponse->script($script);
 	return $objResponse;
 }
