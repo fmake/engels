@@ -144,6 +144,8 @@ $(document).ready(function(){
 			start_item++;
 			end_item++;
 			height = height + parseInt($('#x_tape_item'+end_item).height());
+			alert(parseInt($('#x_tape_item'+end_item).height());
+			alert(height);
 		}
 		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
@@ -159,7 +161,7 @@ $(document).ready(function(){
 		for (var i = 1; i < 4; i++) {
 			start_item--;
 			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
-		};
+		}
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
 	$('#is_tape').height($('#x_tape').height());
