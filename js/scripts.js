@@ -138,10 +138,10 @@ $(document).ready(function(){
 	});
 
 	$('#tape .niz').live('click', function(){
-		var height = 0;
+		var height = 30; //margit-top 3 элементов
 		xajax_TapeWave($('#last_id').html());
 		for (var i = 1; i < 4; i++, end_item++, start_item++) {
-			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height()) + parseInt(10);
+			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
 		};
 		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
@@ -153,9 +153,9 @@ $(document).ready(function(){
 	}
 
 	$("#tape .verh").click(function(){
-		var height = 0;
+		var height = 30;
 		for (var i = 1; i < 4; i++, start_item--) {
-			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height()) + parseInt(10);
+			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
 		};
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
