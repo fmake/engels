@@ -2,7 +2,7 @@
 	<div class="pre_item">
 		<div class="item">
 			<div class="time">
-				[[if item.date > to_date]]
+				[[if item.date > to_day]]
 					{df('date','H:i',item.date)}
 				[[else]]
 					{df('date','H:i d.m.Y',item.date)}
