@@ -142,6 +142,8 @@ $(document).ready(function(){
 		xajax_TapeWave($('#last_id').html());
 		for (var i = 1; i < 4; i++, end_item++, start_item++) {
 			height = parseInt(height) + parseInt($('#x_tape_item'+end_item).height());
+			alert(end_item);
+			alert(i);
 		};
 		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
