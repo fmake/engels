@@ -139,7 +139,7 @@ $(document).ready(function(){
 
 	$('#tape .niz').live('click', function(){
 		xajax_TapeWave($('#last_id').html());
-		var m = 30; //margit-top 3 элементов
+		//var m = 30; //margit-top 3 элементов
 		//for (var i = 1; i < 4; i++) {
 			//start_item++;
 			//end_item++;
@@ -148,7 +148,7 @@ $(document).ready(function(){
 			//alert(m);
 		//}
 		//alert(height);
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+		//$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 
 	if (parseInt($('#tape .news').css('margin-top')) > 0){
