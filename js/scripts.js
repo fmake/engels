@@ -152,7 +152,7 @@ $(document).ready(function(){
 
 	$("#tape .verh").live('click', function(){
 		var height = 0;
-		var start_element = parseInt($('.pre-item').attr('id'));
+		var start_element = parseInt($('.pre-item:last').attr('id'));
 		for (var i = 1; i < 4; i++) {
 			height = parseInt(height) + parseInt($('#' + start_element +'x_tape_item').height());
 		}
