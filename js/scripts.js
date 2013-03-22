@@ -144,7 +144,7 @@ $(document).ready(function(){
 			start_item++;
 			end_item++;
 			m = m + parseInt($('#x_tape_item'+end_item).height());
-			alert(parseInt($('#x_tape_item'+end_item).height()));
+			alert(parseInt($('#x_tape_item13').height()));
 			alert(m);
 		}
 		alert(height);
