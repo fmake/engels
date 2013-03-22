@@ -137,15 +137,20 @@ $(document).ready(function(){
 	});
 
 	$('#tape .niz').live('click', function(){
-		xajax_TapeWave($('#last_id').html());	
-		var height = 0;
-		for (var i = 1; i < 4; i++) {
-			height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
-		};
+		if (true){
+			xajax_TapeWave($('#last_id').html());
+			$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - parseInt($('#x_tape').height())});
+		}
+		else{	
+			var height = 0;
+			for (var i = 1; i < 4; i++) {
+				height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
+			};
+			$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+		}
 		if (parseInt($('#tape .news').css('margin-top')) < 0){
 			$("#tape .verh").show();
 		};
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 	
 	$("#tape .verh").hide();
