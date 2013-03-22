@@ -69,9 +69,7 @@ $(document).ready(function(){
 			$(this).addClass("active");
 			$("li."+rel+"").show();
 		}, 
-		function () {
-			
-		}
+		function () {}
 	);
 
 	$(".menu_day .arrow.l").hide();
@@ -131,15 +129,38 @@ $(document).ready(function(){
 	$('.add_sms_mailer').live('click',function(){
 		$(".form_add_sms_mailer").toggle();
 	});
-	$('#tape .niz').click(function(){
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - 189});
+
+	// Лента новостей Аякс
+	var start_item = 0;
+	var end_item = 12;
+	$('#x_tape .item').each(function(index){
+		$(this).attr('id','x_tape_item'+index);
+	});
+
+	$('#tape .niz').live('click', function(){
+		var height = 0;
 		xajax_TapeWave($('#last_id').html());
+		for (var i = 1; i < 4; i++, end_item++, start_item++) {
+			height += $('#x_tape_item'+end_item).height();
+		};
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
+
+	if (parseInt($('#tape .news').css('margin-top')) > 0){
+		$('#tape .news').css({'margin-top': 0 });
+		$("#tape .verh").hide();
+	}
+
 	$("#tape .verh").click(function(){
-		var m;
-		m = parseInt($('#tape .news').css('margin-top')) + 189;
-		$('#tape .news').css({'margin-top': m});
+		var height = 0;
+		for (var i = 1; i < 4; i++, start_item--) {
+			height += $('#x_tape_item'+start_item).height();
+		};
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
+	$('#is_tape').height($('#x_tape').height());
+	// Конец аякса ленты новостей 
+
 	/*answer*/
 	$('.expert_answer').live('click',function(){
 		$(this).next('.answer_expert').toggle();
@@ -271,7 +292,11 @@ function showInputsParams(array_all,array){
 		return true;
 	}
 }
-
+function newstape(){
+	$('#x_tape .item').each(function(index){
+		$(this).attr('id','x_tape_item'+index);
+	});
+}
 function showInputs(id){
 	try{
 		/*'caption','addres','date_work','phone','email','web','wifi','bron_cherez_engels','kitchen','average_chek','business_lunch','banket','more_services','capacity','steam','pool','restroom','music','residents','num_dance_flors','num_track','type_billiards','num_tables'*/
