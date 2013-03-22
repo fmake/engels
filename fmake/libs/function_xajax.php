@@ -27,6 +27,8 @@ function TapeWave($lastID){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
+	$date = strtotime("today"/*,$tmp_date*/);
+	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
 	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and `main` != '1' and a.`id` < {$lastID}",true);
