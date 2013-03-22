@@ -138,15 +138,7 @@ $(document).ready(function(){
 	});
 
 	$('#tape .niz').live('click', function(){
-		var height = 30; //margit-top 3 элементов
 		xajax_TapeWave($('#last_id').html());
-		for (var i = 1; i < 4; i++, end_item++, start_item++) {
-			height = parseInt(height) + parseInt($('#x_tape_item'+end_item).height());
-			alert(end_item);
-			alert(i);
-		};
-		alert(height);
-		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 
 	if (parseInt($('#tape .news').css('margin-top')) > 0){
@@ -156,7 +148,8 @@ $(document).ready(function(){
 
 	$("#tape .verh").click(function(){
 		var height = 30;
-		for (var i = 1; i < 4; i++, start_item--) {
+		for (var i = 1; i < 4; i++) {
+			start_item--;
 			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
 		};
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
@@ -247,6 +240,19 @@ $('.answer_comment').each(function(index){
 	$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
+function clickniz(){
+	var height = 30; //margit-top 3 элементов
+	for (var i = 1; i < 4; i++) {
+		start_item++;
+		end_item++;
+		height = parseInt(height) + parseInt($('#x_tape_item'+end_item).height());
+		alert(end_item);
+		alert(i);
+	};
+	alert(height);
+	$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+}
+
 function getVote(inx){
 	var wdt = 0;
 	$('#QuestionFormRight'+inx+' .var .color').each(function(index2){
