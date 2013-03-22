@@ -138,12 +138,12 @@ $(document).ready(function(){
 
 	$('#tape .niz').live('click', function(){
 		xajax_TapeWave($('#last_id').html());	
-		if (parseInt($('#tape .news').css('margin-top')) < 0){
-			$("#tape .verh").show();
-		};
 		var height = 0;
 		for (var i = 1; i < 4; i++) {
 			height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
+		};
+		if (parseInt($('#tape .news').css('margin-top')) < 0){
+			$("#tape .verh").show();
 		};
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
@@ -152,7 +152,7 @@ $(document).ready(function(){
 
 	$("#tape .verh").live('click', function(){
 		var height = 0;
-		var start_element = parseInt($('.pre-item:last').attr('id'));
+		var start_element = parseInt($('.pre_item:last').attr('id'));
 		for (var i = 1; i < 4; i++) {
 			height = parseInt(height) + parseInt($('#' + start_element +'x_tape_item').height());
 		}
