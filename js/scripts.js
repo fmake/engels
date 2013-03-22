@@ -138,6 +138,7 @@ $(document).ready(function(){
 
 	$('#tape .niz').live('click', function(){
 		if (parseInt($('#tape .news').css('margin-top')) <= parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) ){
+			$(".pre").show();
 			xajax_TapeWave($('#last_id').html());
 			$("#tape .verh").show();
 		}

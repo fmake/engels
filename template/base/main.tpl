@@ -196,6 +196,7 @@
 							[[endif]]
 						[[endfor]]
 							<div class="cl"></div>
+							<div class="pre"></div>
 						</div>
 						<div class="cl"></div>
 					</div>
