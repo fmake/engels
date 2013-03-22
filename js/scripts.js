@@ -141,7 +141,7 @@ $(document).ready(function(){
 		var height = 30; //margit-top 3 элементов
 		xajax_TapeWave($('#last_id').html());
 		for (var i = 1; i < 4; i++, end_item++, start_item++) {
-			height = parseInt(height) + parseInt($('#x_tape_item'+start_item).height());
+			height = parseInt(height) + parseInt($('#x_tape_item'+end_item).height());
 		};
 		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
