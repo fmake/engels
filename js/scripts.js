@@ -134,7 +134,7 @@ $(document).ready(function(){
 	var start_item = 0;
 	var end_item = 12;
 	$('#x_tape .pre_item').each(function(index){
-		$(this).attr('id','x_tape_item'+index);
+		$(this).attr('id',index + 'x_tape_item');
 	});
 
 	$('#tape .niz').live('click', function(){
@@ -300,7 +300,7 @@ function showInputsParams(array_all,array){
 }
 function newstape(){
 	$('#x_tape .pre_item').each(function(index){
-		$(this).attr('id','x_tape_item'+index);
+		$(this).attr('id',index + 'x_tape_item');
 	});
 }
 function showInputs(id){
