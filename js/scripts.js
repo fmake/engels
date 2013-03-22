@@ -158,7 +158,7 @@ $(document).ready(function(){
 		}
 		if (parseInt($('#tape .news').css('margin-top')) >= 0){
 			$("#tape .verh").show();
-			$('#tape .news').css('margin-top')) = 0;
+			$('#tape .news').css({'margin-top': '0'}));
 		};
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
 	});
