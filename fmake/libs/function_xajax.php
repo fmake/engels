@@ -39,7 +39,7 @@ function TapeWave($lastID){
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
 	$script = "newstape();";
-	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height() - parseInt($('#x_tape').height()) });"
+	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height() - parseInt($('#x_tape').height()) });";
 	/*$script .= 
 	"var height = 15;
 	for (var i = 1; i < 4; i++) {
