@@ -143,6 +143,7 @@ $(document).ready(function(){
 		for (var i = 1; i < 4; i++, end_item++, start_item++) {
 			height += $('#x_tape_item'+end_item).height();
 		};
+		alert(height);
 		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
 	});
 
