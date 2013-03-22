@@ -133,7 +133,7 @@ $(document).ready(function(){
 	// Лента новостей Аякс
 	var start_item = 0;
 	var end_item = 12;
-	$('#x_tape .item').each(function(index){
+	$('#x_tape .pre_item').each(function(index){
 		$(this).attr('id','x_tape_item'+index);
 	});
 
@@ -141,9 +141,9 @@ $(document).ready(function(){
 		xajax_TapeWave($('#last_id').html());
 		var m = 30; //margit-top 3 элементов
 		for (var i = 1; i < 4; i++) {
-			//start_item++;
-			//end_item++;
-			//m = m + parseInt($('#x_tape_item'+end_item).height());
+			start_item++;
+			end_item++;
+			m = m + parseInt($('#x_tape_item'+end_item).height());
 			//alert(parseInt($('#x_tape_item13').height()));
 			//alert(m);
 		}
