@@ -273,7 +273,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     height: 18px;
     width: 1050px;
     margin: 0 auto;
-    top: 72px;
+    top: 72px; 
     *top: 10px;
 
 }
