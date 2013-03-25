@@ -31,7 +31,7 @@ function addFormBaner(){
 	<input title=\"Цена расхода банера\" type=\"text\" name=\"baner[new][price][]\" style=\"width:80px;\"/>
 	<input title=\"Кол.во показов банера\" type=\"text\" name=\"baner[new][max_count_view][]\"  style=\"width:80px;\"/>
 	<input title=\"Ссылка на банер\" type=\"text\" name=\"baner[new][url][]\" style=\"width:150px;\"/>
-	<span class=\"delete_baner\" style=\"color:red;cursor:pointer;\">удалить</span></div>";
+	<input class=\"delete_baner\" type=\"submit\" style=\"color:red;cursor:pointer;\" /></div>";
 	//$objResponse->prepend("add_baner_params","innerHTML", $str_add_baner);
 	$objResponse->script("$('#add_baner_params').prepend('".$str_add_baner."');");
 	return $objResponse;
