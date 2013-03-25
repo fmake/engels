@@ -37,17 +37,12 @@ function TapeWave($lastID){
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
+	$globalTemplateParam->set('news_obj', $news_obj);
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
 	$script = "newstape(); $('.pre').hide();";
 	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) - 2 });";
-	/*$script .= 
-	"var height = 15;
-	for (var i = 1; i < 4; i++) {
-		height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
-	};
-	$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});";*/
 	$objResponse->script($script);
 	return $objResponse;
 }
