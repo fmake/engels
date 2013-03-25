@@ -1,7 +1,7 @@
 <?php
 
 class fmakeBanerContent extends fmakeSiteModule {
-	public $idField = "id";
+
 	//public $fileDirectory = "images/baner/";
 	public $type_baners = array(
 				"0"=>"Банер главная (721x85)",
@@ -166,7 +166,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 	*/
 	function deleteBanner($id){
 		$delete = $this->dataBase->DeleteFromDB( __LINE__ );		
-		$delete	-> addTable($this->table) -> addWhere("`".$this->idField."`='".$this->{$id}."'") -> queryDB();
+		$delete	-> addTable($this->table) -> addWhere("`".$this->idField."`='".$this->id."'") -> queryDB();
 	}
 }
 
