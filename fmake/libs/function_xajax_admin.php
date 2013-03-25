@@ -29,13 +29,14 @@ function addFormBaner(){
 	<select title=\"Тип банера\" name=\"baner[new][id_type][]\">".$select_type_options."</select>
 	<input title=\"Цена расхода банера\" type=\"text\" name=\"baner[new][price][]\" style=\"width:80px;\"/>
 	<input title=\"Кол.во показов банера\" type=\"text\" name=\"baner[new][max_count_view][]\"  style=\"width:80px;\"/>
-	<input title=\"Ссылка на банер\" type=\"text\" name=\"baner[new][url][]\" style=\"width:150px;\"/
+	<input title=\"Ссылка на банер\" type=\"text\" name=\"baner[new][url][]\" style=\"width:150px;\"/>
 	<input class=\"delete_baner\" title=\"Удалить\" type=\"submit\" />
 	</div>";
 	//$objResponse->prepend("add_baner_params","innerHTML", $str_add_baner);
 	$objResponse->script("$('#add_baner_params').prepend('".$str_add_baner."');");
 	return $objResponse;
 }
+
 /* написание функции */
 
 $xajax->processRequest();
