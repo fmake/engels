@@ -118,7 +118,12 @@ switch ($request->action) {
 					$_POST['active'] = 1;
 				else
 					$_POST['active'] = 0;
-					
+				#мнение
+				if ($_POST['active_mnenie'])
+					$_POST['active_mnenie'] = 1;
+				else
+					$_POST['active_mnenie'] = 0;
+				#мнение
 				if($_POST['main'])
 					$_POST['main'] = 1;
 				else
@@ -141,13 +146,14 @@ switch ($request->action) {
                 $fmakeSiteModulRelation->setPageRelation($_POST['parent'], $absitem->id);
                 
                 $_POST['id'] = $absitem->id;
+                //$_POST['expert_picture'] = "0";
                 foreach ($_POST as $key => $value){
                     //$absitem->addParam($key, mysql_real_escape_string($value));
 					$absitem_dop->addParam($key, $value);
 				}
 							
                 $absitem_dop->newItem();
-                
+            
 				/*теги*/
 				$tags->addTags($_POST['tags'],$absitem -> id) ;
 				/*теги*/
@@ -155,6 +161,14 @@ switch ($request->action) {
                 if ($_FILES['picture']['tmp_name']) {
 					if ($_POST['wantermark_false']) $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name'],false);
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
+				}
+				//addExpertFile;
+				if ($_FILES['expert_picture']['tmp_name']) {
+					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->setId($absitem->id);
+					$absitem_dop->addParam('expert_picture', $name);
+					//echo $absitem_dop->id;
+					$absitem_dop->update();
 				}
                 break;
 
@@ -174,7 +188,12 @@ switch ($request->action) {
 					$_POST['active'] = 1;
 				else
 					$_POST['active'] = 0;
-					
+				#мнение
+				if ($_POST['active_mnenie'])
+					$_POST['active_mnenie'] = 1;
+				else
+					$_POST['active_mnenie'] = 0;
+				#мнение	
 				if($_POST['main'])
 					$_POST['main'] = 1;
 				else
@@ -210,6 +229,11 @@ switch ($request->action) {
                 if ($_FILES['picture']['tmp_name']) {
 					if ($_POST['wantermark_false']) $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name'],false);
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
+				}
+				if ($_FILES['expert_picture']['tmp_name']) {
+					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
+					$absitem_dop->addParam('expert_picture', $name);
+					$absitem_dop->update();
 				}
                 break;
 
@@ -280,7 +304,7 @@ switch ($request->action) {
 		$form->addHtml('Дата (ДД.ММ.ГГГГ)',"<td>Дата (ДД.ММ.ГГГГ)</td><td><input type=\"text\" class=\"datepickerTimeField\" id=\"filter-date1\" name=\"date\" value=\"".(($items_dop['date'])? $absitem->setDate($items_dop['date'],"d.m.Y H:i:s") : $absitem->setDate(time(),"d.m.Y H:i:s"))."\"  ></td>");
         if($items['picture'])
             $form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/{$items['picture']}' /></td></tr>");
-        $form->addFile("Фото:", "picture",$text = false);
+        $form->addFile("Фото:", "picture", $text = false);
         $form->addCheckBox("Без вантермарка", "wantermark_false", 1, false);
 		
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
@@ -304,9 +328,13 @@ switch ($request->action) {
         #Эксперт
         $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         $form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
+        if($items_dop['expert_picture'])
+        	$form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/expert/{$items_dop['expert_picture']}' /></td></tr>");
+        $form->addFile("Аватарка: ", "expert_picture", $text=false);
         $form->addVarchar("<i>Имя эксперта</i>", "expert", $items_dop["expert"]);
         $form->addTextAreaMini("Комментарий эксперта", "text_expert", $items_dop["text_expert"]);
         #Эксперт внезапно закончился
+
         /*
         $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         #селектор экспертов

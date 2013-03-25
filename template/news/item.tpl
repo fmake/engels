@@ -6,9 +6,14 @@
 	<div class="new_news">
 		<div id="item_news">
 			<div id="item_new">
-				<h1>{item.caption}</h1>
+				/*<h1>{item.caption}</h1>*/
 				[[if item.picture]]
 					<div class="img">
+						[[if item.caption]]
+							<div class="caption_top">
+								<h2>{item.caption}</h2>
+							</div>
+						[[endif]]
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
 						[[if item.dop_params.anons]]
 							<div class="annotation">
@@ -17,7 +22,10 @@
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" />
 					</div>
+					[[else]]
+						<h1>{item.caption}</h1>
 				[[endif]]
+
 				<div class="cl"></div>
 				<div class="text">
 					[[if item.dop_params.autor]]<span class="avtor">Автор: {item.dop_params.autor}</span>[[endif]]
@@ -25,14 +33,18 @@
 					<div class="cl"></div>
 					<div class="full_text">
 						<p>{item.text|raw}</p>
-							[[if item.dop_params.text_expert and item.dop_params.id_expert]]
+							[[if item.dop_params.text_expert and item.dop_params.active_mnenie]]
 								<div class="quot" id="quot">
-									[[if user_expert.picture]]
-										<img src="/images/users/{item.dop_params.id_expert}/{user_expert.picture}" alt="" width="113px" />
+									[[if item.dop_params.expert_picture]]
+										<img src="/{site_obj.fileDirectory}{item.id}/expert/113_75{item.dop_params.expert_picture}" alt="" width="113px" />
 									[[endif]]
 									<img src="/images/icons/apostrof.png" alt="" />
-									<div class="n-c">{user_expert.name}</div>
-									<p>{item.dop_params.text_expert|raw}</p>
+									[[if item.dop_params.expert]]
+										<div class="n-c">{item.dop_params.expert}</div>
+									[[endif]]
+									[[if item.dop_params.text_expert]]
+										<p>{item.dop_params.text_expert|raw}</p>
+									[[endif]]
 									<div class="cl"></div>
 								</div>
 							[[endif]]

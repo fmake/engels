@@ -8,7 +8,7 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
+if($_GET['debug']==1) $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
@@ -19,9 +19,38 @@ $xajax->register(XAJAX_FUNCTION, "moreComments");
 $xajax->register(XAJAX_FUNCTION, "getMeetsMain");
 $xajax->register(XAJAX_FUNCTION, "getMainVote");
 $xajax->register(XAJAX_FUNCTION, "SiteCount");
+$xajax->register(XAJAX_FUNCTION, "TapeWave");
 /* регистрация функции */
 
 /* написание функции */
+function TapeWave($lastID){
+	$objResponse = new xajaxResponse();
+	$fmakeComments = new fmakeComments();
+	global $twig,$globalTemplateParam;
+	$date = strtotime("today"/*,$tmp_date*/);
+	$globalTemplateParam->set("to_day", $date);
+	$news_obj = new fmakeSiteModule();
+	$limit_news_lent = 3;
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and `main` != '1' and a.`id` < {$lastID}",true);
+	$last = $items_news_lent['2']['id'];
+	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
+		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+	}
+	$globalTemplateParam->set('items_news_lent',$items_news_lent);
+	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
+	$objResponse->assign("last_id", "innerHTML", $last);
+	$objResponse->append("x_tape", "innerHTML", $text);
+	$script = "newstape(); $('.pre').hide();";
+	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) - 2 });";
+	/*$script .= 
+	"var height = 15;
+	for (var i = 1; i < 4; i++) {
+		height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
+	};
+	$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});";*/
+	$objResponse->script($script);
+	return $objResponse;
+}
 function SiteCount($id){
 	$objResponse = new xajaxResponse();
 	$count = new fmakeCount();

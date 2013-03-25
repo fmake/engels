@@ -69,10 +69,9 @@ $(document).ready(function(){
 			$(this).addClass("active");
 			$("li."+rel+"").show();
 		}, 
-		function () {
-			
-		}
+		function () {}
 	);
+
 	$(".menu_day .arrow.l").hide();
 	$(".menu_day .arrow.r").on('click',function(){
 		var margin_left = parseInt($("#spisok-items-week-date").css('margin-left'))-51;
@@ -130,8 +129,48 @@ $(document).ready(function(){
 	$('.add_sms_mailer').live('click',function(){
 		$(".form_add_sms_mailer").toggle();
 	});
+
+	// Лента новостей Аякс
+
+	$('#x_tape .pre_item').each(function(index){
+		$(this).attr('id',index + 'x_tape_item');
+	});
+
+	$('#tape .niz').live('click', function(){
+		if (parseInt($('#tape .news').css('margin-top')) <= parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) ){
+			$(".pre").show();
+			xajax_TapeWave($('#last_id').html());
+			$("#tape .verh").show();
+		}
+		else{	
+			var height = 0;
+			for (var i = 1; i < 4; i++) {
+				height = parseInt(height) + $(('#'+ parseInt($('.pre_item:last').attr('id'))) + 'x_tape_item').height();
+			};
+			$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) - height});
+		}
+		if (parseInt($('#tape .news').css('margin-top')) < 0){
+			$("#tape .verh").show();
+		};
+	});
 	
-	
+	$("#tape .verh").hide();
+
+	$("#tape .verh").live('click', function(){
+		var height = 0;
+		var start_element = parseInt($('.pre_item:last').attr('id'));
+		for (var i = 1; i < 4; i++) {
+			height = parseInt(height) + parseInt($('#' + start_element +'x_tape_item').height());
+		}
+		$('#tape .news').css({'margin-top': parseInt($('#tape .news').css('margin-top')) + height});
+		if (parseInt($('#tape .news').css('margin-top')) >= 0){
+			$("#tape .verh").hide();
+			$('#tape .news').css({'margin-top': '0'});
+		};
+	});
+	$('#is_tape').height($('#x_tape').height());
+	// Конец аякса ленты новостей 
+
 	/*answer*/
 	$('.expert_answer').live('click',function(){
 		$(this).next('.answer_expert').toggle();
@@ -141,7 +180,7 @@ $(document).ready(function(){
 	/*кнопка еще */
 	idcatlist = 0;
 	$(".catlist, .afisha-topic").each(function(index) {
-	   // alert(index + ': ' + $(this).text());
+	    //alert(index + ': ' + $(this).text());
 		maxWidth = parseFloat($(this).css('width')) - 70;
 		//alert(maxWidth);
 		curWidth = 0;
@@ -263,7 +302,11 @@ function showInputsParams(array_all,array){
 		return true;
 	}
 }
-
+function newstape(){
+	$('#x_tape .pre_item').each(function(index){
+		$(this).attr('id',index + 'x_tape_item');
+	});
+}
 function showInputs(id){
 	try{
 		/*'caption','addres','date_work','phone','email','web','wifi','bron_cherez_engels','kitchen','average_chek','business_lunch','banket','more_services','capacity','steam','pool','restroom','music','residents','num_dance_flors','num_track','type_billiards','num_tables'*/

@@ -1,7 +1,13 @@
 .*
 ~*
 template/cache/*
-images/*
+images/sitemodul/*
+images/sitemoduls/*
+images/users/*
+images/admin/*
+images/galleries/*
+robots.txt
+git-hook.php
 admin/includes/tinymce/upload-files/*
 phpMyAdmin/*
 admin/pThumb*

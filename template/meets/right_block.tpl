@@ -1,6 +1,6 @@
 <div id="right_news">
 	<div class="mbh" >
-		<a class="big" href="{site_obj.getLinkPage(4)}">Афиша</a>
+		<a class="h1" href="{site_obj.getLinkPage(4)}"><h1>Афиша</h1></a>
 	</div>
 	[[for item in meets_right_block]]
 		<div class="altnews">

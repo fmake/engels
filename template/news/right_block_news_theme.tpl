@@ -42,7 +42,9 @@
 		 </div>
 	</div>
 	<div class="right_item_news">
-		<h1>Фоторепортажи</h1>
+		<a href = "{site_obj.getLinkPage(9)}" class = "h1">
+			<h1>Фоторепортажи</h1>
+		</a>
 		[[for report in items_photo]]
 			<div class="item">
 				<div class="hidden_item" style="width: 200px;">
@@ -97,7 +99,9 @@
 		/*БАНЕР*/
 	[[endif]]
 	<div class="right_item_news">
-		<h1>Объявления</h1>
+		<a href = "{site_obj.getLinkPage(796)}" class = "h1">
+			<h1>Объявления</h1>
+		</a>
 		<div class="tasks">
 			<div class="desk">
 				<div class="page-container">
@@ -112,7 +116,9 @@
 		</div>
 	</div>
 	<div class="right_item_news">
-		<h1>Места</h1>
+		<a href = "{site_obj.getLinkPage(5)}" class = "h1">
+			<h1>Места</h1>
+		</a>	
 		<div class="place">
 			[[for item in items_place_main]]
 				<div class="item">

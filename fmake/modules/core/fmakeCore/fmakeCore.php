@@ -502,5 +502,26 @@ class fmakeCore extends fmakeWhereSelector{
 		}
 		return $tmp_result;
 	}
+	function imgtransliter($str){  
+
+		$rus = array(
+			"а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ь","ы","ъ","э","ю","я"," ",
+			"А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ь","Ы","Ъ","Э","Ю","Я",",","!","\"","."
+		);
+		$eng = array(
+			"a","b","v","g","d","e","e","zh","z","i","y","k","l","m","n","o","p","r","s","t","u","f","h","c","ch","sh","sh","","y","","e","u","ya","-",
+			"a","b","v","g","d","e","e","zh","z","i","y","k","l","m","n","o","p","r","s","t","u","f","h","c","ch","sh","sh","","y","","e","u","ya","","","","."
+		);
+		#берем строку $str и обрезаем ее до нужного символа а именно точки.
+		$str_new = substr($str, 0, strrpos($str, '.'));
+		$str_type = substr($str, strrpos($str, '.'), strlen($str));
+
+		$result = str_replace($rus, $eng, $str_new);
+		for($i=0;$i<strlen($result);$i++){
+			if(in_array($result{$i},$eng)) $tmp_result.=$result{$i};
+		}
+		$tmp_result.= $str_type;
+		return $tmp_result;
+	}
 }
 ?>
