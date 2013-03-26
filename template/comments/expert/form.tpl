@@ -7,13 +7,15 @@
 			[[endfor]]
 		</div>
 	[[endif]]
+	/*
 	[[if user_params.picture_social_link]]
 		<img src="{user_params.picture_social_link}" style="float:left;" />
 	[[else]]
-		/*[[if user_params.picture]]
+		[[if user_params.picture]]
 			<img src="/images/users/{user_params.id_user}/50_50_{user_params.picture}" style="float:left;" />
-		[[endif]]*/
+		[[endif]]
 	[[endif]]
+	*/
 	/*<br/>*/
 	/*<span style="margin-left: 5px;">
 		[[if user_params.post_create]]
