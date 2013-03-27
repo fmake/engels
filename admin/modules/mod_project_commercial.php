@@ -91,6 +91,11 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("url", $_POST['baner']['new']['url'][$key]);
 					$fmakeBanerContent_dop->addParam("max_count_view", $_POST['baner']['new']['max_count_view'][$key]);
 					
+					$fmakeBanerContent_dop->addParam("regular_exp", $_POST['baner']['new']['regular_exp'][$key]);
+					$fmakeBanerContent_dop->addParam("price_baner_view", $_POST['baner']['new']['price_baner_view'][$key]);
+					$fmakeBanerContent_dop->addParam("price_baner_click", $_POST['baner']['new']['price_baner_click'][$key]);
+					
+					
 					if($value['date_to']) $value['date_to'] = strtotime($value['date_to']);
 					else $value['date_to'] = 0;
 					if($value['date_from']) $value['date_from'] = strtotime($value['date_from']);
@@ -143,6 +148,10 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("url", $_POST['baner']['new']['url'][$key]);
 					$fmakeBanerContent_dop->addParam("max_count_view", $_POST['baner']['new']['max_count_view'][$key]);
 					
+					$fmakeBanerContent_dop->addParam("regular_exp", $_POST['baner']['new']['regular_exp'][$key]);
+					$fmakeBanerContent_dop->addParam("price_baner_view", $_POST['baner']['new']['price_baner_view'][$key]);
+					$fmakeBanerContent_dop->addParam("price_baner_click", $_POST['baner']['new']['price_baner_click'][$key]);
+					
 					$fmakeBanerContent_dop->newItem();
 					if ($_FILES['baner_new_picture']['tmp_name'][$key]) {
 						$fmakeBanerContent->addFile($_FILES['baner_new_picture']['tmp_name'][$key], $_FILES['baner_new_picture']['name'][$key]);
@@ -163,6 +172,10 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("price", $value['price']);
 					$fmakeBanerContent_dop->addParam("url", $value['url']);
 					$fmakeBanerContent_dop->addParam("max_count_view", $value['max_count_view']);
+					
+					$fmakeBanerContent_dop->addParam("regular_exp", $value['regular_exp']);
+					$fmakeBanerContent_dop->addParam("price_baner_view", $value['price_baner_view']);
+					$fmakeBanerContent_dop->addParam("price_baner_click", $value['price_baner_click']);
 					
 					if($value['date_to']) $value['date_to'] = strtotime($value['date_to']);
 					else $value['date_to'] = 0;
@@ -267,7 +280,19 @@ switch($request->action)
 			if($item['date_from']) $item['date_from'] = $fmakeBanerContent->setDate($item['date_from'],"d.m.Y H:i:s");
 			else $item['date_from'] = '';
 			
-			$str_add_baner .= "<div class='line_baner_add'><input title=\"Название банера\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><input title=\"Загрузка банера\" type=\"file\" name=\"baner_picture_{$item[id]}\" /><select title=\"Тип банера\" name=\"baner[{$item[id]}][id_type]\">".$select_type_options."</select><input title=\"Дата начала\" type=\"text\" class=\"datepickerTimeField\" id=\"filter-date1\" name=\"baner[{$item[id]}][date_to]\" value=\"{$item[date_to]}\"  ><input title=\"Дата окончания\" type=\"text\" class=\"datepickerTimeField2\" id=\"filter-date2\" name=\"baner[{$item[id]}][date_from]\" value=\"{$item[date_from]}\"  ><br/><input title=\"Цена расхода банера\" type=\"text\" name=\"baner[{$item[id]}][price]\" value=\"{$item[price]}\" style=\"width:80px;\"/><input title=\"Кол.во показов банера\" type=\"text\" name=\"baner[{$item[id]}][max_count_view]\" value=\"{$item[max_count_view]}\" style=\"width:80px;\"/><input title=\"Ссылка на банер\" type=\"text\" name=\"baner[{$item[id]}][url]\" value=\"{$item[url]}\" style=\"width:150px;\"/><span>Просмотров(руб): {$item[use_view]}({$item[use_price]})&nbsp;&nbsp;</span><span class='delete_baner' style='color:red;cursor:pointer;'>удалить</span></div>";
+			$select_sitepage_options = '
+				<option value="">Выберете одну из страниц</option>
+				<option value="*">Все</option>
+				<option value="/">Главная</option>
+				<option value="/novosti/">Новости</option>
+				<option value="/mesta/">Места</option>
+				<option value="/afisha/">Афиша</option>
+				<option value="/intervju/">Гость</option>
+				<option value="/objavlenija/">Объявления</option>
+				<option value="/spravochnik/">Справочник</option>
+			';
+			
+			$str_add_baner .= "<div class='line_baner_add'><b>Настройка банера</b><br/>Название: <input title=\"Название банера\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>Банер: <input title=\"Загрузка банера\" type=\"file\" name=\"baner_picture_{$item[id]}\" /><br/>Тип банера: <select title=\"Тип банера\" name=\"baner[{$item[id]}][id_type]\">".$select_type_options."</select><br/>Ссылка: <input title=\"Ссылка на банер\" type=\"text\" name=\"baner[{$item[id]}][url]\" value=\"{$item[url]}\" style=\"width:150px;\"/><br/>Цена за показ: <input title=\"Цена за показ\" type=\"text\" name=\"baner[{$item[id]}][price_baner_view]\" value=\"{$item[price_baner_view]}\" style=\"width:150px;\"/> Цена за клик: <input title=\"Цена за клик\" type=\"text\" name=\"baner[{$item[id]}][price_baner_click]\" value=\"{$item[price_baner_click]}\" style=\"width:150px;\"/><br/><b>Ограничения</b><br/>Страницы применения: <select title=\"Основные типы страниц\" name=\"baner[{$item[id]}][select_regular_exp]\">".$select_sitepage_options."</select><input type=\"text\" name=\"baner[{$item[id]}][regular_exp]\" value=\"{$item[regular_exp]}\" /><br/>Периуд активности: <input title=\"Дата начала\" type=\"text\" class=\"datepickerTimeField\" id=\"filter-date1\" name=\"baner[{$item[id]}][date_to]\" value=\"{$item[date_to]}\"  /><input title=\"Дата окончания\" type=\"text\" class=\"datepickerTimeField2\" id=\"filter-date2\" name=\"baner[{$item[id]}][date_from]\" value=\"{$item[date_from]}\"  /><br/>Расход: <input title=\"Цена расхода банера\" type=\"text\" name=\"baner[{$item[id]}][price]\" value=\"{$item[price]}\" style=\"width:80px;\"/> Кол-во показов: <input title=\"Кол.во показов банера\" type=\"text\" name=\"baner[{$item[id]}][max_count_view]\" value=\"{$item[max_count_view]}\" style=\"width:80px;\"/><br/><b>Статистика</b><br/><span>Просмотров: {$item[use_view]}&nbsp;&nbsp;</span><br/><span>Кликов: {$item[use_click]}&nbsp;&nbsp;</span><br/><span class='delete_baner' style='color:red;cursor:pointer;'>удалить банер</span></div>";
 		}
 		
 		$form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
@@ -283,6 +308,8 @@ switch($request->action)
 		
 		$form->addSubmit("save", "Сохранить");
 		$content .= $form->printForm();
+		
+		$content .= "<div id=\"id_new_baner\" style=\"display:none;\"><div class=\"line_baner_add\"><b>Настройка банера</b><br/>Название: <input title=\"Название банера\" type=\"text\" name=\"baner[new][caption][]\" value=\"\" style=\"width:200px;\"/><br/>Банер: <input title=\"Загрузка банера\" type=\"file\" name=\"baner_new_picture[]}\" /><br/>Тип банера: <select title=\"Тип банера\" name=\"baner[new][id_type][]\">".$select_type_options."</select><br/>Ссылка: <input title=\"Ссылка на банер\" type=\"text\" name=\"baner[new][url][]\" value=\"\" style=\"width:150px;\"/><br/>Цена за показ: <input title=\"Цена за показ\" type=\"text\" name=\"baner[new][price_baner_view][]\" value=\"\" style=\"width:150px;\"/> Цена за клик: <input title=\"Цена за клик\" type=\"text\" name=\"baner[new][price_baner_click][]\" value=\"\" style=\"width:150px;\"/><br/><b>Ограничения</b><br/>Страницы применения: <select title=\"Основные типы страниц\" name=\"baner[new][select_regular_exp][]\">".$select_sitepage_options."</select><input type=\"text\" name=\"baner[new][regular_exp][]\" value=\"\" /><br/>Периуд активности: <input title=\"Дата начала\" type=\"text\" class=\"datepickerTimeField\" id=\"filter-date1\" name=\"baner[new][date_to][]\" value=\"\"  /><input title=\"Дата окончания\" type=\"text\" class=\"datepickerTimeField2\" id=\"filter-date2\" name=\"baner[new][date_from][]\" value=\"\"  /><br/>Расход: <input title=\"Цена расхода банера\" type=\"text\" name=\"baner[new][price][]\" value=\"\" style=\"width:80px;\"/> Кол-во показов: <input title=\"Кол.во показов банера\" type=\"text\" name=\"baner[new][max_count_view][]\" value=\"\" style=\"width:80px;\"/><br/><span class=\"delete_baner\" style=\"color:red;cursor:pointer;\">удалить</span></div></div>";
 		
 		$content .= "
 		<script type=\"text/javascript\" >
