@@ -125,12 +125,16 @@
 						<div class = "line">
 							<form>
 								<input type="text" placeholder="Ваш емайл" name="my_mail" />
-					<button style="
-					    height: 35px;
-					    width: 112px;
-					    border-radius: 5px;
-					    box-shadow: 0px 1px 4px #000;
-					">Подписаться</button></form>
+								<button>
+									<span>
+										<span>
+											<span>
+												Подписаться
+											</span>
+										</span>
+									</span>
+								</button>
+							</form>
 						</div>
 					</div>
 					/*
