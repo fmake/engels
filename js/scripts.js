@@ -8,8 +8,8 @@ $(document).ready(function(){
     $('.icon-mail').live('click', function(){
     	if($('#popup_lenta').show())
     		$('#popup_lenta').hide();
-    	if($('#popup_lenta').hide())
-      		$('#popup_lenta').show();
+    	else
+    		$('#popup_lenta').show();
     });
 	$('#show_all').hover(function(){
 		var sh_width = 0;
