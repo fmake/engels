@@ -280,7 +280,10 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #block_news{padding-top: 10px;padding-bottom: 20px;}
 .icon-mail{
     background: url("/images/bg/mail.png") no-repeat;
-    padding-left: 10px;
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+    padding-left: 43px;
 }
 #popup_lenta{
     display: block;
@@ -289,7 +292,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     border-radius: 4px;
     position: absolute;
     background: #fff;
-    border: 41px #000;
+    border: 1px dotted #bababa;
     z-index: 2222;
     opacity: 1;
 }
