@@ -5,10 +5,10 @@ $(document).ready(function(){
         rel:'show'
     });
     //$( "#datepicker" ).datepicker();
-    $('.icon-mail').click(function(){
-    	if($('#popup_lenta').show()
+    $('.icon-mail').live('click', function(){
+    	if($('#popup_lenta').show())
     		$('#popup_lenta').hide();
-    	if($('#popup_lenta').hide()
+    	if($('#popup_lenta').hide())
       		$('#popup_lenta').show();
     });
 	$('#show_all').hover(function(){
