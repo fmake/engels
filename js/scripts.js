@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$('#popup_lenta').hide();
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     $(".show").colorbox({
         rel:'show'
