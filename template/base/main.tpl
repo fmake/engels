@@ -123,9 +123,9 @@
 					<div id="popup_lenta">
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
-							<form>
+							<form onsubmit="return false;">
 								<input type="text" placeholder="Ваш емайл" name="my_mail" />
-								<button onclick="xajax_gogoMail('1'); return false;">
+								<button onclick="xajax_gogoMail('1');">
 									<span>
 										<span>
 											<span>
