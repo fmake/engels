@@ -28,9 +28,15 @@
 		<div class="public">
 			<span>Защита от роботов:</span>
 			<img width="60" height="18" src="/getpicture.php" alt="Защита от роботов" title="Защита от роботов" />
-			<input type="text" id="faq_captcha" class="text" name="picode">
+			<input type="text" id="faq_captcha" class="text" name="picode" style="width: 55px;" />
 		</div>
-		<button class="float-right"><span><span><span>Отправить</span></span></span></button>
+		<button class="float-right">
+			<span>
+				<span>
+					<span>Отправить</span>
+				</span>
+			</span>
+		</button>
 	</form>
 [[else]]
 	<div class="textarea">
