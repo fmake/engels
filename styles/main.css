@@ -278,6 +278,15 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 
 }
 #block_news{padding-top: 10px;padding-bottom: 20px;}
+#popup_lenta{
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 2px;
+}
+#popup_lenta button{
+    background: #bababa;
+}
 #tape{
     float: left;
     width: 270px;
