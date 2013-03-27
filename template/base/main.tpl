@@ -120,6 +120,11 @@
 				<!--PERSON END-->
 				<div id="tape">
 					<h1>Лента новостей</h1>
+					<div id="popup_lenta">
+						<div class="line">
+							
+						</div>
+					</div>
 					/*
 					<div class="nav">
 						<ul>
