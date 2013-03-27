@@ -1,14 +1,15 @@
 $(document).ready(function(){
+	$('#popup_lenta').hide();
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     $(".show").colorbox({
         rel:'show'
     });
     //$( "#datepicker" ).datepicker();
-    $('.icon-mail').live('click', function(){
-    	if($('#popup_lenta').css('display') == 'block')
+    $('.icon-mail').click(function(){
+    	if($('#popup_lenta').show()
     		$('#popup_lenta').hide();
-    	if($('#popup_lenta').css('display') == 'none')
-    		$('#popup_lenta').show();
+    	if($('#popup_lenta').hide()
+      		$('#popup_lenta').show();
     });
 	$('#show_all').hover(function(){
 		var sh_width = 0;
