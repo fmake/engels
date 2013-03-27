@@ -125,7 +125,7 @@
 						<div class = "line">
 							<form>
 								<input type="text" placeholder="Ваш емайл" name="my_mail" />
-								<button>
+								<button onclick="xajax_gogoMail('1')">
 									<span>
 										<span>
 											<span>

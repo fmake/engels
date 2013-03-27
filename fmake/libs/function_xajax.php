@@ -25,10 +25,12 @@ $xajax->register(XAJAX_FUNCTION, "TapeWave");
 /* написание функции */
 function gogoMail($value){
 	$objResponse = new xajaxResponse();
-	$mail = new fmakeMail();
-	$mail->addParam('mail', mysql_real_escape_string($value));
-	$mail->newItem();
-
+	//$mail = new fmakeMail();
+	//$mail->addParam('mail', mysql_real_escape_string($value));
+	//$mail->newItem();
+	$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('f')";
+	$objResponse->script($script);
+	return $objResponse;
 }
 function TapeWave($lastID){
 	$objResponse = new xajaxResponse();
