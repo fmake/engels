@@ -9,7 +9,7 @@ $(document).ready(function(){
     		$('#popup_lenta').hide();
     	if($('#popup_lenta').css('display') == 'none')
     		$('#popup_lenta').hide();
-    };);
+    });
 	$('#show_all').hover(function(){
 		var sh_width = 0;
 		var total = 0;
