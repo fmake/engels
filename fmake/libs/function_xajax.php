@@ -20,6 +20,7 @@ $xajax->register(XAJAX_FUNCTION, "getMeetsMain");
 $xajax->register(XAJAX_FUNCTION, "getMainVote");
 $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
+$xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* регистрация функции */
 
 /* написание функции */
