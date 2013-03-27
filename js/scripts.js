@@ -8,7 +8,7 @@ $(document).ready(function(){
     	if($('#popup_lenta').css('display') == 'block')
     		$('#popup_lenta').hide();
     	if($('#popup_lenta').css('display') == 'none')
-    		$('#popup_lenta').hide();
+    		$('#popup_lenta').show();
     });
 	$('#show_all').hover(function(){
 		var sh_width = 0;
