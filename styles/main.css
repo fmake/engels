@@ -633,7 +633,6 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .img_h {position: relative;margin-bottom: 5px;}
 .img_h:hover .hidden_title{display: block;}
 #person .ap {
-    height: 185px;
     width: 279px;
     float: left;
     padding: 19px 0;

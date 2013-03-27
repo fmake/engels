@@ -37,9 +37,9 @@
 								[[endif]]
 									<a href="{ekspert.full_url}#quot">
 										[[if ekspert.expert_picture]]
-											<img width="133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/expert/133_201{ekspert.expert_picture}" />
+											<img alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/expert/133_201{ekspert.expert_picture}" />
 										[[elseif ekspert.picture]]
-											<img width="133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
+											<img alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
 										[[endif]]
 									</a>
 							</div>
@@ -75,7 +75,7 @@
 						<div class="item [[if loop.index%2 == 0]]lc[[endif]]">
 							<div class="img">
 								<a href="{interv.full_url}">
-									<img width="133" alt="{interv.title}" src="/{interv_obj.fileDirectory}{interv.id}/112_169_{interv.picture}" />
+									<img alt="{interv.title}" src="/{interv_obj.fileDirectory}{interv.id}/112_169_{interv.picture}" />
 								</a>
 							</div>
 							<a href="{interv.full_url}">{interv.caption}</a>
@@ -87,7 +87,7 @@
 						<div class="guest">
 							<div class="item [[if loop.index%2 == 0]]lc[[endif]]">
 								<div class="img">
-									<a href="{interv.full_url}"><img  width="133" alt="{interv.title}" src="/{interv_obj.fileDirectory}{interv.id}/112_169_{interv.picture}" /></a>
+									<a href="{interv.full_url}"><img  alt="{interv.title}" src="/{interv_obj.fileDirectory}{interv.id}/112_169_{interv.picture}" /></a>
 								</div>
 								<a href="{interv.full_url}">{interv.caption}</a>
 							</div>
@@ -105,9 +105,9 @@
 							<div class="img_h">
 								<a href="{ekspert.full_url}#answer_comment_item0">
 									[[if ekspert.expert.picture]]
-										<img width="133" alt="{ekspert.caption}" src="/images/users/{ekspert.expert.id_user}/112_169_{ekspert.expert.picture}" />
+										<img alt="{ekspert.caption}" src="/images/users/{ekspert.expert.id_user}/112_169_{ekspert.expert.picture}" />
 									[[elseif ekspert.picture]]
-										<img width="133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
+										<img alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
 									[[endif]]
 								</a>
 							</div>
