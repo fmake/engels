@@ -119,7 +119,24 @@
 				</div>
 				<!--PERSON END-->
 				<div id="tape">
-					<h1>Лента новостей</h1>
+					<h1>Лента новостей<span class = "icon-mail"><span></h1>
+					<div id="popup_lenta">
+						<div class = "title">Подпишись на новости</div>
+						<div class = "line">
+							<form>
+								<input type="text" placeholder="Ваш емайл" name="my_mail" />
+								<button>
+									<span>
+										<span>
+											<span>
+												Подписаться
+											</span>
+										</span>
+									</span>
+								</button>
+							</form>
+						</div>
+					</div>
 					/*
 					<div class="nav">
 						<ul>
