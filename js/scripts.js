@@ -7,9 +7,9 @@ $(document).ready(function(){
     $('.icon-mail').live('click', function(){
     	if($('#popup_lenta').css('display') == "none"){
     		$('#popup_lenta').show();
-    		$('#page').live('click', function(){
-    			$('#popup_lenta').hide();
-    		});
+    		//$('#page').live('click', function(){
+    			//$('#popup_lenta').hide();
+    		//});
     	}
     	else
     	    $('#popup_lenta').hide();
