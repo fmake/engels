@@ -50,7 +50,12 @@
 					</div>
 					[[endif]]
 					<div class="ap">
-						/*БАНЕР*/
+						/*БАНЕР new*/
+							<div style="height: 117px;">
+								{baner_obj.showBanerType(2,request_uri)|raw}
+							</div>
+						/*БАНЕР new*/
+						/*БАНЕР
 						[[if baner1]]
 						<div style="height: 117px;">
 								[[if baner1.url]]
@@ -134,39 +139,13 @@
 						<div class="news" id="x_tape">
 						[[for item in items_news_lent]]
 							[[if loop.index == 4]]
-								/*БАНЕР*/
-								[[if baner16]]
-								<div style="">
-										[[if baner16.url]]
-											<noindex>
-											<a rel="nofollow" target="_blank" href="{baner16.url}">
-												{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
-											</a>
-											</noindex>
-										[[else]]
-											{baner_obj.showBanerId(baner16.id,baner16.picture,baner16.format)|raw}
-										[[endif]]
-								</div>
-								<div class="cl"></div>
-								[[endif]]
+								/*БАНЕР
+								
 								/*БАНЕР*/
 							[[endif]]
 							[[if loop.index == 6]]
-								/*БАНЕР*/
-								[[if baner17]]
-								<div style="">
-										[[if baner17.url]]
-											<noindex>
-											<a rel="nofollow" target="_blank" href="{baner17.url}">
-												{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
-											</a>
-											</noindex>
-										[[else]]
-											{baner_obj.showBanerId(baner17.id,baner17.picture,baner17.format)|raw}
-										[[endif]]
-								</div>
-								<div class="cl"></div>
-								[[endif]]
+								/*БАНЕР
+								
 								/*БАНЕР*/
 							[[endif]]
 							<div class="pre_item">
@@ -358,7 +337,12 @@
 					</script>
 					[[endraw]]
 				<div class="niz_ap">
-					/*БАНЕР*/
+					/*БАНЕР new*/
+						<p>
+							{baner_obj.showBanerType(3,request_uri)|raw}
+						</p>
+					/*БАНЕР new*/
+					/*БАНЕР
 					[[if baner2]]
 						<p>
 						[[if baner2.url]]
@@ -425,8 +409,12 @@
 	<!-- FORMS START-->
 	<div id="forms">
 		<div class=page-container>
-
-			/*БАНЕР*/
+			/*БАНЕР new*/
+				<div style="">
+					{baner_obj.showBanerType(4,request_uri)|raw}
+				</div>
+			/*БАНЕР new*/
+			/*БАНЕР
 				[[if baner4]]
 				<div style="">
 				  [[if baner4.url]]
@@ -470,7 +458,12 @@
 								[[endif]]
 							[[elseif loop.index == 2]]
 								<div class="">
-									/*БАНЕР*/
+									/*БАНЕР new*/
+										<p style="width: 201px;height: 110px;">
+											{baner_obj.showBanerType(5,request_uri)|raw}
+										</p>
+									/*БАНЕР new*/
+									/*БАНЕР
 									[[if baner3]]
 										<p style="width: 201px;height: 110px;">
 										[[if baner3.url]]								
@@ -552,7 +545,12 @@
 				</div>
 				<div class="cl"></div>
 
-				/*БАНЕР*/
+				/*БАНЕР new*/
+					<div style="">
+						{baner_obj.showBanerType(6,request_uri)|raw}
+					</div>
+				/*БАНЕР new*/
+				/*БАНЕР
 					[[if baner21]]
 					<div style="">
 					  [[if baner21.url]]

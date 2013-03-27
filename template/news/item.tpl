@@ -65,7 +65,13 @@
 					</div>
 				</div>
 			</div>
-			/*БАНЕР*/
+			/*БАНЕР new*/
+				<div class="cl"></div>
+				<p style="width: 740px;">
+						{baner_obj.showBanerType(10,request_uri)|raw}
+				</p>
+			/*БАНЕР new*/
+			/*БАНЕР
 			[[if baner19]] 
 				<div class="cl"></div>
 				<p style="width: 740px;">

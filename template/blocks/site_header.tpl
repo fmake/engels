@@ -1,19 +1,11 @@
 <div align="center" style="background: none repeat scroll 0 0 #FFFFFF;">
-	/*БАНЕР*/
-	[[if baner0]]
+	
+	/*БАНЕР new*/
 		<p class="floatright" style="height: 95px;">
-			[[if baner0.url]]
-				<noindex>
-				<a rel="nofollow" target="_blank" href="{baner0.url}">
-					{baner_obj.showBanerId(baner0.id,baner0.picture,baner0.format)|raw}
-				</a>
-				</noindex>
-			[[else]]
-				{baner_obj.showBanerId(baner0.id,baner0.picture,baner0.format)|raw}
-			[[endif]]
+			{baner_obj.showBanerType(1,request_uri)|raw}
 		</p>
-	[[endif]]
-	/*БАНЕР*/
+	/*БАНЕР new*/
+	
 </div>
 <div id="header">
 		<div id="menu_top">
@@ -106,21 +98,6 @@
 					</div>
 				</div>
 			</div>
-			/*БАНЕР
-			[[if baner0]]
-				<p style="width: 722px; height: 95px;">
-					[[if baner0.url]]
-						<noindex>
-						<a rel="nofollow" target="_blank" href="{baner0.url}">
-							{baner_obj.showBanerId(baner0.id,baner0.picture,baner0.format)|raw}
-						</a>
-						</noindex>
-					[[else]]
-						{baner_obj.showBanerId(baner0.id,baner0.picture,baner0.format)|raw}
-					[[endif]]
-				</p>
-			[[endif]]
-			/*БАНЕР*/
 			<div class="shadow">
 					<div class="shadow_img"></div>
 			</div>
