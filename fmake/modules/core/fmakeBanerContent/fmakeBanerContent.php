@@ -4,6 +4,18 @@ class fmakeBanerContent extends fmakeSiteModule {
 
 	//public $fileDirectory = "images/baner/";
 	public $type_baners = array(
+		"1"=>"B_top_1",
+		"2"=>"B_main_2",
+		"3"=>"B_center_3",
+		"4"=>"B_center_4",
+		"5"=>"B_main_5",
+		"6"=>"B_main_6",
+		"7"=>"B_right_7",
+		"8"=>"B_right_8",
+		"9"=>"B_right_9",
+		"10"=>"B_center_10"
+	);
+	/*public $type_baners = array(
 				"0"=>"Банер главная (721x85)",
 				"1"=>"Банер главная (349x117)",
 				"2"=>"Банер главная (987x135)",
@@ -50,7 +62,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 				"19"=>"0.05",
 				"20"=>"0.05",
 				"21"=>"0.05"
-			);
+			);*/
 	
 	
 	function setDate($date,$format = "d.m.Y"){
@@ -152,7 +164,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		$fmakeBanerContent_dop->table = $table;
 		$fmakeBanerContent_dop->setId($id);
 		$info = $fmakeBanerContent_dop->getInfo();
-		$price = $this->price_baners[$info[id_type]];
+		$price = floatval($info['price_baner_view']);
 		
 		/*$update =  $this->dataBase->UpdateDB( __LINE__);
 		$update	-> addTable($table) -> addFild("`use_price`", "`use_price`+{$price}") -> addWhere("`id` = '".$id."'") -> queryDB();*/
