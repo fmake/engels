@@ -23,6 +23,13 @@ $xajax->register(XAJAX_FUNCTION, "TapeWave");
 /* регистрация функции */
 
 /* написание функции */
+function gogoMail($value){
+	$objResponse = new xajaxResponse();
+	$mail = new fmakeMail();
+	$mail->addParam('mail', mysql_real_escape_string($value));
+	$mail->newItem();
+
+}
 function TapeWave($lastID){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
