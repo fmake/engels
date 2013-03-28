@@ -125,7 +125,7 @@
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<input type="text" placeholder="Ваш емайл" name="my_mail" id="my_mail" />
-								<button onclick="xajax_gogoMail(xajax_getFormValues('mailed'));">
+								<button onclick="xajax_gogoMail(xajax.getFormValues('mailed'));">
 									<span>
 										<span>
 											<span>
