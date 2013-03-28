@@ -4,7 +4,7 @@ header('Content-type: text/html; charset=utf-8');
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 
-//ini_set('display_errors',1);
+ini_set('display_errors',1);
 //error_reporting(7);
 session_start();
 
@@ -24,7 +24,7 @@ session_start();
 		$date = date("d.m.Y", time());
 		PrintAr($date);
 		$date = date("d.m.Y", strtotime($date));
-		PrintAr($date)
+		PrintAr($date);
 		$news_obj->order = "b.date DESC, a.id";
 		$limit_news_lent = 13;
 		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and `date` > '{$date_new}'",true);
