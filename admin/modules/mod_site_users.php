@@ -55,8 +55,7 @@ switch($request->action)
 		}
 		
 		
-		$items = $absitem->getAllUser(mysql_real_escape_string($_REQUEST['filter']['name']),mysql_real_escape_string($_REQUEST['filter']['name2'])
-			,mysql_real_escape_string($_REQUEST['filter']['email']),mysql_real_escape_string($_REQUEST['filter']['phone']));
+		$items = $absitem->getAll();
 		
 		foreach($items as $key=>$item){
 			$items[$key]['date_creation'] = date('H:i d.m.Y',$item['date_creation']);
