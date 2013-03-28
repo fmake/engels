@@ -78,8 +78,12 @@ class fmakeBanerContent extends fmakeSiteModule {
 		//printAr($result);
 		$baners = array();
 		if($result)foreach($result as $key=>$item){
-			if(preg_match("#{$item['regular_exp']}#",$url)){
-				//echo $item['regular_exp']." ".$url;
+			if($item['regular_exp']){
+				if(preg_match("#^{$item['regular_exp']}$#",$url)){
+					//echo $item['regular_exp']." ".$url;
+					$baners[] = $item;
+				}
+			} else {
 				$baners[] = $item;
 			}
 		}
@@ -116,6 +120,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 						<object
 						  type=\"application/x-shockwave-flash\"
 						  data=\"/{$this->fileDirectory}{$id}/{$name}\"
+						  onclick=\"xajax_clickBaner({$id})\"
 						  width=\"100%\" height=\"100%\">
 							<param name=\"movie\" value=\"/{$this->fileDirectory}{$id}/{$name}\">
 							<param name=\"wmode\" value=\"transparent\">
@@ -124,31 +129,39 @@ class fmakeBanerContent extends fmakeSiteModule {
 				//$str = "<embed src='/{$this->fileDirectory}{$id}/{$name}' quality='high' type='application/x-shockwave-flash' wmode='opaque' width='100%' height='100%' pluginspage='http://www.macromedia.com/go/getflashplayer' allowScriptAccess='always'></embed>";
 				break;
 			default:
-				$str = "<script>xajax_viewBaner({$id});</script><img src='/{$this->fileDirectory}{$id}/{$name}' />";
+				$str = "<script>xajax_viewBaner({$id});</script><img onclick=\"xajax_clickBaner({$id})\" src='/{$this->fileDirectory}{$id}/{$name}' />";
 				break;
 		}
 		return $str;
 	}
 	
+	/*просмотр банера*/
 	function updateUseView($id){
 		$table = "`baner_content`";
 		$this->dataBase->query("UPDATE {$table} SET `use_view` = `use_view`+1 WHERE {$table}.`id` = {$id} LIMIT 1",__LINE__);
 	}
 	
-	function updateUsePrice($id){
+	/*клик банера*/
+	function updateUseClick($id){
+		$table = "`baner_content`";
+		$this->dataBase->query("UPDATE {$table} SET `use_click` = `use_click`+1 WHERE {$table}.`id` = {$id} LIMIT 1",__LINE__);
+	}
+	
+	function updateUsePrice($id,$type = 'view'){
 		$table = "`baner_content`";
 		
 		$fmakeBanerContent_dop = new fmakeTypeTable();
 		$fmakeBanerContent_dop->table = $table;
 		$fmakeBanerContent_dop->setId($id);
 		$info = $fmakeBanerContent_dop->getInfo();
-		$price = floatval($info['price_baner_view']);
+		if($type == 'click') $price = floatval($info['price_baner_click']);
+		else $price = floatval($info['price_baner_view']);
 		
-		/*$update =  $this->dataBase->UpdateDB( __LINE__);
-		$update	-> addTable($table) -> addFild("`use_price`", "`use_price`+{$price}") -> addWhere("`id` = '".$id."'") -> queryDB();*/
 		$this->dataBase->query("UPDATE {$table} SET `use_price` = `use_price`+{$price} WHERE {$table}.`id` = {$id} LIMIT 1",__LINE__);
-		//return $price;
 	}
+	
+	
+	
 }
 
 ?>
