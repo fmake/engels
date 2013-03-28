@@ -35,6 +35,29 @@ session_start();
 			$globalTemplateParam->set('items', $items);
 			$globalTemplateParam->set('hostname',$hostname);
 			$mail_all = $fmakeMail->getAll(true);
+			foreach($mail_all as $item_user){
+				$globalTemplateParam->set('item_user', $item_user);
+				$tmp = $twig->getLoader();
+				$twig->setLoader(new Twig_Loader_String());
+				$text = $twig->loadTemplate($_messages['template'])->render($globalTemplateParam->get());
+				$twig->setLoader($tmp);
+				PrintAr("++");
+				$mail = new PHPMailer(); 
+				$mail->CharSet = "utf-8";
+				$mail->From = "info@{$hostname}";
+				$mail->FromName = $hostname;
+				$mail->AddAddress("Obuto3@gmail.com");
+				$mail->WordWrap = 50;                                 
+				$mail->SetLanguage("ru");
+				$mail->IsHTML(true);
+				$mail->Subject = $_messages['title'];
+				$mail->Body    = $text;	
+				if(!$mail->Send())
+					{
+					   echo "Message could not be sent. <p>";
+					   echo "Mailer Error: " . $mail->ErrorInfo;
+					}
+			}
 		}
 		PrintAr($mail_all);
 	}
