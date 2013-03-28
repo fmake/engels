@@ -828,7 +828,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     box-shadow: 0 0 2px #555;
 }
 /*PIE*/
-.asks .desk, #tape .news .item:hover, .news-bar, #down .d-n,#pointer .item, .hidden_show_all, button, .d-n, .quot, .form_news, #pointer .item:hover{
+.asks .desk, #tape .news .item:hover, .news-bar, #down .d-n,#pointer .item, .hidden_show_all, button, .icon-mail, #popup_lenta,  .d-n, .quot, .form_news, #pointer .item:hover{
     behavior: url(/PIE/PIE.php); /*Подправить заголовок передачи PIE.htc*/
 }
 /*PIE*/
