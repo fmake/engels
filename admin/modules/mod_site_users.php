@@ -76,7 +76,6 @@ switch($request->action)
 		$form->addHidden("action", (($request->action == 'new')?'insert':'update'));
 		$form->addHidden("id", $items['id']);
 		
-		$form->AddElement($_modul);
 		$form->addSubmit("save", "Сохранить");
 		$content .= $form->printForm();
 		$globalTemplateParam -> set('content', $content);
