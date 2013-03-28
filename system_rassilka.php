@@ -11,7 +11,7 @@ session_start();
 	require('./fmake/FController.php');
 	$key = "1o0r2i9f3l8a4m7e56";
 	if($key!=$_GET['key']){
-		$fmakeSiteUser = new fmakeMail(); 
+		$fmakeMail = new fmakeMail(); 
 		$fmakeRassilka = new fmakeRassilka();
 		$news_obj = new fmakeSiteModule();
 		$date = strtotime("today");
@@ -21,16 +21,22 @@ session_start();
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		foreach ($items as $key => $value) {
+		/*foreach ($items as $key => $value) {
 			$item[] = date("d.m.Y", $items[$key]['date']);
-		}
-		if ($item){
+		}*/
+		if ($items){
 			$fmakeRassilka->addParam('date',$date_new);
 			$fmakeRassilka->addParam('date_create',time());
 			$fmakeRassilka->addParam('count_item',sizeof($items));
 			$fmakeRassilka->newItem();
+			$fmakeMessages = new fmakeMessages();
+			$fmakeMessages->setId(3);
+			$_messages = $fmakeMessages->getInfo();
+			$globalTemplateParam->set('items', $items);
+			$globalTemplateParam->set('hostname',$hostname);
+			$mail_all = $fmakeMail->getAll(true);
 		}
-		PrintAr($item);
+		PrintAr($mail_all);
 	}
 /*
 header('Content-type: text/html; charset=utf-8'); 
