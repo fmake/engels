@@ -25,10 +25,10 @@ session_start();
 			$item[] = date("d.m.Y", $items[$key]['date']);
 		}
 		if ($item){
-				$fmakeRassilka->addParam('date',$date_new);
-				$fmakeRassilka->addParam('date_create',time());
-				$fmakeRassilka->addParam('count_item',sizeof($items));
-				$fmakeRassilka->newItem();
+			$fmakeRassilka->addParam('date',$date_new);
+			$fmakeRassilka->addParam('date_create',time());
+			$fmakeRassilka->addParam('count_item',sizeof($items));
+			$fmakeRassilka->newItem();
 		}
 		PrintAr($item);
 	}
