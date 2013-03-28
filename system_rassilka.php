@@ -21,11 +21,11 @@ session_start();
 		//if($num_w==1 && $fmakeRassilka->isLastDate()<$time){
 		//$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		//$date_new = date('H:i d.m.Y',$time);
-		$date = date("d.m.Y", time());
+		$date = strtotime(date("d.m.Y", time()));
 		$date = strtotime("-1 days",date());
 		$news_obj->order = "b.date DESC, a.id";
 		$items_news_lent = $news_obj->getByPageAdmin(2, false, false,
-			"a.`file` = 'item_news' and `date` > '{$date}'",true);
+			"a.`file` = 'item_news' and `date` > '$date'",true);
 		//PrintAr($items_news_lent);
 		foreach ($items_news_lent as $key => $value) {
 			PrintAr($items_news_lent[$key]['anons']);
