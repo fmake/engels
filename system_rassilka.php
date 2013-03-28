@@ -38,7 +38,7 @@ session_start();
 				$twig->setLoader(new Twig_Loader_String());
 				$text = $twig->loadTemplate($_messages['template'])->render($globalTemplateParam->get());
 				$twig->setLoader($tmp);
-				PrintAr("++");
+				//PrintAr("++");
 				$mail = new PHPMailer(); 
 				$mail->CharSet = "utf-8";
 				$mail->From = "info@{$hostname}";
