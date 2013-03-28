@@ -17,10 +17,17 @@ session_start();
 		$date = strtotime("today");
 		$date = strtotime("-1 days", $date);
 		$news_obj->order = "b.date DESC, a.id";
-		$items_news_lent = $news_obj->getByPageAdmin(2, false, false,
+		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
+		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		foreach ($items_news_lent as $key => $value) {
-			PrintAr(date("d.m.Y", $items_news_lent[$key]['date']));
+		foreach ($items as $key => $value) {
+			$items[] = date("d.m.Y", $items_news_lent[$key]['date']);
+		}
+		if ($items){
+				$fmakeRassilka->addParam('date',$date_new);
+				$fmakeRassilka->addParam('date_create',time());
+				$fmakeRassilka->addParam('count_item',sizeof($items));
+				$fmakeRassilka->newItem();
 		}
 	}
 /*
