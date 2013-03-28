@@ -19,12 +19,12 @@ session_start();
 		$time = strtotime("-1 days",time());
 		//echo(date('H:i d.m.Y',$fmakeRassilka->isLastDate()));
 		//if($num_w==1 && $fmakeRassilka->isLastDate()<$time){
-			$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
-			//$date_new = date('H:i d.m.Y',$time);
-			$news_obj->order = "b.date DESC, a.id";
-			$limit_news_lent = 13;
-			$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and `date` > '{$date_new}'",true);
-			PrintAr($items);
+		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
+		//$date_new = date('H:i d.m.Y',$time);
+		$news_obj->order = "b.date DESC, a.id";
+		$limit_news_lent = 13;
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and `date` > '{$date_new}'",true);
+		PrintAr($items_news_lent);
 		//}
 	}
 	
