@@ -404,7 +404,7 @@ function changeStatusUser(val) {
 function validateEmail(field){
 	var b="";
 	if (field == ""){
-		$('#my_mail').val = "Не введен email";
+		$("#mailed label").text("Не введен email");
 		b=b+"1";
 	}
 	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field)){
