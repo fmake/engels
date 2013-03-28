@@ -12,7 +12,6 @@ $(document).ready(function(){
     	else 
     		$("#mailed label").text("Не правильный email");
     });
-    //$( "#datepicker" ).datepicker();
     $('.icon-mail').live('click', function(e){
     	if($('#popup_lenta').css('display') == "none"){
     		$('#popup_lenta').show();
