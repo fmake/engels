@@ -30,6 +30,7 @@ session_start();
 				$fmakeRassilka->addParam('count_item',sizeof($items));
 				$fmakeRassilka->newItem();
 		}
+		PrintAr($items);
 	}
 /*
 header('Content-type: text/html; charset=utf-8'); 
