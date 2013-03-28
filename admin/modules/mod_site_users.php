@@ -74,7 +74,7 @@ switch($request->action)
 		$form = new utlFormEngine($modul, "/admin/index.php?modul=".$request->modul);
 		$form->addHidden("action", (($request->action == 'new')?'insert':'update'));
 		$form->addHidden("id", $items['id']);
-		
+		$form->addVarchar("<b>Email</b>", "mail", $items["mail"]);
 		$form->addSubmit("save", "Сохранить");
 		$content .= $form->printForm();
 		$globalTemplateParam -> set('content', $content);
