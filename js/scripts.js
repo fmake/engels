@@ -402,11 +402,16 @@ function changeStatusUser(val) {
 			break;
 	}
 function validateEmail(field){
-	if (field == "") 
-		return $('#my_mail').value() = "Не введен email";
-	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field))
-		return $("#mailed label").text() = "Не правильный email";
-	return ""; 
+	var b="";
+	if (field == ""){
+		$('#my_mail').val = "Не введен email";
+		b=b+"1";
+	}
+	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field)){
+		b=b+"1"
+		$("#mailed label").text("Не правильный email");
+	}
+	return b; 
 	}
 	$("#mailed button").live("click", function(){
     	if (validateEmail($("#my_mail").val) === "")
