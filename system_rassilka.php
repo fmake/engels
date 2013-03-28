@@ -22,7 +22,7 @@ session_start();
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
 		foreach ($items as $key => $value) {
-			$item[] = date("d.m.Y", $items_news_lent[$key]['date']);
+			$item[] = date("d.m.Y", $items[$key]['date']);
 		}
 		if ($item){
 				$fmakeRassilka->addParam('date',$date_new);
