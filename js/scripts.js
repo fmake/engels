@@ -13,13 +13,18 @@ $(document).ready(function(){
     		$("#mailed label").text("Не правильный email");
     });
     //$( "#datepicker" ).datepicker();
-    $('.icon-mail').live('click', function(){
+    $('.icon-mail').live('click', function(e){
     	if($('#popup_lenta').css('display') == "none"){
     		$('#popup_lenta').show();
+    		e.stopImmediatePropagation();
     	}
     	else
     	    $('#popup_lenta').hide();
     });
+	$('#page').live('click', function(e){
+		if ($('#popup_lenta').show())
+			$('#popup_lenta').hide();
+	});
 	$('#show_all').hover(function(){
 		var sh_width = 0;
 		var total = 0;
