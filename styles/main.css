@@ -321,7 +321,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     content: "";
     position: absolute;
 }
-#popup_lenta:before {
+#popup_lenta.top:before {
     border-left: 10px solid rgba(113, 101, 58, 0);
     border-right: 10px solid rgba(113, 101, 58, 0);
     border-top: 10px solid #71653a;
@@ -329,7 +329,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     bottom: -10px;
 }
 
-#popup_lenta:after {
+#popup_lenta.top:after {
     border-left: 10px solid rgba(255, 241, 190, 0);
     border-right: 10px solid rgba(255, 241, 190, 0);
     border-top: 10px solid #fff1be;
