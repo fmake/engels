@@ -12,5 +12,5 @@
 [[endblock]]
 
 [[block right]]
-	[[ include TEMPLATE_PATH ~ "news/right_block.tpl"]]
+	[[ include TEMPLATE_PATH ~ "text/right_block_baner.tpl"]]
 [[endblock]]

@@ -1,63 +1,38 @@
-[[if baner7 or baner8]]
+[[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
+[[set baner_right_8 = baner_obj.showBanerType(8,request_uri)]]
+[[set baner_right_9 = baner_obj.showBanerType(9,request_uri)]]
+[[if baner_right_7 or baner_right_8 or baner_right_9]]
 	<div id="right_news">
 		/*БАНЕР new*/
-			<div>
-				<br/>
-				<p>
-					{baner_obj.showBanerType(7,request_uri)|raw}
-				</p>
-			</div>
+			[[if baner_right_7]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_7|raw}
+					</p>
+				</div>
+			[[endif]]
 		/*БАНЕР new*/
 		/*БАНЕР new*/
-			<div>
-				<br/>
-				<p>
-					{baner_obj.showBanerType(8,request_uri)|raw}
-				</p>
-			</div>
+			[[if baner_right_8]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_8|raw}
+					</p>
+				</div>
+			[[endif]]
 		/*БАНЕР new*/
 		/*БАНЕР new*/
-			<div>
-				<br/>
-				<p>
-					{baner_obj.showBanerType(9,request_uri)|raw}
-				</p>
-			</div>
+			[[if baner_right_9]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_9|raw}
+					</p>
+				</div>
+			[[endif]]
 		/*БАНЕР new*/
-		/*БАНЕР*
-		[[if baner7]]
-		<div>
-			<p>
-				[[if baner7.url]]
-					<noindex>
-					<a rel="nofollow" target="_blank" href="{baner7.url}">
-						{baner_obj.showBanerId(baner7.id,baner7.picture,baner7.format)|raw}
-					</a>
-					</noindex>
-				[[else]]
-					{baner_obj.showBanerId(baner7.id,baner7.picture,baner7.format)|raw}
-				[[endif]]
-			</p>
-		</div>
-		[[endif]]
-		/*БАНЕР*/
-		/*БАНЕР
-		[[if baner8]]
-		<div>
-			<p>
-				[[if baner8.url]]
-					<noindex>
-					<a rel="nofollow" target="_blank" href="{baner8.url}">
-						{baner_obj.showBanerId(baner8.id,baner8.picture,baner8.format)|raw}
-					</a>
-					</noindex>
-				[[else]]
-					{baner_obj.showBanerId(baner8.id,baner8.picture,baner8.format)|raw}
-				[[endif]]
-			</p>
-		</div>
-		[[endif]]
-		/*БАНЕР*/
 
 		<div style="clear:both;"></div>
 	</div>
