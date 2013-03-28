@@ -8,7 +8,7 @@ ini_set('display_errors',1);
 error_reporting(7);
 session_start();
 
-	require('/fmake/FController.php');
+	require('./fmake/FController.php');
 	$key = "1o0r2i9f3l8a4m7e56";
 	if($key!=$_GET['key']){
 		$fmakeSiteUser = new fmakeMail(); 
