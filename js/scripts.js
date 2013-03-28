@@ -3,7 +3,9 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
-
+    $("#mailed button").live("click", function(){
+    		xajax_gogoMail(xajax.getFormValues('mailed'));
+    });
     //$( "#datepicker" ).datepicker();
     $('.icon-mail').live('click', function(){
     	if($('#popup_lenta').css('display') == "none"){
@@ -413,8 +415,4 @@ function validateEmail(field){
 	}
 	return b; 
 	}
-	$("#mailed button").live("click", function(){
-    	if (validateEmail($("#my_mail").val) === "")
-    		xajax_gogoMail(xajax.getFormValues('mailed'));
-    });
 }
