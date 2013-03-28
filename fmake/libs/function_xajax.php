@@ -28,7 +28,7 @@ function gogoMail($values){
 	$objResponse = new xajaxResponse();
 	$values = $values['my_mail'];
 	$mail = new fmakeMail();
-	$mail->addParam('mail', mysql_real_escape_string($value));
+	$mail->addParam('mail', $value);
 	$mail->newItem();
 	$script = "alert($values);$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
 	$objResponse->script($script);
