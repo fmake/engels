@@ -114,7 +114,7 @@
 				<!--PERSON END-->
 				<div id="tape">
 					<h1>Лента новостей<span class = "icon-mail"><span></h1>
-					<div id="popup_lenta">
+					<div id="popup_lenta" class="top">
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
