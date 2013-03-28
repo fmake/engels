@@ -4,8 +4,13 @@ $(document).ready(function(){
         rel:'show'
     });
     $("#mailed button").live("click", function(){
-    	if (validateEmail(form.my_mail.value) === "")
+    	if (($("#my_mail").val() != "") && 
+    	    		(!(!(($("#my_mail").val().indexOf(".")>0 ) && ($("#my_mail").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail").val()))))
     		xajax_gogoMail(xajax.getFormValues('mailed'));
+    	else if ($("#my_mail").val() == "")
+    		$("#mailed label").text("Не введен email");
+    	else 
+    		$("#mailed label").text("Не правильный email");
     });
     //$( "#datepicker" ).datepicker();
     $('.icon-mail').live('click', function(){
@@ -403,12 +408,5 @@ function changeStatusUser(val) {
 		default:
 			$('#oblast_ekspert,#first_name,#second_name,#main_email').hide();
 			break;
-	}
-function validateEmail(field){
-	if (field == "") 
-		return $('#my_mail').value() = "Не введен email";
-	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field))
-		return $("#mailed label").text() = "Не правильный email";
-	return ""; 
 	}
 }

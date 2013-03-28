@@ -129,7 +129,7 @@
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
-								<label>Ваш емайл</label>
+								<label class="label"></label>
 								<input type="text" placeholder="Ваш емайл" name="my_mail" id="my_mail" />
 								<button>
 									<span>
