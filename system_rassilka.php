@@ -19,7 +19,7 @@ session_start();
 		$news_obj->order = "b.date DESC, a.id";
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		foreach ($items_news_lent as $key => $value) {
+		foreach ($items as $key => $value) {
 			$items[] = date("d.m.Y", $items_news_lent[$key]['date']));
 		}
 		if($items){
