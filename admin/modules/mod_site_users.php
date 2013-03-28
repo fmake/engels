@@ -46,7 +46,7 @@ switch($request->action)
 			break;
 		
 			case 'delete': // Удалить
-				//$absitem -> delete();
+				$absitem -> delete();
 			break;
 		
 			case 'active': // Включить/выключить
@@ -61,7 +61,6 @@ switch($request->action)
 			$items[$key]['date_creation'] = date('H:i d.m.Y',$item['date_creation']);
 		}
 		
-		//printAr($items);
 		$globalTemplateParam -> set('items', $items);
 		global $template; 
 		$template = $block;
