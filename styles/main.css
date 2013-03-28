@@ -321,6 +321,21 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     content: "";
     position: absolute;
 }
+#popup_lenta:before {
+    border-left: 10px solid rgba(113, 101, 58, 0);
+    border-right: 10px solid rgba(113, 101, 58, 0);
+    border-top: 10px solid #71653a;
+    left: 20px;
+    bottom: -10px;
+}
+
+#popup_lenta:after {
+    border-left: 10px solid rgba(255, 241, 190, 0);
+    border-right: 10px solid rgba(255, 241, 190, 0);
+    border-top: 10px solid #fff1be;
+    left: 20px;
+    bottom: -9px;
+}
 #popup_lenta .title{
     position: absolute;
     padding: 14px 15px;
