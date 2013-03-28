@@ -37,5 +37,5 @@
 		<div style="clear:both;"></div>
 	</div>
 [[else]]
-	[[ include TEMPLATE_PATH ~ "news/right_block_news_theme.tpl"]]
+	[[ include TEMPLATE_PATH ~ "meets/right_block.tpl"]]
 [[endif]]

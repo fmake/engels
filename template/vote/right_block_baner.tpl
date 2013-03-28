@@ -1,20 +1,41 @@
-<div id="right_news">
-	<div class="right_item_news">
-		<h1>Новости</h1>
-		<div class="news">
-			[[for item in news_right_block]]
-				<div class="item">
-					<div class="time">{df('date','H:i',item.date)}</div>
-					<div class="icons"></div>
-					<div class="cl"></div>
-					<div class="note">
-						[[if item.name_category]]<a href="{site_obj.getLinkPage(item.parent)}"><span class="title">{item.name_category}:</span></a>[[endif]]
-						<a href="{item.full_url}">{item.caption}</a>
-						[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
-					</div>
+[[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
+[[set baner_right_8 = baner_obj.showBanerType(8,request_uri)]]
+[[set baner_right_9 = baner_obj.showBanerType(9,request_uri)]]
+[[if baner_right_7 or baner_right_8 or baner_right_9]]
+	<div id="right_news">
+		/*БАНЕР new*/
+			[[if baner_right_7]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_7|raw}
+					</p>
 				</div>
-			[[endfor]]
-		 </div>
+			[[endif]]
+		/*БАНЕР new*/
+		/*БАНЕР new*/
+			[[if baner_right_8]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_8|raw}
+					</p>
+				</div>
+			[[endif]]
+		/*БАНЕР new*/
+		/*БАНЕР new*/
+			[[if baner_right_9]]
+				<div>
+					<br/>
+					<p>
+						{baner_right_9|raw}
+					</p>
+				</div>
+			[[endif]]
+		/*БАНЕР new*/
+
+		<div style="clear:both;"></div>
 	</div>
-</div>
-<div class="cl"></div>
+[[else]]
+	[[ include TEMPLATE_PATH ~ "news/right_block.tpl"]]
+[[endif]]

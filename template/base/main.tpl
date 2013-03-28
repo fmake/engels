@@ -51,25 +51,14 @@
 					[[endif]]
 					<div class="ap">
 						/*БАНЕР new*/
-							<div style="height: 117px;">
-								{baner_obj.showBanerType(2,request_uri)|raw}
-							</div>
+							[[set baner_right_main = baner_obj.showBanerType(2,request_uri)]]
+							[[if baner_right_main]]
+								<div style="height: 117px;">
+									{baner_right_main|raw}
+								</div>
+							[[endif]]
 						/*БАНЕР new*/
-						/*БАНЕР
-						[[if baner1]]
-						<div style="height: 117px;">
-								[[if baner1.url]]
-									<noindex>
-									<a rel="nofollow" target="_blank" href="{baner1.url}">
-										{baner_obj.showBanerId(baner1.id,baner1.picture,baner1.format)|raw}
-									</a>
-									</noindex>
-								[[else]]
-									{baner_obj.showBanerId(baner1.id,baner1.picture,baner1.format)|raw}
-								[[endif]]
-						</div>
-						[[endif]]
-						/*БАНЕР*/
+						
 					</div>
 					<div class="cl"></div>
 					<!-- ГОСТИ СТАРТ -->
@@ -360,21 +349,6 @@
 							{baner_obj.showBanerType(3,request_uri)|raw}
 						</p>
 					/*БАНЕР new*/
-					/*БАНЕР
-					[[if baner2]]
-						<p>
-						[[if baner2.url]]
-							<noindex>
-							<a rel="nofollow" target="_blank" href="{baner2.url}">
-								{baner_obj.showBanerId(baner2.id,baner2.picture,baner2.format)|raw}
-							</a>
-							</noindex>
-						[[else]]
-							{baner_obj.showBanerId(baner2.id,baner2.picture,baner2.format)|raw}
-						[[endif]]
-						</p>
-					[[endif]]
-					/*БАНЕР*/
 				</div>
 			</div>
 			<div class="cl"></div>
@@ -432,21 +406,6 @@
 					{baner_obj.showBanerType(4,request_uri)|raw}
 				</div>
 			/*БАНЕР new*/
-			/*БАНЕР
-				[[if baner4]]
-				<div style="">
-				  [[if baner4.url]]
-				   <noindex>
-				   <a rel="nofollow" target="_blank" href="{baner4.url}">
-				    {baner_obj.showBanerId(baner4.id,baner4.picture,baner4.format)|raw}
-				   </a>
-				   </noindex>
-				  [[else]]
-				   {baner_obj.showBanerId(baner4.id,baner4.picture,baner4.format)|raw}
-				  [[endif]]
-				</div>
-				[[endif]]
-			/*БАНЕР*/
 
 		<!-- СПРАВОЧНИК START -->
 			<div class="asks">
@@ -459,8 +418,9 @@
 				<div class="cl"></div>
 				<div class="desk">
 					<div class="page-container">
+					[[set baner_manual = baner_obj.showBanerType(5,request_uri)]]
 					[[for item in items_manual_main]]
-						[[if baner3]]
+						[[if baner_manual]]
 							[[if loop.index != 3 and loop.index != 2]]
 								[[if loop.index == 7]]
 								
@@ -478,24 +438,9 @@
 								<div class="">
 									/*БАНЕР new*/
 										<p style="width: 201px;height: 110px;">
-											{baner_obj.showBanerType(5,request_uri)|raw}
+											{baner_manual|raw}
 										</p>
 									/*БАНЕР new*/
-									/*БАНЕР
-									[[if baner3]]
-										<p style="width: 201px;height: 110px;">
-										[[if baner3.url]]								
-											<noindex>
-											<a rel="nofollow" target="_blank" href="{baner3.url}">
-												{baner_obj.showBanerId(baner3.id,baner3.picture,baner3.format)|raw}
-											</a>
-											</noindex>
-										[[else]]
-											{baner_obj.showBanerId(baner3.id,baner3.picture,baner3.format)|raw}
-										[[endif]]
-										</p>
-									[[endif]]
-									/*БАНЕР*/
 								</div>
 								 <div class="item">
 									<div class="title">
@@ -568,21 +513,6 @@
 						{baner_obj.showBanerType(6,request_uri)|raw}
 					</div>
 				/*БАНЕР new*/
-				/*БАНЕР
-					[[if baner21]]
-					<div style="">
-					  [[if baner21.url]]
-					   <noindex>
-					   <a rel="nofollow" target="_blank" href="{baner21.url}">
-					    {baner_obj.showBanerId(baner21.id,baner21.picture,baner21.format)|raw}
-					   </a>
-					   </noindex>
-					  [[else]]
-					   {baner_obj.showBanerId(baner21.id,baner21.picture,baner21.format)|raw}
-					  [[endif]]
-					</div>
-					[[endif]]
-				/*БАНЕР*/
 
 				<div class="tasks">
 					<a href = "{site_obj.getLinkPage(796)}" class = "h1">
