@@ -300,6 +300,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     position: absolute;
     height: 40px;
     z-index: 200;
+    zoom: 1;
 }
 .response{
     padding-top: 0px;
