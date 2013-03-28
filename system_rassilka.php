@@ -25,7 +25,7 @@ session_start();
 		$date = strtotime("-1 days",date());
 		$news_obj->order = "b.date DESC, a.id";
 		$items_news_lent = $news_obj->getByPageAdmin(2, false, false,
-			"a.`file` = 'item_news' and `b.date` > '$date'",true);
+			"a.`file` = 'item_news' and b.`date` > '$date'",true);
 		//PrintAr($items_news_lent);
 		foreach ($items_news_lent as $key => $value) {
 			PrintAr($items_news_lent[$key]['anons']);
