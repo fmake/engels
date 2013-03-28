@@ -3,6 +3,10 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
+    $("#mailed button").live("click", function(){
+    	if (validateEmail(form.my_mail.value) === "")
+    		xajax_gogoMail(xajax.getFormValues('mailed'));
+    });
     //$( "#datepicker" ).datepicker();
     $('.icon-mail').live('click', function(){
     	if($('#popup_lenta').css('display') == "none"){
