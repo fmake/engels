@@ -25,6 +25,10 @@ session_start();
 		$limit_news_lent = 13;
 		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and `date` > '{$date_new}'",true);
 		PrintAr($items_news_lent);
+		foreach ($items_news_lent as $key => $value) {
+			if ($key == 'anons')
+				PrintAr($items_news_lent[$key]);
+		}
 		//}
 	}
 	
