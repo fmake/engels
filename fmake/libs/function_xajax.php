@@ -13,6 +13,7 @@ $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
+$xajax->register(XAJAX_FUNCTION, "clickBaner");
 $xajax->register(XAJAX_FUNCTION, "addStar");
 $xajax->register(XAJAX_FUNCTION, "sendLetter");
 $xajax->register(XAJAX_FUNCTION, "moreComments");
@@ -67,7 +68,15 @@ function viewBaner($id) {
 	$objResponse = new xajaxResponse();
 	$fmakeBanerContent = new fmakeBanerContent();
 	$fmakeBanerContent->updateUseView($id);
-	$fmakeBanerContent->updateUsePrice($id);
+	$fmakeBanerContent->updateUsePrice($id,'view');
+    return $objResponse;
+}
+
+function clickBaner($id) {
+	$objResponse = new xajaxResponse();
+	$fmakeBanerContent = new fmakeBanerContent();
+	$fmakeBanerContent->updateUseClick($id);
+	$fmakeBanerContent->updateUsePrice($id,'click');
     return $objResponse;
 }
 
