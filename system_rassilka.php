@@ -20,7 +20,7 @@ session_start();
 		$items_news_lent = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
 		foreach ($items_news_lent as $key => $value) {
-			PrintAr($items_news_lent[$key]['anons']);
+			PrintAr(date("d.m.Y", $items_news_lent[$key]['date']));
 		}
 	}
 	
