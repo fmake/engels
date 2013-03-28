@@ -22,15 +22,15 @@ session_start();
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
 		foreach ($items as $key => $value) {
-			$items[] = date("d.m.Y", $items_news_lent[$key]['date']);
+			$item[] = date("d.m.Y", $items_news_lent[$key]['date']);
 		}
-		if ($items){
+		if ($item){
 				$fmakeRassilka->addParam('date',$date_new);
 				$fmakeRassilka->addParam('date_create',time());
 				$fmakeRassilka->addParam('count_item',sizeof($items));
 				$fmakeRassilka->newItem();
 		}
-		PrintAr($items);
+		PrintAr($item);
 	}
 /*
 header('Content-type: text/html; charset=utf-8'); 
