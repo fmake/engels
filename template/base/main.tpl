@@ -128,8 +128,9 @@
 					<div id="popup_lenta">
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
-							<form>
-								<input type="text" placeholder="Ваш емайл" name="my_mail" />
+							<form onsubmit="return false;" method="POST" id="mailed">
+								<label>Ваш емайл</label>
+								<input type="text" placeholder="Ваш емайл" name="my_mail" id="my_mail" />
 								<button>
 									<span>
 										<span>

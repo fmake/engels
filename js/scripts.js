@@ -3,10 +3,18 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
+    $("#mailed button").live("click", function(){
+    	if (validateEmail(form.my_mail.value) === "")
+    		xajax_gogoMail(xajax.getFormValues('mailed'));
+    });
     //$( "#datepicker" ).datepicker();
     $('.icon-mail').live('click', function(){
-    	if($('#popup_lenta').css('display') == "none")
+    	if($('#popup_lenta').css('display') == "none"){
     		$('#popup_lenta').show();
+    		//$('#page').live('click', function(){
+    			//$('#popup_lenta').hide();
+    		//});
+    	}
     	else
     	    $('#popup_lenta').hide();
     });
@@ -395,5 +403,12 @@ function changeStatusUser(val) {
 		default:
 			$('#oblast_ekspert,#first_name,#second_name,#main_email').hide();
 			break;
+	}
+function validateEmail(field){
+	if (field == "") 
+		return $('#my_mail').value() = "Не введен email";
+	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field))
+		return $("#mailed label").text() = "Не правильный email";
+	return ""; 
 	}
 }
