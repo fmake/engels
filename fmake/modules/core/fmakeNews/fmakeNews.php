@@ -181,6 +181,12 @@ class fmakeNews extends fmakeSiteModule {
 		$images->resize(113, 75, true, $dirname, '113_75', false);
 		return $name;
 	}
+	function getNewsMail($date,$active = false){
+		$select = $this->dataBase->SelectFromDB( __LINE__);
+		if($active)
+			$select -> addWhere("active='1'");
+		$result = $select-> addFrom($this->table)->addWhere("`date` >='".$date."'")->addOrder($this->order,DESC)-> queryDB();
+		return $result;
+	}
 }
 
-?>

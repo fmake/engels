@@ -4,6 +4,40 @@ header('Content-type: text/html; charset=utf-8');
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 
+//ini_set('display_errors',1);
+//error_reporting(7);
+session_start();
+
+	require('./fmake/FController.php');
+	$key = "1o0r2i9f3l8a4m7e56";
+	if($key!=$_GET['key']){
+		$fmakeSiteUser = new fmakeMail(); 
+		$fmakeRassilka = new fmakeRassilka();
+		$news_obj = new fmakeSiteModule();
+		$date = strtotime("today");
+		$date = strtotime("-1 days", $date);
+		$news_obj->order = "b.date DESC, a.id";
+		$time = strtotime("-1 days",time());
+		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
+		$items = $news_obj->getByPageAdmin(2, false, false,
+			"a.`file` = 'item_news' and b.`date` > {$date}",true);
+		foreach ($items as $key => $value) {
+			$item[] = date("d.m.Y", $items[$key]['date']);
+		}
+		if ($item){
+			$fmakeRassilka->addParam('date',$date_new);
+			$fmakeRassilka->addParam('date_create',time());
+			$fmakeRassilka->addParam('count_item',sizeof($items));
+			$fmakeRassilka->newItem();
+		}
+		PrintAr($item);
+	}
+/*
+header('Content-type: text/html; charset=utf-8'); 
+
+setlocale(LC_ALL, 'ru_RU.UTF-8');
+mb_internal_encoding('UTF-8');
+
 ini_set('display_errors',1);
 error_reporting(7);
 session_start();
@@ -72,4 +106,4 @@ session_start();
 			}
 		//}
 	}
-	
+*/
