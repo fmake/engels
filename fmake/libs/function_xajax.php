@@ -24,9 +24,10 @@ $xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* регистрация функции */
 
 /* написание функции */
-function gogoMail(){
+function gogoMail($params){
 	$objResponse = new xajaxResponse();
-	$value = $_POST['my_mail'];
+	//$value = $_POST['my_mail'];
+	PrintAr($params);
 	$mail = new fmakeMail();
 	$mail->addParam('mail', mysql_real_escape_string($value));
 	$mail->newItem();
