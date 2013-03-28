@@ -4,7 +4,7 @@ $(document).ready(function(){
         rel:'show'
     });
     $("#mailed button").live("click", function(){
-    	if (validateEmail(form.my_mail.value) === "")
+    	if (validateEmail($("#my_mail").val) === "")
     		xajax_gogoMail(xajax.getFormValues('mailed'));
     });
     //$( "#datepicker" ).datepicker();
