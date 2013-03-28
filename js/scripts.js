@@ -7,7 +7,7 @@ $(document).ready(function(){
     	if (($("#my_mail").val() != "") && 
     	    		(!(!(($("#my_mail").val().indexOf(".")>0 ) && ($("#my_mail").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail").val()))))
     		xajax_gogoMail(xajax.getFormValues('mailed'));
-    	else if ($("#my_mail").val() != "")
+    	else if ($("#my_mail").val() == "")
     		$("#mailed label").text("Не введен email");
     	else 
     		$("#mailed label").text("Не правильный email");
