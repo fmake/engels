@@ -21,9 +21,6 @@ session_start();
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		/*foreach ($items as $key => $value) {
-			$item[] = date("d.m.Y", $items[$key]['date']);
-		}*/
 		if ($items){
 			$fmakeRassilka->addParam('date',$date_new);
 			$fmakeRassilka->addParam('date_create',time());
@@ -46,7 +43,8 @@ session_start();
 				$mail->CharSet = "utf-8";
 				$mail->From = "info@{$hostname}";
 				$mail->FromName = $hostname;
-				$mail->AddAddress("Obuto3@gmail.com");
+				$mail->AddAddress($item_user['mail']);
+				//$mail->AddAddress("Obuto3@gmail.com");
 				$mail->WordWrap = 50;                                 
 				$mail->SetLanguage("ru");
 				$mail->IsHTML(true);
@@ -60,6 +58,7 @@ session_start();
 			}
 		}
 		PrintAr($mail_all);
+		PrintAr($items);
 	}
 /*
 header('Content-type: text/html; charset=utf-8'); 
