@@ -278,6 +278,11 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 
 }
 #block_news{padding-top: 10px;padding-bottom: 20px;}
+.label{
+    position: absolute;
+    top: 31px;
+    left: 20px;
+}
 .icon-mail{
     background: url("/images/bg/mail.png") no-repeat;
     margin-left: 10px;
