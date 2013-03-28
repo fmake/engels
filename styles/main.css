@@ -285,7 +285,8 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     color: red;
 }
 .icon-mail{
-    background: url("/images/bg/mail.png") no-repeat;
+    background: url("/images/bg/mail.png");
+    background-repeat: no-repeat;
     margin-left: 160px;
     display: block;
     position: relative;
