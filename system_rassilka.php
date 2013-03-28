@@ -17,6 +17,7 @@ session_start();
 		$date = strtotime("today");
 		$date = strtotime("-1 days", $date);
 		$news_obj->order = "b.date DESC, a.id";
+		$time = strtotime("-1 days",time());
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
