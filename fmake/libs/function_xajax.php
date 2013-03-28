@@ -30,7 +30,7 @@ function gogoMail($values){
 	$mail = new fmakeMail();
 	$mail->addParam('mail', mysql_real_escape_string($value));
 	$mail->newItem();
-	$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+	$script = "alert($values);$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
 	$objResponse->script($script);
 	return $objResponse;
 }
