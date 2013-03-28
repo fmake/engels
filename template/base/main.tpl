@@ -124,8 +124,9 @@
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
+								<label>Ваш емайл</label>
 								<input type="text" placeholder="Ваш емайл" name="my_mail" id="my_mail" />
-								<button onclick="xajax_gogoMail(xajax.getFormValues('mailed'));">
+								<button>
 									<span>
 										<span>
 											<span>

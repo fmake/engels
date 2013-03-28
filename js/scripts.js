@@ -400,4 +400,11 @@ function changeStatusUser(val) {
 			$('#oblast_ekspert,#first_name,#second_name,#main_email').hide();
 			break;
 	}
+function validateEmail(field){
+	if (field == "") 
+		return $('#my_mail').value() = "Не введен email";
+	else if (!((field.indexOf(".")>0 ) && (field.indexOf("@"))) || /[^a-zA-Z0-9.@_-]/.test(field))
+		return $("#mailed label").text() = "Не правильный email";
+	return ""; 
+	}
 }
