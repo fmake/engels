@@ -1,5 +1,28 @@
-
-/*БАНЕР*/
+/*БАНЕР new*/
+	<div>
+		<br/>
+		<p>
+			{baner_obj.showBanerType(7,request_uri)|raw}
+		</p>
+	</div>
+/*БАНЕР new*/
+/*БАНЕР new*/
+	<div>
+		<br/>
+		<p>
+			{baner_obj.showBanerType(8,request_uri)|raw}
+		</p>
+	</div>
+/*БАНЕР new*/
+/*БАНЕР new*/
+	<div>
+		<br/>
+		<p>
+			{baner_obj.showBanerType(9,request_uri)|raw}
+		</p>
+	</div>
+/*БАНЕР new*/
+/*БАНЕР
 [[if baner18]]
 <div>
 	<br/>
@@ -18,7 +41,7 @@
 [[endif]]
 /*БАНЕР*/
 
-/*БАНЕР*/
+/*БАНЕР
 [[if baner20]]
 <div>
 	<br/>
