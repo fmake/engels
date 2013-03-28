@@ -21,6 +21,9 @@ $(document).ready(function(){
     	else
     	    $('#popup_lenta').hide();
     });
+    $('#popup_lenta').live('click', function(e){
+    	e.stopImmediatePropagation();
+    });
 	$('#page').live('click', function(e){
 		if ($('#popup_lenta').show())
 			$('#popup_lenta').hide();
