@@ -10,7 +10,7 @@ session_start();
 
 	require('./fmake/FController.php');
 	$key = "1o0r2i9f3l8a4m7e56";
-	if($key!=$_GET['key']){
+	if($key == $_GET['key']){
 		$fmakeMail = new fmakeMail(); 
 		$fmakeRassilka = new fmakeRassilka();
 		$news_obj = new fmakeSiteModule();
@@ -57,8 +57,8 @@ session_start();
 					}
 			}
 		}
-		PrintAr($mail_all);
-		PrintAr($items);
+		//PrintAr($mail_all);
+		//PrintAr($items);
 	}
 /*
 header('Content-type: text/html; charset=utf-8'); 
