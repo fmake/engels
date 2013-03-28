@@ -317,21 +317,25 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     opacity: 1;
     display: none;
 }
-#popup_lenta.top:before {
+#popup_lenta:before {
+    content: "";
+    position: absolute;
     border-left: 10px solid rgba(113, 101, 58, 0);
     border-right: 10px solid rgba(113, 101, 58, 0);
-    border-top: 10px solid #71653a;
+    border-bottom: 10px solid #71653a;
     left: 20px;
-    bottom: -10px;
-}
+    top: -10px;
+}​
 
-#popup_lenta.top:after {
-    border-left: 10px dotted #bababa;
-    border-right: 10px dotted #bababa;
-    border-top: 10px dotted #bababa;
+#popup_lenta:after {
+    content: "";
+    position: absolute;
+    border-left: 10px solid rgba(255, 241, 190, 0);
+    border-right: 10px solid rgba(255, 241, 190, 0);
+    border-bottom: 10px solid #fff1be;
     left: 20px;
-    bottom: -9px;
-}
+    top: -9px;
+}​
 #popup_lenta .title{
     position: absolute;
     padding: 14px 15px;
