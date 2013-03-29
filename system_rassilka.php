@@ -10,11 +10,6 @@ session_start();
 
 	require('./fmake/FController.php');
 	$key = "1o0r2i9f3l8a4m7e56";
-	if($_GET['ms'] == 1){
-		$fmakeMail = new fmakeMail();
-		$mail_all = $fmakeMail->getAll(true);
-		printAr($mail_all);
-	}
 	if($key == $_GET['key']){
 		$fmakeMail = new fmakeMail(); 
 		$fmakeRassilka = new fmakeRassilka();
