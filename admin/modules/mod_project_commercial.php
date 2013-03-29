@@ -196,7 +196,7 @@ switch($request->action)
 					}
 					$not_delete_array[] = $id;
 				}
-				printAr($not_delete_array);
+				
 				$fmakeProjectCommercialRelation->deleteRelation($absitem->id,$not_delete_array);
 				/*-------------------добавление банеров и привязка к проекту----------------------------*/
 			break;

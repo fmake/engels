@@ -62,6 +62,11 @@ function SiteCount($id){
 	$objResponse = new xajaxResponse();
 	$count = new fmakeCount();
 	$count->soCounted($id);
+	
+	$fmakeBanerContent = new fmakeBanerContent();
+	$fmakeBanerContent->updateUseViewPage($id);
+	$fmakeBanerContent->updateUsePricePage($id,'view');
+	
 	return $objResponse;
 }
 function viewBaner($id) {

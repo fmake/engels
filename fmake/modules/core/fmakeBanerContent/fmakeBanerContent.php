@@ -141,6 +141,12 @@ class fmakeBanerContent extends fmakeSiteModule {
 		$this->dataBase->query("UPDATE {$table} SET `use_view` = `use_view`+1 WHERE {$table}.`id` = {$id} LIMIT 1",__LINE__);
 	}
 	
+	/*просмотр банера*/
+	function updateUseViewPage($id){
+		$table = "`baner_content`";
+		$this->dataBase->query("UPDATE {$table} SET `use_view` = `use_view`+1 WHERE {$table}.`id_post` = {$id}",__LINE__);
+	}
+	
 	/*клик банера*/
 	function updateUseClick($id){
 		$table = "`baner_content`";
@@ -158,6 +164,22 @@ class fmakeBanerContent extends fmakeSiteModule {
 		else $price = floatval($info['price_baner_view']);
 		
 		$this->dataBase->query("UPDATE {$table} SET `use_price` = `use_price`+{$price} WHERE {$table}.`id` = {$id} LIMIT 1",__LINE__);
+	}
+	
+	function updateUsePricePage($id,$type = 'view'){
+		$table = "`baner_content`";
+		$select = $this->dataBase->SelectFromDB( __LINE__);
+		$result = $select->addfrom($table)->addWhere("`id_post` = '{$id}'")->queryDB();
+		
+		$fmakeBanerContent_dop = new fmakeTypeTable();
+		$fmakeBanerContent_dop->table = $table;
+		
+		if($result)foreach($result as $key=>$item){
+			if($type == 'click') $price = floatval($item['price_baner_click']);
+			else $price = floatval($item['price_baner_view']);
+			
+			$this->dataBase->query("UPDATE {$table} SET `use_price` = `use_price`+{$price} WHERE {$table}.`id` = {$item[id]}",__LINE__);
+		}
 	}
 	
 	
