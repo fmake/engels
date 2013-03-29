@@ -1,8 +1,7 @@
 <?php
 	$key = "1o0r2i9f3l8a4m7e56";
 	$fmakeSiteUser = new fmakeMail();
-	$item = $modul->params;
-	$breadcrumbs = $modul->getBreadCrumbs($item['id']);
+	$breadcrubs = $modul->getBreadCrumbs($modul->id);
 	switch($request->action){
 		case 'delete':
 			$email = $_GET['email'];
