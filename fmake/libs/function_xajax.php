@@ -13,6 +13,7 @@ $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
+$xajax->register(XAJAX_FUNCTION, "clickBaner");
 $xajax->register(XAJAX_FUNCTION, "addStar");
 $xajax->register(XAJAX_FUNCTION, "sendLetter");
 $xajax->register(XAJAX_FUNCTION, "moreComments");
@@ -20,9 +21,20 @@ $xajax->register(XAJAX_FUNCTION, "getMeetsMain");
 $xajax->register(XAJAX_FUNCTION, "getMainVote");
 $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
+$xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* регистрация функции */
 
 /* написание функции */
+function gogoMail($values){
+	$objResponse = new xajaxResponse();
+	$values = $values['my_mail'];
+	$mail = new fmakeMail();
+	$mail->addParam('mail', mysql_real_escape_string($values));
+	$mail->newItem();
+	$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+	$objResponse->script($script);
+	return $objResponse;
+}
 function TapeWave($lastID){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
@@ -56,7 +68,15 @@ function viewBaner($id) {
 	$objResponse = new xajaxResponse();
 	$fmakeBanerContent = new fmakeBanerContent();
 	$fmakeBanerContent->updateUseView($id);
-	$fmakeBanerContent->updateUsePrice($id);
+	$fmakeBanerContent->updateUsePrice($id,'view');
+    return $objResponse;
+}
+
+function clickBaner($id) {
+	$objResponse = new xajaxResponse();
+	$fmakeBanerContent = new fmakeBanerContent();
+	$fmakeBanerContent->updateUseClick($id);
+	$fmakeBanerContent->updateUsePrice($id,'click');
     return $objResponse;
 }
 

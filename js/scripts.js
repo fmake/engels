@@ -3,7 +3,30 @@ $(document).ready(function(){
     $(".show").colorbox({
         rel:'show'
     });
-    //$( "#datepicker" ).datepicker();
+    $("#mailed button").live("click", function(){
+    	if (($("#my_mail").val() != "") && 
+    	    		(!(!(($("#my_mail").val().indexOf(".")>0 ) && ($("#my_mail").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail").val()))))
+    		xajax_gogoMail(xajax.getFormValues('mailed'));
+    	else if ($("#my_mail").val() == "")
+    		$("#mailed label").text("Не введен email");
+    	else 
+    		$("#mailed label").text("Не правильный email");
+    });
+    $('.icon-mail').live('click', function(e){
+    	if($('#popup_lenta').css('display') == "none"){
+    		$('#popup_lenta').show();
+    		e.stopImmediatePropagation();
+    	}
+    	else
+    	    $('#popup_lenta').hide();
+    });
+    $('#popup_lenta').live('click', function(e){
+    	e.stopImmediatePropagation();
+    });
+	$('#page').live('click', function(e){
+		if ($('#popup_lenta').show())
+			$('#popup_lenta').hide();
+	});
 	$('#show_all').hover(function(){
 		var sh_width = 0;
 		var total = 0;

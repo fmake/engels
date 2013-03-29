@@ -38,43 +38,40 @@
 		
 	</div>
 	
-	[[if baner7 or baner8]]
-		<br />
-		/*БАНЕР*/
-		[[if baner9]]
-		<div>
-			<p>
-				[[if baner9.url]]
-					<noindex>
-					<a rel="nofollow" target="_blank" href="{baner9.url}">
-						{baner_obj.showBanerId(baner9.id,baner9.picture,baner9.format)|raw}
-					</a>
-					</noindex>
-				[[else]]
-					{baner_obj.showBanerId(baner9.id,baner9.picture,baner9.format)|raw}
-				[[endif]]
-			</p>
-		</div>
+	/*БАНЕР new*/
+		[[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
+		[[if baner_right_7]]
+			<div>
+				<br/>
+				<p>
+					{baner_right_7|raw}
+				</p>
+			</div>
 		[[endif]]
-		/*БАНЕР*/
-		/*БАНЕР*/
-		[[if baner10]]
-		<div>
-			<p>
-				[[if baner10.url]]
-					<noindex>
-					<a rel="nofollow" target="_blank" href="{baner10.url}">
-						{baner_obj.showBanerId(baner10.id,baner10.picture,baner10.format)|raw}
-					</a>
-					</noindex>
-				[[else]]
-					{baner_obj.showBanerId(baner10.id,baner10.picture,baner10.format)|raw}
-				[[endif]]
-			</p>
-		</div>
+	/*БАНЕР new*/
+	/*БАНЕР new*/
+		[[set baner_right_8 = baner_obj.showBanerType(8,request_uri)]]
+		[[if baner_right_8]]
+			<div>
+				<br/>
+				<p>
+					{baner_right_8|raw}
+				</p>
+			</div>
 		[[endif]]
-		/*БАНЕР*/
-	[[endif]]
+	/*БАНЕР new*/
+	/*БАНЕР new*/
+		[[set baner_right_9 = baner_obj.showBanerType(9,request_uri)]]
+		[[if baner_right_9]]
+			<div>
+				<br/>
+				<p>
+					{baner_right_9|raw}
+				</p>
+			</div>
+		[[endif]]
+	/*БАНЕР new*/
+	
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(796)}" class = "h1">
 			<h1>Объявления</h1>

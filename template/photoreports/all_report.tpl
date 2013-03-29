@@ -38,5 +38,5 @@
 [[endblock]]
 
 [[block right]]
-	[[ include TEMPLATE_PATH ~ "meets/right_block.tpl"]]
+	[[ include TEMPLATE_PATH ~ "photoreports/right_block_baner.tpl"]]
 [[endblock]]

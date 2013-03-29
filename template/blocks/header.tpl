@@ -17,11 +17,11 @@
 	<script type="text/javascript" src="/js/fieldFocus.js?ver=0.2"></script>
 	<script type="text/javascript" src="/js/jquery.ratings.js"></script>
 	<script type="text/javascript" src="/js/scripts.js?ver=0.2"></script>
-        <script src="/js/popup.js?ver=0.1"  type="text/javascript"></script>
-        <script type="text/javascript" src="/js/jquery.ui.core.js?ver=0.1"></script>
-        <script type="text/javascript" src="/js/jquery.ui.widget.js?ver=0.1"></script>
-        <script type="text/javascript" src="/js/jquery.ui.datepicker.js?ver=0.1"></script>
-        <script type="text/javascript" src="/js/jquery.ui.datepicker-ru.js?ver=0.1"></script>
+    <script src="/js/popup.js?ver=0.1"  type="text/javascript"></script>
+    <script type="text/javascript" src="/js/jquery.ui.core.js?ver=0.1"></script>
+    <script type="text/javascript" src="/js/jquery.ui.widget.js?ver=0.1"></script>
+    <script type="text/javascript" src="/js/jquery.ui.datepicker.js?ver=0.1"></script>
+    <script type="text/javascript" src="/js/jquery.ui.datepicker-ru.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/jquery.colorbox.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/slides.min.jquery.js"></script>
 

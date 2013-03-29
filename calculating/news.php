@@ -81,7 +81,11 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
-				$modul->template = "news/item.tpl"; //exit;
+				//PrintAr($item['dop_params']);
+				if ($item['dop_params']['templ'] == 1)				
+					$modul->template = "news/item_old.tpl"; //exit;
+				else 
+					$modul->template = "news/item.tpl"; //exit;					
 			} else {
 				//$news_obj->order = "b.date DESC, a.id";
 				//$news_obj->setRedir($request->modul);
