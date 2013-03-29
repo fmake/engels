@@ -27,5 +27,6 @@ $modulNameSpace = array(
 	'mod_edit_user_param'=> 'Личный кабинет',
 	'mod_expert'=> 'Эксперт',
 	'mod_vote' => 'Голосования',
+	'rassilka.php' => 'Рассылка',
 );
 ?>
