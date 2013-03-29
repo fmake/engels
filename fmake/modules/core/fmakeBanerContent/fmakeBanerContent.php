@@ -175,9 +175,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		$fmakeBanerContent_dop->table = $table;
 		
 		if($result)foreach($result as $key=>$item){
-			if($type == 'click') $price = floatval($item['price_baner_click']);
-			else $price = floatval($item['price_baner_view']);
-			
+			$price = floatval($item['price_baner_view']);
 			$this->dataBase->query("UPDATE {$table} SET `use_price` = `use_price`+{$price} WHERE {$table}.`id` = {$item[id]}",__LINE__);
 		}
 	}
