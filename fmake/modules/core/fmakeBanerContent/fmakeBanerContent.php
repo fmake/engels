@@ -169,7 +169,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 	function updateUsePricePage($id,$type = 'view'){
 		$table = "`baner_content`";
 		$select = $this->dataBase->SelectFromDB( __LINE__);
-		$result = $select->addfrom($table)->addWhere("`id_post` = '{$id}'")->queryDB();
+		$result = $select->addfrom($table)->addWhere("`id_post` = {$id}")->queryDB();
 		
 		$fmakeBanerContent_dop = new fmakeTypeTable();
 		$fmakeBanerContent_dop->table = $table;
