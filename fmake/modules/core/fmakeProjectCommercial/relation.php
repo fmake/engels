@@ -23,12 +23,31 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 	}
 	
 	function deleteRelation($id_project,$array_not_delete){
-		if($id_project && $array_not_delete){
+		if($id_project){
 			$delete = $this->dataBase->DeleteFromDB( __LINE__ );
-
-			foreach ($array_not_delete as $NotDelete){
+			$select = $this->dataBase->SelectFromDB(__LINE__);
+			if($array_not_delete)foreach ($array_not_delete as $NotDelete){
 				$delete -> addWhere("`id_content` != '".$NotDelete."'");
+				$select -> addWhere("`id_content` != '".$NotDelete."'");
 			}
+			
+			/*выбираем все элементы которые нужно удалить из site_modul*/
+			$result = $select-> addFrom($this->table) -> addWhere("`id_project`='".$id_project."'") -> queryDB();
+			
+			$fmakeBanerContent = new fmakeBanerContent();
+			$id_page_modul = 5585;
+			$fmakeTypeTable = new fmakeTypeTable();
+			$fmakeBanerContent_dop = new fmakeTypeTable();
+			$fmakeBanerContent_dop->table = $fmakeTypeTable->getTable($id_page_modul);
+			
+			if($result)foreach($result as $key=>$item){
+				$fmakeBanerContent->setId($item['id_content']);
+				$fmakeBanerContent_dop->setId($item['id_content']);
+				$fmakeBanerContent->delete();
+				$fmakeBanerContent_dop->delete();
+			}
+			/*выбираем все элементы которые нужно удалить из site_modul*/
+			
 			
 			$delete	-> addTable($this->table) -> addWhere("`id_project`='".$id_project."'") -> queryDB();
 		}
