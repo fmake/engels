@@ -8,7 +8,7 @@
 			<div id="item_new">
 				<h1>{item.caption}</h1>
 				[[if item.picture]]
-						<img src="/{site_obj.isFile(item.id, 400)}" alt="" style="float: left; pading-right: 10px; "/>
+						<img src="/{site_obj.isFile(item.id, 400)}" alt="" style="float: left; padding-right: 10px; "/>
 				[[endif]]
 				<div class="text">
 					[[if item.dop_params.autor]]<span class="avtor">Автор: {item.dop_params.autor}</span>[[endif]]
