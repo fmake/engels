@@ -12,7 +12,7 @@
 				[[endif]]
 				<div class="text">
 					[[if item.dop_params.autor]]<span class="avtor">Автор: {item.dop_params.autor}</span>[[endif]]
-					[[if item.dop_params.date]]<span class="date">{df('date','d.m.Y H:i',item.dop_params.date)}</span>[[endif]]
+					[[if item.dop_params.date]]<span class="date" style="float: none;">{df('date','d.m.Y H:i',item.dop_params.date)}</span>[[endif]]
 					<div class="full_text">
 						<p>{item.text|raw}</p>
 							[[if item.dop_params.text_expert and item.dop_params.active_mnenie]]
