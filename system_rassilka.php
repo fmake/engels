@@ -48,7 +48,8 @@ session_start();
 				$mail->SetLanguage("ru");
 				$mail->IsHTML(true);
 				$mail->Subject = $_messages['title'];
-				$mail->Body    = $text;	
+				$mail->Body    = $text;
+				PrintAr("done");	
 				if(!$mail->Send())
 					{
 					   echo "Message could not be sent. <p>";
