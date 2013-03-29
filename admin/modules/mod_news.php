@@ -306,7 +306,12 @@ switch ($request->action) {
             $form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/{$items['picture']}' /></td></tr>");
         $form->addFile("Фото:", "picture", $text = false);
         $form->addCheckBox("Без вантермарка", "wantermark_false", 1, false);
-		
+        #
+		$temp = $form->addSelect("Шаблон", "templ");
+		$temp -> AddOption(new SelectOption(0, "Новый"));
+		$temp -> AddOption(new SelectOption(1, "Сратый"));
+		$form ->AddElement($temp);
+		#
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
         
 		$form->addCheckBox("Включить/Выключить", "active", 1, ($items["active"]==='0') ? false : true);
