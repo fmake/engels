@@ -81,8 +81,8 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
-				PrintAr($item['dop_params']['temp']);
-				if ($item['dop_params']['temp'] == 1)				
+				PrintAr($item['dop_params']['templ']);
+				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
 					$modul->template = "news/item.tpl"; //exit;					
