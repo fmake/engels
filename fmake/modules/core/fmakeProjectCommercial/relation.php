@@ -31,7 +31,7 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 				$select -> addWhere("`id_content` != '".$NotDelete."'");
 			}
 			
-			/*âûáèðàåì âñå ýëåìåíòû êîòîðûå íóæíî óäàëèòü èç site_modul*/
+			/*Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð²ÑÐµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð½ÑƒÐ¶Ð½Ð¾ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð¸Ð· site_modul*/
 			$result = $select-> addFrom($this->table) -> addWhere("`id_project`='".$id_project."'") -> queryDB();
 			
 			$fmakeBanerContent = new fmakeBanerContent();
@@ -46,7 +46,7 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 				$fmakeBanerContent->delete();
 				$fmakeBanerContent_dop->delete();
 			}
-			/*âûáèðàåì âñå ýëåìåíòû êîòîðûå íóæíî óäàëèòü èç site_modul*/
+			/*Ð²Ñ‹Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð²ÑÐµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð½ÑƒÐ¶Ð½Ð¾ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð¸Ð· site_modul*/
 			
 			
 			$delete	-> addTable($this->table) -> addWhere("`id_project`='".$id_project."'") -> queryDB();
@@ -55,7 +55,7 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 	
 	/**
 	 * 
-	 * Ñîçäàíèå íîâîãî îáúåêòà, ñ èñïîëüçîâàíèåì ìàññèâà params, c ó÷åòîâ ïîëÿ position
+	 * Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°, Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸ÐµÐ¼ Ð¼Ð°ÑÑÐ¸Ð²Ð° params, c ÑƒÑ‡ÐµÑ‚Ð¾Ð² Ð¿Ð¾Ð»Ñ position
 	 */
 	function newItem(){
 		$insert = $this->dataBase->InsertInToDB(__LINE__);	
