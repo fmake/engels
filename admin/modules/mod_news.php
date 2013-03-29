@@ -308,8 +308,8 @@ switch ($request->action) {
         $form->addCheckBox("Без вантермарка", "wantermark_false", 1, false);
         #
 		$temp = $form->addSelect("Шаблон", "templ");
-		$temp -> AddOption(new SelectOption(0, "Новый"));
-		$temp -> AddOption(new SelectOption(1, "Старый"));
+		$temp -> AddOption(new SelectOption(0, "Новый", $items_dop['templ']));
+		$temp -> AddOption(new SelectOption(1, "Старый", $items_dop['templ']));
 		$form ->AddElement($temp);
 		#
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
