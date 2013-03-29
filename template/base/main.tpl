@@ -120,7 +120,7 @@
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<label class="label"></label>
-								<input type="text" class="fieldFocus" title="Ваш емайл" name="my_mail" id="my_mail"  />
+								<input type="text" class="fieldFocus" title="Ваш емайл" value="Ваш емайл" name="my_mail" id="my_mail"  />
 								<button>
 									<span>
 										<span>
