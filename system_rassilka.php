@@ -27,7 +27,7 @@ session_start();
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		PrintAr($item);
+		PrintAr($items);
 		if ($items){
 			$fmakeRassilka->addParam('date',$date_new);
 			$fmakeRassilka->addParam('date_create',time());
