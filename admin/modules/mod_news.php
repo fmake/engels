@@ -309,7 +309,7 @@ switch ($request->action) {
         #
 		$temp = $form->addSelect("Шаблон", "templ");
 		$temp -> AddOption(new SelectOption(0, "Новый"));
-		$temp -> AddOption(new SelectOption(1, "Сратый"));
+		$temp -> AddOption(new SelectOption(1, "Старый"));
 		$form ->AddElement($temp);
 		#
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
@@ -425,5 +425,5 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-//PrintAr($_POST);
+PrintAr($_POST);
 ?>

@@ -361,5 +361,4 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-PrintAr($_POST);
 ?>
