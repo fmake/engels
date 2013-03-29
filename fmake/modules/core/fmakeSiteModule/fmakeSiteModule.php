@@ -596,7 +596,9 @@ class fmakeSiteModule extends fmakeCore {
 			$select->addWhere($where);
 		if($this->order) 
 				$select->addOrder($this->order, $this->order_as);	
-		return $select->addFild("a.*,b.*,c.caption name_category")->addFrom($this->table . $table_join)->addWhere('a.parent in (' . $parent . ')')->addLimit((($page - 1) * $limit), $limit)->queryDB();
+		if($limit)
+			$select->addLimit((($page - 1) * $limit), $limit);
+		return $select->addFild("a.*,b.*,c.caption name_category")->addFrom($this->table . $table_join)->addWhere('a.parent in (' . $parent . ')')->queryDB();
 	}
 
 	function getByPageCount($parent, $where = false, $type = false, $active = false) {
