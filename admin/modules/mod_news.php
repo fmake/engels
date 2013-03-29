@@ -306,12 +306,12 @@ switch ($request->action) {
             $form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/{$items['picture']}' /></td></tr>");
         $form->addFile("Фото:", "picture", $text = false);
         $form->addCheckBox("Без вантермарка", "wantermark_false", 1, false);
-        #
+        # Выбор шаблона	
 		$temp = $form->addSelect("Шаблон", "templ");
 		$temp -> AddOption(new SelectOption(0, "Новый", $items_dop['templ']));
 		$temp -> AddOption(new SelectOption(1, "Старый", $items_dop['templ']));
 		$form ->AddElement($temp);
-		#
+		# Выбор шаблона
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
         
 		$form->addCheckBox("Включить/Выключить", "active", 1, ($items["active"]==='0') ? false : true);
@@ -425,5 +425,5 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-PrintAr($_POST);
+//PrintAr($_POST);
 ?>
