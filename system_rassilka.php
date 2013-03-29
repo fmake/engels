@@ -16,14 +16,13 @@ session_start();
 		printAr($mail_all);
 	}
 	if($key == $_GET['key']){
-		echo "12";
 		$fmakeMail = new fmakeMail(); 
 		$fmakeRassilka = new fmakeRassilka();
 		$news_obj = new fmakeSiteModule();
 		$date = strtotime("today");
-		$date = strtotime("-1 days", $date);
+		$date = strtotime("-2 days", $date);
 		$news_obj->order = "b.date DESC, a.id";
-		$time = strtotime("-1 days",time());
+		$time = strtotime("-2 days",time());
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
