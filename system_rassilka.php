@@ -20,13 +20,12 @@ session_start();
 		$fmakeRassilka = new fmakeRassilka();
 		$news_obj = new fmakeSiteModule();
 		$date = strtotime("today");
-		$date = strtotime("-2 days", $date);
+		$date = strtotime("-1 days", $date);
 		$news_obj->order = "b.date DESC, a.id";
-		$time = strtotime("-2 days",time());
+		$time = strtotime("-1 days",time());
 		$date_new = mktime(0,0,0,date('m',$time),date('d',$time),date('Y',$time));
 		$items = $news_obj->getByPageAdmin(2, false, false,
 			"a.`file` = 'item_news' and b.`date` > {$date}",true);
-		PrintAr($items);
 		if ($items){
 			$fmakeRassilka->addParam('date',$date_new);
 			$fmakeRassilka->addParam('date_create',time());
