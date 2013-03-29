@@ -82,7 +82,7 @@
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
 				PrintAr($item);
-				if ($item['temp'] == 1)				
+				if ($item['dop_params']['temp'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
 					$modul->template = "news/item.tpl"; //exit;					
