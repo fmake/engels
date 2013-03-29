@@ -4,12 +4,17 @@ header('Content-type: text/html; charset=utf-8');
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 
-ini_set('display_errors',1);
-error_reporting(7);
+//ini_set('display_errors',1);
+//error_reporting(7);
 session_start();
 
 	require('./fmake/FController.php');
 	$key = "1o0r2i9f3l8a4m7e56";
+	if($_GET['ms'] == 1){
+		$fmakeMail = new fmakeMail();
+		$mail_all = $fmakeMail->getAll(true);
+		printAr($mail_all);
+	}
 	if($key == $_GET['key']){
 		$fmakeMail = new fmakeMail(); 
 		$fmakeRassilka = new fmakeRassilka();
@@ -48,8 +53,7 @@ session_start();
 				$mail->SetLanguage("ru");
 				$mail->IsHTML(true);
 				$mail->Subject = $_messages['title'];
-				$mail->Body    = $text;
-				PrintAr("done");	
+				$mail->Body    = $text;	
 				if(!$mail->Send())
 					{
 					   echo "Message could not be sent. <p>";
