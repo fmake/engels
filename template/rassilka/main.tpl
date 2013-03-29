@@ -1,6 +1,6 @@
 [[ extends  TEMPLATE_PATH ~ "base/main.tpl" ]] 
 
-[[block content]]
+[[block center]]
 	<p>
 		<a href="/" class="breadcrubs">Главная</a>
 		[[for b in breadcrubs]]
