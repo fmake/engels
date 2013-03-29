@@ -2,6 +2,7 @@
 	$key = "1o0r2i9f3l8a4m7e56";
 	$fmakeSiteUser = new fmakeMail();
 	$breadcrubs = $modul->getBreadCrumbs($modul->id);
+	$globalTemplateParam->set('breadcrubs', $breadcrubs);
 	switch($request->action){
 		case 'delete':
 			$email = $_GET['email'];
@@ -23,7 +24,6 @@
 		break;*/
 	}
 	$globalTemplateParam->set('item', $item);
-	$globalTemplateParam->set('breadcrumbs', $breadcrumbs);
 	$modul->template = "rassilka/main.tpl";
 	
 ?>

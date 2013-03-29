@@ -2,7 +2,7 @@
 [[block center]]
 		
 	[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
-		<div id="item_news">
+	<div id="item_news">
 		{item.alt_text|raw}
 	</div>
 [[endblock]]
