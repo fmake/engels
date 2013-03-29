@@ -351,6 +351,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     position: relative;
     width: 100%;
     height: 34px;
+    *padding-top: 43px;
     margin: 43px 0px;
 }
 #popup_lenta form{
@@ -358,12 +359,14 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 #popup_lenta form input{
     height: 20px;
+    color: #0a0a0a;
 }
 
 #tape{
     float: left;
     width: 270px;
     position: relative;
+    *z-index: 1;
 }
 #tape .arrow{
     background: url("/images/bg/vverh.png") no-repeat;
