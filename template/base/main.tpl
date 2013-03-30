@@ -114,13 +114,13 @@
 				<!--PERSON END-->
 				<div id="tape">
 					<h1>Лента новостей</h1>
-					<span class = "icon-mail"></span>
+					<span class = "icon-mail">подписаться</span>
 					<div id="popup_lenta" class="top">
 						<div class = "title">Подпишись на новости</div>
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<label class="label"></label>
-								<input type="text" placeholder="Ваш емайл" name="my_mail" id="my_mail" />
+								<input type="text" class="fieldfocus" title="Ваш емайл" name="my_mail" id="my_mail"  />
 								<button>
 									<span>
 										<span>

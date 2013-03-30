@@ -57,7 +57,7 @@ switch($request->action)
 		
 		$items = $absitem->getAll();
 		
-		foreach($items as $key=>$item){
+		if($items)foreach($items as $key=>$item){
 			$items[$key]['date_creation'] = date('H:i d.m.Y',$item['date_creation']);
 		}
 		
