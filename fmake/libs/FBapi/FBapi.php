@@ -78,13 +78,13 @@
 		 //echo("Hello " . $user_fb->id);
 		$user_fb_id = $user_fb->id;
 		$user_fb_nickname = $user_fb->username;
+		$user_fb_nickname2 = $user_fb->name;
 		if($user_fb_id){
 			$userObj = new fmakeSiteUser();
 			$user = $userObj->getByIdFb($user_fb_id);
 			if(!$user){
 				$userObj->addParam("login","fb{$user_fb_id}");
 				$userObj->addParam("id_fb", $user_fb_id);
-				$userObj->addParam("name_social","{$user_fb_nickname}");
 				$userObj->addParam("post_create", 0);
 				$userObj->addParam("active", 1);
 				$userObj->newItem();
@@ -93,6 +93,8 @@
 			$picture_social_link = "http://graph.facebook.com/{$user_fb_id}/picture";
 			$fmakeSiteUser = new fmakeSiteUser($user[$userObj->idField]);
 			$fmakeSiteUser->addParam("picture_social_link", $picture_social_link);
+			if($user_fb_nickname) $userObj->addParam("name_social","{$user_fb_nickname}");
+			else $userObj->addParam("name_social","{$user_fb_nickname2}");
 			$fmakeSiteUser->update();
 			
 			$userObj->id = $user[$userObj->idField];

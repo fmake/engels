@@ -43,7 +43,7 @@ function TapeWave($lastID){
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and `main` != '1' and a.`id` < {$lastID}",true);
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID}",true);
 	$last = $items_news_lent['2']['id'];
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
