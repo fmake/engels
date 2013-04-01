@@ -182,6 +182,14 @@ switch ($request->action) {
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
 				}
 				//addExpertFile;
+				if($_POST['exspert']['new'])
+					foreach ($_POST['exspert']['new']['expert'] as $key => $value){
+						$mneniya->addParam("id_news", $_POST['id']);
+						$mneniya->addParam("text_expert", $_POST['exspert']['new']['text_expert'][$key]);
+						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
+						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
+						$mneniya->newItem();
+					}
 				if ($_FILES['expert_picture']['tmp_name']) {
 					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
 					$absitem_dop->setId($absitem->id);
@@ -192,6 +200,8 @@ switch ($request->action) {
                 break;
 
             case 'update': // Переписать
+         
+
 				/*-------------------выставление параметров----------------------------*/
 				if(!$_POST['title'] && $_POST['caption']) $_POST['title'] = $_POST['caption'];
 				if($_POST['title'] && !$_POST['caption']) $_POST['caption'] = $_POST['title'];
@@ -254,6 +264,34 @@ switch ($request->action) {
 					$absitem_dop->addParam('expert_picture', $name);
 					$absitem_dop->update();
 				}
+				if($_POST['exspert']['new'])
+					foreach ($_POST['exspert']['new']['expert'] as $key => $value){
+						$mneniya->addParam("id_news", $_POST['id']);
+						$mneniya->addParam("text_expert", $_POST['exspert']['new']['text_expert'][$key]);
+						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
+						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
+						$mneniya->newItem();
+					}
+				unset($_POST['exspert']['new']);
+				if($_POST['exspert'])foreach ($_POST['exspert'] as $key=>$value){
+					if($_POST['id'])foreach ($all_m as $key2 => $value2) {
+    					if ($_POST['id'] == $all_m[$key2]['id_news']){
+    						$m_items[] =  $value2;
+    					}
+    				}
+    				if($m_items)foreach ($m_items as $key3 => $value3) {
+    					if ($key3 != $key){
+    						$mneniya -> setId($key3);
+    						$mneniya -> delete();
+    					}
+    				}
+					$mneniya->setId($key);
+					$mneniya->addParam("id_news", $_POST['id']);
+					$mneniya->addParam("text_expert", $_POST['exspert'][$key]['text_expert']);
+					$mneniya->addParam("active_mnenie", $_POST['exspert'][$key]['active_mnenie']);
+					$mneniya->addParam("expert", $_POST['exspert'][$key]['expert']);
+				    $mneniya->update();
+				}
                 break;
 
             case 'delete': // Удалить
@@ -273,9 +311,10 @@ switch ($request->action) {
 			$items = $absitem->getByPageAdmin($id_page_modul, $limit, $page);
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
-		//printAr($items);
 		$pages = ceil($count/$limit);
-		
+    	//PrintAr($m_items);
+
+
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
 		$globalTemplateParam->set('page', $page);
@@ -287,13 +326,6 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
-		if($items_dop['id'])foreach ($all_m as $key => $value) {
-    		if ($items_dop['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items_dop['id']] =  $value;
-    		}
-    	}
-    	PrintAr($m_items);
-    	Echo "1";
     
     case 'new': // Далее форма
 		/*теги*/
@@ -317,13 +349,7 @@ switch ($request->action) {
 		$form->addVarchar("<em>Ключевые</em>", "keywords", $items["keywords"],50,false,"");
 		$form->addVarchar("<i>URL</i>", "redir", $items["redir"]);
         
-        /*$_select = $form->addSelect("Категория", "parent");
-        //$_select->AddOption(new selectOption("", "", false));
-        foreach($news_categories as $category){
-            $_select->AddOption(new selectOption($category['id'], $category['title'], (($category['id'] == $items['parent'] || ($request->action=='new' && $file=='mod_text') )? true : false )));
-        }
-        
-        $form->AddElement($_select);*/
+
 		
 		$form->addHtml('Категория',"<td>Категория</td><td>".$absitem->getHtmlSelectCat($id_page_modul,'parent',$items['parent'])."</td>");
 
@@ -357,8 +383,41 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
+        if($request->id)foreach ($all_m as $key => $value) {
+    		if ($request->id == $all_m[$key]['id_news']){
+    			$m_items[] =  $value;
+    		}
+    	}
+        $select_sitepage_options = "
+        	<option value=\"1\">Активно</option>
+        	<option value=\"0\">Не активно</option>
+      	";
+        if($m_items)foreach ($m_items as $key => $value) {
+        	if($m_items[$key][active_mnenie]){
+        		$select_sitepage_options_s = "
+        			<option value=\"1\">Активно</option>
+        			<option value=\"0\">Не активно</option>
+      			";
+        	}else{
+        		$select_sitepage_options_s = "
+        			<option value=\"1\">Активно</option>
+        			<option selected value=\"0\">Не активно</option>
+      			";
+        	}
+        	$str_add_mnenie .= "
+				<div class='line_baner_add'>
+					<b>Настройка мнения</b><br/>
+					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options_s."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$m_items[$key][id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{{$m_items[$key][id]}}\" />{$link_view_baner}<br/>
+					Мнение: <textarea name=\"exspert[{$m_items[$key][id]}][text_expert]\">{$m_items[$key][text_expert]}</textarea>
+					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
+				</div>";
+		}
         $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
         $form->addHtml('Форма добавления мнения',"<td >Мнения</td><td ><img id='add_baner' onclick='xajax_addForm();return false;' style='cursor:pointer;' src='/images/admin/ico_add.png'></td>");
+        $form->addHtml('Форма добавления мнения',"<td colspan='2' id='add_form_mnenye'>".$str_add_mnenie."</td>");
+        $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
 
         //$form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         //$form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
@@ -399,11 +458,27 @@ switch ($request->action) {
 			});
 		</script>';
 		/*теги*/
-		
+
+		$content .= "
+			<div id=\"id_new_form\" style=\"display:none;\">
+				<div class=\"line_baner_add\">
+					<b>Настройка мнения</b><br/>
+					Актив: <select title=\"Активно?\" name=\"exspert[new][active_mnenie][]\">".$select_sitepage_options."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture[]\" /><br/>
+					Мнение: <textarea name=\"exspert[new][text_expert][]\"></textarea>
+					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
+				</div>
+			</div>
+			";
 		$content .= "
 		<script type=\"text/javascript\" >
 			$(document).ready(function(){
-
+				$('.delete_baner').live('click',function(){
+					if(confirm('Вы уверенны?')){
+						$(this).parent().remove();
+					}
+				});
 				/*$('#filter-date1').DatePicker({
 					format:'d.m.Y',
 					date: '',
@@ -455,7 +530,11 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-//PrintAr($_POST);
+PrintAr($_POST);
+//PrintAr($_FILES);
+//PrintAr($m_items);
+		//printAr($items);
+		//echo "$request->id";
         //PrintAr($m_items);
         //PrintAr($all_m);
 ?>
