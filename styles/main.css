@@ -454,7 +454,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     width: 391px;
     overflow: hidden;
 }
-.caption_top h2{
+.caption_top h1, .caption_top h2{
     color: #fff;
     background: url("/images/bg/bg_slider_blue.png");
     position: absolute;
