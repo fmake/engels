@@ -407,7 +407,7 @@ switch ($request->action) {
 		</script>';
 		/*теги*/
 		$content .= "
-			<div id=\"id_new_baner\" style=\"display:none;\">
+			<div id=\"id_new_form\" style=\"display:none;\">
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
