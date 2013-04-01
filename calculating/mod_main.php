@@ -133,7 +133,6 @@
 	
 	/*афиша*/
 	$meets_obj = new fmakeMeets();
-	
 	$items_meets_cats = $meets_obj->getChilds(4,true);
 	
 	$limit_meets = 6;

@@ -83,6 +83,8 @@
 				$globalTemplateParam->set('item', $item);
 				$exp = new fmakeMneniya();
 				$exp = $exp -> getAll();
+				PrintAr($exp);
+				PrintAr($items);
 				foreach ($exp as $key => $value) {
 					if ($exp[$key]['id_news'] == $items['id'])
 						$total_exp[] = $value;
