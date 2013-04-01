@@ -288,7 +288,7 @@ switch ($request->action) {
 		echo "1";
 		$pages = ceil($count/$limit);
 
-		if($items_['id'])foreach ($all_m as $key => $value) {
+		if($items['id'])foreach ($all_m as $key => $value) {
     		if ($items_dop['id'] == $all_m[$key]['id_news']){
     			$m_items[$items_dop['id']] =  $value;
     		}
@@ -304,14 +304,14 @@ switch ($request->action) {
         include('content.php');
         break;
     case 'edit':    
-    	printAr($items);
-		echo "1";
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
     
     case 'new': // Далее форма
 		/*теги*/
+		printAr($items);
+		echo "1";
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
 		$tagsJsStr = $tags -> tagsToJsString( $tags -> getAll () );
 		/*теги*/
