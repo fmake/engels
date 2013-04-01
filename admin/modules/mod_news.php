@@ -355,8 +355,8 @@ switch ($request->action) {
         $str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
-					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[{$items['id']}][active_mnenie]\"/><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$items[id]}][caption]\" value=\"{$items[caption]}\" style=\"width:200px;\"/><br/>
+					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[{$items[id]}][active_mnenie]\"/><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$items[id]}][expert]\" value=\"\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$items[id]}\" />{$link_view_baner}<br/>
 					Мнение: <textarea name=\"exspert[{$items[id]}][text_expert]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
@@ -411,7 +411,7 @@ switch ($request->action) {
 				<div class=\"line_baner_add\">
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[new][active_mnenie]\"/><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][caption][]\" value=\"\" style=\"width:200px;\"/><br/>
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert]\" value=\"\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture\" /><br/>
 					Мнение: <textarea name=\"exspert[new][text_expert]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
