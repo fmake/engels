@@ -120,7 +120,7 @@
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<label class="label"></label>
-								<input type="text" class="fieldfocus" title="Ваш емайл" [[if user_params.post_create == 1]]value="{user_params}@engels.bz"[[elseif user_params.main_email !=0 ]]value="{user_params.main_email}"[[endif]]name="my_mail" id="my_mail"  />
+								<input type="text" class="fieldfocus" title="Ваш емайл" [[if user_params.post_create == 1]]value="{user_params.login}@engels.bz"[[elseif user_params.main_email !=0 ]]value="{user_params.main_email}"[[endif]]name="my_mail" id="my_mail"  />
 								<button>
 									<span>
 										<span>
