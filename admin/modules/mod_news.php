@@ -356,7 +356,7 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
-        if($request->id)foreach ($all_m as $key => $value) {
+        		if($request->id)foreach ($all_m as $key => $value) {
     		if ($request->id == $all_m[$key]['id_news']){
     			$m_items[] =  $value;
     		}
