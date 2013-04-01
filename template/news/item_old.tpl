@@ -15,22 +15,25 @@
 					[[if item.dop_params.date]]<span class="date" style="float: none;">{df('date','d.m.Y H:i',item.dop_params.date)}</span>[[endif]]
 					<div class="full_text">
 						<p>{item.text|raw}</p>
-							[[if item.dop_params.text_expert and item.dop_params.active_mnenie]]
-								<div class="cl"></div>
-								<div class="quot" id="quot">
-									[[if item.dop_params.expert_picture]]
-										<img src="/{site_obj.fileDirectory}{item.id}/expert/113_75{item.dop_params.expert_picture}" alt="" width="113px" />
+							<div id="quot">
+								[[for item in exp]]
+									[[if item.text_expert]]
+										<div class="quot" id="quot">
+											[[if item.expert_picture]]
+												<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="" />
+											[[endif]]
+											<img src="/images/icons/apostrof.png" alt="" />
+											[[if item.expert]]
+												<div class="n-c">{item.expert}</div>
+											[[endif]]
+											[[if item.text_expert]]
+												<p>{item.text_expert|raw}</p>
+											[[endif]]
+											<div class="cl"></div>
+										</div>
 									[[endif]]
-									<img src="/images/icons/apostrof.png" alt="" />
-									[[if item.dop_params.expert]]
-										<div class="n-c">{item.dop_params.expert}</div>
-									[[endif]]
-									[[if item.dop_params.text_expert]]
-										<p>{item.dop_params.text_expert|raw}</p>
-									[[endif]]
-									<div class="cl"></div>
-								</div>
-							[[endif]]
+								[[endfor]]
+							</div>
 						<div id="video">
 							[[if item.dop_params.video]]
 								{item.dop_params.video|raw}
