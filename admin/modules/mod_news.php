@@ -277,14 +277,17 @@ switch ($request->action) {
 					if($_POST['id'])foreach ($all_m as $key2 => $value2) {
     					if ($_POST['id'] == $all_m[$key2]['id_news']){
     						$m_items[] =  $value2;
+    						echo "3";
     					}
     				}
     				if($m_items)foreach ($m_items as $key3 => $value3) {
     					if ($key3 != $key){
     						$mneniya -> setId($key3);
     						$mneniya -> delete();
+    						echo "1";
     					}
     				}
+    				echo "12";
 					$mneniya->setId($key);
 					$mneniya->addParam("id_news", $_POST['id']);
 					$mneniya->addParam("text_expert", $_POST['exspert'][$key]['text_expert']);
