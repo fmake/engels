@@ -353,7 +353,7 @@ switch ($request->action) {
 
         #Эксперт
         $str_add_mnenie .= "
-				<div class='line_mnenie'>
+				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
@@ -408,7 +408,7 @@ switch ($request->action) {
 		/*теги*/
 		$content .= "
 			<div id=\"id_new_form\" style=\"display:none;\">
-				<div class='line_mnenie'>
+				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
@@ -421,7 +421,11 @@ switch ($request->action) {
 		$content .= "
 		<script type=\"text/javascript\" >
 			$(document).ready(function(){
-
+				$('.delete_baner').live('click',function(){
+					if(confirm('Вы уверенны?')){
+						$(this).parent().remove();
+					}
+				});
 				/*$('#filter-date1').DatePicker({
 					format:'d.m.Y',
 					date: '',
