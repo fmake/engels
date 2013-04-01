@@ -189,11 +189,11 @@ switch ($request->action) {
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
 						$mneniya->newItem();
-					    if ($_FILES['expert_picture']['tmp_name']) {
-							$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name'], $mneniya->id);
+				    	if ($_FILES['exspert_new_picture']['tmp_name'][$key]) {
+							$name = $absitem->addExpertFile($_FILES['exspert_new_picture']['tmp_name'][$key], $_FILES['exspert_new_picture']['name'][$key], $mneniya->id);
 							$mneniya->addParam('expert_picture', $name);
 							$mneniya->update();
-						}
+						}	
 					}
                 break;
 
@@ -264,8 +264,8 @@ switch ($request->action) {
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
 						$mneniya->newItem();
-				    	if ($_FILES['expert_picture']['tmp_name']) {
-							$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name'], $mneniya->id);
+				    	if ($_FILES['exspert_new_picture']['tmp_name'][$key]) {
+							$name = $absitem->addExpertFile($_FILES['exspert_new_picture']['tmp_name'][$key], $_FILES['exspert_new_picture']['name'][$key], $mneniya->id);
 							$mneniya->addParam('expert_picture', $name);
 							$mneniya->update();
 						}	
@@ -280,7 +280,7 @@ switch ($request->action) {
 					$mneniya->addParam("expert", $_POST['exspert'][$key]['expert']);
 				    $mneniya->update();
 				    $ex_ne = "exspert_picture_".$key;
-				    if ($_FILES['expert_picture']['tmp_name']) {
+				    if ($_FILES[$ex_ne]['tmp_name']) {
 						$name = $absitem->addExpertFile($_FILES[$ex_ne]['tmp_name'], $_FILES[$ex_ne]['name'], $key);
 						$mneniya->addParam($ex_ne, $name);
 						$mneniya->update();
@@ -404,7 +404,9 @@ switch ($request->action) {
 					<b>Настройка мнения</b><br/>
 					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options_s."</select><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$m_items[$key][id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
-					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$m_items[$key][id]}\" />{$link_view_baner}<br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$m_items[$key][id]}\" />
+					<img src=\"{$site_obj->fileDirectory}/{$request-id}/expert/133_201{$m_items[$key][expert_picture]}\">
+					<br/>
 					Мнение: <textarea name=\"exspert[{$m_items[$key][id]}][text_expert]\">{$m_items[$key][text_expert]}</textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>";
