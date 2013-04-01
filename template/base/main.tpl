@@ -35,7 +35,7 @@
 										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
 									</div>
 								[[endif]]
-									<a href="{site_obj.getLinkPage(item.id_news)}#quot">
+									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot">
 										[[if ekspert.expert_picture]]
 											<img width = "133"alt="{ekspert.caption}" src="
 											/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}
