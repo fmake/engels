@@ -355,10 +355,10 @@ switch ($request->action) {
         $str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
-					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
-					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"baner_picture_{$item[id]}\" />{$link_view_baner}<br/>
-					Мнение: <textarea></textarea>
+					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[{$item[id]}][active_mnenie]\"/><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$item[id]}\" />{$link_view_baner}<br/>
+					Мнение: <textarea name=\"exspert[{$item[id]}][text_expert]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>";
 
