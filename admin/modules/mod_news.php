@@ -285,6 +285,7 @@ switch ($request->action) {
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
 		printAr($items);
+		echo "1";
 		$pages = ceil($count/$limit);
 
 		if($items_['id'])foreach ($all_m as $key => $value) {
