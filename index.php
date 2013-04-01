@@ -176,7 +176,6 @@ $globalTemplateParam->set('time_new',$time_new);
 $globalTemplateParam->set('request_uri',$request_uri);
 $globalTemplateParam->set('menu',$menu);
 $globalTemplateParam->set('url',$url);
-PrintAr($configs);
 $modul->template = "base/main.tpl";
 $globalTemplateParam->set('modul',$modul);
 if($modul->file){
