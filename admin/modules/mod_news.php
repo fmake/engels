@@ -30,6 +30,13 @@ $absitem_dop = new fmakeTypeTable();
 $absitem_dop->table = $fmakeTypeTable->getTable($id_page_modul);
 $absitem_dop->setId($request->id);
 
+#----------------------------мнения
+$mneniya = new fmakMneniya();
+$older = $absitem_dop ->getAll();
+PrintAr($older);
+foreach ($older as $key => $value) {}
+$mneniya -> setId($request->id);
+#----------------------------мнения 
 $news_categories = $absitem->getCatAsTree($id_page_modul,0,true);
 
 //printAr($news_categories);
@@ -331,6 +338,7 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
+
         $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         $form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
         if($items_dop['expert_picture'])
@@ -338,6 +346,7 @@ switch ($request->action) {
         $form->addFile("Аватарка: ", "expert_picture", $text=false);
         $form->addVarchar("<i>Имя эксперта</i>", "expert", $items_dop["expert"]);
         $form->addTextAreaMini("Комментарий эксперта", "text_expert", $items_dop["text_expert"]);
+
         #Эксперт внезапно закончился
 
         /*
