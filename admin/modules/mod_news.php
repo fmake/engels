@@ -375,10 +375,21 @@ switch ($request->action) {
         	<option value=\"0\">Не активно</option>
       	";
         if($m_items)foreach ($m_items as $key => $value) {
+        	if($m_items[$key][active_mnenie]){
+        		$select_sitepage_options_s = "
+        			<option value=\"1\">Активно</option>
+        			<option value=\"0\">Не активно</option>
+      			";
+        	}else{
+        		$select_sitepage_options_s = "
+        			<option value=\"1\">Активно</option>
+        			<option selected value=\"0\">Не активно</option>
+      			";
+        	}
         	$str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
-					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options."</select><br />
+					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options_s."</select><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$m_items[$key][id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{{$m_items[$key][id]}}\" />{$link_view_baner}<br/>
 					Мнение: <textarea name=\"exspert[{$m_items[$key][id]}][text_expert]\">{$m_items[$key][text_expert]}</textarea>
