@@ -299,12 +299,6 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
-		if($request->id)foreach ($all_m as $key => $value) {
-    		if ($request->id == $all_m[$key]['id_news']){
-    			$m_items[] =  $value;
-    		}
-    	}
-    	echo "1";
     
     case 'new': // Далее форма
 		/*теги*/
@@ -362,6 +356,12 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
+        if($request->id)foreach ($all_m as $key => $value) {
+    		if ($request->id == $all_m[$key]['id_news']){
+    			$m_items[] =  $value;
+    		}
+    	}
+    	echo "1";
         $select_sitepage_options = "
         	<option value=\"1\">Активно</option>
         	<option value=\"0\">Не активно</option>
