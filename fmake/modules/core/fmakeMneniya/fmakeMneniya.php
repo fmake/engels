@@ -1,7 +1,7 @@
 ﻿<?php
 class fmakeMneniya extends fmakeCore{
 	public $table = 'mneniya';
-	public $idField = "id";
+	public $idField = "id";	
 
 	function delete_adm_mod($id_news , $array_not_delete){
 		if($id_news){
@@ -11,5 +11,19 @@ class fmakeMneniya extends fmakeCore{
 			}
 			$delete	-> addTable($this->table) -> addWhere("`id_news`='".$id_news."'") -> queryDB();
 		}
+	}
+	function getByPageAdmin($limit, $page, $where = "", $active = false) {
+		$select = $this->dataBase->SelectFromDB(__LINE__);
+		if ($active)
+			$select->addWhere("a.active='1'");
+		if($where)
+			$select->addWhere($where);
+		if($this->order) 
+			$select->addOrder($this->order, $this->order_as);
+		if($this->group_by)
+			$select->addGroup($this->group_by);
+		if($limit)
+			$select->addLimit((($page - 1) * $limit), $limit);
+		return $select->addFrom($this->table)->queryDB();
 	}
 }
