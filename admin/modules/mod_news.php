@@ -477,7 +477,7 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-//PrintAr($_POST);
+PrintAr($_POST);
         //PrintAr($m_items);
         //PrintAr($all_m);
 ?>
