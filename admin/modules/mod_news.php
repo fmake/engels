@@ -311,7 +311,7 @@ switch ($request->action) {
     case 'new': // Далее форма
 		/*теги*/
 		printAr($items);
-		echo "1";
+		echo "$request->id";
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
 		$tagsJsStr = $tags -> tagsToJsString( $tags -> getAll () );
 		/*теги*/
