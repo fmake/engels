@@ -280,8 +280,8 @@ switch ($request->action) {
     					}
     				}
     				if($m_items_o)foreach ($m_items_o as $key3 => $value3) {
-    					if ($key3 != $key){
-    						$mneniya -> setId($key3);
+    					if ($m_items_o[$key3]['id'] != $key){
+    						$mneniya -> setId($m_items_o[$key3]['id']);
     						$mneniya -> delete();
     					}
     				}
@@ -535,7 +535,7 @@ PrintAr($_POST);
 //PrintAr($m_items);
 		//printAr($items);
 		//echo "$request->id";
-        PrintAr($m_items);
+        PrintAr($m_items_o);
        // PrintAr($all_m);
         //PrintAr("we");
 ?>
