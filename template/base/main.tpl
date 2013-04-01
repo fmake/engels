@@ -37,7 +37,9 @@
 								[[endif]]
 									<a href="{ekspert.full_url}#quot">
 										[[if ekspert.expert_picture]]
-											<img width = "133"alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/{ekspert.id}/expert/133_201{ekspert.expert_picture}" />
+											<img width = "133"alt="{ekspert.caption}" src="
+											/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}
+											" />
 										[[endif]]
 									</a>
 							</div>
