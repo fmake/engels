@@ -215,7 +215,7 @@
 	$news_obj_exp = new fmakeMneniya;
 	$limit_news_exp = 2;
 	$news_obj_exp->order = "b.date DESC, a.id";
-	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' and `active_mnenie` = '1' " , true);
+	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	//printAr("23");
 	PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
