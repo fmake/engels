@@ -13,6 +13,7 @@
 						<form action="#questionform" method="post" id="QuestionFormRight{interv_item.id}" onsubmit="SubmitFormVote({interv_item.id}); return false;" style="position: relative;"> 
 							<img src="/images/pre.gif" style="display: none; position: absolute; left: 95px; top: 21px;" alt="" /> 
 							[[set Quest = vopros[key] ]]
+							[[set Quest_stat = vopros_statistic_all[key] ]]
 							[[set Cook = true ]]
 							[[set interview_id = interv_item.id ]]
 							[[set Do = 1]]

@@ -1,4 +1,6 @@
-                        <input type="hidden" name="action" value="interview_right" />
+                        [[if Cook]]<p style="color: #878787;">Проголосовало: {Quest_stat} чел.</p><br/>[[endif]]
+						
+						<input type="hidden" name="action" value="interview_right" />
                         <input type="hidden" name="interview_id" value="{interview_id}" />
                             [[for vopr in Quest ]]
                                 [[if Cook ]]
