@@ -35,7 +35,7 @@
 						<p>{item.text|raw}</p>
 						<div id="quot">
 							[[for item in exp]]
-								[[if item.text_expert and item.active_mnenie]]
+								[[if item.text_expert]]
 									<div class="quot" id="quot">
 										[[if item.expert_picture]]
 											<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="" />
