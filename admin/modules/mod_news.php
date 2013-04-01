@@ -353,7 +353,7 @@ switch ($request->action) {
 
         #Эксперт
         $str_add_mnenie .= "
-				<div class='line_baner_add'>
+				<div class='line_mnenie'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
@@ -364,7 +364,7 @@ switch ($request->action) {
 
         $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
         $form->addHtml('Форма добавления мнения',"<td >Мнения</td><td ><img id='add_baner' onclick='xajax_addForm();return false;' style='cursor:pointer;' src='/images/admin/ico_add.png'></td>");
-        $form->addHtml('Форма добавления мнения',"<td colspan='2' id='add_baner_mnenie'>".$str_add_mnenie."</td>");
+        $form->addHtml('Форма добавления мнения',"<td colspan='2' id='add_form_mnenye'>".$str_add_mnenie."</td>");
         $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
 
         //$form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
@@ -408,7 +408,7 @@ switch ($request->action) {
 		/*теги*/
 		$content .= "
 			<div id=\"id_new_form\" style=\"display:none;\">
-				<div class='line_baner_add'>
+				<div class='line_mnenie'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
