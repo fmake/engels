@@ -282,7 +282,7 @@ switch ($request->action) {
 				    $ex_ne = "exspert_picture_".$key;
 				    if ($_FILES[$ex_ne]['tmp_name']) {
 						$name = $absitem->addExpertFile($_FILES[$ex_ne]['tmp_name'], $_FILES[$ex_ne]['name'], $key);
-						$mneniya->addParam($ex_ne, $name);
+						$mneniya->addParam('expert_picture', $name);
 						$mneniya->update();
 					}
 				    $not_delete_array[] = $key;
@@ -405,7 +405,7 @@ switch ($request->action) {
 					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options_s."</select><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$m_items[$key][id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$m_items[$key][id]}\" />
-					<img src=\"{$site_obj->fileDirectory}/{$request->id}/expert/133_201{$m_items[$key][expert_picture]}\">
+					<img src=\"{$site_obj->fileDirectory}/{$modul->id}/expert/133_201{$m_items[$key][expert_picture]}\">
 					<br/>
 					Мнение: <textarea name=\"exspert[{$m_items[$key][id]}][text_expert]\">{$m_items[$key][text_expert]}</textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
