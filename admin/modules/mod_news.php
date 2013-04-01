@@ -275,7 +275,15 @@ switch ($request->action) {
 		}
 		//printAr($items);
 		$pages = ceil($count/$limit);
-		
+
+		if($items_dop['id'])foreach ($all_m as $key => $value) {
+    		if ($items_dop['id'] == $all_m[$key]['id_news']){
+    			$m_items[$items_dop['id']] =  $value;
+    		}
+    	}
+    	PrintAr($m_items);
+    	Echo "1";
+
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
 		$globalTemplateParam->set('page', $page);
@@ -287,13 +295,6 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
-		if($items_dop['id'])foreach ($all_m as $key => $value) {
-    		if ($items_dop['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items_dop['id']] =  $value;
-    		}
-    	}
-    	PrintAr($m_items);
-    	Echo "1";
     
     case 'new': // Далее форма
 		/*теги*/
@@ -317,13 +318,7 @@ switch ($request->action) {
 		$form->addVarchar("<em>Ключевые</em>", "keywords", $items["keywords"],50,false,"");
 		$form->addVarchar("<i>URL</i>", "redir", $items["redir"]);
         
-        /*$_select = $form->addSelect("Категория", "parent");
-        //$_select->AddOption(new selectOption("", "", false));
-        foreach($news_categories as $category){
-            $_select->AddOption(new selectOption($category['id'], $category['title'], (($category['id'] == $items['parent'] || ($request->action=='new' && $file=='mod_text') )? true : false )));
-        }
-        
-        $form->AddElement($_select);*/
+
 		
 		$form->addHtml('Категория',"<td>Категория</td><td>".$absitem->getHtmlSelectCat($id_page_modul,'parent',$items['parent'])."</td>");
 
@@ -357,8 +352,20 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
+        $str_add_mnenie .= "
+				<div class='line_baner_add'>
+					<b>Настройка мнения</b><br/>
+					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"baner_picture_{$item[id]}\" />{$link_view_baner}<br/>
+					Мнение: <textarea></textarea>
+					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
+				</div>";
+
         $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
         $form->addHtml('Форма добавления мнения',"<td >Мнения</td><td ><img id='add_baner' onclick='xajax_addForm();return false;' style='cursor:pointer;' src='/images/admin/ico_add.png'></td>");
+        $form->addHtml('Форма добавления мнения',"<td colspan='2' id='add_baner_mnenie'>".$str_add_mnenie."</td>");
+        $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
 
         //$form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
         //$form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
@@ -399,7 +406,18 @@ switch ($request->action) {
 			});
 		</script>';
 		/*теги*/
-		
+		$content .= "
+			<div id=\"id_new_baner\" style=\"display:none;\">
+				<div class='line_baner_add'>
+					<b>Настройка мнения</b><br/>
+					Актив: <input title=\"Активно?\" type=\"checkbox\" /><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"baner_picture_{$item[id]}\" />{$link_view_baner}<br/>
+					Мнение: <textarea></textarea>
+					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
+				</div>
+			</div>
+			";
 		$content .= "
 		<script type=\"text/javascript\" >
 			$(document).ready(function(){
