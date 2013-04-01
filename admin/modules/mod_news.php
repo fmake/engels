@@ -310,8 +310,6 @@ switch ($request->action) {
     
     case 'new': // Далее форма
 		/*теги*/
-		printAr($items);
-		echo "$request->id";
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
 		$tagsJsStr = $tags -> tagsToJsString( $tags -> getAll () );
 		/*теги*/
@@ -498,6 +496,8 @@ switch ($request->action) {
 }
 PrintAr($_POST);
 PrintAr($_FILES);
+		printAr($items);
+		echo "$request->id";
         //PrintAr($m_items);
         //PrintAr($all_m);
 ?>
