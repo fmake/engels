@@ -34,7 +34,7 @@
 							</a>
 						</p>
 						<div class="text">
-							{new.text|raw}
+							{item.text|raw}
 						</div>
 						[[set tags = new.tags]]
 						[[ include TEMPLATE_PATH ~ "blocks/tags.tpl"]]
