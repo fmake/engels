@@ -741,7 +741,7 @@
             </div>
             <div class="cl"></div>
             <div class="corypting">
-            	{configs.footer}
+            	{configs.footer|raw}
             </div>
             <div class="cl"></div>
         </div>
