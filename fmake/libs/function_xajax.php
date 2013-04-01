@@ -30,16 +30,17 @@ function gogoMail($values){
 	$values = mysql_real_escape_string($values['my_mail']);
 	$mail = new fmakeMail();
 	$all = $mail->getAll();
+	$bool = false;
 	foreach ($all as $key => $value) {
-		if ($all[$key]['mail'] == $values)
+		if ($all[$key]['mail'] == $values){
 			$script = '$("#mailed label").text("Этот email уже есть в базе.");';
-		break;
-		else{
-			$mail->addParam('mail', $values);
-			$mail->newItem();
-			$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
-			break;
+			$boll =  true;
 		}
+	}
+	if ($bool == false){
+		$mail->addParam('mail', $values);
+		$mail->newItem();
+		$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
 	}
 	$objResponse->script($script);
 	return $objResponse;
