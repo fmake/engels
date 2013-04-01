@@ -23,7 +23,7 @@
 							<span class="time">Дата комментария: {df('date','H:i d.m.Y',item.date)}</span>
 						</div>
 						<p class="f14">
-							<a href="{new.full_url}">
+							<a href="/{site_obj.getLinkPage(item.page_id)}#comment{item.id}">{item.page_caption}</a> от
 								[[if item.user_params.post_create]]
 									<a href="mailto:{item.user_params.login}@engels.bz">
 										{item.user_params.login}
@@ -31,10 +31,9 @@
 								[[else]]
 									{item.user_params.name_social}
 								[[endif]]
-							</a>
 						</p>
 						<div class="text">
-							{item.text|raw}
+							{new.text|raw}
 						</div>
 						[[set tags = new.tags]]
 						[[ include TEMPLATE_PATH ~ "blocks/tags.tpl"]]
@@ -43,7 +42,6 @@
 				</div>
 			[[endfor]]
 		</div>
-
 		<div class="cl"></div>
 		[[ include TEMPLATE_PATH ~ "pager/pager.tpl"]]
 	</div>
