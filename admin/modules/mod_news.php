@@ -189,14 +189,12 @@ switch ($request->action) {
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
 						$mneniya->newItem();
+					    if ($_FILES['expert_picture']['tmp_name']) {
+							$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name'], $mneniya->id);
+							$mneniya->addParam('expert_picture', $name);
+							$mneniya->update();
+						}
 					}
-				if ($_FILES['expert_picture']['tmp_name']) {
-					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
-					$absitem_dop->setId($absitem->id);
-					$absitem_dop->addParam('expert_picture', $name);
-					//echo $absitem_dop->id;
-					$absitem_dop->update();
-				}
                 break;
 
             case 'update': // Переписать
@@ -259,11 +257,6 @@ switch ($request->action) {
 					if ($_POST['wantermark_false']) $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name'],false);
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
 				}
-				if ($_FILES['expert_picture']['tmp_name']) {
-					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
-					$absitem_dop->addParam('expert_picture', $name);
-					$absitem_dop->update();
-				}
 				if($_POST['exspert']['new'])
 					foreach ($_POST['exspert']['new']['expert'] as $key => $value){
 						$mneniya->addParam("id_news", $_POST['id']);
@@ -271,6 +264,11 @@ switch ($request->action) {
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
 						$mneniya->newItem();
+				    	if ($_FILES['expert_picture']['tmp_name']) {
+							$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name'], $mneniya->id);
+							$mneniya->addParam('expert_picture', $name);
+							$mneniya->update();
+						}	
 						$not_delete_array[] = $mneniya->id;
 					}
 				unset($_POST['exspert']['new']);
@@ -281,7 +279,14 @@ switch ($request->action) {
 					$mneniya->addParam("active_mnenie", $_POST['exspert'][$key]['active_mnenie']);
 					$mneniya->addParam("expert", $_POST['exspert'][$key]['expert']);
 				    $mneniya->update();
+				    $ex_ne = "exspert_picture_".$key;
+				    if ($_FILES['expert_picture']['tmp_name']) {
+						$name = $absitem->addExpertFile($_FILES[$ex_ne]['tmp_name'], $_FILES[$ex_ne]['name'], $key);
+						$mneniya->addParam($ex_ne, $name);
+						$mneniya->update();
+					}
 				    $not_delete_array[] = $key;
+
 				}
 				$mneniya ->delete_adm_mod($request->id, $not_delete_array);
                 break;
@@ -296,7 +301,6 @@ switch ($request->action) {
 		$absitem->order = "b.date DESC, a.id";
 		$absitem->order_as = "DESC";
 		if($filters){
-			//echo 'qq';
 			$items = $absitem->getByPageAdminFilter($filters,$id_page_modul, $limit, $page);
 			$count = $absitem->getByPageCountAdminFilter($filters,$id_page_modul,$id_page_modul);
 		}else{
@@ -304,8 +308,6 @@ switch ($request->action) {
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
 		$pages = ceil($count/$limit);
-    	//PrintAr($m_items);
-
 
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
@@ -315,10 +317,11 @@ switch ($request->action) {
         include('content.php');
         break;
     case 'edit':    
+
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
-    
+
     case 'new': // Далее форма
 		/*теги*/
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
@@ -522,12 +525,12 @@ switch ($request->action) {
         $template = $block;
         break;
 }
-PrintAr($_POST);
-//PrintAr($_FILES);
+//PrintAr($_POST);
+PrintAr($_FILES);
 //PrintAr($m_items);
 		//printAr($items);
 		//echo "$request->id";
-        PrintAr($m_items_o);
-       // PrintAr($all_m);
+        //PrintAr($m_items_o);
+       	//PrintAr($all_m);
         //PrintAr("we");
 ?>
