@@ -182,6 +182,14 @@ switch ($request->action) {
 					else $absitem->addFile($_FILES['picture']['tmp_name'], $_FILES['picture']['name']);
 				}
 				//addExpertFile;
+				if($_POST['exspert']['new'])
+					foreach ($_POST['exspert']['new']['expert'] as $key => $value){
+						$mneniya->addParam("id_news", $_POST['id']);
+						$mneniya->addParam("text_expert", $_POST['exspert']['new']['text_expert'][$key]);
+						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
+						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
+						$mneniya->newItem();
+					}
 				if ($_FILES['expert_picture']['tmp_name']) {
 					$name = $absitem->addExpertFile($_FILES['expert_picture']['tmp_name'], $_FILES['expert_picture']['name']);
 					$absitem_dop->setId($absitem->id);
@@ -266,7 +274,17 @@ switch ($request->action) {
 					}
 				unset($_POST['exspert']['new']);
 				if($_POST['exspert'])foreach ($_POST['exspert'] as $key=>$value){
-
+					if($_POST['id'])foreach ($all_m as $key2 => $value2) {
+    					if ($_POST['id'] == $all_m[$key2]['id_news']){
+    						$m_items[] =  $value2;
+    					}
+    				}
+    				if($m_items)foreach ($m_items as $key3 => $value3) {
+    					if ($key3 != $key){
+    						$mneniya -> setId($key3);
+    						$mneniya -> delete();
+    					}
+    				}
 					$mneniya->setId($key);
 					$mneniya->addParam("id_news", $_POST['id']);
 					$mneniya->addParam("text_expert", $_POST['exspert'][$key]['text_expert']);
@@ -513,8 +531,8 @@ switch ($request->action) {
         break;
 }
 PrintAr($_POST);
-PrintAr($_FILES);
-PrintAr($m_items);
+//PrintAr($_FILES);
+//PrintAr($m_items);
 		//printAr($items);
 		//echo "$request->id";
         //PrintAr($m_items);
