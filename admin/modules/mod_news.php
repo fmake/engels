@@ -416,10 +416,10 @@ switch ($request->action) {
 			<div id=\"id_new_form\" style=\"display:none;\">
 				<div class=\"line_baner_add\">
 					<b>Настройка мнения</b><br/>
-					Актив: <select title=\"Активно?\" name=\"exspert[new][][active_mnenie]\">".$select_sitepage_options."</select><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][][expert]\" value=\"\" style=\"width:200px;\"/><br/>
+					Актив: <select title=\"Активно?\" name=\"exspert[new][active_mnenie][]\">".$select_sitepage_options."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture[]\" /><br/>
-					Мнение: <textarea name=\"exspert[new][][text_expert]\"></textarea>
+					Мнение: <textarea name=\"exspert[new][text_expert][]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>
 			</div>
