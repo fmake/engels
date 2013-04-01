@@ -284,13 +284,11 @@ switch ($request->action) {
 			$items = $absitem->getByPageAdmin($id_page_modul, $limit, $page);
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
-		printAr($items);
-		echo "1";
 		$pages = ceil($count/$limit);
 
-		if($items['id'])foreach ($all_m as $key => $value) {
-    		if ($items_dop['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items_dop['id']] =  $value;
+		if($request->id)foreach ($all_m as $key => $value) {
+    		if ($request->id == $all_m[$key]['id_news']){
+    			$m_items[$request->id] =  $value;
     		}
     	}
     	//PrintAr($m_items);
@@ -496,8 +494,9 @@ switch ($request->action) {
 }
 PrintAr($_POST);
 PrintAr($_FILES);
-		printAr($items);
-		echo "$request->id";
+PrintAr($m_items);
+		//printAr($items);
+		//echo "$request->id";
         //PrintAr($m_items);
         //PrintAr($all_m);
 ?>
