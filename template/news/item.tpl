@@ -34,7 +34,7 @@
 					<div class="full_text">
 						<p>{item.text|raw}</p>
 						<div id="quot">
-							[[for item on exp]]
+							[[for item in exp]]
 								[[if item.text_expert and item.active_mnenie]]
 									<div class="quot" id="quot">
 										[[if item.expert_picture]]

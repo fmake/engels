@@ -81,6 +81,7 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
+				#---------------------------------------------------------------мнения
 				$exp = new fmakeMneniya();
 				$exp = $exp -> getAll();
 				foreach ($exp as $key => $value) {
@@ -89,13 +90,12 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
-				PrintAr($exp);
-				//PrintAr($item['dop_params']);
+				#---------------------------------------------------------------мнения
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
 					$modul->template = "news/item.tpl"; //exit;					
-			} else {
+				} else {
 				//$news_obj->order = "b.date DESC, a.id";
 				//$news_obj->setRedir($request->modul);
 				//$item = $news_obj->getInfo();
