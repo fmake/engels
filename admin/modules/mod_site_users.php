@@ -17,7 +17,10 @@ $actions = array(
 
 $globalTemplateParam -> set('actions', $actions);
 $absitem = new fmakeMail($request->id); 
-	
+
+$limit = 20;
+$page = ($request->page)? $request->page : 1;
+
 $ignor_delete_security = true;
 $globalTemplateParam->set('ignor_delete_security', $ignor_delete_security);
 	
@@ -40,7 +43,7 @@ switch($request->action)
 		
 			case 'update': // Переписать
 				foreach ($_POST as $key=>$value){
-					$absitem ->addParam($key, (($key=='date_creation')? strtotime($value):$value));
+					$absitem ->addParam($key, (($key == 'date_creation')? strtotime($value):$value));
 				}
 				$absitem -> update();
 			break;
@@ -56,6 +59,12 @@ switch($request->action)
 		
 		
 		$items = $absitem->getAll();
+		$items = $absitem->getByPage($limit,$page);
+		$count = $absitem->getNumRows();
+		$pages = ceil($count/$limit);
+		
+		$globalTemplateParam -> set('page', $page);
+		$globalTemplateParam -> set('pages', $pages);
 		
 		if($items)foreach($items as $key=>$item){
 			$items[$key]['date_creation'] = date('H:i d.m.Y',$item['date_creation']);
@@ -82,4 +91,3 @@ switch($request->action)
 		$template = "admin/edit/simple_edit.tpl";
 	break;
 }
-?>
