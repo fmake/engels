@@ -352,7 +352,7 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
-        $str_add_mnenie .= "
+        if($items_baners)$str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
 					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[{$items[id]}][active_mnenie]\"/><br />
