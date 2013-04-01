@@ -284,15 +284,16 @@ switch ($request->action) {
 			$items = $absitem->getByPageAdmin($id_page_modul, $limit, $page);
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
-		//printAr($items);
+		printAr($items);
 		$pages = ceil($count/$limit);
 
-		if($items_dop['id'])foreach ($all_m as $key => $value) {
+		if($items_['id'])foreach ($all_m as $key => $value) {
     		if ($items_dop['id'] == $all_m[$key]['id_news']){
     			$m_items[$items_dop['id']] =  $value;
     		}
     	}
-    	PrintAr($m_items);
+    	//PrintAr($m_items);
+
 
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
