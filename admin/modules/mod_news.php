@@ -284,17 +284,17 @@ switch ($request->action) {
         include('content.php');
         break;
     case 'edit':    
-            	if($items['id'])foreach ($all_m as $key => $value) {
-            		if ($items['id'] == $all_m[$key]['id_news']){
-            			$m_items[$items['id']] =  $value;
-            		}
-            	}
-            	PrintAr($m_items);
-            	PrintAr($all_m);
-            	PrintAr($items['id']);
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
+		if($items['id'])foreach ($all_m as $key => $value) {
+    		if ($items['id'] == $all_m[$key]['id_news']){
+    			$m_items[$items['id']] =  $value;
+    		}
+    	}
+        PrintAr($m_items);
+        //PrintAr($all_m);
+        PrintAr($items['id']);
     case 'new': // Далее форма
 
 		/*теги*/
