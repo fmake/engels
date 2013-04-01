@@ -352,9 +352,9 @@ switch ($request->action) {
 
         #Эксперт
         $select_sitepage_options = "
-        <option value=\"1\">Активно</option>
-        <option value=\"0\">Не активно</option>
-        "
+        	<option value=\"1\">Активно</option>
+        	<option value=\"0\">Не активно</option>
+      	";
         if($items_baners)$str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
