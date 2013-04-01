@@ -15,6 +15,7 @@
 					[[if item.dop_params.date]]<span class="date" style="float: none;">{df('date','d.m.Y H:i',item.dop_params.date)}</span>[[endif]]
 					<div class="full_text">
 						<p>{item.text|raw}</p>
+						<div class="cl"></div>
 							<div id="quot">
 								[[for item in exp]]
 									[[if item.text_expert]]
