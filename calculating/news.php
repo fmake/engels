@@ -75,7 +75,7 @@
 				$modul->keywords = $item['keywords'];
 				/*теги*/
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
-				$items['tags'] = $tags;
+				$item['tags'] = $tags; // WTFF?????????? почему было items????
 				/*теги*/
 				$breadcrubs = $modul->getBreadCrumbs($item[$news_obj->idField]);
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
@@ -83,10 +83,8 @@
 				$globalTemplateParam->set('item', $item);
 				$exp = new fmakeMneniya();
 				$exp = $exp -> getAll();
-				PrintAr($exp);
-				PrintAr($items);
 				foreach ($exp as $key => $value) {
-					if ($exp[$key]['id_news'] == $items['id'])
+					if ($exp[$key]['id_news'] == $item['id'])
 						$total_exp[] = $value;
 				}
 				$exp = $total_exp;
