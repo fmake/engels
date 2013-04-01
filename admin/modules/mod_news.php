@@ -258,7 +258,7 @@ switch ($request->action) {
 				}
 				if($_POST['exspert']['new'])
 					foreach ($_POST['exspert']['new']['expert'] as $key => $value){
-						$mneniya->addParam("id_news", $items['id']);
+						$mneniya->addParam("id_news", $_POST['id']);
 						$mneniya->addParam("text_expert", $_POST['exspert']['new']['text_expert'][$key]);
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
