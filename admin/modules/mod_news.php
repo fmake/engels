@@ -289,13 +289,6 @@ switch ($request->action) {
 		$items_dop = $absitem_dop->getInfo();
     
     case 'new': // Далее форма
-    	if($items['id'])foreach ($all_m as $key => $value) {
-    		if ($items['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items['id']] =  $value;
-    		}
-    	}
-        PrintAr($items_dop);
-        //PrintAr($all_m);
 		/*теги*/
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
 		$tagsJsStr = $tags -> tagsToJsString( $tags -> getAll () );
@@ -456,4 +449,12 @@ switch ($request->action) {
         break;
 }
 //PrintAr($_POST);
+    	if($items['id'])foreach ($all_m as $key => $value) {
+    		if ($items['id'] == $all_m[$key]['id_news']){
+    			$m_items[$items['id']] =  $value;
+    		}
+    	}
+        PrintAr($items_dop);
+        //PrintAr($all_m);
+        echo "1";
 ?>
