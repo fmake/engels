@@ -453,7 +453,7 @@ switch ($request->action) {
     		echo "1";
     		if ($items_dop['id'] == $all_m[$key]['id_news']){
     			$m_items[$items_dop['id']] =  $value;
-    			echo = "2";
+    			echo "2";
     		}
     	}
         PrintAr($m_items);
