@@ -34,7 +34,7 @@ function gogoMail($values){
 	foreach ($all as $key => $value) {
 		if ($all[$key]['mail'] == $values){
 			$script = '$("#mailed label").text("Этот email уже есть в базе.");';
-			$boll =  true;
+			$bool = true;
 		}
 	}
 	if ($bool == false){
