@@ -27,11 +27,18 @@ $xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* написание функции */
 function gogoMail($values){
 	$objResponse = new xajaxResponse();
-	$values = $values['my_mail'];
+	$values = mysql_real_escape_string($values['my_mail']);
 	$mail = new fmakeMail();
-	$mail->addParam('mail', mysql_real_escape_string($values));
-	$mail->newItem();
-	$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+	$all = $mail->getAll();
+	foreach ($all as $key => $value) {
+		if ($all[$key]['mail'] == $values)
+			$script = '$("#mailed label").text("Этот email уже есть в базе.");';
+		else{
+			$mail->addParam('mail', $values);
+			$mail->newItem();
+			$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')"; 
+		}
+	}
 	$objResponse->script($script);
 	return $objResponse;
 }
