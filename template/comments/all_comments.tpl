@@ -16,7 +16,7 @@
 							<span class="time">Дата комментария: {df('date','H:i d.m.Y',item.date)}</span>
 						</div>
 						<p class="f14">
-							<a href="/{site_obj.getLinkPage(item.page_id)}#comment{item.id}">{item.page_caption}</a> от
+							<a href="http://engels.bz{site_obj.getLinkPage(item.page_id)}#comment{item.id}">{item.page_caption}</a> от
 								[[if item.user_params.post_create]]
 									<a href="mailto:{item.user_params.login}@engels.bz">
 										{item.user_params.login}
