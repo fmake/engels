@@ -543,7 +543,7 @@
 			<div class="cl"></div>
 			<!-- ГОЛОСОВАНИЕ START -->
 				<div id="votes">
-					<h1>Голосование</h1>
+					<a class ="h1" href="{site_obj.getLinkPage(7030)}"><h1>Голосование</h1></a>
 					<a name="golosovanie"></a>
 					[[for key,interv_item in interview]]
 					<div class="vote">
