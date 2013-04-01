@@ -282,7 +282,6 @@ switch ($request->action) {
     		}
     	}
     	PrintAr($m_items);
-    	Echo "1";
 
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
@@ -410,10 +409,10 @@ switch ($request->action) {
 			<div id=\"id_new_form\" style=\"display:none;\">
 				<div class=\"line_baner_add\">
 					<b>Настройка мнения</b><br/>
-					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[new][active_mnenie]\"/><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert]\" value=\"\" style=\"width:200px;\"/><br/>
-					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture\" /><br/>
-					Мнение: <textarea name=\"exspert[new][text_expert]\"></textarea>
+					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[new][active_mnenie][]\"/><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture[]\" /><br/>
+					Мнение: <textarea name=\"exspert[new][text_expert][]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>
 			</div>
