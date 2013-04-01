@@ -273,12 +273,12 @@ switch ($request->action) {
 						$mneniya->newItem();
 					}
 				unset($_POST['exspert']['new']);
+				if($_POST['id'])foreach ($all_m as $key2 => $value2) {
+					if ($_POST['id'] == $all_m[$key2]['id_news']){
+						$m_items_o[] =  $value2;
+					}
+    			}
 				if($_POST['exspert'])foreach ($_POST['exspert'] as $key=>$value){
-					if($_POST['id'])foreach ($all_m as $key2 => $value2) {
-    					if ($_POST['id'] == $all_m[$key2]['id_news']){
-    						$m_items_o[] =  $value2;
-    					}
-    				}
     				if($m_items_o)foreach ($m_items_o as $key3 => $value3) {
     					if ($m_items_o[$key3]['id'] != $key){
     						$mneniya -> setId($m_items_o[$key3]['id']);
