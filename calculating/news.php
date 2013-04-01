@@ -87,7 +87,8 @@
 					if ($exp[$key]['id_news'] == $items['id'])
 						$total_exp[] = $value;
 				}
-				$exp = $value;
+				$exp = $total_exp;
+				$globalTemplateParam->set('exp', $exp);
 				PrintAr($exp);
 				//PrintAr($item['dop_params']);
 				if ($item['dop_params']['templ'] == 1)				
