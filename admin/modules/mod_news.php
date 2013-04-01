@@ -276,10 +276,10 @@ switch ($request->action) {
 				if($_POST['exspert'])foreach ($_POST['exspert'] as $key=>$value){
 					if($_POST['id'])foreach ($all_m as $key2 => $value2) {
     					if ($_POST['id'] == $all_m[$key2]['id_news']){
-    						$m_items[] =  $value2;
+    						$m_items_o[] =  $value2;
     					}
     				}
-    				if($m_items)foreach ($m_items as $key3 => $value3) {
+    				if($m_items_o)foreach ($m_items_o as $key3 => $value3) {
     					if ($key3 != $key){
     						$mneniya -> setId($key3);
     						$mneniya -> delete();
@@ -536,6 +536,6 @@ PrintAr($_POST);
 		//printAr($items);
 		//echo "$request->id";
         PrintAr($m_items);
-        PrintAr($all_m);
-        PrintAr("we");
+       // PrintAr($all_m);
+        //PrintAr("we");
 ?>
