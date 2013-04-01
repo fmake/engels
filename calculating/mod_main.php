@@ -212,12 +212,12 @@
 	/*объявления*/
 
 	#мнения
-	$news_obj_exp = new fmakeSiteModule();
+	$news_obj_exp = new fmakeMneniya;
 	$limit_news_exp = 2;
 	$news_obj_exp->order = "b.date DESC, a.id";
-	$items_news_exp = $news_obj_exp->getByPageAdmin(2, $limit_news_exp, 1 ,"a.`file` = 'item_news' and b.text_expert != '' and b.active_mnenie = '1' " , true);
+	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' and `active_mnenie` = '1' " , true);
 	//printAr("23");
-	//PrintAr($items_news_exp);
+	PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	/*
 	$user_exp = new fmakeSiteUser();

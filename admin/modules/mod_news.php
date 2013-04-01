@@ -47,7 +47,6 @@ $older = $absitem_dop ->getAll();
 	}
 }
 */
-//$mneniya -> setId($request->id);
 #----------------------------мнения 
 $news_categories = $absitem->getCatAsTree($id_page_modul,0,true);
 
@@ -530,7 +529,7 @@ switch ($request->action) {
         break;
 }
 //PrintAr($_POST);
-PrintAr($_FILES);
+//PrintAr($_FILES);
 //PrintAr($m_items);
 		//printAr($items);
 		//echo "$request->id";
