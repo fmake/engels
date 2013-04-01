@@ -90,6 +90,7 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
+				PrintAr($exp);
 				#---------------------------------------------------------------мнения
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
