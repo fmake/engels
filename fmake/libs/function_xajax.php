@@ -33,10 +33,12 @@ function gogoMail($values){
 	foreach ($all as $key => $value) {
 		if ($all[$key]['mail'] == $values)
 			$script = '$("#mailed label").text("Этот email уже есть в базе.");';
+		break;
 		else{
 			$mail->addParam('mail', $values);
 			$mail->newItem();
-			$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')"; 
+			$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+			break;
 		}
 	}
 	$objResponse->script($script);
