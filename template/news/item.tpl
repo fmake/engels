@@ -38,7 +38,7 @@
 								[[if item.text_expert]]
 									<div class="quot" id="quot">
 										[[if item.expert_picture]]
-											<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="" height="150" />
+											<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="{item.expert}" height="150" />
 										[[endif]]
 										<img src="/images/icons/apostrof.png" alt="" />
 										[[if item.expert]]
