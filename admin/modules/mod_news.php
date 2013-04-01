@@ -287,6 +287,13 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
+		if($items_dop['id'])foreach ($all_m as $key => $value) {
+    		if ($items_dop['id'] == $all_m[$key]['id_news']){
+    			$m_items[$items_dop['id']] =  $value;
+    		}
+    	}
+    	PrintAr($m_items);
+    	Echo "1";
     
     case 'new': // Далее форма
 		/*теги*/
@@ -449,14 +456,6 @@ switch ($request->action) {
         break;
 }
 //PrintAr($_POST);
-    	if($items_dop['id'])foreach ($all_m as $key => $value) {
-    		echo "1";
-    		if ($items_dop['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items_dop['id']] =  $value;
-    			echo "2";
-    		}
-    	}
-        PrintAr($m_items);
+        //PrintAr($m_items);
         //PrintAr($all_m);
-        echo "1";
 ?>
