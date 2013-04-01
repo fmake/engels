@@ -33,7 +33,7 @@ $absitem_dop->setId($request->id);
 #----------------------------мнения
 $mneniya = new fmakeMneniya();
 $older = $absitem_dop ->getAll();
-PrintAr($older);
+//PrintAr($older);
 foreach ($older as $key => $value) {
 	if ($older[$key]['expert'] != 0 or $older[$key]['text_expert'] != 0 or $older[$key]['active_mnenie'] != 0 or $order[$key]['expert_picture'] != 0 ){
 		$mneniya -> addParam('text_expert', $older[$key]['text_expert']);
