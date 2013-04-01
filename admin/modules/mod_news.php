@@ -405,7 +405,7 @@ switch ($request->action) {
 					Актив: <select title=\"Активно?\" name=\"exspert[{$m_items[$key][id]}][active_mnenie]\" >".$select_sitepage_options_s."</select><br />
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$m_items[$key][id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$m_items[$key][id]}\" />
-					<img src=\"{$absitem ->fileDirectory}/{$absitem ->id}/expert/133_201{$m_items[$key][expert_picture]}\">
+					<img src=\"{$absitem ->fileDirectory}{$absitem ->id}/expert/{$m_items[$key]}/133_201{$m_items[$key][expert_picture]}\">
 					<br/>
 					Мнение: <textarea name=\"exspert[{$m_items[$key][id]}][text_expert]\">{$m_items[$key][text_expert]}</textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
