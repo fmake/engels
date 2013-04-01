@@ -31,7 +31,7 @@ $absitem_dop->table = $fmakeTypeTable->getTable($id_page_modul);
 $absitem_dop->setId($request->id);
 
 #----------------------------мнения
-$mneniya = new fmakMneniya();
+$mneniya = new fmakeMneniya();
 $older = $absitem_dop ->getAll();
 PrintAr($older);
 foreach ($older as $key => $value) {}
