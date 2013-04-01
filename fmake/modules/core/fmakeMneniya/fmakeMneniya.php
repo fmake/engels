@@ -2,4 +2,14 @@
 class fmakeMneniya extends fmakeCore{
 	public $table = 'mneniya';
 	public $idField = "id";
+
+	function delete_adm_mod($id_news , $array_not_delete){
+		if($id_news){
+			$delete = $this ->dataBase -> DeleteFromDB( __LINE__ );
+			if($array_not_delete)foreach ($array_not_delete as $NotDelete){
+				$delete -> addWhere("`id` != '".$NotDelete."'");
+			}
+			$delete	-> addTable($this->table) -> addWhere("`id_news`='".$id_news."'") -> queryDB();
+		}
+	}
 }

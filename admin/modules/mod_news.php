@@ -271,27 +271,19 @@ switch ($request->action) {
 						$mneniya->addParam("active_mnenie", $_POST['exspert']['new']['active_mnenie'][$key]);
 						$mneniya->addParam("expert", $_POST['exspert']['new']['expert'][$key]);
 						$mneniya->newItem();
+						$not_delete_array[] = $mneniya->id;
 					}
 				unset($_POST['exspert']['new']);
-				if($_POST['id'])foreach ($all_m as $key2 => $value2) {
-					if ($_POST['id'] == $all_m[$key2]['id_news']){
-						$m_items_o[] =  $value2;
-					}
-    			}
 				if($_POST['exspert'])foreach ($_POST['exspert'] as $key=>$value){
-    				if($m_items_o)foreach ($m_items_o as $key3 => $value3) {
-    					if ($m_items_o[$key3]['id'] != $key){
-    						$mneniya -> setId($m_items_o[$key3]['id']);
-    						$mneniya -> delete();
-    					}
-    				}
 					$mneniya->setId($key);
 					$mneniya->addParam("id_news", $_POST['id']);
 					$mneniya->addParam("text_expert", $_POST['exspert'][$key]['text_expert']);
 					$mneniya->addParam("active_mnenie", $_POST['exspert'][$key]['active_mnenie']);
 					$mneniya->addParam("expert", $_POST['exspert'][$key]['expert']);
 				    $mneniya->update();
+				    $not_delete_array[] = $key;
 				}
+				$mneniya ->delete_adm_mod($request->id, $not_delete_array);
                 break;
 
             case 'delete': // Удалить
