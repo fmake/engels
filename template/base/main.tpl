@@ -120,7 +120,7 @@
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<label class="label"></label>
-								<input type="text" class="fieldfocus" title="Ваш емайл" name="my_mail" id="my_mail"  />
+								<input type="text" class="fieldfocus" title="Ваш емайл" [[if user_params.post_create == 1]]value="{user_params.login}@engels.bz"[[elseif user_params.main_email !=0 ]]value="{user_params.main_email}"[[endif]]name="my_mail" id="my_mail"  />
 								<button>
 									<span>
 										<span>
@@ -543,7 +543,7 @@
 			<div class="cl"></div>
 			<!-- ГОЛОСОВАНИЕ START -->
 				<div id="votes">
-					<h1>Голосование</h1>
+					<a class ="h1" href="{site_obj.getLinkPage(7030)}"><h1>Голосование</h1></a>
 					<a name="golosovanie"></a>
 					[[for key,interv_item in interview]]
 					<div class="vote">
@@ -741,8 +741,7 @@
             </div>
             <div class="cl"></div>
             <div class="corypting">
-                Copyright © Энгельс bz - городской портал - свидетельство о регистрации ЭЛ№ФС77-52410<br/>
-                Свидетельство выдано 28 декабря 2012 года Федеральной службой по надзору за соблюдением законодательства в сфере массовых коммуникаций и охране культурного наследия. При использовании материалов сайта - гиперссылка обязательна | Замечания и предложения направляйте по адресу <a href="mailto:{configs.email}">{configs.email}</a>
+            	{configs.footer|raw}
             </div>
             <div class="cl"></div>
         </div>
