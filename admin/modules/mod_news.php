@@ -304,6 +304,8 @@ switch ($request->action) {
         include('content.php');
         break;
     case 'edit':    
+    	printAr($items);
+		echo "1";
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
