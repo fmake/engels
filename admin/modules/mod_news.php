@@ -287,16 +287,15 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
-		if($items['id'])foreach ($all_m as $key => $value) {
+    
+    case 'new': // Далее форма
+    	if($items['id'])foreach ($all_m as $key => $value) {
     		if ($items['id'] == $all_m[$key]['id_news']){
     			$m_items[$items['id']] =  $value;
     		}
     	}
         PrintAr($items_dop);
         //PrintAr($all_m);
-        PrintAr($items);
-    case 'new': // Далее форма
-
 		/*теги*/
 		$tagsStr = $tags -> tagsToString( $tags -> getTags ($items[$absitem->idField]) );
 		$tagsJsStr = $tags -> tagsToJsString( $tags -> getAll () );
