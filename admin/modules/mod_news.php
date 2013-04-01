@@ -256,6 +256,14 @@ switch ($request->action) {
 					$absitem_dop->addParam('expert_picture', $name);
 					$absitem_dop->update();
 				}
+				if($_POST['expert']['new'])foreach ($_POST['expert']['new'] as $key => $value){
+					$mneniya->addParam("id_news", $items['id']);
+					$mneniya->addParam("text_expert", $_POST['expert']['new']['text_expert'][$key]);
+					$mneniya->addParam("active_mnenie", $_POST['expert']['new']['active_mnenie'][$key]);
+					$mneniya->addParam("expert", $_POST['expert']['new']['expert'][$key]);
+					$mneniya->newItem();
+				}
+				unset($_POST['baner']['new']);
                 break;
 
             case 'delete': // Удалить
