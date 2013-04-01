@@ -285,12 +285,6 @@ switch ($request->action) {
 			$count = $absitem->getByPageCountAdmin($id_page_modul);
 		}
 		$pages = ceil($count/$limit);
-
-		if($request->id)foreach ($all_m as $key => $value) {
-    		if ($request->id == $all_m[$key]['id_news']){
-    			$m_items[$request->id] =  $value;
-    		}
-    	}
     	//PrintAr($m_items);
 
 
@@ -305,6 +299,12 @@ switch ($request->action) {
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
+		if($request->id)foreach ($all_m as $key => $value) {
+    		if ($request->id == $all_m[$key]['id_news']){
+    			$m_items[] =  $value;
+    		}
+    	}
+    	echo "1";
     
     case 'new': // Далее форма
 		/*теги*/
