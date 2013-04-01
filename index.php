@@ -144,6 +144,7 @@ if ($modul->id == 2) {
 	$cat_theme = "";
 }
 PrintAr($user_params);
+PrintAr($user);
 /*новости по теме*/
 $limit_news_right = 7;
 $tmp_order = $modul->order;
