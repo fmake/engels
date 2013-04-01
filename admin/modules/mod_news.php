@@ -256,14 +256,15 @@ switch ($request->action) {
 					$absitem_dop->addParam('expert_picture', $name);
 					$absitem_dop->update();
 				}
-				if($_POST['expert']['new'])foreach ($_POST['expert']['new'] as $key => $value){
-					$mneniya->addParam("id_news", $items['id']);
-					$mneniya->addParam("text_expert", $_POST['expert']['new']['text_expert'][$key]);
-					$mneniya->addParam("active_mnenie", $_POST['expert']['new']['active_mnenie'][$key]);
-					$mneniya->addParam("expert", $_POST['expert']['new']['expert'][$key]);
-					$mneniya->newItem();
-				}
-				unset($_POST['baner']['new']);
+				if($_POST['expert']['new'])
+					foreach ($_POST['expert']['new']['expert'] as $key => $value){
+						$mneniya->addParam("id_news", $items['id']);
+						$mneniya->addParam("text_expert", $_POST['expert']['new']['text_expert'][$key]);
+						$mneniya->addParam("active_mnenie", $_POST['expert']['new']['active_mnenie'][$key]);
+						$mneniya->addParam("expert", $_POST['expert']['new']['expert'][$key]);
+						$mneniya->newItem();
+					}
+				unset($_POST['expert']['new']);
                 break;
 
             case 'delete': // Удалить
@@ -368,10 +369,10 @@ switch ($request->action) {
         if($items_baners)$str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
-					Актив: <select title=\"Активно?\" name=\"exspert[{$items[id]}][active_mnenie]\">".$select_sitepage_options."</select><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$items[id]}][expert]\" value=\"\" style=\"width:200px;\"/><br/>
-					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$items[id]}\" />{$link_view_baner}<br/>
-					Мнение: <textarea name=\"exspert[{$items[id]}][text_expert]\"></textarea>
+					Актив: <select title=\"Активно?\" name=\"expert[{$items[id]}][active_mnenie]\">".$select_sitepage_options."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"expert[{$items[id]}][expert]\" value=\"\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"expert_picture_{$items[id]}\" />{$link_view_baner}<br/>
+					Мнение: <textarea name=\"expert[{$items[id]}][text_expert]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>";
 
@@ -424,10 +425,10 @@ switch ($request->action) {
 			<div id=\"id_new_form\" style=\"display:none;\">
 				<div class=\"line_baner_add\">
 					<b>Настройка мнения</b><br/>
-					Актив: <select title=\"Активно?\" name=\"exspert[new][active_mnenie][]\">".$select_sitepage_options."</select><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
-					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture[]\" /><br/>
-					Мнение: <textarea name=\"exspert[new][text_expert][]\"></textarea>
+					Актив: <select title=\"Активно?\" name=\"expert[new][active_mnenie][]\">".$select_sitepage_options."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"expert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
+					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"expert_new_picture[]\" /><br/>
+					Мнение: <textarea name=\"expert[new][text_expert][]\"></textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>
 			</div>
