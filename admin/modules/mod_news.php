@@ -409,7 +409,8 @@ switch ($request->action) {
 			<div id=\"id_new_form\" style=\"display:none;\">
 				<div class=\"line_baner_add\">
 					<b>Настройка мнения</b><br/>
-					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[new][active_mnenie][]\"/><br />
+					Актив: <input title=\"Активно?\" type=\"checkbox\" name=\"exspert[new][active_mnenie][]\" /><br />
+					.$form->addCheckBox(\"Включить мнение\", \"active_mnenie\", 1, ($items_dop[active_mnenie]) ? true : false).
 					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[new][expert][]\" value=\"\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_new_picture[]\" /><br/>
 					Мнение: <textarea name=\"exspert[new][text_expert][]\"></textarea>
