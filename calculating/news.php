@@ -81,6 +81,14 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
+				$exp = new fmakeMneniya();
+				$exp = $exp -> getAll();
+				foreach ($exp as $key => $value) {
+					if ($exp[$key]['id_news'] == $items['id'])
+						$total_exp[] = $value;
+				}
+				$exp = $value;
+				PrintAr($exp);
 				//PrintAr($item['dop_params']);
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;

@@ -218,7 +218,7 @@
 	$news_obj_exp->order="id"; 
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	//printAr("23");
-	PrintAr($items_news_exp);
+	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	/*
 	$user_exp = new fmakeSiteUser();
