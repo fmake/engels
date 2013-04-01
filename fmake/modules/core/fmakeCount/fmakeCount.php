@@ -14,7 +14,7 @@ class fmakeCount extends fmakeCore {
 		}
 	}
 	
-	function getShortNameNews($limit,$active = true){
+	function getShortNameNews($limit,$day = 1,$active = true){
 		$news_obj = new fmakeNews();
 		$select = $this->dataBase->SelectFromDB(__LINE__);
 		if ($active)
@@ -25,7 +25,13 @@ class fmakeCount extends fmakeCore {
 		}
 		if($limit)
 			$select->addLimit(0, $limit);
-		return $select->addFild("a.id,a.count,b.short_name,c.caption,c.full_url")->addFrom($this->table . $table_join)/*->addWhere("b.`short_name`")*/->addWhere("b.`id`!=0 and c.`id`!=0")->addOrder("a.count", "DESC")->queryDB();
+		
+		$date_to = strtotime("-{$day} day",strtotime("today"));
+		$date_from = strtotime("today");
+			
+		return $select->addFild("a.id,a.count,b.short_name,c.caption,c.full_url")->addFrom($this->table . $table_join)->addWhere("{$date_to} <= b.`date` AND b.`date` <= {$date_from}")->addWhere("b.`id`!=0 and c.`id`!=0")->addOrder("a.count", "DESC")->queryDB();
 	}
+	
+	
 }
 ?>
