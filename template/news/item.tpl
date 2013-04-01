@@ -11,7 +11,7 @@
 					<div class="img">
 						[[if item.caption]]
 							<div class="caption_top">
-								<h2>{item.caption}</h2>
+								<h1>{item.caption}</h1>
 							</div>
 						[[endif]]
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
