@@ -449,12 +449,14 @@ switch ($request->action) {
         break;
 }
 //PrintAr($_POST);
-    	if($items['id'])foreach ($all_m as $key => $value) {
-    		if ($items['id'] == $all_m[$key]['id_news']){
-    			$m_items[$items['id']] =  $value;
+    	if($items_dop['id'])foreach ($all_m as $key => $value) {
+    		echo "1";
+    		if ($items_dop['id'] == $all_m[$key]['id_news']){
+    			$m_items[$items_dop['id']] =  $value;
+    			echo = "2";
     		}
     	}
-        PrintAr($items_dop);
+        PrintAr($m_items);
         //PrintAr($all_m);
         echo "1";
 ?>
