@@ -32,7 +32,7 @@ $absitem_dop->setId($request->id);
 
 #----------------------------мнения
 $mneniya = new fmakeMneniya();
-$all_m = $mneniya ->getAll();
+$all_m = $mneniya->getAll();
 $older = $absitem_dop ->getAll();
 //PrintAr($older);
 
@@ -192,12 +192,6 @@ switch ($request->action) {
                 break;
 
             case 'update': // Переписать
-            	if($items['id'])foreach ($all_m as $key => $value) {
-            		if ($items['id'] == $all_m[$key]['id_news']){
-            			$m_items[$items['id']] =  $value;
-            		}
-            	}
-            	PrintAr($m_items);
 				/*-------------------выставление параметров----------------------------*/
 				if(!$_POST['title'] && $_POST['caption']) $_POST['title'] = $_POST['caption'];
 				if($_POST['title'] && !$_POST['caption']) $_POST['caption'] = $_POST['title'];
@@ -289,7 +283,15 @@ switch ($request->action) {
         $template = $block;
         include('content.php');
         break;
-    case 'edit':
+    case 'edit':    
+            	if($items['id'])foreach ($all_m as $key => $value) {
+            		if ($items['id'] == $all_m[$key]['id_news']){
+            			$m_items[$items['id']] =  $value;
+            		}
+            	}
+            	PrintAr($m_items);
+            	PrintAr($all_m);
+            	PrintAr($items['id']);
         $items = $absitem->getInfo();
 		$flag_url = false;
 		$items_dop = $absitem_dop->getInfo();
