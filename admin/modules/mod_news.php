@@ -482,6 +482,7 @@ switch ($request->action) {
         break;
 }
 PrintAr($_POST);
+PrintAr($_FILES);
         //PrintAr($m_items);
         //PrintAr($all_m);
 ?>
