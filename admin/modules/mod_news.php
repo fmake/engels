@@ -292,9 +292,9 @@ switch ($request->action) {
     			$m_items[$items['id']] =  $value;
     		}
     	}
-        PrintAr($m_items);
+        PrintAr($items_dop);
         //PrintAr($all_m);
-        PrintAr($items['id']);
+        PrintAr($items);
     case 'new': // Далее форма
 
 		/*теги*/
