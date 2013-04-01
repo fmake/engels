@@ -33,9 +33,11 @@ $absitem_dop->setId($request->id);
 #----------------------------мнения
 $mneniya = new fmakeMneniya();
 $older = $absitem_dop ->getAll();
+
 //PrintAr($older);
+/*
 foreach ($older as $key => $value) {
-	if ($older[$key]['expert'] != 0 or $older[$key]['text_expert'] != 0 or $older[$key]['active_mnenie'] != 0 or $order[$key]['expert_picture'] != 0 ){
+	if ($older[$key]['expert'] != 0 or $older[$key]['text_expert'] != 0 or $older[$key]['active_mnenie'] != 0 or $order[$key]['expert_picture'] != 0 ) {
 		$mneniya -> addParam('text_expert', $older[$key]['text_expert']);
 		$mneniya -> addParam('expert', $older[$key]['expert']);
 		$mneniya -> addParam('active_mnenie', $older[$key]['active_mnenie']);
@@ -44,7 +46,8 @@ foreach ($older as $key => $value) {
 		$mneniya -> newItem();
 	}
 }
-$mneniya -> setId($request->id);
+*/
+//$mneniya -> setId($request->id);
 #----------------------------мнения 
 $news_categories = $absitem->getCatAsTree($id_page_modul,0,true);
 
@@ -251,6 +254,7 @@ switch ($request->action) {
 					$absitem_dop->addParam('expert_picture', $name);
 					$absitem_dop->update();
 				}
+				PrintAr($request->id);
                 break;
 
             case 'delete': // Удалить
@@ -347,14 +351,16 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
+        $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
+        $form->addHtml('Форма добавления мнения',"<td >Мнения</td><td ><img id='add_baner' onclick='xajax_addForm();return false;' style='cursor:pointer;' src='/images/admin/ico_add.png'></td>");
 
-        $form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
-        $form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
-        if($items_dop['expert_picture'])
-        	$form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/expert/{$items_dop['expert_picture']}' /></td></tr>");
-        $form->addFile("Аватарка: ", "expert_picture", $text=false);
-        $form->addVarchar("<i>Имя эксперта</i>", "expert", $items_dop["expert"]);
-        $form->addTextAreaMini("Комментарий эксперта", "text_expert", $items_dop["text_expert"]);
+        //$form->addHtml("","<td><h1>Мнение эксперта</h1><td>");
+        //$form->addCheckBox("Включить мнение", "active_mnenie", 1, ($items_dop["active_mnenie"]) ? true : false);
+        //if($items_dop['expert_picture'])
+        	//$form->addHtml("", "<tr><td colspan='2'><img width='150' src='/{$absitem->fileDirectory}{$items['id']}/expert/{$items_dop['expert_picture']}' /></td></tr>");
+        //$form->addFile("Аватарка: ", "expert_picture", $text=false);
+        //$form->addVarchar("<i>Имя эксперта</i>", "expert", $items_dop["expert"]);
+        //$form->addTextAreaMini("Комментарий эксперта", "text_expert", $items_dop["text_expert"]);
 
         #Эксперт внезапно закончился
 
