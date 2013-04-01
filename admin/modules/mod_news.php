@@ -356,26 +356,28 @@ switch ($request->action) {
         $form->addTinymce("Текст", "text", $items["text"]);
 
         #Эксперт
-        		if($request->id)foreach ($all_m as $key => $value) {
+        if($request->id)foreach ($all_m as $key => $value) {
     		if ($request->id == $all_m[$key]['id_news']){
     			$m_items[] =  $value;
     		}
     	}
-    	echo "1";
         $select_sitepage_options = "
         	<option value=\"1\">Активно</option>
         	<option value=\"0\">Не активно</option>
       	";
-        if($items_baners)$str_add_mnenie .= "
+        if($m_items)foreach ($m_items as $key => $value) {
+        	$str_add_mnenie .= "
 				<div class='line_baner_add'>
 					<b>Настройка мнения</b><br/>
-					Актив: <select title=\"Активно?\" name=\"exspert[{$items[id]}][active_mnenie]\">".$select_sitepage_options."</select><br />
-					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$items[id]}][expert]\" value=\"\" style=\"width:200px;\"/><br/>
+					Актив: <select title=\"Активно?\" name=\"exspert[{$items[id]}][active_mnenie]\" >".$select_sitepage_options."</select><br />
+					Эксперт: <input title=\"Эксперт\" type=\"text\" name=\"exspert[{$items[id]}][expert]\" value=\"{$m_items[$key][expert]}\" style=\"width:200px;\"/><br/>
 					Картинка эксперта: <input title=\"Картинка эксперта\" type=\"file\" name=\"exspert_picture_{$items[id]}\" />{$link_view_baner}<br/>
-					Мнение: <textarea name=\"exspert[{$items[id]}][text_expert]\"></textarea>
+					Мнение: <textarea name=\"exspert[{$items[id]}][text_expert]\">
+						{$m_items[$key][text_expert]}
+					</textarea>
 					<span class='delete_baner' style='color:red;cursor:pointer;'>удалить мнение</span>
 				</div>";
-
+		}
         $form->addHtml('Разделитель',"<td >&nbsp;</td><td >&nbsp;</td>");
         $form->addHtml('Форма добавления мнения',"<td >Мнения</td><td ><img id='add_baner' onclick='xajax_addForm();return false;' style='cursor:pointer;' src='/images/admin/ico_add.png'></td>");
         $form->addHtml('Форма добавления мнения',"<td colspan='2' id='add_form_mnenye'>".$str_add_mnenie."</td>");
