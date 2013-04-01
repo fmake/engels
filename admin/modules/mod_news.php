@@ -40,7 +40,7 @@ foreach ($older as $key => $value) {
 		$mneniya -> addParam('expert', $older[$key]['expert']);
 		$mneniya -> addParam('active_mnenie', $older[$key]['active_mnenie']);
 		$mneniya -> addParam('expert_picture', $older[$key]['expert_picture']);
-		$mneniya -> addParam('id_news', $order[$key]['id'])
+		$mneniya -> addParam('id_news', $order[$key]['id']);
 		$mneniya -> newItem();
 	}
 }
