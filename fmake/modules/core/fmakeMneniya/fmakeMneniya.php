@@ -15,7 +15,7 @@ class fmakeMneniya extends fmakeCore{
 	function getByPageAdmin($limit, $page, $where = "", $active = false) {
 		$select = $this->dataBase->SelectFromDB(__LINE__);
 		if ($active)
-			$select->addWhere("expert_active='1'");
+			$select->addWhere(" active_mnenie = '1'");
 		if($where)
 			$select->addWhere($where);
 		if($this->order) 
