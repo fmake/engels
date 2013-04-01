@@ -11,13 +11,6 @@
 		<div id="all_news">
 		[[for item in comments]]
 				<div class="item">
-					[[if new.picture]]
-						<div class="img">
-							<a href="{new.full_url}">
-								<img src="/{news_obj.fileDirectory}{new.id}/100_80_{new.picture}" alt="" />
-							</a>
-						</div>
-					[[endif]]
 					<div class="item_news">
 						<div class="date">
 							<span class="time">Дата комментария: {df('date','H:i d.m.Y',item.date)}</span>
@@ -33,10 +26,8 @@
 								[[endif]]
 						</p>
 						<div class="text">
-							{new.text|raw}
+							{item.text|raw}
 						</div>
-						[[set tags = new.tags]]
-						[[ include TEMPLATE_PATH ~ "blocks/tags.tpl"]]
 					</div>
 					<div class="cl"></div>
 				</div>
