@@ -2,11 +2,11 @@
 [[block center]]
 	
 	[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
-	
-	<div class="names">
-		<span>{modul.caption}</span>
-	</div>
-	<div class="all_comments">
+	<div id="item_news">
+		<div class="names">
+			<h1>{modul.caption}</h1>
+		</div>
+		<div class="cl"></div>
 		[[for item in comments]]
 			<div class="item_comments">
 				<div class="date">Дата комментария: {df('date','H:i d.m.Y',item.date)}</div>
@@ -25,8 +25,9 @@
 				</div>
 			</div>
 		[[endfor]]
+		<div class="cl"></div>
+		[[ include TEMPLATE_PATH ~ "pager/pager.tpl"]]
 	</div>
-	[[ include TEMPLATE_PATH ~ "pager/pager.tpl"]]
 	
 [[endblock]]
 
