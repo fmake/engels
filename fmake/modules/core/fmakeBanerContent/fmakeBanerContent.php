@@ -65,6 +65,15 @@ class fmakeBanerContent extends fmakeSiteModule {
 		return $result;
 	}
 	
+	function isProjectBaner($id_baner){
+		$fmakeProjectCommercialRelation = new fmakeProjectCommercial_relation();
+		$fmakeProjectCommercial = new fmakeProjectCommercial();
+		$id_project = $fmakeProjectCommercialRelation->getProjectBanerId($id_baner);
+		$fmakeProjectCommercial->setId($id_project);
+		$info_project = $fmakeProjectCommercial->getInfo();
+		return $info_project['active'];
+	}
+	
 	function showBanerType($type,$url){
 		$select = $this->dataBase->SelectFromDB( __LINE__);
 		
@@ -78,13 +87,15 @@ class fmakeBanerContent extends fmakeSiteModule {
 		//printAr($result);
 		$baners = array();
 		if($result)foreach($result as $key=>$item){
-			if($item['regular_exp']){
-				if(preg_match("#^{$item['regular_exp']}$#",$url)){
-					//echo $item['regular_exp']." ".$url;
+			if($this->isProjectBaner($item['id'])){
+				if($item['regular_exp']){
+					if(preg_match("#^{$item['regular_exp']}$#",$url)){
+						//echo $item['regular_exp']." ".$url;
+						$baners[] = $item;
+					}
+				} else {
 					$baners[] = $item;
 				}
-			} else {
-				$baners[] = $item;
 			}
 		}
 		//printAr($baners);
