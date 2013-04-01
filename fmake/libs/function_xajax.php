@@ -255,10 +255,14 @@ function getMainVote($params){
 
 		$iscookie = true;
 		$vopros = array();
+		$vopros_statistic = 0;
 		#if ($interview) foreach ($interview as $key=>$interview_item) {
 			
 			$fmakeInterview->table = $fmakeInterview->table_vopros;
 			$vopros = $fmakeInterview->getVoproses($params['interview_id'],true);
+			if($vopros)foreach($vopros as $k=>$v){
+				$vopros_statistic += $v['stat'];
+			}
 			#if($params['interview_id'] != $params['interview_id']) {
 				//$iscookie = $fmakeInterview->isCookies($params['interview_id']);
 			#} else {
@@ -267,6 +271,7 @@ function getMainVote($params){
 			#}
 		#}
 		$globalTemplateParam->set('Quest',$vopros);
+		$globalTemplateParam->set('Quest_stat',$vopros_statistic);
 		$globalTemplateParam->set('interview_id',$params['interview_id']);
 		#$globalTemplateParam->set('Cook',$iscookie);
 		$globalTemplateParam->set('Cook',$iscookie);
