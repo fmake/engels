@@ -20,6 +20,9 @@ $(document).ready(function(){
     	else
     	    $('#popup_lenta').hide();
     });
+    $('#tape .nav ul li').each(function(index){
+    	$(this).attr('id',index + 'item_main');
+    });
     $('#popup_lenta').live('click', function(e){
     	e.stopImmediatePropagation();
     });
