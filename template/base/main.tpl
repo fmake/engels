@@ -164,9 +164,17 @@
 										[[endif]]
 									</div>
 									<div class="icons">
-										[[if item.picture]]<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>[[endif]]
-										[[if item.video]]<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>[[endif]]
-										[[if item.mnenie]]<a href="{item.full_url}#start_mneniya"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>[[endif]]
+										[[if item.picture]]
+											<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+										[[endif]]
+										
+										[[if item.video]]
+											<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+										[[endif]]
+
+										[[if item.mnenie]]
+											<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+										[[endif]]
 									</div>
 									<div class="cl"></div>
 									<div class="note">
