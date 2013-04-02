@@ -24,7 +24,7 @@ if($older)foreach ($older as $key => $value) {
 		$mneniya -> addParam('id_news', $older[$key]['id']);
 		$mneniya -> newItem();
 		if ($older[$key]['expert_picture']) {
-			$absitem->addExpertFile("{ROOT}/{$absitem->fileDirectory}/{$older[$key][id]}/expert/{$mneniya->id}", $older[$key]['expert_picture'], $mneniya->id);
+			$absitem->addExpertFile("{ROOT}/{$absitem->fileDirectory}/{$older[$key][id]}/expert/{$older[$key][expert_picture]}", $older[$key]['expert_picture'], $mneniya->id);
 			PrintAr("file_create");
 		}
 		PrintAr("+1");
