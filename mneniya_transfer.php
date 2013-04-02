@@ -8,11 +8,6 @@ require('./fmake/FController.php');
 
 $absitem = new fmakeNews();
 
-$id_page_modul = 2;
-$fmakeTypeTable = new fmakeTypeTable();
-$absitem_dop = new fmakeTypeTable();
-$absitem_dop->table = $fmakeTypeTable->getTable($id_page_modul);
-
 $mneniya = new fmakeMneniya();
 $all_m = $mneniya->getAll();
 
