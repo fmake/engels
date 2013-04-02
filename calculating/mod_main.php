@@ -16,7 +16,7 @@
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 		$fmakeNews->setId($items_news_lent[$key]['id']);
-		PrintAr($fmakeNews->is_mnenie());
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
 	
 	$limit_news2 = 5;
