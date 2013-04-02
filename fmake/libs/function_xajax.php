@@ -64,7 +64,7 @@ function TapeWaveTab($val){
 	}
 
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
-	if (sizeof($items_news_lent) <= 13)
+	if (sizeof($items_news_lent) < 13)
 		$script.="$('#tape .niz').hide();";
 	$globalTemplateParam->set('news_obj', $news_obj);
 
