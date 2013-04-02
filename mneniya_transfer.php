@@ -16,7 +16,7 @@ $absitem_dop->table = $fmakeTypeTable->getTable($id_page_modul);
 $mneniya = new fmakeMneniya();
 $all_m = $mneniya->getAll();
 
-$older = $absitem ->getByPageAdmin(2, false, false, "a.text_expert != '' and a.`expert` != '' ");
+$older = $absitem ->getAll();
 PrintAr($older);
 
 /*
