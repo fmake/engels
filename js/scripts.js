@@ -165,7 +165,7 @@ $(document).ready(function(){
 	$('#tape .niz').live('click', function(){
 		if (parseInt($('#tape .news').css('margin-top')) <= parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) ){
 			$(".pre").show();
-			xajax_TapeWave($('#last_id').html());
+			xajax_TapeWave($('#last_id').html(), $('#tape .nav ul li.active').attr('rel'));
 			$("#tape .verh").show();
 		}
 		else{	

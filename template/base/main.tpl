@@ -133,9 +133,9 @@
 					</div>
 					<div class="nav">
 						<ul>
-							<li><a href="#" onclick="xajax_TapeWaveTab(1); return false;"><span><span><span>Энгельс</span></span></span></a></li>
-							<li><a href="#" onclick="xajax_TapeWaveTab(2); return false;"><span><span><span>Саратов</span></span></span></a></li>
-							<li class="active" ><a href="#" onclick="xajax_TapeWaveTab(0); return false;"><span><span><span>Все новости</span></span></span></a></li>
+							<li rel = "1" ><a href="#" onclick="xajax_TapeWaveTab(1); return false;"><span><span><span>Энгельс</span></span></span></a></li>
+							<li rel = "2" ><a href="#" onclick="xajax_TapeWaveTab(2); return false;"><span><span><span>Саратов</span></span></span></a></li>
+							<li class="active" rel = "0" ><a href="#" onclick="xajax_TapeWaveTab(0); return false;"><span><span><span>Все новости</span></span></span></a></li>
 						</ul>
 					</div>
 					<div class="cl"></div>
