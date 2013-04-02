@@ -252,7 +252,7 @@
 	/*---------опрос-----------*/
 	$fmakeInterview = new fmakeInterview();
 	$limit = 4; //roman
-	$fmakeInterview ->order = "`position` ASC"; 
+	$fmakeInterview ->order = "position"; 
 	$interview = $fmakeInterview->getInterview($limit); 
 	
 	/*if($request->action == 'interview_right' && $request->interview_id){
