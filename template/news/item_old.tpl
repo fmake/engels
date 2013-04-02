@@ -19,7 +19,7 @@
 							<div id="quot">
 								[[for item in exp]]
 									[[if item.text_expert]]
-										<div class="quot" id="quot">
+										<div class="quot" id="quot{item.id}">
 											[[if item.expert_picture]]
 												<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="{item.expert}" height="150" />
 											[[endif]]
