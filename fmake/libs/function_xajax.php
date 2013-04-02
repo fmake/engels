@@ -65,7 +65,7 @@ function TapeWaveTab($val){
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$globalTemplateParam->set('news_obj', $news_obj);
 
-	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get()); 
+	$text = $twig->loadTemplate("xajax/TapeWave_new_item.tpl")->render($globalTemplateParam->get()); 
 	$objResponse->assign("x_tape", "innerHTML", $text);
 	if ($val == '1')
 		$val = 0;
@@ -73,7 +73,7 @@ function TapeWaveTab($val){
 		$val = 1;
 	else
 		$val = 2;
-	$script = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');";
+	$script = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');$('#tape .news').css({'margin-top': '0'}));";
 	$objResponse->script($script);
 	return $objResponse;
 }
