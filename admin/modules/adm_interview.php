@@ -24,7 +24,7 @@ $globalTemplateParam->set('ignor_delete_security', $ignor_delete_security);
 	$absitem->setId($request->id);
 	$absitem->tree = false;
 	
-	$actions = array('active','edit','delete', 'move');
+	$actions = array('active','edit','delete');
 	$globalTemplateParam->set('actions', $actions);
 
 /*фильтры*/
