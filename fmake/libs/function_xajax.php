@@ -67,8 +67,8 @@ function TapeWaveTab($val){
 
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get()); 
 	$objResponse->assign("x_tape", "innerHTML", $text);
-	$script .= "$('#tape .nav ul li .active').remoteClass('active');";
-
+	$script = "$('#tape .nav ul li .active').remoteClass('active');";
+	$objResponse->script($script);
 	return $objResponse;
 }
 
