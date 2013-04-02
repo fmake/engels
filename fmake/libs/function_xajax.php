@@ -61,6 +61,7 @@ function TapeWave($lastID){
 		$fmakeNews->setId($items_news_lent[$key]['id']);
 		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
+	PrintAr($items_news_lent);
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$globalTemplateParam->set('news_obj', $news_obj);
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
