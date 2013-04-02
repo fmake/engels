@@ -139,6 +139,7 @@
 				$globalTemplateParam->set('pages', $pages);
 				$globalTemplateParam->set('item', $item);
 				$globalTemplateParam->set('categories', $cat);
+				PrintAr($item);
 				$modul->template = "news/category.tpl"; //exit;
 			}
 		} else {
