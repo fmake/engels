@@ -72,7 +72,7 @@ function TapeWaveTab($val){
 	elseif ($val == '2')
 		$val = 1;
 	else
-		$val = 0;
+		$val = 2;
 	$script = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');";
 	$objResponse->script($script);
 	return $objResponse;
