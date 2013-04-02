@@ -188,5 +188,10 @@ class fmakeNews extends fmakeSiteModule {
 		$result = $select-> addFrom($this->table)->addWhere("`date` >='".$date."'")->addOrder($this->order,DESC)-> queryDB();
 		return $result;
 	}
+	function is_mnenie(){
+		$mnenie = new fmakeMneniya();
+		$result = $mnenie->getByPageAdmin(false, false, "id_news = {$this->id}", true);
+		return $result;
+	}
 }
 

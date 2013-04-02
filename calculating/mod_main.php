@@ -10,10 +10,13 @@
 		$items_news_main[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
 	//printar($items_news_main);
+	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
 	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		PrintAr($fmakeNews->is_mnenie());
 	}
 	
 	$limit_news2 = 5;
@@ -235,7 +238,8 @@
 	//printar($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	*/
-	
+	#мнения
+
 	/*Справочник*/
 	
 	$manual_obj = new fmakeSiteModule();
