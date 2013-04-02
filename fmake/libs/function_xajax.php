@@ -67,14 +67,13 @@ function TapeWaveTab($val){
 
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get()); 
 	$objResponse->assign("x_tape", "innerHTML", $text);
-	$script = "alert($val);";
 	if ($val == '1')
 		$val = 0;
 	if ($val == '2')
 		$val = 1;
 	else
 		$val = 0;
-	$script. = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active')";
+	$script. = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');";
 	$objResponse->script($script);
 	return $objResponse;
 }
