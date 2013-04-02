@@ -101,6 +101,7 @@
 				//$news_obj->setRedir($request->modul);
 				//$item = $news_obj->getInfo();
 				
+				PrintAr($item);
 				$cat = $news_obj->getCatForMenu($item[$news_obj->idField],true);
 				$parents = $news_obj->getCats($item[$news_obj->idField]);
 				
@@ -139,7 +140,6 @@
 				$globalTemplateParam->set('pages', $pages);
 				$globalTemplateParam->set('item', $item);
 				$globalTemplateParam->set('categories', $cat);
-				PrintAr($item);
 				$modul->template = "news/category.tpl"; //exit;
 			}
 		} else {

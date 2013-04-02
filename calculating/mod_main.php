@@ -15,7 +15,9 @@
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
-	PrintAr($items_news_lent);
+
+	//PrintAr($items_news_lent);
+
 	$limit_news2 = 5;
 	$items_news = $news_obj->getByPageAdmin(2, $limit_news2,1,"a.`file` = 'item_news' and `main` != '1'",true);
 	if ($items_news) foreach ($items_news as $key=>$item) {
