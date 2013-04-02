@@ -69,11 +69,11 @@ function TapeWaveTab($val){
 	$objResponse->assign("x_tape", "innerHTML", $text);
 	if ($val == '1')
 		$val = 0;
-	if ($val == '2')
+	elseif ($val == '2')
 		$val = 1;
 	else
 		$val = 0;
-	$script. = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');";
+	$script = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active');";
 	$objResponse->script($script);
 	return $objResponse;
 }
