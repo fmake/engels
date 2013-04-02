@@ -132,13 +132,11 @@
 						</div>
 					</div>
 					<div class="nav">
-						/*
 						<ul>
-							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
-							<li><span><span><span><a href="#">Саратов</a></span></span></span></li>
-							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
+							<li class="active" ><span><span><span><a href="#" onclick="xajax_TapeWaveTab(1); return false;">Энгельс</a></span></span></span></li>
+							<li><span><span><span><a href="#" onclick="xajax_TapeWaveTab(2); return false;">Саратов</a></span></span></span></li>
+							<li><span><span><span><a href="#" onclick="xajax_TapeWaveTab(0); return false;">Все новости</a></span></span></span></li>
 						</ul>
-						*/
 					</div>
 					<div class="arrow verh"></div>
 					<div id="is_tape">

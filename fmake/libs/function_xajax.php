@@ -21,6 +21,7 @@ $xajax->register(XAJAX_FUNCTION, "getMeetsMain");
 $xajax->register(XAJAX_FUNCTION, "getMainVote");
 $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
+$xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* регистрация функции */
 
@@ -45,6 +46,31 @@ function gogoMail($values){
 	$objResponse->script($script);
 	return $objResponse;
 }
+function TapeWaveTab($val){
+	$objResponse = new xajaxResponse();
+	$fmakeComments = new fmakeComments();
+	global $twig,$globalTemplateParam;
+
+	$news_obj = new fmakeSiteModule();
+	$fmakeNews = new fmakeNews();
+	$limit_news_lent = 13;
+
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.`main_cat' = {$val}",true);
+	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
+		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
+	}
+
+	$globalTemplateParam->set('items_news_lent',$items_news_lent);
+	$globalTemplateParam->set('news_obj', $news_obj);
+
+	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get()); 
+	$objResponse->assign("x_tape", "innerHTML", $text);
+
+	return $objResponse;
+}
+
 function TapeWave($lastID){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
