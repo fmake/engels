@@ -219,7 +219,7 @@
 	//$news_obj_exp->order = "b.date DESC, a.id";
 	$news_obj_exp->order="id"; 
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
-	$news_obj_exp = new fmakeSiteModule();
+	$news_obj_exp = new fmakeNews();
 	foreach ($items_news_exp as $key => $value) {
 		$news_obj_exp->setId($items_news_lent[$key]['id_news']);
 		$news_obj_exp->getInfo();
