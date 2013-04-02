@@ -81,6 +81,11 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 		}
 		return $str;
 	}
+	
+	function getProjectBanerId($id_baner){
+		$items = $this->getWhere(array("`id_content` = '{$id_baner}'"));
+		return $items[0]['id_project'];
+	}
 }
 
 ?>

@@ -75,18 +75,28 @@
 				$modul->keywords = $item['keywords'];
 				/*теги*/
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
-				$items['tags'] = $tags;
+				$item['tags'] = $tags; // WTFF?????????? почему было items????
 				/*теги*/
 				$breadcrubs = $modul->getBreadCrumbs($item[$news_obj->idField]);
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
-				//PrintAr($item['dop_params']);
+				#---------------------------------------------------------------мнения
+				$exp = new fmakeMneniya();
+				$exp = $exp -> getAll();
+				foreach ($exp as $key => $value) {
+					if ($exp[$key]['id_news'] == $item['id'])
+						$total_exp[] = $value;
+				}
+				$exp = $total_exp;
+				$globalTemplateParam->set('exp', $exp);
+				//PrintAr($exp);
+				#---------------------------------------------------------------мнения
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
 					$modul->template = "news/item.tpl"; //exit;					
-			} else {
+				} else {
 				//$news_obj->order = "b.date DESC, a.id";
 				//$news_obj->setRedir($request->modul);
 				//$item = $news_obj->getInfo();

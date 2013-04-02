@@ -11,7 +11,7 @@
 					<div class="img">
 						[[if item.caption]]
 							<div class="caption_top">
-								<h2>{item.caption}</h2>
+								<h1>{item.caption}</h1>
 							</div>
 						[[endif]]
 						/*<div class="avtor_foto">Фото: Черекаев </div>*/
@@ -33,21 +33,25 @@
 					<div class="cl"></div>
 					<div class="full_text">
 						<p>{item.text|raw}</p>
-							[[if item.dop_params.text_expert and item.dop_params.active_mnenie]]
-								<div class="quot" id="quot">
-									[[if item.dop_params.expert_picture]]
-										<img src="/{site_obj.fileDirectory}{item.id}/expert/113_75{item.dop_params.expert_picture}" alt="" width="113px" />
-									[[endif]]
-									<img src="/images/icons/apostrof.png" alt="" />
-									[[if item.dop_params.expert]]
-										<div class="n-c">{item.dop_params.expert}</div>
-									[[endif]]
-									[[if item.dop_params.text_expert]]
-										<p>{item.dop_params.text_expert|raw}</p>
-									[[endif]]
-									<div class="cl"></div>
-								</div>
-							[[endif]]
+						<div id="quot">
+							[[for item in exp]]
+								[[if item.text_expert]]
+									<div class="quot" id="quot{item.id}">
+										[[if item.expert_picture]]
+											<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="{item.expert}" height="150" />
+										[[endif]]
+										<img src="/images/icons/apostrof.png" alt="" />
+										[[if item.expert]]
+											<div class="n-c">{item.expert}</div>
+										[[endif]]
+										[[if item.text_expert]]
+											<p>{item.text_expert|raw}</p>
+										[[endif]]
+										<div class="cl"></div>
+									</div>
+								[[endif]]
+							[[endfor]]
+						</div>
 						<div id="video">
 							[[if item.dop_params.video]]
 								{item.dop_params.video|raw}
@@ -68,25 +72,9 @@
 			/*БАНЕР new*/
 				<div class="cl"></div>
 				<p style="width: 740px;">
-						{baner_obj.showBanerType(10,request_uri)|raw}
+					{baner_obj.showBanerType(10,request_uri)|raw}
 				</p>
 			/*БАНЕР new*/
-			/*БАНЕР
-			[[if baner19]] 
-				<div class="cl"></div>
-				<p style="width: 740px;">
-				[[if baner19.url]]					
-					<noindex>
-					<a rel="nofollow" target="_blank" href="{baner19.url}">
-						{baner_obj.showBanerId(baner19.id,baner19.picture,baner19.format)|raw}
-					</a>
-					</noindex>
-				[[else]]
-					{baner_obj.showBanerId(baner19.id,baner19.picture,baner19.format)|raw}
-				[[endif]]
-				</p>
-			[[endif]]
-			/*БАНЕР*/
 			<div class="cl"></div>
 			<div class="socbutt">
 				[[ include TEMPLATE_PATH ~ "blocks/block_social_like.tpl"]]

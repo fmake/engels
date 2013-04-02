@@ -164,8 +164,8 @@ class fmakeNews extends fmakeSiteModule {
 		}
 		return $str;
 	}
-	function addExpertFile($tempName, $name){
-		$dirs = explode("/", $this->fileDirectory . '/' . $this->id.'/expert');
+	function addExpertFile($tempName, $name, $id){
+		$dirs = explode("/", $this->fileDirectory . '/' . $this->id.'/expert/'.$id);
 		$dirname = ROOT . "/";
 		$name = $this->imgtransliter($name);
 		foreach ($dirs as $dir) {
@@ -178,7 +178,7 @@ class fmakeNews extends fmakeSiteModule {
 		$images->resize(false,false, false, $dirname, '', false);
 		$images->resize(false,false, false, $dirname, 'original_', false);
 		$images->resize(133, 201, true, $dirname, '133_201', false);
-		$images->resize(113, 75, true, $dirname, '113_75', false);
+		//$images->resize(113, 75, true, $dirname, '113_75', false);
 		return $name;
 	}
 	function getNewsMail($date,$active = false){
@@ -186,6 +186,11 @@ class fmakeNews extends fmakeSiteModule {
 		if($active)
 			$select -> addWhere("active='1'");
 		$result = $select-> addFrom($this->table)->addWhere("`date` >='".$date."'")->addOrder($this->order,DESC)-> queryDB();
+		return $result;
+	}
+	function is_mnenie(){
+		$mnenie = new fmakeMneniya();
+		$result = $mnenie->getByPageAdmin(false, false, "id_news = {$this->id}", true);
 		return $result;
 	}
 }

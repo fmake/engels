@@ -13,6 +13,7 @@ $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "addFormBaner");
+$xajax->register(XAJAX_FUNCTION, "addForm");
 /* регистрация функции */
 
 /* написание функции */
@@ -23,6 +24,11 @@ function addFormBaner($type = 0){
 	if($type == 1) $objResponse->script("$('#add_baner_params').prepend($('#id_new_post').html());");
 	else $objResponse->script("$('#add_baner_params').prepend($('#id_new_baner').html());");
 	
+	return $objResponse;
+}
+function addForm(){
+	$objResponse = new xajaxResponse();
+	$objResponse->script("$('#add_form_mnenye').prepend($('#id_new_form').html());");
 	return $objResponse;
 }
 

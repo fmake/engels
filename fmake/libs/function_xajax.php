@@ -27,11 +27,21 @@ $xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* написание функции */
 function gogoMail($values){
 	$objResponse = new xajaxResponse();
-	$values = $values['my_mail'];
+	$values = mysql_real_escape_string($values['my_mail']);
 	$mail = new fmakeMail();
-	$mail->addParam('mail', mysql_real_escape_string($values));
-	$mail->newItem();
-	$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+	$all = $mail->getAll();
+	$bool = false;
+	foreach ($all as $key => $value) {
+		if ($all[$key]['mail'] == $values){
+			$script = '$("#mailed label").text("Этот email уже есть в базе.");';
+			$bool = true;
+		}
+	}
+	if ($bool == false){
+		$mail->addParam('mail', $values);
+		$mail->newItem();
+		$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+	}
 	$objResponse->script($script);
 	return $objResponse;
 }
@@ -43,10 +53,13 @@ function TapeWave($lastID){
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and `main` != '1' and a.`id` < {$lastID}",true);
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID}",true);
 	$last = $items_news_lent['2']['id'];
+	$fmakeNews = new fmakeNews();
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$globalTemplateParam->set('news_obj', $news_obj);
@@ -245,10 +258,14 @@ function getMainVote($params){
 
 		$iscookie = true;
 		$vopros = array();
+		$vopros_statistic = 0;
 		#if ($interview) foreach ($interview as $key=>$interview_item) {
 			
 			$fmakeInterview->table = $fmakeInterview->table_vopros;
 			$vopros = $fmakeInterview->getVoproses($params['interview_id'],true);
+			if($vopros)foreach($vopros as $k=>$v){
+				$vopros_statistic += $v['stat'];
+			}
 			#if($params['interview_id'] != $params['interview_id']) {
 				//$iscookie = $fmakeInterview->isCookies($params['interview_id']);
 			#} else {
@@ -257,6 +274,7 @@ function getMainVote($params){
 			#}
 		#}
 		$globalTemplateParam->set('Quest',$vopros);
+		$globalTemplateParam->set('Quest_stat',$vopros_statistic);
 		$globalTemplateParam->set('interview_id',$params['interview_id']);
 		#$globalTemplateParam->set('Cook',$iscookie);
 		$globalTemplateParam->set('Cook',$iscookie);

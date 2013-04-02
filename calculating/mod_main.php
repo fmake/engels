@@ -10,10 +10,13 @@
 		$items_news_main[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
 	//printar($items_news_main);
+	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and `main` != '1'",true);
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
 	
 	$limit_news2 = 5;
@@ -133,7 +136,6 @@
 	
 	/*афиша*/
 	$meets_obj = new fmakeMeets();
-	
 	$items_meets_cats = $meets_obj->getChilds(4,true);
 	
 	$limit_meets = 6;
@@ -212,10 +214,11 @@
 	/*объявления*/
 
 	#мнения
-	$news_obj_exp = new fmakeSiteModule();
+	$news_obj_exp = new fmakeMneniya;
 	$limit_news_exp = 2;
-	$news_obj_exp->order = "b.date DESC, a.id";
-	$items_news_exp = $news_obj_exp->getByPageAdmin(2, $limit_news_exp, 1 ,"a.`file` = 'item_news' and b.text_expert != '' and b.active_mnenie = '1' " , true);
+	//$news_obj_exp->order = "b.date DESC, a.id";
+	$news_obj_exp->order="id"; 
+	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	//printAr("23");
 	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
@@ -235,7 +238,8 @@
 	//printar($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	*/
-	
+	#мнения
+
 	/*Справочник*/
 	
 	$manual_obj = new fmakeSiteModule();
@@ -260,10 +264,14 @@
 	*/
 	$iscookie = array();
 	$vopros = array();
+	$vopros_statistic_all = array();
 	if ($interview) foreach ($interview as $key=>$interview_item) {
 		
 		$fmakeInterview->table = $fmakeInterview->table_vopros;
 		$vopros[$key] = $fmakeInterview->getVoproses($interview_item['id'],true);
+		if($vopros[$key])foreach($vopros[$key] as $k=>$v){
+			$vopros_statistic_all[$key] += $v['stat'];
+		}
 		if($request->interview_id != $interview_item['id']) {
 			$iscookie[$key] = $fmakeInterview->isCookies($interview_item['id']);
 		} else {
@@ -271,7 +279,9 @@
 			else $iscookie[$key] = false;
 		}
 	}
+	//printAr($vopros);
 	$globalTemplateParam->set('vopros',$vopros);
+	$globalTemplateParam->set('vopros_statistic_all',$vopros_statistic_all);
 	$globalTemplateParam->set('interview',$interview);
 	$globalTemplateParam->set('iscookie',$iscookie);
 	/*---------опрос-----------*/

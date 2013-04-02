@@ -35,11 +35,9 @@
 										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
 									</div>
 								[[endif]]
-									<a href="{ekspert.full_url}#quot">
+									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
 										[[if ekspert.expert_picture]]
-											<img width = "133"alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/expert/133_201{ekspert.expert_picture}" />
-										[[elseif ekspert.picture]]
-											<img alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
+											<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
 										[[endif]]
 									</a>
 							</div>
@@ -120,7 +118,7 @@
 						<div class = "line">
 							<form onsubmit="return false;" method="POST" id="mailed">
 								<label class="label"></label>
-								<input type="text" class="fieldfocus" title="Ваш емайл" name="my_mail" id="my_mail"  />
+								<input type="text" class="fieldfocus" title="Ваш емайл" [[if user_params.post_create == 1]]value="{user_params.login}@engels.bz"[[elseif user_params.main_email !=0 ]]value="{user_params.main_email}"[[endif]]name="my_mail" id="my_mail"  />
 								<button>
 									<span>
 										<span>
@@ -133,15 +131,15 @@
 							</form>
 						</div>
 					</div>
-					/*
 					<div class="nav">
+						/*
 						<ul>
 							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
 							<li><span><span><span><a href="#">Саратов</a></span></span></span></li>
 							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
 						</ul>
+						*/
 					</div>
-					*/
 					<div class="arrow verh"></div>
 					<div id="is_tape">
 						<div class="news" id="x_tape">
@@ -166,8 +164,17 @@
 										[[endif]]
 									</div>
 									<div class="icons">
-										[[if item.picture]]<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>[[endif]]
-										[[if item.video]]<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>[[endif]]
+										[[if item.picture]]
+											<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+										[[endif]]
+										
+										[[if item.video]]
+											<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+										[[endif]]
+
+										[[if item.mnenie]]
+											<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+										[[endif]]
 									</div>
 									<div class="cl"></div>
 									<div class="note">
@@ -179,7 +186,7 @@
 							</div>
 							<div class="cl"></div>
 							[[if loop.index == loop.last]]
-								<div id="last_id" hidden>{item.id}</div>
+								<div id="last_id" hidden style="display: none;">{item.id}</div>
 							[[endif]]
 						[[endfor]]
 							<div class="cl"></div>
@@ -543,7 +550,7 @@
 			<div class="cl"></div>
 			<!-- ГОЛОСОВАНИЕ START -->
 				<div id="votes">
-					<h1>Голосование</h1>
+					<a class ="h1" href="{site_obj.getLinkPage(7030)}"><h1>Голосование</h1></a>
 					<a name="golosovanie"></a>
 					[[for key,interv_item in interview]]
 					<div class="vote">
@@ -552,6 +559,7 @@
 						<form action="#questionform" method="post" id="QuestionFormRight{interv_item.id}" onsubmit="SubmitFormVote({interv_item.id}); return false;" style="position: relative;"> 
 							<img src="/images/pre.gif" style="display: none; position: absolute; left: 95px; top: 21px;" alt="" /> 
 							[[set Quest = vopros[key] ]]
+							[[set Quest_stat = vopros_statistic_all[key] ]]
 							[[set Cook = iscookie[key] ]]
 							[[set interview_id = interv_item.id ]]
 							[[set Do = 0]]
@@ -741,8 +749,7 @@
             </div>
             <div class="cl"></div>
             <div class="corypting">
-                Copyright © Энгельс bz - городской портал - свидетельство о регистрации ЭЛ№ФС77-52410<br/>
-                Свидетельство выдано 28 декабря 2012 года Федеральной службой по надзору за соблюдением законодательства в сфере массовых коммуникаций и охране культурного наследия. При использовании материалов сайта - гиперссылка обязательна | Замечания и предложения направляйте по адресу <a href="mailto:{configs.email}">{configs.email}</a>
+            	{configs.footer|raw}
             </div>
             <div class="cl"></div>
         </div>

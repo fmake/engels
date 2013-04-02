@@ -40,7 +40,11 @@ a:hover, a:active, .a:hover, .a:active{text-decoration:none;color:#010101;}
 h1{font: bold  20px/28px 'Arial';color: #555; margin: 0 0 10px 0; }
 h2{font: bold italic 16px 'Georgia';}
 .f16 {font-size: 16px;}
-.f14 {font-size: 14px;}пресс-служба министерства образования региона
+.f14 {font-size: 14px;}
+.fix_img{
+    top: -2px;
+    position: relative;
+}
 /*RESET END*/
 /*BUTTON*/
 .login button span span span {padding: 0 7px;}
@@ -454,7 +458,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     width: 391px;
     overflow: hidden;
 }
-.caption_top h2{
+.caption_top h1, .caption_top h2{
     color: #fff;
     background: url("/images/bg/bg_slider_blue.png");
     position: absolute;

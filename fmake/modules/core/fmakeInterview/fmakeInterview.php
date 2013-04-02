@@ -21,6 +21,8 @@
 			$select = $this->dataBase->SelectFromDB(__LINE__);
 			if($rand)
 				$select->addOrder("RAND()", ASC);
+			else
+				$select->addOrder($this->order, ASC); 
 			$result = $select->addFrom($this->table)->addWhere("active = '1'")->addLimit(0, $limit)->queryDB();
 			return $result;
 		}
