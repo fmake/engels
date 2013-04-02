@@ -15,7 +15,7 @@
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 		$fmakeNews = new fmakeNews;
-		PrintAr($fmakeNews ->getHtmlSelectCats($items_news_lent['parent']));
+		PrintAr($fmakeNews ->getHtmlSelectCat($items_news_lent['parent']));
 	}
 	PrintAr($fmakeNews->getCats(2, true));
 
