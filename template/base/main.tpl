@@ -41,7 +41,7 @@
 										[[endif]]
 									</a>
 							</div>
-							<a href="{ekspert.full_url}#quot">{ekspert.caption}</a>
+							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
 						</div>
 						[[endfor]]
 						<div class="cl"></div>

@@ -78,7 +78,7 @@ function TapeWaveTab($val){
 	return $objResponse;
 }
 
-function TapeWave($lastID){
+function TapeWave($lastID, $val){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
@@ -86,7 +86,7 @@ function TapeWave($lastID){
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID}",true);
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} and b.main_cat = '{$val}' ",true);
 	$last = $items_news_lent['2']['id'];
 	$fmakeNews = new fmakeNews();
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
