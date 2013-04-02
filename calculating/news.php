@@ -90,7 +90,7 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
-								PrintAr($item);
+				//PrintAr($item);
 				//PrintAr($exp);
 				#---------------------------------------------------------------мнения
 				if ($item['dop_params']['templ'] == 1)				
