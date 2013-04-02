@@ -138,6 +138,7 @@
 							<li><span><span><span><a href="#" onclick="xajax_TapeWaveTab(0); return false;">Все новости</a></span></span></span></li>
 						</ul>
 					</div>
+					<div class="cl"></div>
 					<div class="arrow verh"></div>
 					<div id="is_tape">
 						<div class="news" id="x_tape">
