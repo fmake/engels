@@ -54,6 +54,7 @@ function TapeWaveTab($val){
 	$news_obj = new fmakeSiteModule();
 	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
+	$script = "$('#tape .verh').hide();";
 
 	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.main_cat = '{$val}'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
@@ -63,6 +64,8 @@ function TapeWaveTab($val){
 	}
 
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
+	if (sizeof($items_news_lent) < 14)
+		$script.="$('#tape .niz').hide();" 
 	$globalTemplateParam->set('news_obj', $news_obj);
 
 	$text = $twig->loadTemplate("xajax/TapeWave_new_item.tpl")->render($globalTemplateParam->get()); 
@@ -73,7 +76,7 @@ function TapeWaveTab($val){
 		$val = 1;
 	else
 		$val = 2;
-	$script = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active'); $('#tape .news').css({'margin-top': '0'});";
+	$script. = "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active'); $('#tape .news').css({'margin-top': '0'});";
 	$objResponse->script($script);
 	return $objResponse;
 }
