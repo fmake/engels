@@ -362,6 +362,15 @@ switch ($request->action) {
 		$temp -> AddOption(new SelectOption(1, "Старый", $items_dop['templ']));
 		$form ->AddElement($temp);
 		# Выбор шаблона
+
+		# Выбор категории для главной страницы 	
+		$temp = $form->addSelect("Выбор категорий для главной страницы", "main_cat");
+		$temp -> AddOption(new SelectOption(0, "Все новости", $items_dop['main_cat']));
+		$temp -> AddOption(new SelectOption(1, "Энгельс", $items_dop['main_cat']));
+		$temp -> AddOption(new SelectOption(2, "Саратов", $items_dop['main_cat']));
+		$form ->AddElement($temp);
+		# Выбор категории для главной страницы
+
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
         
 		$form->addCheckBox("Включить/Выключить", "active", 1, ($items["active"]==='0') ? false : true);
