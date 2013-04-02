@@ -11,11 +11,11 @@
 	}
 	//printar($items_news_main);
 	$limit_news_lent = 13;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and c.caption name_category = 'Саратов' ",true);
+	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
-
+	
 	$limit_news2 = 5;
 	$items_news = $news_obj->getByPageAdmin(2, $limit_news2,1,"a.`file` = 'item_news' and `main` != '1'",true);
 	if ($items_news) foreach ($items_news as $key=>$item) {

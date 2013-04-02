@@ -90,7 +90,6 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
-				//PrintAr($item);
 				//PrintAr($exp);
 				#---------------------------------------------------------------мнения
 				if ($item['dop_params']['templ'] == 1)				
@@ -101,7 +100,7 @@
 				//$news_obj->order = "b.date DESC, a.id";
 				//$news_obj->setRedir($request->modul);
 				//$item = $news_obj->getInfo();
-			
+				
 				$cat = $news_obj->getCatForMenu($item[$news_obj->idField],true);
 				$parents = $news_obj->getCats($item[$news_obj->idField]);
 				

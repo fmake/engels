@@ -132,11 +132,13 @@
 						</div>
 					</div>
 					<div class="nav">
+						/*
 						<ul>
 							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
 							<li><span><span><span><a href="#">Саратов</a></span></span></span></li>
 							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
 						</ul>
+						*/
 					</div>
 					<div class="arrow verh"></div>
 					<div class="cl"></div>
