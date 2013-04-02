@@ -221,10 +221,10 @@
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	$news_obj_exp = new fmakeNews();
 	foreach ($items_news_exp as $key => $value) {
-		$news_obj_exp->setId($items_news_lent[$key]['id_news']);
-		$news_obj_exp->getInfo();
-		PrintAr($news_obj_exp);
+		$news_obj_exp[] = $news_obj_exp->getByPageAdmin(2, false, false, "a.id = {$items_news_lent[$key][id_news]}", true);
 	}
+	PrintAr($news_obj_exp);
+
 	//printAr("23");
 	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
