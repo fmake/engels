@@ -364,8 +364,8 @@ switch ($request->action) {
 		# Выбор шаблона
 
 		# Выбор категории для главной страницы 	
-		$temp = $form->addSelect("Выбор категорий для главной страницы", "templ");
-		$temp -> AddOption(new SelectOption(0, "Все нововсти", $items_dop['main_cat']));
+		$temp = $form->addSelect("Выбор категорий для главной страницы", "main_cat");
+		$temp -> AddOption(new SelectOption(0, "Все новости", $items_dop['main_cat']));
 		$temp -> AddOption(new SelectOption(1, "Энгельс", $items_dop['main_cat']));
 		$temp -> AddOption(new SelectOption(2, "Саратов", $items_dop['main_cat']));
 		$form ->AddElement($temp);
