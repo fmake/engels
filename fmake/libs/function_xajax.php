@@ -64,8 +64,10 @@ function TapeWaveTab($val){
 	}
 
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
-	if (sizeof($items_news_lent) < 12)
+	if (sizeof($items_news_lent) < 13)
 		$script.="$('#tape .niz').hide();";
+	else
+		$script.="$('#tape .niz').show();"
 	$globalTemplateParam->set('news_obj', $news_obj);
 
 	$text = $twig->loadTemplate("xajax/TapeWave_new_item.tpl")->render($globalTemplateParam->get()); 
