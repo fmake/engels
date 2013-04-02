@@ -221,7 +221,7 @@
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	$news_obj_exp = new fmakeNews();
 	foreach ($items_news_exp as $key => $value) {
-		$news_obj_exp[] = $news_obj_exp->getByPageAdmin(2, false, false, "a.id = {$items_news_lent[$key][id_news]}", true);
+		$news_obj_exp[] = $news_obj_exp->getByPageAdmin(2, false, false, "a.id = {$items_news_exp[$key][id_news]}", true);
 	}
 	PrintAr($news_obj_exp);
 
