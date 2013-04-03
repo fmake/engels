@@ -222,7 +222,8 @@
 	//printAr("23");
 	//PrintAr($items_news_exp);
     foreach ($items_news_exp as $key => $value) {
-    	$items_news_exp[$key]['caption'] = $news_obj->getByPageAdmin(2, false, false,"a.`file` = 'item_news' and a.`id` = {$items_news_exp[$key][id_news]}",true);
+    	$templ = $news_obj->getByPageAdmin(2, false, false,"a.`file` = 'item_news' and a.`id` = {$items_news_exp[$key][id_news]}",true);
+    	$items_news_exp[$key]['caption'] = $templ[0]['caption'];
   	}
   	//printAr("23");
   	PrintAr($items_news_exp);
