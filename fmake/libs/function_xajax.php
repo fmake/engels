@@ -50,7 +50,8 @@ function TapeWaveTab($val){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
-
+	$date = strtotime("today"/*,$tmp_date*/);
+	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
