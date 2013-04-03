@@ -65,9 +65,9 @@ function TapeWaveTab($val){
 
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	if (sizeof($items_news_lent) < 13)
-		$script.="$('#tape .niz').hide();";
+		$script.= "$('#tape .niz').hide();";
 	else
-		$script.="$('#tape .niz').show();";
+		$script.= "$('#tape .niz').show();";
 	$globalTemplateParam->set('news_obj', $news_obj);
 
 	$text = $twig->loadTemplate("xajax/TapeWave_new_item.tpl")->render($globalTemplateParam->get()); 
@@ -99,12 +99,14 @@ function TapeWave($lastID, $val){
 		$fmakeNews->setId($items_news_lent[$key]['id']);
 		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
+	if ($items_news_lent < 3)
+		$script .= "$('#tape .niz').hide();";
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$globalTemplateParam->set('news_obj', $news_obj);
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
-	$script = "newstape(); $('.pre').hide();";
+	$script .= "newstape(); $('.pre').hide();";
 	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) - 2 });";
 	$objResponse->script($script);
 	return $objResponse;
