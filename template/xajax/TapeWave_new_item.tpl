@@ -29,4 +29,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="cl"></div>
+	[[if loop.index == loop.last]]
+		<div id="last_id" hidden style="display: none;">{item.id}</div>
+	[[endif]]
 [[endfor]]

@@ -19,7 +19,7 @@ $globalTemplateParam->set('ignor_delete_security', $ignor_delete_security);
 	$absitem->setId($request->id);
 	$absitem->tree = false;
 	
-	$actions = array('active','edit','delete');
+	$actions = array('active','edit','delete', 'move');
 	$globalTemplateParam->set('actions', $actions);
 
 # Actions

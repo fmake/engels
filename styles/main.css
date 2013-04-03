@@ -40,7 +40,11 @@ a:hover, a:active, .a:hover, .a:active{text-decoration:none;color:#010101;}
 h1{font: bold  20px/28px 'Arial';color: #555; margin: 0 0 10px 0; }
 h2{font: bold italic 16px 'Georgia';}
 .f16 {font-size: 16px;}
-.f14 {font-size: 14px;}пресс-служба министерства образования региона
+.f14 {font-size: 14px;}
+.fix_img{
+    top: -2px;
+    position: relative;
+}
 /*RESET END*/
 /*BUTTON*/
 .login button span span span {padding: 0 7px;}
@@ -388,7 +392,8 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     height: 805px;
 }
 #tape .arrow.verh{
-    top: -5px;
+    top: -21px;
+    left: -24px;
 }
 .pre{
     background: url("/images/pre.gif");
@@ -402,6 +407,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #tape .arrow.niz{
     background: url("/images/bg/vniz.png") no-repeat;
     margin-top: 5px;
+    left: -24px;
 }
 #tape .news{float: left}
 #tape .nav ul li{
@@ -423,7 +429,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #tape .nav ul li a{border-bottom: 1px dotted #878787;}
 #tape .nav ul li:hover span, #tape .nav .active span{background-image:url("/images/bg/bg_button-l.png");background-repeat: no-repeat;background-position:  0 0;}
 #tape .nav ul li:hover span span,  #tape .nav .active span span{background-image:url("/images/bg/bg_button-r.png");background-repeat: no-repeat; background-position: 100% 0;}
-#tape .nav ul li:hover span span span,  #tape .nav .active span span span{background-image:url("/images/bg/bg_button-c.png"); background-repeat:repeat-x; background-position: 0 0;}
+#tape .nav ul li:hover span span span,  #tape .nav .active span span span{background-image:url("/images/bg/bg_button-c.png"); background-repeat:repeat-x; background-position: 0 0;color: #000;}
 #tape .nav ul li:hover a,  #tape .nav .active span a{border: none; color:#000;}
 #tape .news .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
 #tape .news .item:hover {border: 1px solid #bababa; box-shadow: 0 0 5px #bababa}
@@ -515,7 +521,6 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 #news-tab-main .caption{
     width: 151px;
-    height: 45px;
 }
 #news-tab-main .img img{
     margin-bottom: 4px;

@@ -10,10 +10,13 @@
 		$items_news_main[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 	}
 	//printar($items_news_main);
+	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
 	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
 	
 	$limit_news2 = 5;
@@ -133,7 +136,6 @@
 	
 	/*афиша*/
 	$meets_obj = new fmakeMeets();
-	
 	$items_meets_cats = $meets_obj->getChilds(4,true);
 	
 	$limit_meets = 6;
@@ -212,12 +214,19 @@
 	/*объявления*/
 
 	#мнения
-	$news_obj_exp = new fmakeSiteModule();
+	$news_obj_exp = new fmakeMneniya;
 	$limit_news_exp = 2;
-	$news_obj_exp->order = "b.date DESC, a.id";
-	$items_news_exp = $news_obj_exp->getByPageAdmin(2, $limit_news_exp, 1 ,"a.`file` = 'item_news' and b.text_expert != '' and b.active_mnenie = '1' " , true);
+	//$news_obj_exp->order = "b.date DESC, a.id";
+	$news_obj_exp->order="id"; 
+	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	//printAr("23");
 	//PrintAr($items_news_exp);
+    foreach ($items_news_exp as $key => $value) {
+    	$templ = $news_obj->getByPageAdmin(2, false, false,"a.`file` = 'item_news' and a.`id` = {$items_news_exp[$key][id_news]}",true);
+    	$items_news_exp[$key]['caption'] = $templ[0]['caption'];
+  	}
+  	//printAr("23");
+  	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	/*
 	$user_exp = new fmakeSiteUser();
@@ -235,7 +244,8 @@
 	//printar($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	*/
-	
+	#мнения
+
 	/*Справочник*/
 	
 	$manual_obj = new fmakeSiteModule();

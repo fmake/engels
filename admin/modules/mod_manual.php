@@ -316,7 +316,7 @@ switch ($request->action) {
 <div id="iframe-pole" style="position: fixed; top:100px; left: 136px;z-index: 9999999;width: 800px; min-height: 500px;display: none;"></div></td>');
 		/*-----------------галлерея----------------------*/
 		
-		$form->addTextArea("Краткое описание", "info", $items_dop["info"], 50, 50);
+		$form->addTinymce("Краткое описание", "info", $items_dop["info"], 50, 50);
 		
 		$form->addVarchar("<i>Город</i>", "city", $items_dop["city"]);
 		

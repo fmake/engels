@@ -35,15 +35,13 @@
 										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
 									</div>
 								[[endif]]
-									<a href="{ekspert.full_url}#quot">
+									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
 										[[if ekspert.expert_picture]]
-											<img width = "133"alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/expert/133_201{ekspert.expert_picture}" />
-										[[elseif ekspert.picture]]
-											<img alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id}/112_169_{ekspert.picture}" />
+											<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
 										[[endif]]
 									</a>
 							</div>
-							<a href="{ekspert.full_url}#quot">{ekspert.caption}</a>
+							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
 						</div>
 						[[endfor]]
 						<div class="cl"></div>
@@ -133,15 +131,14 @@
 							</form>
 						</div>
 					</div>
-					/*
 					<div class="nav">
 						<ul>
-							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
-							<li><span><span><span><a href="#">Саратов</a></span></span></span></li>
-							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
+							<li rel = "1" ><a href="#" onclick="xajax_TapeWaveTab(1); return false;"><span><span><span>Энгельс</span></span></span></a></li>
+							<li rel = "2" ><a href="#" onclick="xajax_TapeWaveTab(2); return false;"><span><span><span>Саратов</span></span></span></a></li>
+							<li class="active" rel = "0" ><a href="#" onclick="xajax_TapeWaveTab(0); return false;"><span><span><span>Все новости</span></span></span></a></li>
 						</ul>
 					</div>
-					*/
+					<div class="cl"></div>
 					<div class="arrow verh"></div>
 					<div id="is_tape">
 						<div class="news" id="x_tape">
@@ -166,8 +163,17 @@
 										[[endif]]
 									</div>
 									<div class="icons">
-										[[if item.picture]]<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>[[endif]]
-										[[if item.video]]<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>[[endif]]
+										[[if item.picture]]
+											<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+										[[endif]]
+										
+										[[if item.video]]
+											<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+										[[endif]]
+
+										[[if item.mnenie]]
+											<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+										[[endif]]
 									</div>
 									<div class="cl"></div>
 									<div class="note">
@@ -179,7 +185,7 @@
 							</div>
 							<div class="cl"></div>
 							[[if loop.index == loop.last]]
-								<div id="last_id" hidden>{item.id}</div>
+								<div id="last_id" hidden style="display: none;">{item.id}</div>
 							[[endif]]
 						[[endfor]]
 							<div class="cl"></div>
