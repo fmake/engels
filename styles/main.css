@@ -392,7 +392,8 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     height: 805px;
 }
 #tape .arrow.verh{
-    top: -5px;
+    top: -21px;
+    left: -24px;
 }
 .pre{
     background: url("/images/pre.gif");
@@ -406,6 +407,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 #tape .arrow.niz{
     background: url("/images/bg/vniz.png") no-repeat;
     margin-top: 5px;
+    left: -24px;
 }
 #tape .news{float: left}
 #tape .nav ul li{
@@ -519,7 +521,6 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 #news-tab-main .caption{
     width: 151px;
-    height: 45px;
 }
 #news-tab-main .img img{
     margin-bottom: 4px;
