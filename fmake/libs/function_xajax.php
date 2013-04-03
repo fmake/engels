@@ -54,8 +54,13 @@ function TapeWaveTab($val){
 	$news_obj = new fmakeSiteModule();
 	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
-	$script = "$('#tape .verh').hide();alert(typeof($val));";
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.main_cat = '{$val}'",true);
+	$script = "$('#tape .verh').hide();";
+
+	if ($val == "0")
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
+	else 
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.main_cat = '{$val}'",true);
+
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
 		$fmakeNews->setId($items_news_lent[$key]['id']);
