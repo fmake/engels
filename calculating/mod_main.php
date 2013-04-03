@@ -226,7 +226,7 @@
     	$items_news_exp[$key]['caption'] = $templ[0]['caption'];
   	}
   	//printAr("23");
-  	PrintAr($items_news_exp);
+  	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	/*
 	$user_exp = new fmakeSiteUser();
