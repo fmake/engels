@@ -219,11 +219,6 @@
 	//$news_obj_exp->order = "b.date DESC, a.id";
 	$news_obj_exp->order="id"; 
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
-		foreach ($items_news_exp as $key => $value) {
-		$items_news_exp[$key]['caption'] = $news_obj->getByPageAdmin(2, false, false,"a.`file` = 'item_news' and a.`id` = {$items_news_exp[$key][id_news]}",true);
-	}
-	//printAr("23");
-	PrintAr($items_news_exp);
 	//printAr("23");
 	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);

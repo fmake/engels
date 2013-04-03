@@ -21,6 +21,7 @@ $xajax->register(XAJAX_FUNCTION, "getMeetsMain");
 $xajax->register(XAJAX_FUNCTION, "getMainVote");
 $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
+$xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
 /* регистрация функции */
 
@@ -45,15 +46,66 @@ function gogoMail($values){
 	$objResponse->script($script);
 	return $objResponse;
 }
-function TapeWave($lastID){
+function TapeWaveTab($val){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
 	$date = strtotime("today"/*,$tmp_date*/);
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
+	$fmakeNews = new fmakeNews();
+	$limit_news_lent = 13;
+	$script = "$('#tape .verh').hide();";
+
+	if ($val != '1' and $val != '2')
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
+	else 
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.main_cat = '{$val}'",true);
+
+	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
+		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+		$fmakeNews->setId($items_news_lent[$key]['id']);
+		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
+	}
+
+	$globalTemplateParam->set('items_news_lent',$items_news_lent);
+	if (sizeof($items_news_lent) < 13)
+		$script.= "$('#tape .niz').hide();";
+	else
+		$script.= "$('#tape .niz').show();";
+	$globalTemplateParam->set('news_obj', $news_obj);
+
+	$text = $twig->loadTemplate("xajax/TapeWave_new_item.tpl")->render($globalTemplateParam->get()); 
+	$objResponse->assign("x_tape", "innerHTML", $text);
+	if ($val == '1')
+		$val = 0;
+	elseif ($val == '2')
+		$val = 1;
+	else
+		$val = 2;
+	$script.= "
+		$('#tape .nav ul li.active').removeClass('active');
+		$('#{$val}item_main').addClass('active');
+		$('#tape .news').css({'margin-top': '0'});
+		$('#is_tape').height($('#x_tape').height());
+	";
+	$objResponse->script($script);
+	return $objResponse;
+}
+
+function TapeWave($lastID, $val){
+	$objResponse = new xajaxResponse();
+	$fmakeComments = new fmakeComments();
+	global $twig,$globalTemplateParam;
+	$script = "";
+	$date = strtotime("today"/*,$tmp_date*/);
+	$globalTemplateParam->set("to_day", $date);
+	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID}",true);
+	if ($val == "0")
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} ",true);
+	else 
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} and b.main_cat = '{$val}' ",true);
 	$last = $items_news_lent['2']['id'];
 	$fmakeNews = new fmakeNews();
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
@@ -61,12 +113,14 @@ function TapeWave($lastID){
 		$fmakeNews->setId($items_news_lent[$key]['id']);
 		$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
 	}
+	if ($items_news_lent < 3)
+		$script .= "$('#tape .niz').hide();";
 	$globalTemplateParam->set('items_news_lent',$items_news_lent);
 	$globalTemplateParam->set('news_obj', $news_obj);
 	$text = $twig->loadTemplate("xajax/TapeWave.tpl")->render($globalTemplateParam->get());
 	$objResponse->assign("last_id", "innerHTML", $last);
 	$objResponse->append("x_tape", "innerHTML", $text);
-	$script = "newstape(); $('.pre').hide();";
+	$script .= "newstape(); $('.pre').hide();";
 	$script .= "$('#tape .news').css( { 'margin-top': parseInt($('#is_tape').height()) - parseInt($('#x_tape').height()) - 2 });";
 	$objResponse->script($script);
 	return $objResponse;
