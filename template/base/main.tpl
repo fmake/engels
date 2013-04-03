@@ -41,7 +41,7 @@
 										[[endif]]
 									</a>
 							</div>
-							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{site_obj.setId(ekspert.id_news).getInfo().caption}</a>
+							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
 						</div>
 						[[endfor]]
 						<div class="cl"></div>
