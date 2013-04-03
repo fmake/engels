@@ -78,7 +78,12 @@ function TapeWaveTab($val){
 		$val = 1;
 	else
 		$val = 2;
-	$script.= "$('#tape .nav ul li.active').removeClass('active'); $('#{$val}item_main').addClass('active'); $('#tape .news').css({'margin-top': '0'});";
+	$script.= "
+		$('#tape .nav ul li.active').removeClass('active');
+		$('#{$val}item_main').addClass('active');
+		$('#tape .news').css({'margin-top': '0'});
+		$('#is_tape').height($('#x_tape').height());
+	";
 	$objResponse->script($script);
 	return $objResponse;
 }
