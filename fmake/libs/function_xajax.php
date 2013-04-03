@@ -87,6 +87,7 @@ function TapeWave($lastID, $val){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
+	$script = "";
 	$date = strtotime("today"/*,$tmp_date*/);
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
