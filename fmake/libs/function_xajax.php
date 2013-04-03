@@ -54,8 +54,7 @@ function TapeWaveTab($val){
 	$news_obj = new fmakeSiteModule();
 	$fmakeNews = new fmakeNews();
 	$limit_news_lent = 13;
-	$script = "$('#tape .verh').hide();";
-
+	$script = "$('#tape .verh').hide();alert(typeof($val));";
 	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news' and b.main_cat = '{$val}'",true);
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
 		$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
@@ -97,7 +96,10 @@ function TapeWave($lastID, $val){
 	$globalTemplateParam->set("to_day", $date);
 	$news_obj = new fmakeSiteModule();
 	$limit_news_lent = 3;
-	$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} and b.main_cat = '{$val}' ",true);
+	if ($val == "0")
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} ",true);
+	else 
+		$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent, 1,"a.`file` = 'item_news' and a.`id` < {$lastID} and b.main_cat = '{$val}' ",true);
 	$last = $items_news_lent['2']['id'];
 	$fmakeNews = new fmakeNews();
 	if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
