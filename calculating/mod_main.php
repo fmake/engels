@@ -217,10 +217,16 @@
 	$news_obj_exp = new fmakeMneniya;
 	$limit_news_exp = 2;
 	//$news_obj_exp->order = "b.date DESC, a.id";
-	$news_obj_exp->order="id"; 
+	$news_obj_exp->order="id_news DESC"; 
 	$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
 	//printAr("23");
 	//PrintAr($items_news_exp);
+    foreach ($items_news_exp as $key => $value) {
+    	$templ = $news_obj->getByPageAdmin(2, false, false,"a.`file` = 'item_news' and a.`id` = {$items_news_exp[$key][id_news]}",true);
+    	$items_news_exp[$key]['caption'] = $templ[0]['caption'];
+  	}
+  	//printAr("23");
+  	//PrintAr($items_news_exp);
 	$globalTemplateParam->set('items_news_exp', $items_news_exp);
 	/*
 	$user_exp = new fmakeSiteUser();
