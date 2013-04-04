@@ -16,6 +16,8 @@ class fmakeMneniya extends fmakeCore{
 		$select = $this->dataBase->SelectFromDB(__LINE__);
 		if ($active)
 			$select->addWhere(" active_mnenie = '1'");
+		if($this->order) 
+			$select->addOrder($this->order, $this->order_as);
 		if($where)
 			$select->addWhere($where);
 		if($limit)
