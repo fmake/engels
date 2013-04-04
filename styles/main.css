@@ -1178,7 +1178,7 @@ a:hover h1{
     width: 100%;
 }
 #item_new .img .annotation div{padding: 15px 10px 15px 20px}
-#item_new h1{padding: 10px 0;margin: 0;}
+#item_new h1{padding: 10px 12px;margin: 0;}
 #item_new .text{
     padding-right: 3px;
     line-height: 16px;
