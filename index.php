@@ -143,7 +143,6 @@ if ($modul->id == 2) {
 } else {
 	$cat_theme = "";
 }
-PrintAr("doo");
 /*новости по теме*/
 $limit_news_right = 7;
 $tmp_order = $modul->order;
@@ -162,7 +161,7 @@ if($_GET['debug']==1){
 	//printAr($modul->id);
 	//echo($request->modul);
 }
- 
+
 /*--------правый блок с последними новостями--------*/
 
 /*--------меню с самыми посещяемыми новостями--------*/
