@@ -8,6 +8,8 @@ $flag_url = true;
 # Поля
 $filds = array(
     'title' => 'Название',
+	'user_create_name' => 'Пользователь',
+	'count_view' => 'Просмотры',
 );
 
 $globalTemplateParam->set('filds', $filds);
@@ -312,6 +314,19 @@ switch ($request->action) {
 		}
 		$pages = ceil($count/$limit);
 
+		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
+		$fmakeCount = new fmakeCount();
+		if($items)foreach($items as $key=>$item){
+			if($item['create_user']){
+				$fmakeSiteAdministrator->setId($item['create_user']);
+				$info_user = $fmakeSiteAdministrator->getInfo();
+				$items[$key]['user_create_name'] = "{$info_user['name']} ({$info_user['login']})";
+			}	
+			$fmakeCount->setId($item[$absitem->idField]);
+			$info_page = $fmakeCount->getInfo();
+			$items[$key]['count_view'] = $info_page['count'];
+		}
+		
         $globalTemplateParam->set('items', $items);
 		$globalTemplateParam->set('pages', $pages);
 		$globalTemplateParam->set('page', $page);
