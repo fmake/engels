@@ -31,6 +31,8 @@ require('../fmake/libs/function_xajax_admin.php');
 require_once('checklogin.php');
 $mod = $modulObj->getModul( $admin->getRole(),$request->modul);
 
+printAr($_SESSION);
+
 $globalTemplateParam -> set('admin', $admin);
 
 include 'modulNamespace.php';

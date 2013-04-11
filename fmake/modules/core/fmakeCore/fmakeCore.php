@@ -132,6 +132,12 @@ class fmakeCore extends fmakeWhereSelector{
 	 * Создание нового объекта, с использованием массива params, c учетов поля position
 	 */
 	function newItem(){
+		/*добавляем в таблицу пользователя который создал страницу*/
+		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
+		$fmakeSiteAdministrator->load();
+		$this->addParam('create_user',$fmakeSiteAdministrator->id);
+		/*добавляем в таблицу пользователя который создал страницу*/
+		
 		$insert = $this->dataBase->InsertInToDB(__LINE__);	
 			
 		$insert	-> addTable($this->table);
