@@ -100,7 +100,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		}
 		//printAr($baners);
 		if($baners[0]){
-			$b = $this->showBanerId($baners[0]['id'],$baners[0]['picture'],$baners[0]['format']);
+			$b = $this->showBanerId($baners[0]['id'],$baners[0]['picture'],$baners[0]['format'],$baners[0]['width'],$baners[0]['height']);
 			if($baners[0]['url']){
 				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[0]['url'].'">'.$b.'</a></noindex>';
 				return $b_url;
@@ -123,8 +123,14 @@ class fmakeBanerContent extends fmakeSiteModule {
 		return $str;
 	}
 	
-	function showBanerId($id,$name,$format = false){
+	function showBanerId($id,$name,$format = false,$width = false,$height = false){
 		if(!$format) $format = substr($name,1+strrpos($name,"."));
+		
+		if($width) $width = " width=\"{$width}\" ";
+		else $width = "";
+		if($height) $height = " height=\"{$height}\" ";
+		else $height = "";
+		
 		switch($format){
 			case 'swf':
 				$str = "<script>xajax_viewBaner({$id});</script>
@@ -132,7 +138,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 						  type=\"application/x-shockwave-flash\"
 						  data=\"/{$this->fileDirectory}{$id}/{$name}\"
 						  onclick=\"xajax_clickBaner({$id})\"
-						  width=\"100%\" height=\"100%\">
+						  {$width} {$height}>
 							<param name=\"movie\" value=\"/{$this->fileDirectory}{$id}/{$name}\">
 							<param name=\"wmode\" value=\"transparent\">
 							<param name=\"allowScriptAccess\" value=\"sameDomain\" />
@@ -140,7 +146,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 				//$str = "<embed src='/{$this->fileDirectory}{$id}/{$name}' quality='high' type='application/x-shockwave-flash' wmode='opaque' width='100%' height='100%' pluginspage='http://www.macromedia.com/go/getflashplayer' allowScriptAccess='always'></embed>";
 				break;
 			default:
-				$str = "<script>xajax_viewBaner({$id});</script><img onclick=\"xajax_clickBaner({$id})\" src='/{$this->fileDirectory}{$id}/{$name}' />";
+				$str = "<script>xajax_viewBaner({$id});</script><img {$width} {$height} onclick=\"xajax_clickBaner({$id})\" src='/{$this->fileDirectory}{$id}/{$name}' />";
 				break;
 		}
 		return $str;
