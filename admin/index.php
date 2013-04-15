@@ -27,7 +27,6 @@ require_once('../fmake/FController.php');
 $modulObj = new fmakeAdminController();
 
 require('../fmake/libs/function_xajax_admin.php');
-
 require_once('checklogin.php');
 $mod = $modulObj->getModul( $admin->getRole(),$request->modul);
 

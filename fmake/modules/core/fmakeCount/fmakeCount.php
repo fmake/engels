@@ -27,7 +27,7 @@ class fmakeCount extends fmakeCore {
 			$select->addLimit(0, $limit);
 		
 		$date_to = strtotime("-{$day} day",strtotime("today"));
-		$date_from = strtotime("today");
+		$date_from = time();
 			
 		return $select->addFild("a.id,a.count,b.short_name,c.caption,c.full_url")->addFrom($this->table . $table_join)->addWhere("{$date_to} <= b.`date` AND b.`date` <= {$date_from}")->addWhere("b.`id`!=0 and c.`id`!=0")->addOrder("a.count", "DESC")->queryDB();
 	}

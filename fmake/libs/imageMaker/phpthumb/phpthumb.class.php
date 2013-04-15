@@ -71,7 +71,7 @@ class phpthumb {
 	var $config_cache_disable_warning                = true;
 	var $config_cache_source_enabled                 = false;
 	var $config_cache_source_directory               = null;
-	var $config_temp_directory                       = null;
+	var $config_temp_directory                       = '/var/www/vhosts/engels.bz/subdomains/dev/temp'; //поменять для каждого сайта
 	var $config_document_root                        = null;
 
 	// * Default output configuration:

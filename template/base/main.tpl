@@ -41,7 +41,7 @@
 										[[endif]]
 									</a>
 							</div>
-							<a href="{ekspert.full_url}#quot">{ekspert.caption}</a>
+							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
 						</div>
 						[[endfor]]
 						<div class="cl"></div>
@@ -132,14 +132,13 @@
 						</div>
 					</div>
 					<div class="nav">
-						/*
 						<ul>
-							<li class="active" ><span><span><span><a href="#">Энгельс</a></span></span></span></li>
-							<li><span><span><span><a href="#">Саратов</a></span></span></span></li>
-							<li><span><span><span><a href="#">Все новости</a></span></span></span></li>
+							<li rel = "1" ><a href="#" onclick="xajax_TapeWaveTab(1); return false;"><span><span><span>Энгельс</span></span></span></a></li>
+							<li rel = "2" ><a href="#" onclick="xajax_TapeWaveTab(2); return false;"><span><span><span>Саратов</span></span></span></a></li>
+							<li class="active" rel = "0" ><a href="#" onclick="xajax_TapeWaveTab(0); return false;"><span><span><span>Все новости</span></span></span></a></li>
 						</ul>
-						*/
 					</div>
+					<div class="cl"></div>
 					<div class="arrow verh"></div>
 					<div id="is_tape">
 						<div class="news" id="x_tape">

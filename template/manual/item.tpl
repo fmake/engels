@@ -18,7 +18,7 @@
 			
 			<div>
 				<ul class="dop-params">
-					[[if item.dop_params.info]]<li><strong>Описание деятельности:</strong> {item.dop_params.info}</li>[[endif]]
+					[[if item.dop_params.info]]<li><strong>Описание деятельности:</strong> {item.dop_params.info|raw}</li>[[endif]]
 					[[if item.dop_params.city]]<li><strong>Город:</strong> {item.dop_params.city}</li>[[endif]]
 					[[if item.dop_params.addres]]<li><strong>Адрес:</strong> <a href="#adress">{item.dop_params.addres}</a></li>[[endif]]
 					[[if item.dop_params.time_work]]<li><strong>Время работы:</strong> {item.dop_params.time_work}</li>[[endif]]

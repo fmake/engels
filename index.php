@@ -143,6 +143,7 @@ if ($modul->id == 2) {
 } else {
 	$cat_theme = "";
 }
+
 /*новости по теме*/
 $limit_news_right = 7;
 $tmp_order = $modul->order;
