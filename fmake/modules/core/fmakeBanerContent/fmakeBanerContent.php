@@ -133,6 +133,10 @@ class fmakeBanerContent extends fmakeSiteModule {
 		
 		switch($format){
 			case 'swf':
+				
+				if(!$width) $width = " width=\"100%\" ";
+				if(!$height) $height = " height=\"100%\" ";
+				
 				$str = "<script>xajax_viewBaner({$id});</script>
 						<object
 						  type=\"application/x-shockwave-flash\"
