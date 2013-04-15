@@ -76,6 +76,7 @@ switch($request->action)
 				$fmakeBanerContent_dop = new fmakeTypeTable();
 				$fmakeBanerContent_dop->table = $fmakeTypeTable->getTable($id_page_modul);
 				$not_delete_array = array();
+				
 				if($_POST['baner']['new'])foreach ($_POST['baner']['new']['caption'] as $key=>$value){
 					$fmakeBanerContent->addParam("caption", $value);
 					$fmakeBanerContent->addParam("title", $value);
@@ -90,6 +91,8 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("price", $_POST['baner']['new']['price'][$key]);
 					$fmakeBanerContent_dop->addParam("url", $_POST['baner']['new']['url'][$key]);
 					$fmakeBanerContent_dop->addParam("max_count_view", $_POST['baner']['new']['max_count_view'][$key]);
+					$fmakeBanerContent_dop->addParam("width", $_POST['baner']['new']['width'][$key]);
+					$fmakeBanerContent_dop->addParam("height", $_POST['baner']['new']['height'][$key]);
 					
 					$fmakeBanerContent_dop->addParam("regular_exp", $_POST['baner']['new']['regular_exp'][$key]);
 					$fmakeBanerContent_dop->addParam("price_baner_view", $_POST['baner']['new']['price_baner_view'][$key]);
@@ -149,6 +152,8 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("price", $_POST['baner']['new']['price'][$key]);
 					$fmakeBanerContent_dop->addParam("url", $_POST['baner']['new']['url'][$key]);
 					$fmakeBanerContent_dop->addParam("max_count_view", $_POST['baner']['new']['max_count_view'][$key]);
+					$fmakeBanerContent_dop->addParam("width", $_POST['baner']['new']['width'][$key]);
+					$fmakeBanerContent_dop->addParam("height", $_POST['baner']['new']['height'][$key]);
 					
 					$fmakeBanerContent_dop->addParam("regular_exp", $_POST['baner']['new']['regular_exp'][$key]);
 					$fmakeBanerContent_dop->addParam("price_baner_view", $_POST['baner']['new']['price_baner_view'][$key]);
@@ -163,6 +168,7 @@ switch($request->action)
 					$not_delete_array[] = $id;
 				}
 				unset($_POST['baner']['new']);
+				//printAr($_POST['baner']);
 				if($_POST['baner'])foreach ($_POST['baner'] as $key=>$value){
 					$fmakeBanerContent->setId($key);
 					$fmakeBanerContent->addParam("caption", $value['caption']);
@@ -176,6 +182,8 @@ switch($request->action)
 					$fmakeBanerContent_dop->addParam("price", $value['price']);
 					$fmakeBanerContent_dop->addParam("url", $value['url']);
 					$fmakeBanerContent_dop->addParam("max_count_view", $value['max_count_view']);
+					$fmakeBanerContent_dop->addParam("width", $value['width']);
+					$fmakeBanerContent_dop->addParam("height", $value['height']);
 					
 					$fmakeBanerContent_dop->addParam("regular_exp", $value['regular_exp']);
 					$fmakeBanerContent_dop->addParam("price_baner_view", $value['price_baner_view']);
@@ -285,7 +293,7 @@ switch($request->action)
 		if ($items_news_inwave) foreach ($items_news_inwave as $key=>$item) {
 			$select_post .= '<option value="'.$item[id].'">'.$item[caption].'</option>';
 		}	
-			
+		//printAr($items_baners);
 		if($items_baners)foreach($items_baners as $key=>$item){
 			
 			
@@ -331,6 +339,7 @@ switch($request->action)
 					Название: <input title=\"Название банера\" type=\"text\" name=\"baner[{$item[id]}][caption]\" value=\"{$item[caption]}\" style=\"width:200px;\"/><br/>
 					Банер: <input title=\"Загрузка банера\" type=\"file\" name=\"baner_picture_{$item[id]}\" />{$link_view_baner}<br/>
 					Тип банера: <select title=\"Тип банера\" name=\"baner[{$item[id]}][id_type]\">".$select_type_options."</select><br/>
+					Ширина: <input title=\"Ширина банера\" type=\"text\" name=\"baner[{$item[id]}][width]\"  value=\"{$item[width]}\" /> Высота: <input title=\"Высота банера\" type=\"text\" name=\"baner[{$item[id]}][height]\"  value=\"{$item[height]}\"/><br/>
 					Ссылка: <input title=\"Ссылка на банер\" type=\"text\" name=\"baner[{$item[id]}][url]\" value=\"{$item[url]}\" style=\"width:150px;\"/><br/>
 					Цена за показ: <input title=\"Цена за показ\" type=\"text\" name=\"baner[{$item[id]}][price_baner_view]\" value=\"{$item[price_baner_view]}\" style=\"width:150px;\"/> Цена за клик: <input title=\"Цена за клик\" type=\"text\" name=\"baner[{$item[id]}][price_baner_click]\" value=\"{$item[price_baner_click]}\" style=\"width:150px;\"/><br/>
 					<b>Ограничения</b><br/>
@@ -363,6 +372,7 @@ switch($request->action)
 					Название: <input title=\"Название банера\" type=\"text\" name=\"baner[new][caption][]\" value=\"\" style=\"width:200px;\"/><br/>
 					Банер: <input title=\"Загрузка банера\" type=\"file\" name=\"baner_new_picture[]}\" /><br/>
 					Тип банера: <select title=\"Тип банера\" name=\"baner[new][id_type][]\">".$select_type_options."</select><br/>
+					Ширина: <input title=\"Ширина банера\" type=\"text\" name=\"baner[new][width][]\" /> Высота: <input title=\"Высота банера\" type=\"text\" name=\"baner[new][height][]\" /><br/>
 					Ссылка: <input title=\"Ссылка на банер\" type=\"text\" name=\"baner[new][url][]\" value=\"\" style=\"width:150px;\"/><br/>
 					Цена за показ: <input title=\"Цена за показ\" type=\"text\" name=\"baner[new][price_baner_view][]\" value=\"\" style=\"width:150px;\"/> Цена за клик: <input title=\"Цена за клик\" type=\"text\" name=\"baner[new][price_baner_click][]\" value=\"\" style=\"width:150px;\"/><br/>
 					<b>Ограничения</b><br/>
