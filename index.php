@@ -143,7 +143,7 @@ if ($modul->id == 2) {
 } else {
 	$cat_theme = "";
 }
-PrintAr("doo");
+
 /*новости по теме*/
 $limit_news_right = 7;
 $tmp_order = $modul->order;
