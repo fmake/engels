@@ -1,0 +1,16 @@
+admin/index.php
+admin/modules/mod_news.php
+admin/modules/mod_project_commercial.php
+fmake/libs/function_xajax.php
+fmake/libs/imageMaker/phpthumb/phpthumb.class.php
+fmake/modules/core/fmakeBanerContent/fmakeBanerContent.php
+fmake/modules/core/fmakeCore/fmakeCore.php
+fmake/modules/core/fmakeCount/fmakeCount.php
+fmake/modules/core/fmakeMneniya/fmakeMneniya.php
+fmake/modules/core/fmakeSiteModule/fmakeSiteModule.php
+index.php
+js/scripts.js
+styles/main.css
+template/base/main.tpl
+template/manual/item.tpl
+template/xajax/TapeWave_new_item.tpl
