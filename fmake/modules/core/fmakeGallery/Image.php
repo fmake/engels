@@ -121,7 +121,7 @@ class fmakeGallery_Image extends fmakeSiteModule implements fmakeSiteModule_Exte
 		$dirs = explode("/", $this->imgFolder.$id_gal);
 		$dirname = ROOT."/";
 		
-		$wantermark = ROOT.'/images/wantermark2.png';
+		$wantermark = ROOT.'/images/logo/logo_wantermark.png';
 		
 		foreach($dirs as $dir){
 			$dirname = $dirname.$dir."/";
