@@ -73,8 +73,16 @@ class fmakeProjectCommercial_relation extends fmakeCore {
 		$insert->queryDB();
 	}
 	
-	function getContentId($id_project){
-		$items = $this->getWhere(array("`id_project` = '{$id_project}'"));
+	function getContentId($id_projects){
+		if(is_array($id_projects)){
+			if($id_projects)foreach($id_projects as $k=>$p){
+				if($k == 0) $str_id_projects = "`id_project` = '{$p}'";
+				else $str_id_projects .= " OR `id_project` = '{$p}'";
+			}
+		} else {
+			$str_id_projects = "`id_project` = '{$id_projects}'";
+		}
+		$items = $this->getWhere(array($str_id_projects));
 		if($items)foreach($items as $key=>$item){
 			if($key==0) $str .= $item['id_content'];
 			else $str .= ",".$item['id_content'];

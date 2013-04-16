@@ -820,6 +820,7 @@
 	{generate_page}
 	<br />
 	<script>
+		showNewsPopup();
 		xajax_SiteCount({id_page});
 	</script>
 </div>

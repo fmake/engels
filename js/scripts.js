@@ -1,8 +1,10 @@
 $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
-    $(".show").colorbox({
+    
+	$(".show").colorbox({
         rel:'show'
     });
+	
     $("#mailed button").live("click", function(){
     	if (($("#my_mail").val() != "") && 
     	    		(!(!(($("#my_mail").val().indexOf(".")>0 ) && ($("#my_mail").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail").val()))))
@@ -371,15 +373,14 @@ function showInputs(id){
 }
 /*места*/
 
-function setCookie(){
-	$.cookie('like_cookie', '1', { expires: 2, path: '/', domain: 'engels.bz'});
+function setCookie(name,value,time){
+	$.cookie(name, value, { expires: time, path: '/'});
 }
 
 function showCookie(){
 	if(!$.cookie('like_cookie')){
-		//$("#hiddenreg").css("top",getBodyScrollTop()+30);
 		$('#current, #popup_likes').show();
-		setCookie();
+		setCookie('like_cookie','1',2);
 	}
 }
 
@@ -388,6 +389,27 @@ function showPopup(){
 		setTimeout("showCookie();", 10000);
 	}
 }
+
+/*всплывающяя подписка на новости*/
+
+function showNewsPopupCookie(){
+	if(!$.cookie('popup_news_cookie')){
+		
+		if($('#popup_lenta').css('display') == "none"){
+    		$('#tape .icon-mail').click();
+    	}
+		
+		setCookie('popup_news_cookie',1,7);
+	}
+}
+
+function showNewsPopup(){
+	if(!$.cookie('popup_news_cookie') && !$.cookie('subscription_news_cookie')){
+		setTimeout("showNewsPopupCookie();", 3000);
+	}
+}
+
+/*всплывающяя подписка на новости*/
 
 function getMeetsMain(time,i){
 	$("#preloader_meets").show();

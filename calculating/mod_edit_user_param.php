@@ -186,8 +186,12 @@
 	$fmakeProjectCommercial = new fmakeProjectCommercial();
 	$fmakeProjectCommercialRelation = new fmakeProjectCommercial_relation();
 	$comercial_project = $fmakeProjectCommercial->getProjectToUserId($user->id);
+	//printAr($comercial_project);
 	if($comercial_project){
-		$id_baners = $fmakeProjectCommercialRelation->getContentId($comercial_project['id']);
+		if($comercial_project)foreach($comercial_project as $k=>$p){
+			$array_comercial_project[] = $p['id'];
+		}
+		$id_baners = $fmakeProjectCommercialRelation->getContentId($array_comercial_project);
 		if($id_baners) $items_baners = $fmakeBanerContent->getByPageAdmin(5585, false,1,"a.id in ( {$id_baners} ) AND a.`file` = 'item_baner'",true);
 		$use_price = 0;
 		if($items_baners)foreach($items_baners as $key=>$item){

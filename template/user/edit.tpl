@@ -333,13 +333,15 @@
 				<h3>Рекламная компания на сайте</h3><br/>
 				<table>
 					<tr>
-						<th>Название банера</th>
+						<th>Название</th>
+						<th>Тип</th>
 						<th>Показы</th>
 						<th>Деньги</th>
 					</tr>
 				[[for baner_user in baners_user_used]]
 					<tr>
 						<td><div style="width: 200px;"><p>{baner_user.caption}</p></div></td>
+						<td><div style="width: 50px;"><p>[[if baner_user.type_baner == 1]]статья[[else]]банер[[endif]]</p></div></td>
 						<td><div style=""><p>{baner_user.use_view}</p></div></td>
 						<td>{baner_user.use_price}</td>
 					</tr>

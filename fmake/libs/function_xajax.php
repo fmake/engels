@@ -41,7 +41,7 @@ function gogoMail($values){
 	if ($bool == false){
 		$mail->addParam('mail', $values);
 		$mail->newItem();
-		$script = "$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
+		$script = "setCookie('subscription_news_cookie','1',372);$('#popup_lenta .title').hide();$('#popup_lenta .line').html('<div class=\"title response\">Вы подписались на рассылку.</div>')";
 	}
 	$objResponse->script($script);
 	return $objResponse;

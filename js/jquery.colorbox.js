@@ -10,7 +10,7 @@
 		speed: 300,
 		width: false,
 		initialWidth: "600",
-		innerWidth: false,
+		innerWidth: "800",
 		maxWidth: "800",
 		height: false,
 		initialHeight: "450",
