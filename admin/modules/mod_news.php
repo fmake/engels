@@ -158,6 +158,11 @@ switch ($request->action) {
 				else
 					$_POST['rss_yandex_news'] = 0;
 				
+				if($_POST['recommend'])
+					$_POST['recommend'] = 1;
+				else
+					$_POST['recommend'] = 0;
+					
 				$_POST['file'] = 'item_news';
 				/*-------------------выставление параметров----------------------------*/
 				
@@ -235,6 +240,12 @@ switch ($request->action) {
 					$_POST['rss_yandex_news'] = 1;
 				else
 					$_POST['rss_yandex_news'] = 0;
+					
+				if($_POST['recommend'])
+					$_POST['recommend'] = 1;
+				else
+					$_POST['recommend'] = 0;
+					
 				/*-------------------выставление параметров----------------------------*/	
 					
                 foreach ($_POST as $key => $value){
@@ -388,6 +399,8 @@ switch ($request->action) {
 
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
         
+		$form->addCheckBox("Рекомендуем", "recommend", 1, ($items_dop["recommend"]==='0') ? false : true);
+		
 		$form->addCheckBox("Включить/Выключить", "active", 1, ($items["active"]==='0') ? false : true);
 		
         $form->addCheckBox("Главная новость", "main", 1, ($items_dop["main"]==='0') ? false : true);
