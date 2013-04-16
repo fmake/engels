@@ -56,6 +56,11 @@ if($older)foreach ($older as $key => $value) {
 #----------------------------мнения 
 $news_categories = $absitem->getCatAsTree($id_page_modul,0,true);
 
+/*список администраторов сайта*/
+$fmakeSiteAdministrator = new fmakeSiteAdministrator();
+$all_users = $fmakeSiteAdministrator->getAll();
+/*список администраторов сайта*/
+
 //printAr($news_categories);
 
 $actions = array('active',
@@ -77,6 +82,7 @@ $filters_left = "admin/blocks/filter_news.tpl";
 $globalTemplateParam->set('filters_left', $filters_left);
 
 $globalTemplateParam->set('categories', $news_categories);
+$globalTemplateParam->set('all_users', $all_users);
 
 $filters = $_REQUEST['filter'];
 $globalTemplateParam->set('filters', $filters);
@@ -325,7 +331,6 @@ switch ($request->action) {
 		}
 		$pages = ceil($count/$limit);
 
-		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
 		$fmakeCount = new fmakeCount();
 		if($items)foreach($items as $key=>$item){
 			if($item['create_user']){
