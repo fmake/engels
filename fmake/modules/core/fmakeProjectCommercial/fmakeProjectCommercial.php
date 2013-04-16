@@ -37,7 +37,7 @@ class fmakeProjectCommercial extends fmakeCore {
 			$select->addWhere("a.active='1'");
 		$time = time();
 		$result = $select->addFrom($this->table)->addWhere("`id_user` = {$id_user}")->queryDB();
-		return $result[0];
+		return $result;
 	}
 }
 
