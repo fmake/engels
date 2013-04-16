@@ -101,5 +101,8 @@
 					</div>
 				</div>
 			</div>
+			<div class="shadow">
+					<div class="shadow_img"></div>
+			</div>
 		</div>
 </div>
