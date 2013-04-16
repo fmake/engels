@@ -32,7 +32,7 @@
 							<div class="img_h">
 								[[if ekspert.expert]]
 									<div class="hidden_title">
-										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
+										<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot" class="bell">{ekspert.expert}</a>
 									</div>
 								[[endif]]
 									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
