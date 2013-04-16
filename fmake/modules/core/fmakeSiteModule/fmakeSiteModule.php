@@ -689,7 +689,7 @@ function getBreadCrumbs($id)
 				mkdir($dirname);
 		}
 
-		$wantermark = ROOT.'/images/wantermark2.png';
+		$wantermark = ROOT.'/images/logo/logo_wantermark.png';
 		
 		$images = new imageMaker($name);
 		$images->imagesData = $tempName;
@@ -760,7 +760,7 @@ function getBreadCrumbs($id)
 				mkdir($dirname);
 		}
 
-		$wantermark = ROOT.'/images/wantermark2.png';
+		$wantermark = ROOT.'/images/logo/logo_wantermark.png';
 		
 		$fmake = new fmakeSiteModule();
 		$fmake->setId($id);

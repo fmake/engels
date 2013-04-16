@@ -32,7 +32,7 @@
 							<div class="img_h">
 								[[if ekspert.expert]]
 									<div class="hidden_title">
-										<a href="{ekspert.full_url}#quot" class="bell">{ekspert.expert}</a>
+										<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot" class="bell">{ekspert.expert}</a>
 									</div>
 								[[endif]]
 									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
@@ -820,8 +820,29 @@
 	{generate_page}
 	<br />
 	<script>
+		showNewsPopup();
 		xajax_SiteCount({id_page});
 	</script>
+</div>
+<div id="current" ></div>
+<div id="popup_subscribe_news" class="">
+	<div class = "title">Подпишись на новости</div>
+	<div class = "line">
+		<form onsubmit="return false;" method="POST" id="mailed_popup_subscribe_news">
+			<input type="hidden" name="type_form" value="popup_subscribe" />
+			<label class="label"></label>
+			<input type="text" class="fieldfocus" title="Ваш емайл" [[if user_params.post_create == 1]]value="{user_params.login}@engels.bz"[[elseif user_params.main_email !=0 ]]value="{user_params.main_email}"[[endif]] name="my_mail" id="my_mail_popup_subscribe_news"  />
+			<button>
+				<span>
+					<span>
+						<span>
+							Подписаться
+						</span>
+					</span>
+				</span>
+			</button>
+		</form>
+	</div>
 </div>
 
 [[block include_block]]

@@ -1,8 +1,26 @@
 $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
-    $(".show").colorbox({
+    
+	$(".show").colorbox({
         rel:'show'
     });
+	
+	/*всплывающяя подписка на новости*/
+	$('#current').live('click',function(){
+		$('#current,#popup_subscribe_news').hide();
+	});
+	
+	$("#mailed_popup_subscribe_news button").live("click", function(){
+    	if (($("#my_mail_popup_subscribe_news").val() != "") && 
+    	    		(!(!(($("#my_mail_popup_subscribe_news").val().indexOf(".")>0 ) && ($("#my_mail_popup_subscribe_news").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail_popup_subscribe_news").val()))))
+    		xajax_gogoMail(xajax.getFormValues('mailed_popup_subscribe_news'));
+    	else if ($("#my_mail_popup_subscribe_news").val() == "")
+    		$("#mailed_popup_subscribe_news label").text("Не введен email");
+    	else 
+    		$("#mailed_popup_subscribe_news label").text("Не правильный email");
+    });
+	/*всплывающяя подписка на новости*/
+	
     $("#mailed button").live("click", function(){
     	if (($("#my_mail").val() != "") && 
     	    		(!(!(($("#my_mail").val().indexOf(".")>0 ) && ($("#my_mail").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail").val()))))
@@ -239,47 +257,49 @@ $(document).ready(function(){
 		}
 		idcatlist++;
 	}); 
-/*голосования*/
-$('.vote').each(function(index){
-	$(this).attr('id', 'vote-item'+index);
-	var wdt = 0;
-	$('#vote-item'+index+' .var .color').each(function(index2){
-		$(this).attr('class','color color-var-item'+index2);
-		wdt += parseInt($(this).attr('wdt'));
-	})
-	$('#vote-item'+index+' .var .number').each(function(index4){
-		$(this).attr('class', 'number item-nubmer'+index4);
+	/*голосования*/
+	$('.vote').each(function(index){
+		$(this).attr('id', 'vote-item'+index);
+		var wdt = 0;
+		$('#vote-item'+index+' .var .color').each(function(index2){
+			$(this).attr('class','color color-var-item'+index2);
+			wdt += parseInt($(this).attr('wdt'));
+		})
+		$('#vote-item'+index+' .var .number').each(function(index4){
+			$(this).attr('class', 'number item-nubmer'+index4);
+		});
+		$('#vote-item'+index+' .var .value').each(function(index3) {
+			var total;
+			var color;
+			total = parseInt($('.var').width()) - 20 - parseInt($(this).width());
+			total = 1/(wdt/parseInt($('#vote-item'+index+' .color-var-item'+index3).attr('wdt'))) * total;
+			color = 1/(wdt/parseInt($('#vote-item'+index+' .color-var-item'+index3).attr('wdt')));
+			$('#vote-item'+index+' .color-var-item'+index3).css({'background': '#6438c8'});
+			if (color > 0.10)
+				$('#vote-item'+index+' .color-var-item'+index3).css({'background':'#68a332'});
+			if (color > 0.25)
+				$('#vote-item'+index+' .color-var-item'+index3).css({'background':'#0d44a0'});	
+			if (color > 0.50)
+				$('#vote-item'+index+' .color-var-item'+index3).css({'background': '#ff0000'});
+			$('#vote-item'+index+' .item-nubmer'+index3).html(Math.round(color*100)+"%"); 
+			$('#vote-item'+index+' .color-var-item'+index3).width(total);
+		});
 	});
-	$('#vote-item'+index+' .var .value').each(function(index3) {
-		var total;
-		var color;
-		total = parseInt($('.var').width()) - 20 - parseInt($(this).width());
-		total = 1/(wdt/parseInt($('#vote-item'+index+' .color-var-item'+index3).attr('wdt'))) * total;
-		color = 1/(wdt/parseInt($('#vote-item'+index+' .color-var-item'+index3).attr('wdt')));
-		$('#vote-item'+index+' .color-var-item'+index3).css({'background': '#6438c8'});
-		if (color > 0.10)
-			$('#vote-item'+index+' .color-var-item'+index3).css({'background':'#68a332'});
-		if (color > 0.25)
-			$('#vote-item'+index+' .color-var-item'+index3).css({'background':'#0d44a0'});	
-		if (color > 0.50)
-			$('#vote-item'+index+' .color-var-item'+index3).css({'background': '#ff0000'});
-		$('#vote-item'+index+' .item-nubmer'+index3).html(Math.round(color*100)+"%"); 
-		$('#vote-item'+index+' .color-var-item'+index3).width(total);
-	});
-});
-var index_but;
-$('.vote .hide_me').each(function(index){
-		$(this).addClass("hide_me-item" + index)
-		$(this).hide();	
-		index_but = index;
-})
-$('.vote .hide_me.hide_me-item'+index_but).show(); 
 
-/*голосования*/
-$('.answer_comment').each(function(index){
-	$(this).attr('id', 'answer_comment_item'+index);
+	var index_but;
+	$('.vote .hide_me').each(function(index){
+			$(this).addClass("hide_me-item" + index)
+			$(this).hide();	
+			index_but = index;
+	});
+	$('.vote .hide_me.hide_me-item'+index_but).show(); 
+
+	/*голосования*/
+	$('.answer_comment').each(function(index){
+		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
+
 function getVote(inx){
 	var wdt = 0;
 	$('#QuestionFormRight'+inx+' .var .color').each(function(index2){
@@ -371,15 +391,14 @@ function showInputs(id){
 }
 /*места*/
 
-function setCookie(){
-	$.cookie('like_cookie', '1', { expires: 2, path: '/', domain: 'engels.bz'});
+function setCookie(name,value,time){
+	$.cookie(name, value, { expires: time, path: '/'});
 }
 
 function showCookie(){
 	if(!$.cookie('like_cookie')){
-		//$("#hiddenreg").css("top",getBodyScrollTop()+30);
 		$('#current, #popup_likes').show();
-		setCookie();
+		setCookie('like_cookie','1',2);
 	}
 }
 
@@ -388,6 +407,27 @@ function showPopup(){
 		setTimeout("showCookie();", 10000);
 	}
 }
+
+/*всплывающяя подписка на новости*/
+
+function showNewsPopupCookie(){
+	if(!$.cookie('popup_news_cookie')){
+		
+		if($('#popup_subscribe_news').css('display') == "none"){
+    		$('#current,#popup_subscribe_news').show();
+    	}
+		
+		setCookie('popup_news_cookie',1,7);
+	}
+}
+
+function showNewsPopup(){
+	if(!$.cookie('popup_news_cookie') && !$.cookie('subscription_news_cookie')){
+		setTimeout("showNewsPopupCookie();", 10000);
+	}
+}
+
+/*всплывающяя подписка на новости*/
 
 function getMeetsMain(time,i){
 	$("#preloader_meets").show();
