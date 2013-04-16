@@ -405,7 +405,7 @@ function showNewsPopupCookie(){
 
 function showNewsPopup(){
 	if(!$.cookie('popup_news_cookie') && !$.cookie('subscription_news_cookie')){
-		setTimeout("showNewsPopupCookie();", 3000);
+		setTimeout("showNewsPopupCookie();", 10000);
 	}
 }
 
