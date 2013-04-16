@@ -366,6 +366,57 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     color: #0a0a0a;
 }
 
+/**/
+#popup_subscribe_news{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px #999999;
+    display: none;
+    height: 111px;
+    left: 50%;
+    margin-left: -194px;
+    opacity: 1;
+    position: fixed;
+    top: 191px;
+    width: 388px;
+    z-index: 2222;
+}
+
+#popup_subscribe_news .title{
+    position: absolute;
+    padding: 14px 15px;
+    width: 359px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+#popup_subscribe_news .line{
+    position: relative;
+    width: 100%;
+    height: 34px;
+    *padding-top: 43px;
+    margin: 43px 0px;
+}
+#popup_subscribe_news form{
+    margin-left: 82px;
+}
+#popup_subscribe_news form input{
+    height: 20px;
+    color: #0a0a0a;
+}
+#current {
+    background: url("/images/bg/backpop.png") repeat scroll 0 0 transparent;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+	display: none;
+}
+/**/
+
 #tape{
     float: left;
     width: 270px;
