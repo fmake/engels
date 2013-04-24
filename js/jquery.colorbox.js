@@ -329,7 +329,7 @@
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
 				$close = $tag(div, "Close"),
-				$myHtmlCode = $taf(div, "myHtmlCode", 'float: none; display: block; width: settings.w, height: 20px; background: #000;');
+				$myHtmlCode = $taf(div, "myHtmlCode", 'float: none; display: block; width: settings.w, height: 20px; background: #000;')
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
