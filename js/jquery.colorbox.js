@@ -18,8 +18,8 @@
 		maxHeight: "600",
 		scalePhotos: true,
 		scrolling: true,
-		inline: false,
-		html: false,
+		inline: true,
+		html: true,
 		iframe: false,
 		fastIframe: true,
 		photo: false,
@@ -590,7 +590,7 @@
 		
 		$loaded.remove();
 		$loaded = $tag(div, 'LoadedContent').append(object);
-		
+
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
