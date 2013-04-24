@@ -322,16 +322,15 @@
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
 				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
-				$myHtml = $tag(div, "MyHtml"),
 				$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic")),
 				$title = $tag(div, "Title"),
 				$current = $tag(div, "Current"),
 				$next = $tag(div, "Next"),
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
-				$close = $tag(div, "Close")
+				$close = $tag(div, "Close"),
+				$myHtml = $tag(div, "MyHtml", 'display:block')
 			);
-			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
 				$tag(div).append(
 					$tag(div, "TopLeft"),
@@ -565,7 +564,6 @@
 				settings.w = setSize(options.innerWidth, 'x');
 			}
 			$loaded.css({width: settings.w});
-			
 			if (options.height) {
 				settings.h = setSize(options.height, 'y') - loadedHeight - interfaceHeight;
 			}
