@@ -351,21 +351,19 @@
 			).find('div div').css({'float': 'left'});
 			
 			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w', 'height': '100px', 'background': '#000'});
-			__code = "<div class=\"all-c\">
-				<div id=\"comments\" class=\"all-c\">
-				<a name=\"comment333\"></a>
-				<div class=\"comments_ite\">
-				<div class=\"img\">
-					<img src=\"http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg\" style=\"float:left\">
+			__code = "<div class='all-c'><div id='comments' class='all-c'><a name='comment333'></a>
+				<div class='comments_ite'>
+				<div class='img'>
+					<img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'>
 				</div>
-				<div class=\"comment\">
-					<div class=\"title\">
-					<span class=\"name\">
+				<div class='comment'>
+					<div class='title'>
+					<span class='name'>
 						Роман Петухов
 					</span>
-					<span class=\"date\">10:07 26.03.2013</span>
+					<span class='date'>10:07 26.03.2013</span>
 					</div>
-					<div class=\"comment\">
+					<div class='comment'>
 						Печально
 					</div>
 				</div>
