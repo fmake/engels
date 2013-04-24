@@ -329,7 +329,7 @@
 				$next = $tag(div, "Next"),
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
-				$close = $tag(div, "Close"),
+				$close = $tag(div, "Close")
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
