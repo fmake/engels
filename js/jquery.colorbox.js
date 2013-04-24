@@ -329,7 +329,7 @@
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
 				$close = $tag(div, "Close"),
-				$myHtmlCode = $tag(div, "myHtmlCode", 'float: none; display: block; width: settings.w, height: 20px; background: #000;')
+				$myHtmlCode = $tag(div, "myHtmlCode")
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
@@ -350,6 +350,7 @@
 				)
 			).find('div div').css({'float': 'left'});
 			
+			$myHtmlCode.css({'float': 'none', 'display': 'block', 'width': 'settings.w', 'height': '20px', 'background': '#000'});
 			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
 			
 			$groupControls = $next.add($prev).add($current).add($slideshow);
