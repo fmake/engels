@@ -350,7 +350,7 @@
 				)
 			).find('div div').css({'float': 'left'});
 			
-			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w', 'height': '20px', 'background': '#000'});
+			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w', 'height': '100px', 'background': '#000'});
 			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
 			
 			$groupControls = $next.add($prev).add($current).add($slideshow);
@@ -368,7 +368,7 @@
 				// Cache values needed for size calculations
 				interfaceHeight = $topBorder.height() + $bottomBorder.height() + $content.outerHeight(true) - $content.height();//Subtraction needed for IE6
 				interfaceWidth = $leftBorder.width() + $rightBorder.width() + $content.outerWidth(true) - $content.width();
-				loadedHeight = $loaded.outerHeight(true)+20;
+				loadedHeight = $loaded.outerHeight(true)+100;
 				loadedWidth = $loaded.outerWidth(true);
 				
 				// Setting padding to remove the need to do size conversions during the animation step.
