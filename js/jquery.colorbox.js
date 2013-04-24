@@ -18,8 +18,8 @@
 		maxHeight: "600",
 		scalePhotos: true,
 		scrolling: true,
-		inline: true,
-		html: true,
+		inline: false,
+		html: false,
 		iframe: false,
 		fastIframe: true,
 		photo: false,
@@ -328,9 +328,9 @@
 				$next = $tag(div, "Next"),
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
-				$close = $tag(div, "Close"),
-				$myHtml = $tag(div, "MyHtml", 'display:block')
+				$close = $tag(div, "Close")
 			);
+			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
 				$tag(div).append(
 					$tag(div, "TopLeft"),
@@ -564,6 +564,7 @@
 				settings.w = setSize(options.innerWidth, 'x');
 			}
 			$loaded.css({width: settings.w});
+			
 			if (options.height) {
 				settings.h = setSize(options.height, 'y') - loadedHeight - interfaceHeight;
 			}
@@ -589,7 +590,7 @@
 		
 		$loaded.remove();
 		$loaded = $tag(div, 'LoadedContent').append(object);
-
+		
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
