@@ -9,7 +9,9 @@ $(document).ready(function(){
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
 	});
-	
+	$(".close").live('click',function(){
+		$("#current,#popup_subscribe_news").hide();
+	});
 	$("#mailed_popup_subscribe_news button").live("click", function(){
     	if (($("#my_mail_popup_subscribe_news").val() != "") && 
     	    		(!(!(($("#my_mail_popup_subscribe_news").val().indexOf(".")>0 ) && ($("#my_mail_popup_subscribe_news").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail_popup_subscribe_news").val()))))
