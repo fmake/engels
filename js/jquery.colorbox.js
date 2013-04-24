@@ -371,7 +371,7 @@
 				// Cache values needed for size calculations
 				interfaceHeight = $topBorder.height() + $bottomBorder.height() + $content.outerHeight(true) - $content.height();//Subtraction needed for IE6
 				interfaceWidth = $leftBorder.width() + $rightBorder.width() + $content.outerWidth(true) - $content.width();
-				loadedHeight = $loaded.outerHeight(true)+100;
+				loadedHeight = $loaded.outerHeight(true)+myHeight;
 				loadedWidth = $loaded.outerWidth(true);
 				
 				// Setting padding to remove the need to do size conversions during the animation step.
