@@ -1076,6 +1076,16 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     display: block;
     position: relative;
 }
+.close{
+    background: url("/images/icons/exit2.png") no-repeat;
+    height: 36px;
+    position: absolute;
+    width: 36px;
+    cursor: pointer;
+    z-index: 600;
+    right: -11px;
+    top: -12px;
+}
 .task1, .task2 {float: left; text-align: center;  padding: 7px 15px 0 0;}
 .company, .ques{float: left; padding-left: 20px; padding-top: 15px;}
 .ques{padding-right: 20px;background: url("/images/icons/bg_border.png") no-repeat scroll 100% 9px transparent;padding-bottom: 10px;}
