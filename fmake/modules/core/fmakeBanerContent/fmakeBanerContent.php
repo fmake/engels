@@ -81,6 +81,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		$table = "(select c.*,t.`picture`,t.`date_create`,t.`active` FROM  `baner_content` c LEFT JOIN `{$this->table}` t ON c.id = t.id ) a";
 
 		$select->addWhere("a.active='1'");
+		$select->addWhere("a.`picture`!=''");
 		$select->addWhere("( a.`date_to` <= '{$time}'  OR a.`date_to` = 0 )")->addWhere("( a.`date_from` >= '{$time}' OR a.`date_from` = 0 )");
 
 		$result = $select->addFrom($table)->addWhere(" ( (( a.`use_view` <= a.`max_count_view` AND a.`max_count_view` != 0 ) OR a.`max_count_view` = 0 ) AND (( a.`use_price` <= a.`price` AND a.`price` != 0 ) OR a.`price` = 0 ) AND ( a.`id_type` = '{$type}' ) ) ")->queryDB();
