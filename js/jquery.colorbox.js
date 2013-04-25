@@ -597,8 +597,8 @@
 		var callback, speed = settings.transition === "none" ? 0 : settings.speed;
 		
 		$loaded.remove();
-		$loaded = $tag(div, 'LoadedContent').append(object);
-		
+		__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		$loaded = $tag(div, 'LoadedContent').append(object).append(__code);
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
@@ -617,9 +617,9 @@
 		.prependTo($content);
 		
 		$loadingBay.hide();
-		__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		//__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
 		//__form = "";
-		$myHtmlCode.append(__code);
+		//$myHtmlCode.append(__code);
 			//myHeight = $("#comments").height() + 20;
 		// floating the IMG removes the bottom line-height and fixed a problem where IE miscalculates the width of the parent element as 100% of the document width.
 		//$(photo).css({'float': 'none', marginLeft: 'auto', marginRight: 'auto'});
