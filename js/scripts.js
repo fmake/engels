@@ -476,9 +476,9 @@ var cw=get_client_width();
 var ch=get_client_height(); 
 
 /* Центрируем элемент #main */
-var xy=abs_pos('colorbox');
-if(cw>xy['w']) set_style('colorbox', 'marginLeft', ((cw-xy['w'])/2)); 
-if(ch>xy['h']) set_style('colorbox', 'marginTop', ((ch-xy['h'])/2)); 
+var xy=abs_pos('cboxWrapper');
+if(cw>xy['w']) set_style('cboxWrapper', 'marginLeft', ((cw-xy['w'])/2)); 
+if(ch>xy['h']) set_style('cboxWrapper', 'marginTop', ((ch-xy['h'])/2)); 
 
 /* 
 Условия:
@@ -497,7 +497,7 @@ if(ch>=el_yh && el_sh>el_xy['h']){
  set_style('wscroll', 'height', el_ys); 
  
 //Скрываем элементы прокрутки #content
- set_style(el_id, 'overflow', 'hidden'); 
+ set_style('body', 'overflow', 'hidden'); 
  
 //Фиксируем элемент #main
  set_style('body', 'position', 'fixed'); 
