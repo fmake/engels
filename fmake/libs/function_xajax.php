@@ -36,7 +36,7 @@ function htmlforcolorbox(){
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
 	str_replace(" ","",$text);
 	$script = "__code = '{$text}'; ";
-	$objResponse->alert($script);
+	$objResponse->script($script);
 	return $objResponse;
 }
 function gogoMail($values){
