@@ -1,5 +1,6 @@
 [[ include TEMPLATE_PATH ~ "blocks/header.tpl"]]
 <body>
+	<div id="all_content_for_noscroll">
 /*facebook like*/
 [[raw]]
     <div id="fb-root"></div>
@@ -849,6 +850,6 @@
 [[block include_block]]
 
 [[endblock]]
-<div id="wscroll"></div>
+</div>
 </body>
 </html>
