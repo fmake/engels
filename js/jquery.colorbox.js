@@ -608,14 +608,14 @@
 		function getHeight() {
 			//settings.h = settings.h || $loaded.height();
 			//settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
-			settings.h = settings.h || $loaded.height();
+			settings.h = settings.h || $loaded.height() + 50;
 			settings.h = settings.mh && settings.mh  < settings.h ? settings.h : settings.mh;
 			return settings.h;
 		}
 		
 		$loaded.hide()
 		.appendTo($loadingBay.show())// content has to be appended to the DOM for accurate size calculations.
-		.css({width: getWidth(), overflow: settings.scrolling ? 'hidden' : 'hidden'})
+		.css({width: getWidth()/*, overflow: settings.scrolling ? 'hidden' : 'hidden'*/})
 		.css({height: getHeight()})// sets the height independently from the width in case the new width influences the value of height.
 		.prependTo($content);
 		
