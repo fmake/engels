@@ -37,7 +37,7 @@ function htmlforcolorbox(){
 	str_replace("\r", "", $text);
 	str_replace("\n", "", $text);
 	str_replace("\t", "", $text);
-	str_replace('#\#', "#\\#", $text);
+	//str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
 	//$script = "var __code = \"{$text}\"; ";
 	$script = "showhtml($text);";
