@@ -40,7 +40,7 @@ function htmlforcolorbox(){
 	str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
 	$script = "__code = '{$text}'; ";
-	$objResponse->alert($script);
+	$objResponse->script($script);
 	return $objResponse;
 }
 function gogoMail($values){
