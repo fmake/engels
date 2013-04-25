@@ -41,7 +41,7 @@ function htmlforcolorbox(){
 	//$text =  htmlspecialchars($text);
 	//$script = "var __code = \"{$text}\"; ";
 	//$script = "showhtml($text);";
-	$$objResponse->alert($text);
+	$objResponse->alert($text);
 	//$objResponse->script($script);
 	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->call("showhtml", $text);
