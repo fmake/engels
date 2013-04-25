@@ -24,12 +24,12 @@ $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
 $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
-$xajax->register(XAJAX_FUNCTION, "html_for_colorbox");
+$xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 /* регистрация функции */
 
 /* написание функции */
-function html_for_colorbox(){
-	$objResponse = new xajaxResponse;
+function htmlforcolorbox(){
+	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
 	include ROOT.'calculating/helpModules/comments.php';
