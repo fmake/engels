@@ -102,12 +102,12 @@ class fmakeBanerContent extends fmakeSiteModule {
 		//printAr($baners);
 		if($baners){
 			$key_baner = array_rand($baners);
-			printAr($baners[$key_baner]);
+			//printAr($baners[$key_baner]);
 		}
 		if($baners[$key_baner]){
-			$b = $this->showBanerId($baners[0]['id'],$baners[0]['picture'],$baners[0]['format'],$baners[0]['width'],$baners[0]['height']);
-			if($baners[0]['url']){
-				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[0]['url'].'">'.$b.'</a></noindex>';
+			$b = $this->showBanerId($baners[$key_baner]['id'],$baners[$key_baner]['picture'],$baners[$key_baner]['format'],$baners[$key_baner]['width'],$baners[$key_baner]['height']);
+			if($baners[$key_baner]['url']){
+				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[$key_baner]['url'].'">'.$b.'</a></noindex>';
 				return $b_url;
 			} else {
 				return $b;
