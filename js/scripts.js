@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onOpen: function(){onGoGo()},
+        onOpen: function(){onGoGo();$('input.fieldfocus,textarea.fieldfocus').fieldFocus();},
         onClosed: function(){onEndEnd()}
     });
 	
