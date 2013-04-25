@@ -14,15 +14,6 @@ var browser={
   ipad: /ipad/i.test(WS_UA)
 }
 
-function $(obj){	
-  if(typeof(obj)=='object') return obj;	
-  if(typeof(obj)!='string' || !obj) return false;
-  if (document.getElementById) return document.getElementById(obj);  
-  else if (document.all) return document.all[obj];
-  else if (document.layers) return document.layers[obj]; 
-  return false;
-}
-
 function get_doc_body(){
   return document.body || document.documentElement;
 }
