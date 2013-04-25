@@ -3,7 +3,8 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onOpen: function(){onGoGo();xajax_htmlforcolorbox();},
+        onLoad: function(){xajax_htmlforcolorbox();}
+        onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()}
     });
 	/*всплывающяя подписка на новости*/
