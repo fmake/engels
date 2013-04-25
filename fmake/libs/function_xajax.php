@@ -34,7 +34,7 @@ function htmlforcolorbox(){
 	global $twig,$globalTemplateParam;
 	include ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
-	$script = "__code = "."$text"."; ";
+	$script = "__code = '{$text}'; ";
 	$objResponse->script($script);
 	return $objResponse;
 }
