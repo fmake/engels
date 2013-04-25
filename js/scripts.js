@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onLoad: function(){xajax_htmlforcolorbox();}, 
+        //onLoad: function(){xajax_htmlforcolorbox();}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()}
     });
@@ -399,7 +399,10 @@ function showInputs(id){
 	}
 }
 /*места*/
-
+function showhtml(text){
+	__code = text;
+	alert(__code);
+}
 function setCookie(name,value,time){
 	$.cookie(name, value, { expires: time, path: '/'});
 }

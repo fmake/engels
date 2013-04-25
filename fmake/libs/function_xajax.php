@@ -33,15 +33,17 @@ function htmlforcolorbox(){
 	global $twig,$globalTemplateParam;
 	include ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
-	//str_replace(" ","",$text);
-	//str_replace("\r", "", $text);
-	//str_replace("\n", "", $text);
-	//str_replace("\t", "", $text);
-	//str_replace('#\#', "#\\#", $text);
+	str_replace(" ","",$text);
+	str_replace("\r", "", $text);
+	str_replace("\n", "", $text);
+	str_replace("\t", "", $text);
+	str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
 	//$script = "var __code = \"{$text}\"; ";
-	//$objResponse->script($script);
-	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+	$script = "showhtml({text});"
+	$objResponse->script($script);
+	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+	//$objResponse->call("showhtml", $text);
 	return $objResponse;
 }
 function gogoMail($values){
