@@ -304,10 +304,10 @@ $(document).ready(function(){
 	});
 });
 function onGoGo(){
-	$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});
+	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }
 function onEndEnd(){
-	$(".all_content_for_noscroll").css({'position':'static','width':'auto'});	
+	$("#all_content_for_noscroll").css({'position':'static','width':'auto'});	
 }
 function getVote(inx){
 	var wdt = 0;
