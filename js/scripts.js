@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onOnpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});},
+        onOpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});},
         onClose: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'});}
     });
 	
