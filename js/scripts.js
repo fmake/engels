@@ -2,7 +2,9 @@ $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     
 	$(".show").colorbox({
-        rel:'show'
+        rel:'show',
+        onOpen: function(){onGoGo()},
+        onClosed: function(){onEndEnd()}
     });
 	
 	/*всплывающяя подписка на новости*/
@@ -301,6 +303,12 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
+function onGoGo(){
+	$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});
+}
+function onEndEnd(){
+	$(".all_content_for_noscroll").css({'position':'static','width':'auto'});	
+}
 function getVote(inx){
 	var wdt = 0;
 	$('#QuestionFormRight'+inx+' .var .color').each(function(index2){
