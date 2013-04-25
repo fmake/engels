@@ -32,9 +32,9 @@ function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
 	$fmakeComments = new fmakeComments();
 	global $twig,$globalTemplateParam;
-	include ROOT.'calculating/helpModules/comments.php';
+	include ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
-	$script = "__code = ".$text."; alert(__code)";
+	$script = "__code = ".$text."; alert(__code);";
 	$objResponse->script($script);
 	return $objResponse;
 }
