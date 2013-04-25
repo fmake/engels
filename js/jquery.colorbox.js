@@ -350,12 +350,12 @@
 				)
 			).find('div div').css({'float': 'left'});
 			
-			__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
-			__form = "";
-			$myHtmlCode.append(__code);
-			myHeight = $("#comments").height() + 20;
+			//__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+			//__form = "";
+			//$myHtmlCode.append(__code);
+			//myHeight = $("#comments").height() + 20;
 			alert(myHeight);
-			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w', 'height': 'myHeight'});
+			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w' /*'height': 'myHeight'*/});
 			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
 			
 			$groupControls = $next.add($prev).add($current).add($slideshow);
@@ -373,7 +373,8 @@
 				// Cache values needed for size calculations
 				interfaceHeight = $topBorder.height() + $bottomBorder.height() + $content.outerHeight(true) - $content.height();//Subtraction needed for IE6
 				interfaceWidth = $leftBorder.width() + $rightBorder.width() + $content.outerWidth(true) - $content.width();
-				loadedHeight = $loaded.outerHeight(true) + myHeight;
+				//loadedHeight = $loaded.outerHeight(true) + myHeight;
+				loadedHeight = $loaded.outerHeight(true);
 				loadedWidth = $loaded.outerWidth(true);
 				
 				// Setting padding to remove the need to do size conversions during the animation step.
@@ -616,7 +617,10 @@
 		.prependTo($content);
 		
 		$loadingBay.hide();
-		
+		__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		//__form = "";
+		$myHtmlCode.append(__code);
+			//myHeight = $("#comments").height() + 20;
 		// floating the IMG removes the bottom line-height and fixed a problem where IE miscalculates the width of the parent element as 100% of the document width.
 		//$(photo).css({'float': 'none', marginLeft: 'auto', marginRight: 'auto'});
 		
