@@ -3,8 +3,8 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        cbox_open: onGoGo(),
-        cbox_close: onEndEnd()
+        onOnpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});},
+        onClose: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'});}
     });
 	
 	/*всплывающяя подписка на новости*/
@@ -303,12 +303,6 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
-function onGoGo(){
-	$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});
-}
-function onEndEnd(){
-	$(".all_content_for_noscroll").css({'position':'static','width':'auto'});	
-}
 function getVote(inx){
 	var wdt = 0;
 	$('#QuestionFormRight'+inx+' .var .color').each(function(index2){
