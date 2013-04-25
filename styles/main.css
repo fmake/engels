@@ -1302,7 +1302,7 @@ a:hover h1{
     margin-bottom: 5px;
     overflow: hidden;
 }
-#item_news .form_news form input[type="text"], .form_expert form input[type="text"]{
+.form_news form input[type="text"], .form_expert form input[type="text"]{
     background: #fff;
     border: 0 none;
     height: 24px;
@@ -1314,7 +1314,7 @@ a:hover h1{
     position: relative;
 }
 
-#item_news .form_news form textarea, .form_expert form textarea{
+.form_news form textarea, .form_expert form textarea{
     position: relative;
     color: #868686;
     padding: 5px 10px;
@@ -1326,20 +1326,20 @@ a:hover h1{
     border: 0 none;
     resize: none;
 }
-#item_news .form_news form .public, .form_expert form .public{ 
+.form_news form .public, .form_expert form .public{ 
     background: #ededed;
     color: #8f8f8f;
     line-height: 25px;
     width: 460px;
 }
-#item_news .form_news form .public span , .form_expert form .public span {
+.form_news form .public span , .form_expert form .public span {
     padding-left: 10px;
 }
-#item_news .form_news form .public img, .form_expert form .public img{
+.form_news form .public img, .form_expert form .public img{
     vertical-align: middle;
      margin-left: 10px;
 }
-#item_news .form_news form .float-right, .form_expert form .float-right{
+.form_news form .float-right, .form_expert form .float-right{
     float: left; 
     margin: 10px 0 10px 377px;
 }
