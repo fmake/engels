@@ -35,7 +35,7 @@ function htmlforcolorbox(){
 	include ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
 	$script = "__code = '{$text}'; ";
-	$objResponse->script($script);
+	$objResponse->alert($script);
 	return $objResponse;
 }
 function gogoMail($values){
