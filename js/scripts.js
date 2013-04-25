@@ -2,9 +2,9 @@ $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     
 	$(".show").colorbox({
-        rel:'show',
-        onOpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});},
-        onClosed: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'});}
+		onOpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'})},
+        onClosed: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'})},
+        rel:'show'
     });
 	
 	/*всплывающяя подписка на новости*/
