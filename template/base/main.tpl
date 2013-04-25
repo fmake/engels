@@ -849,6 +849,6 @@
 [[block include_block]]
 
 [[endblock]]
-
+<div id="wscroll"></div>
 </body>
 </html>
