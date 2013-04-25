@@ -354,7 +354,7 @@
 			//__form = "";
 			//$myHtmlCode.append(__code);
 			//myHeight = $("#comments").height() + 20;
-			alert(myHeight);
+			//alert(myHeight);
 			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w' /*'height': 'myHeight'*/});
 			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
 			
