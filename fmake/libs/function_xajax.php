@@ -8,8 +8,7 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-//if($_GET['debug']==1 && $_GET['key']=='5523887')
-	$xajax->configure('debug',true);
+if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
@@ -38,7 +37,8 @@ function htmlforcolorbox(){
 	str_replace("\r", "", $text);
 	str_replace("\n", "", $text);
 	str_replace("\t", "", $text);
-	$text =  htmlspecialchars($text);
+	str_replace('#\#', "#\\#", $text);
+	//$text =  htmlspecialchars($text);
 	$script = "__code = '{$text}'; ";
 	$objResponse->script($script);
 	return $objResponse;
