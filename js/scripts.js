@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onLoad: function(){xajax_htmlforcolorbox();}
+        onLoad: function(){xajax_htmlforcolorbox();},
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()}
     });
