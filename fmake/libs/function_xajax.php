@@ -41,7 +41,7 @@ function htmlforcolorbox(){
 	//$text =  htmlspecialchars($text);
 	//$script = "var __code = \"{$text}\"; ";
 	//$objResponse->script($script);
-	$objResponse->append("cboxLoadedContent", "innerHTML", $text)
+	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	return $objResponse;
 }
 function gogoMail($values){
