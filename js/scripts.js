@@ -459,3 +459,66 @@ function changeStatusUser(val) {
 			break;
 	}
 }
+
+var el_id='cboxWrapper';
+
+//Возвращает: координаты x/y, ширину, высоту элемента
+var el_xy=abs_pos(el_id); 
+
+//коорд. Y + высота элемента #content 
+var el_yh=(el_xy['y']+el_xy['h']); 
+
+//Высота #content с учетом прокрутки
+var el_sh=get_scroll_height(el_id); 
+
+//Ширина и высота окна (видимая область сайта)
+var cw=get_client_width();
+var ch=get_client_height(); 
+
+/* Центрируем элемент #main */
+var xy=abs_pos('colorbox');
+if(cw>xy['w']) set_style('colorbox', 'marginLeft', ((cw-xy['w'])/2)); 
+if(ch>xy['h']) set_style('colorbox', 'marginTop', ((ch-xy['h'])/2)); 
+
+/* 
+Условия:
+ 1) Прокручиваемый элемент должен быть полностью виден в окне браузера.
+ 2) Наличие скрытого текста для прокрутки.
+*/
+
+if(ch>=el_yh && el_sh>el_xy['h']){
+//Закрепляем фон страницы 
+ set_style(get_doc_body(), 'backgroundAttachment', 'fixed'); 
+
+//Высота окна + высота скрытой части текста
+ var el_ys=ch+(el_sh-el_xy['h']); 
+ 
+//Задаем длину линии #wscroll для ее прокрутки
+ set_style('wscroll', 'height', el_ys); 
+ 
+//Скрываем элементы прокрутки #content
+ set_style(el_id, 'overflow', 'hidden'); 
+ 
+//Фиксируем элемент #main
+ set_style('colorbox', 'position', 'fixed'); 
+ 
+//Если неподдерживается fixed, то задаем обратно absolute (на всякий случай). 
+ if(get_style('colorbox', 'position')!='fixed') 
+ set_style('colorbox', 'position', 'absolute'); 
+ 
+/*
+Функция-обработчик события OnScroll окна браузера, 
+ассоциируем с прокруткой элемента #content.
+*/ 
+ var func=function(){
+//get_scroll_top(элемент) - возвращает значение прокрутки. 
+//Для кроссбраузерности: (document.documentElement || document.body), (0 || 1)=1 
+ set_scroll_top(el_id, (get_scroll_top(document.documentElement) || get_scroll_top(document.body)));
+ } 
+ 
+ if(typeof(document.onscroll)!=='undefined') document.onscroll=func;
+ else window.onscroll=func;
+ 
+}else set_style('main', 'top', 0); 
+
+
