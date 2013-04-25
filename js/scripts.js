@@ -6,7 +6,6 @@ $(document).ready(function(){
         onOpen: function(){onGoGo();$('input.fieldfocus,textarea.fieldfocus').fieldFocus();},
         onClosed: function(){onEndEnd()}
     });
-	
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
@@ -303,6 +302,8 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
+xajax_html_for_colorbox();
+if(__code)alert(__code);
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }
