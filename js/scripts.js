@@ -302,8 +302,6 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
-xajax_htmlforcolorbox();
-if(__code)alert(__code);
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }
