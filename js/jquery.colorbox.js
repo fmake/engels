@@ -322,6 +322,7 @@
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
 				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
+				$myHtmlCode = $tag(div, "myHtmlCode"),
 				$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic")),
 				$title = $tag(div, "Title"),
 				$current = $tag(div, "Current"),
@@ -349,6 +350,12 @@
 				)
 			).find('div div').css({'float': 'left'});
 			
+			//__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+			//__form = "";
+			//$myHtmlCode.append(__code);
+			//myHeight = $("#comments").height() + 20;
+			//alert(myHeight);
+			$myHtmlCode.css({'float': 'none', 'clear':'both', 'display': 'block', 'width': 'settings.w' /*'height': 'myHeight'*/});
 			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
 			
 			$groupControls = $next.add($prev).add($current).add($slideshow);
@@ -366,6 +373,7 @@
 				// Cache values needed for size calculations
 				interfaceHeight = $topBorder.height() + $bottomBorder.height() + $content.outerHeight(true) - $content.height();//Subtraction needed for IE6
 				interfaceWidth = $leftBorder.width() + $rightBorder.width() + $content.outerWidth(true) - $content.width();
+				//loadedHeight = $loaded.outerHeight(true) + myHeight;
 				loadedHeight = $loaded.outerHeight(true);
 				loadedWidth = $loaded.outerWidth(true);
 				
@@ -589,27 +597,33 @@
 		var callback, speed = settings.transition === "none" ? 0 : settings.speed;
 		
 		$loaded.remove();
-		$loaded = $tag(div, 'LoadedContent').append(object);
-		
+		__code = "<div id='comments' class='all-c' style='margin-left: 15px'><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		__form = "<div class='form_news' style='margin-left: 15px'><form method='post' action='#form_comments' onsubmit='javascript: document.form_comments.submit(); return false;' name='form_comments'><input type='hidden' name='action' value='comments'><div class='i-n'><input type='text' name='name_comment' class='fieldfocus' title='Имя'></div><div class='i-t'><textarea name='text' class='fieldfocus' title='Комментарий'></textarea></div><div class='public'><span>Защита от роботов:</span><img width='60' height='18' src='/getpicture.php' alt='Защита от роботов' title='Защита от роботов'><input type='text' id='faq_captcha' class='text' name='picode' style='width: 55px;'></div><button class='float-right'><span><span><span>Отправить</span></span></span></button><div class='cl'></div></form><div class='cl'></div></div>";
+		$loaded = $tag(div, 'LoadedContent').append(object).append(__code).append(__form);
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
 			return settings.w;
 		}
 		function getHeight() {
-			settings.h = settings.h || $loaded.height();
-			settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
+			//settings.h = settings.h || $loaded.height();
+			//settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
+			settings.h = settings.h || $loaded.height() + 100;
+			settings.h = settings.mh && settings.mh  < settings.h ? settings.h : settings.mh;
 			return settings.h;
 		}
 		
 		$loaded.hide()
 		.appendTo($loadingBay.show())// content has to be appended to the DOM for accurate size calculations.
-		.css({width: getWidth(), overflow: settings.scrolling ? 'auto' : 'hidden'})
+		.css({width: getWidth()/*, overflow: settings.scrolling ? 'hidden' : 'hidden'*/})
 		.css({height: getHeight()})// sets the height independently from the width in case the new width influences the value of height.
 		.prependTo($content);
 		
 		$loadingBay.hide();
-		
+		//__code = "<div id='comments' class='all-c'><a name='comment333'></a><div class='comments_ite'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		//__form = "";
+		//$myHtmlCode.append(__code);
+			//myHeight = $("#comments").height() + 20;
 		// floating the IMG removes the bottom line-height and fixed a problem where IE miscalculates the width of the parent element as 100% of the document width.
 		//$(photo).css({'float': 'none', marginLeft: 'auto', marginRight: 'auto'});
 		

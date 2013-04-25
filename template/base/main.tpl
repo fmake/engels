@@ -1,5 +1,6 @@
 [[ include TEMPLATE_PATH ~ "blocks/header.tpl"]]
 <body>
+	<div id="all_content_for_noscroll">
 /*facebook like*/
 [[raw]]
     <div id="fb-root"></div>
@@ -453,7 +454,7 @@
 									<div class="title">
 										<a href="{item.full_url}">{item.caption}</a>
 									</div>
-									<div class="text">{item.info}</div>
+									<div class="text">{item.info|raw}</div>
 								</div>
 							[[elseif loop.index == 3]]
 								</div>
@@ -462,7 +463,7 @@
 										<div class="title">
 											<a href="{item.full_url}">{item.caption}</a>
 										</div>
-										<div class="text">{item.info}</div>
+										<div class="text">{item.info|raw}</div>
 									</div>
 							[[endif]]
 						[[else]]
@@ -471,7 +472,7 @@
 									<div class="title">
 										<a href="{item.full_url}">{item.caption}</a>
 									</div>
-									<div class="text">{item.info}</div>
+									<div class="text">{item.info|raw}</div>
 								</div>
 							[[elseif loop.index == 4]]
 								</div>
@@ -480,7 +481,7 @@
 										<div class="title">
 											<a href="{item.full_url}">{item.caption}</a>
 										</div>
-										<div class="text">{item.info}</div>
+										<div class="text">{item.info|raw}</div>
 									</div>
 							[[endif]]
 						[[endif]]
@@ -826,6 +827,7 @@
 </div>
 <div id="current" ></div>
 <div id="popup_subscribe_news" class="">
+	<div class = "close"></div>
 	<div class = "title">Подпишись на новости</div>
 	<div class = "line">
 		<form onsubmit="return false;" method="POST" id="mailed_popup_subscribe_news">
@@ -848,6 +850,6 @@
 [[block include_block]]
 
 [[endblock]]
-
+</div>
 </body>
 </html>

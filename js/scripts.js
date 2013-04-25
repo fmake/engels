@@ -2,14 +2,18 @@ $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     
 	$(".show").colorbox({
-        rel:'show'
+        rel:'show',
+        onOpen: function(){onGoGo();$('input.fieldfocus,textarea.fieldfocus').fieldFocus();},
+        onClosed: function(){onEndEnd()}
     });
 	
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
 	});
-	
+	$(".close").live('click',function(){
+		$("#current,#popup_subscribe_news").hide();
+	});
 	$("#mailed_popup_subscribe_news button").live("click", function(){
     	if (($("#my_mail_popup_subscribe_news").val() != "") && 
     	    		(!(!(($("#my_mail_popup_subscribe_news").val().indexOf(".")>0 ) && ($("#my_mail_popup_subscribe_news").val().indexOf("@") > 0 )) || /[^a-zA-Z0-9.@_-]/.test($("#my_mail_popup_subscribe_news").val()))))
@@ -299,7 +303,12 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
-
+function onGoGo(){
+	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
+}
+function onEndEnd(){
+	$("#all_content_for_noscroll").css({'position':'static','width':'auto'});	
+}
 function getVote(inx){
 	var wdt = 0;
 	$('#QuestionFormRight'+inx+' .var .color').each(function(index2){
