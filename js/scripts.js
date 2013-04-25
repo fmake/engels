@@ -2,8 +2,6 @@ $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
     
 	$(".show").colorbox({
-		onOpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'})},
-        onClosed: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'})},
         rel:'show'
     });
 	
