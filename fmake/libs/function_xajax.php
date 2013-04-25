@@ -8,7 +8,8 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
+//if($_GET['debug']==1 && $_GET['key']=='5523887')
+$xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
@@ -33,7 +34,8 @@ function html_for_colorbox(){
 	global $twig,$globalTemplateParam;
 	include ROOT.'calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
-	$script = "{$text}";
+	$script = "__code_new = '{$text}'";
+	$objResponse->script($script);
 	return $objResponse;
 }
 function gogoMail($values){
