@@ -100,7 +100,10 @@ class fmakeBanerContent extends fmakeSiteModule {
 			}
 		}
 		//printAr($baners);
-		if($baners[0]){
+		if($baners){
+			$key_baner = array_rand($baners);
+		}
+		if($baners[$key_baner]){
 			$b = $this->showBanerId($baners[0]['id'],$baners[0]['picture'],$baners[0]['format'],$baners[0]['width'],$baners[0]['height']);
 			if($baners[0]['url']){
 				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[0]['url'].'">'.$b.'</a></noindex>';
