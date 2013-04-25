@@ -606,8 +606,10 @@
 			return settings.w;
 		}
 		function getHeight() {
-			settings.h = settings.h || $loaded.height();
-			settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
+			//settings.h = settings.h || $loaded.height();
+			//settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
+			settings.h = $loaded.height();
+			settings.h = settings.mh < settings.h ? settings.h : settings.mh;
 			return settings.h;
 		}
 		
