@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onOpen: function(){onGoGo();$('input.fieldfocus,textarea.fieldfocus').fieldFocus();},
+        onOpen: function(){onGoGo();xajax_htmlforcolorbox();},
         onClosed: function(){onEndEnd()}
     });
 	/*всплывающяя подписка на новости*/
