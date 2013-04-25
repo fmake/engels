@@ -102,6 +102,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		//printAr($baners);
 		if($baners){
 			$key_baner = array_rand($baners);
+			printAr($baners[$key_baner]);
 		}
 		if($baners[$key_baner]){
 			$b = $this->showBanerId($baners[0]['id'],$baners[0]['picture'],$baners[0]['format'],$baners[0]['width'],$baners[0]['height']);
