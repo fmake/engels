@@ -40,7 +40,7 @@ function htmlforcolorbox(){
 	str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
 	//$script = "var __code = \"{$text}\"; ";
-	$script = "showhtml(\"1234\");";
+	$script = "showhtml($text);";
 	$objResponse->script($script);
 	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->call("showhtml", $text);
