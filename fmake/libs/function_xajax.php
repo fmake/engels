@@ -38,6 +38,7 @@ function htmlforcolorbox(){
 	str_replace("\r", "", $text);
 	str_replace("\n", "", $text);
 	str_replace("\t", "", $text);
+	$text =  htmlspecialchars($text);
 	$script = "__code = '{$text}'; ";
 	$objResponse->script($script);
 	return $objResponse;
