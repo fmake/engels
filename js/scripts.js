@@ -401,7 +401,6 @@ function showInputs(id){
 /*места*/
 function showhtml(text){
 	__code = text;
-	alert(__code);
 }
 function setCookie(name,value,time){
 	$.cookie(name, value, { expires: time, path: '/'});
