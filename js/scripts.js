@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         onOpen: function(){$(".all_content_for_noscroll").css({'position':'fixed','width':'100%'});},
-        onClose: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'});}
+        onClosed: function(){$(".all_content_for_noscroll").css({'position':'static','width':'auto'});}
     });
 	
 	/*всплывающяя подписка на новости*/
