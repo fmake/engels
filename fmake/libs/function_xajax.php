@@ -23,12 +23,21 @@ $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
 $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
+$xajax->register(XAJAX_FUNCTION, "html_for_colorbox");
 /* регистрация функции */
 
 /* написание функции */
+function html_for_colorbox(){
+	$objResponse = new xajaxResponse;
+	$fmakeComments = new fmakeComments();
+	global $twig,$globalTemplateParam;
+	include ROOT.'calculating/helpModules/comments.php';
+	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
+	$script = "{$text}";
+	return $objResponse;
+}
 function gogoMail($values){
 	$objResponse = new xajaxResponse();
-	
 	$type_form = $values['type_form'];
 	if($type_form) $id_form = "mailed_popup_subscribe_news";
 	else $id_form = "mailed";
