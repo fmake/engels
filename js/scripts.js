@@ -459,5 +459,3 @@ function changeStatusUser(val) {
 			break;
 	}
 }
-
-
