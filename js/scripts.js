@@ -459,3 +459,39 @@ function changeStatusUser(val) {
 			break;
 	}
 }
+ 
+function wheel(event)
+{
+var delta=0
+
+if(!event)		event = window.event
+if(event.wheelDelta)	delta = event.wheelDelta/120
+else if(event.detail)	delta = -event.detail/3
+
+if(delta && typeof handle == 'function')
+{
+	handle(delta)
+	if(event.preventDefault) event.preventDefault()
+	event.returnValue = false
+}
+}
+
+function over_div(elem)
+{
+handle = function(delta)
+{
+	if(delta > 0)	elem.scrollTop -= 30;
+	else		elem.scrollTop += 30;
+}
+}
+
+function out_div(elem)
+{
+handle = null
+}
+
+if(window.addEventListener)
+window.addEventListener('DOMMouseScroll', wheel, false);
+window.onmousewheel = document.onmousewheel = wheel;
+ 
+
