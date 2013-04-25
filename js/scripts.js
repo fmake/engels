@@ -500,11 +500,11 @@ if(ch>=el_yh && el_sh>el_xy['h']){
  set_style(el_id, 'overflow', 'hidden'); 
  
 //Фиксируем элемент #main
- set_style('colorbox', 'position', 'fixed'); 
+ set_style('body', 'position', 'fixed'); 
  
 //Если неподдерживается fixed, то задаем обратно absolute (на всякий случай). 
- if(get_style('colorbox', 'position')!='fixed') 
- set_style('colorbox', 'position', 'absolute'); 
+ if(get_style('body', 'position')!='fixed') 
+ set_style('body', 'position', 'absolute'); 
  
 /*
 Функция-обработчик события OnScroll окна браузера, 
