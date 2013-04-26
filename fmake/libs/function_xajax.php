@@ -34,6 +34,7 @@ function htmlforcolorbox(){
 	include ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
+	/*такой бред*/
 	//str_replace(" ","",$text);
 	//str_replace("\"", "'", $text);
 	//str_replace("\r", "", $text);
@@ -49,6 +50,7 @@ function htmlforcolorbox(){
 	//$objResponse->alert($text);
 	//$objResponse->script($script);
 	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+	/*конец такого бреда*/
 	$objResponse->call("showhtml", $text);
 	return $objResponse;
 }
