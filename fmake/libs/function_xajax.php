@@ -10,7 +10,7 @@ $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
 if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
-
+$id_foto = "";
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
 $xajax->register(XAJAX_FUNCTION, "clickBaner");
@@ -73,6 +73,7 @@ function formFoto($values){
 	return $objResponse;
 }
 function htmlforcolorbox(){
+
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam;
 	include_once ROOT.'/fmake/libs/login.php';
