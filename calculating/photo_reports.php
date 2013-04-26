@@ -59,7 +59,7 @@
 				$photos = $fmakeGallery->getFullPhoto($item[$reports_obj->idField]);
 				$count = $fmakeGallery->getByPageCount($item[$reports_obj->idField]);
 				$pages = ceil($count/$limit_photo);
-				PrintAr($photos);
+				//PrintAr($photos);
 				$gap['to'] = ($page-1)*$limit_photo;
 				$gap['from'] = ($page-1)*$limit_photo+$limit_photo-1;
 				$globalTemplateParam->set('gap',$gap);
