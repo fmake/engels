@@ -46,7 +46,7 @@ function formFoto($values){
 		$objResponse->script($script);
 	}
 	else{
-		$objResponse->alert("++";
+		$objResponse->alert("++");
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
