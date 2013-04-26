@@ -43,7 +43,7 @@ function formFoto($values){
 		//$temp_argument = md5($code);
 		//$objResponse->alert($temp_argument);
 		//$objResponse->alert($_SESSION['code_foto']);
-		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\")";
+		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\");";
 		$objResponse->script($script);
 	}
 	else{
@@ -60,8 +60,8 @@ function formFoto($values){
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
 
-		$script += "$(\"#form_foto_for_comments .sucsess\").html(\"Ваше сообщение отправлено.\")";
-		$script += "$(\"#form_foto_for_comments .error\").html(\"\")";
+		$script += "$(\"#form_foto_for_comments .sucless\").html(\"Ваше сообщение отправлено.\");";
+		$script += "$(\"#form_foto_for_comments .error\").html(\"\");";
 
 		$objResponse->script($script);
 	}
