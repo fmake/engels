@@ -50,8 +50,8 @@ function formFoto($values){
 		$script = "$(\"#form_foto_for_comments .error\").html(\"\")";
 		$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
-		$script += "$(\"#form_foto_for_comments .sucless\").html(\"Ваше сообщение отправлено.\");";
-		$script += "$(\"#form_foto_for_comments .error\").html(\"\");";
+		$script += "$(\"#form_foto_for_comments .sucless\").html('Ваше сообщение отправлено.'');";
+		$script += "$(\"#form_foto_for_comments .error\").html('');";
 		$objResponse->alert($script);
 		$objResponse->script($script);
 
