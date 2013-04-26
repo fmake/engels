@@ -29,11 +29,10 @@ $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 /* написание функции */
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
-	$fmakeComments = new fmakeComments();
-	require('./fmake/FController.php');
-	require('./fmake/libs/login.php');
-	global $twig,$globalTemplateParam;
+	include ROOT.'/fmake/FController.php';
+	include ROOT.'/fmake/libs/login.php';
 	include ROOT.'/calculating/helpModules/comments.php';
+	global $twig,$globalTemplateParam;
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
 
@@ -56,6 +55,7 @@ function htmlforcolorbox(){
 	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 
 	/*конец такого бреда*/
+
 	$objResponse->call("showhtml", $text);
 	return $objResponse;
 }
