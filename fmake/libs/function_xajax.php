@@ -32,7 +32,7 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* загружает коменты для колорбокса */
 function formFoto($values){
 	$objResponse = new xajaxResponse();
-
+	require_once ROOT.'/fmake/libs/login.php';
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
@@ -49,6 +49,16 @@ function formFoto($values){
 		$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
 		$objResponse->script($script);
+
+		$post_id = $request->getEscape('id');
+		$fmakeComments = new fmakeComments_foto();
+		$fmakeComments->addParam("name",$name);
+		$fmakeComments->addParam("id_content",$include_param_id_comment);
+		$fmakeComments->addParam("id_user",$user->id);
+		$fmakeComments->addParam("text",$text);
+		$fmakeComments->addParam("date",time());
+		$fmakeComments->addParam("active",1);
+		$fmakeComments->newItem();
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
