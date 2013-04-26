@@ -85,7 +85,7 @@
 				
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);
-				
+				PrintAr($item);
 				$modul->template = "photoreports/item.tpl";
 			}elseif(is_string($cat)){
 				$cat = $reports_obj->getChilds($modul->id,true);
@@ -113,7 +113,7 @@
 				}*/
 				
 				$breadcrubs = $modul->getBreadCrumbs($item[$reports_obj->idField]);
-				PrintAr($fmakeGallery);
+				//PrintAr($fmakeGallery);
 				$globalTemplateParam->set('gallery_obj', $fmakeGallery);
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);
