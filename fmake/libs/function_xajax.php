@@ -73,8 +73,8 @@ function formFoto($values){
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam;
-	include ROOT.'/fmake/libs/login.php';
-	include ROOT.'/calculating/helpModules/comments.php';
+	include_once ROOT.'/fmake/libs/login.php';
+	include_once ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
 
