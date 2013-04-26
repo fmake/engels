@@ -50,6 +50,10 @@ function formFoto($values){
 		$script = "$(\"#form_foto_for_comments .error\").html(\"\")";
 		$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
+		$script += "$(\"#form_foto_for_comments .sucless\").html(\"Ваше сообщение отправлено.\");";
+		$script += "$(\"#form_foto_for_comments .error\").html(\"\");";
+		$objResponse->alert($script);
+		$objResponse->script($script);
 
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
@@ -59,11 +63,6 @@ function formFoto($values){
 		$fmakeComments->addParam("date",time());
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
-
-		$script += "$(\"#form_foto_for_comments .sucless\").html(\"Ваше сообщение отправлено.\");";
-		$script += "$(\"#form_foto_for_comments .error\").html(\"\");";
-
-		$objResponse->script($script);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
