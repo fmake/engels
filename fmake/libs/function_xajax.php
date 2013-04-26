@@ -32,9 +32,8 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* загружает коменты для колорбокса */
 function formFoto($values){
 	$objResponse = new xajaxResponse();
-	print_r($values);
-	$values = serialize($values);
-	json_decode($values);
+	//$values = serialize($values);
+	//json_decode($values);
 	$objResponse->alert($values);
 	return $objResponse;
 }
