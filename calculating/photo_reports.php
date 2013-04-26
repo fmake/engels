@@ -113,7 +113,7 @@
 				}*/
 				
 				$breadcrubs = $modul->getBreadCrumbs($item[$reports_obj->idField]);
-				
+				PrintAr($fmakeGallery);
 				$globalTemplateParam->set('gallery_obj', $fmakeGallery);
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);
