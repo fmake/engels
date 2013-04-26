@@ -46,6 +46,8 @@ function formFoto($values){
 	}
 	else{
 		$script = "$(\"#form_foto_for_comments .error\").html(\"\")";
+		$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
+		$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
 		$objResponse->script($script);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
