@@ -15,7 +15,7 @@
 			<input type="text" name="name_comment" class="fieldfocus name" title="Имя"/>
 		</div>
 		<div class="i-t">
-			<textarea name="text" class="fieldfocus textarea" title="Комментарий">{request.text}</textarea>
+			<textarea name="text" class="fieldfocus textarea" title="Комментарий"></textarea>
 		</div>
 		<div class="public">
 			<span>Защита от роботов:</span>
@@ -29,6 +29,8 @@
 				</span>
 			</span>
 		</button>
+		<div class="cl"></div>
+		<div class="sucless" style="color: green;"></div>
 	</form>
 [[else]]
 	<div class="textarea">
