@@ -15,7 +15,7 @@ $(document).ready(function(){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'));
     	else{
     		var __tt;
-    		_tt = "Пожалуйста введите код с картинки. <br />";
+    		__tt = "Пожалуйста введите код с картинки. <br />";
     		$("#form_foto_for_comments").prepend("<div class=\"error\"></div>")
     		$("#form_foto_for_comments .error").append(__tt);
     	}
