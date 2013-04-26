@@ -24,17 +24,25 @@ $xajax->register(XAJAX_FUNCTION, "TapeWave");
 $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
 $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
+$xajax->register(XAJAX_FUNCTION, "formFoto");
 /* регистрация функции */
 
 /* написание функции */
 
 /* загружает коменты для колорбокса */
+function formFoto($values){
+	$objResponse = new xajaxResponse();
+	$values = serialize($values);
+	json_decode($values);
+	$objResponse->alert($values);
+	return $objResponse;
+}
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam;
 	include ROOT.'/fmake/libs/login.php';
 	include ROOT.'/calculating/helpModules/comments.php';
-	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
+	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
 
 	/*такой бред*/
