@@ -40,6 +40,7 @@ function htmlforcolorbox(){
 	str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
 	//$text = "12341234";
+	$text = is_string($text);
 	$script = "__code = $text;";
 	//$script = "showhtml($text);";
 	//$script = "__code = \"qrwq\"; ";
