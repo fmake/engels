@@ -28,12 +28,13 @@ $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 /* регистрация функции */
 
 /* написание функции */
+
 /* загружает коменты для колорбокса */
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
+	global $twig,$globalTemplateParam;
 	include ROOT.'/fmake/libs/login.php';
 	include ROOT.'/calculating/helpModules/comments.php';
-	global $twig,$globalTemplateParam;
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
 
