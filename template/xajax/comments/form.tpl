@@ -8,29 +8,20 @@
 		</div>
 	[[endif]]
 	
-	<form method="post" onsubmit="xajax_formFoto(); return false;" name="form_foto">
-				<input type="hidden" name="action" value="comments">
+	<form method="post" onsubmit="return false;" id="form_foto_for_comments">
+		<input type="hidden" name="action" value="comments">
 		<div class="i-n">
 			<input type="text" name="name_comment" class="fieldfocus" title="Имя"/>
 		</div>
 		<div class="i-t">
 			<textarea name="text" class="fieldfocus" title="Комментарий">{request.text}</textarea>
 		</div>
-		/*
-		<div class="public">
-			<span>Опубликовать в социальных сетях</span>
-			<img src="/images/icons/vkontaktike.png" alt="" />
-			<input type="checkbox" name="vk">
-			<img src="/images/icons/faceboock.png" alt="" />
-			<input type="checkbox" name="facebook"/>
-		</div>
-		*/
 		<div class="public">
 			<span>Защита от роботов:</span>
 			<img width="60" height="18" src="/getpicture.php" alt="Защита от роботов" title="Защита от роботов" />
 			<input type="text" id="faq_captcha" class="text" name="picode" style="width: 55px;" />
 		</div>
-		<button class="float-right">
+		<button class="float-right" id="button_for_form_foto_for_comments">
 			<span>
 				<span>
 					<span>Отправить</span>
