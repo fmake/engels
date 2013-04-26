@@ -33,7 +33,7 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* загружает коменты для колорбокса */
 function formFoto($values){
 	$objResponse = new xajaxResponse();
-	global $twig,$globalTemplateParam;s
+	global $twig,$globalTemplateParam;
 	require_once ROOT.'/fmake/libs/login.php';
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
