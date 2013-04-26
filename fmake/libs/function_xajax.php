@@ -8,7 +8,8 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
+//if($_GET['debug']==1 && $_GET['key']=='5523887') 
+	$xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
@@ -27,6 +28,7 @@ $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 /* регистрация функции */
 
 /* написание функции */
+/* загружает коменты для колорбокса */
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
 	include ROOT.'/fmake/libs/login.php';
