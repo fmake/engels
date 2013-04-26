@@ -33,19 +33,20 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* загружает коменты для колорбокса */
 function formFoto($values){
 	$objResponse = new xajaxResponse();
-	if($values['action'] != "comments")
-		return $objResponse;
 
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
 
 	if (md5($code) != $_SESSION['code_foto']){
-		$objResponse->alert(md5($code));
+		$temp_argument = md5($code);
+		$objResponse->alert($temp_argument);
 		$objResponse->alert($_SESSION['code_foto']);
 		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\")";
 		$objResponse->script($script);
-		return $objResponse;
+	}
+	else{
+		$objResponse->alert("++";
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
