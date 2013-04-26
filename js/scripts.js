@@ -8,6 +8,13 @@ $(document).ready(function(){
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
     });
+
+    /*фото форма*/
+    $("#button_for_form_foto_for_comments").live('click', function(){
+    	xajax_formFoto(xajax.getFormValues('form_foto_for_comments'));
+    	alert("123");
+    });
+    /*фото форма*/
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
