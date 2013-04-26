@@ -40,6 +40,8 @@ function formFoto($values){
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
 
 	if (md5($code) != $_SESSION['code_foto']){
+		$objResponse->alert(md5($code));
+		$objResponse->alert($_SESSION['code_foto']);
 		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\")";
 		$objResponse->script($script);
 		return $objResponse;
