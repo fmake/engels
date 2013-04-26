@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox();}, 
+        html:"<p>Hello</p>",
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()}
     });
