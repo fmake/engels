@@ -59,7 +59,7 @@
 				$photos = $fmakeGallery->getFullPhoto($item[$reports_obj->idField]);
 				$count = $fmakeGallery->getByPageCount($item[$reports_obj->idField]);
 				$pages = ceil($count/$limit_photo);
-				
+				PrintAr($photos);
 				$gap['to'] = ($page-1)*$limit_photo;
 				$gap['from'] = ($page-1)*$limit_photo+$limit_photo-1;
 				$globalTemplateParam->set('gap',$gap);
@@ -85,7 +85,7 @@
 				
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);
-				PrintAr($item);
+				//PrintAr($item);
 				$modul->template = "photoreports/item.tpl";
 			}elseif(is_string($cat)){
 				$cat = $reports_obj->getChilds($modul->id,true);
