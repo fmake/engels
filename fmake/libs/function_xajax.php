@@ -41,6 +41,8 @@ function formFoto($values){
 
 	if ($code == $_SESSION['code_foto'])
 		alert("+++++++++++++++++++");
+	$objResponse->alert($_SESSION['code_foto']);
+	$objResponse->alert($_SESSION['code']);
 	//$values = serialize($values);
 	//json_decode($values);
 	$objResponse->alert($text);
