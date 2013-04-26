@@ -38,6 +38,9 @@ function formFoto($values){
 	$name = $values['name_comment'];
 	$text = $values['text'];
 	$code = $values['picode'];
+	
+	if ($code == $_SESSION['code_foto'])
+		alert("+++++++++++++++++++");
 	//$values = serialize($values);
 	//json_decode($values);
 	$objResponse->alert($text);
