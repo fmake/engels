@@ -39,7 +39,7 @@ function htmlforcolorbox(){
 	str_replace("\t", "", $text);
 	str_replace('#\#', "#\\#", $text);
 	//$text =  htmlspecialchars($text);
-	$script = "__code = \"{$text}\"; ";
+	$script = "__code = \"{$text}\";";
 	//$script = "showhtml($text);";
 	//$script = "__code = \"qrwq\"; ";
 	//$objResponse->alert($text);
