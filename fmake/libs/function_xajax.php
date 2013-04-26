@@ -39,7 +39,7 @@ function formFoto($values){
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
 
-	if (md5($code) == $_SESSION['code_foto']) alert("+++++++++++++++++++");
+	if (md5($code) == $_SESSION['code_foto']) $objResponse->alert("+++++++++++++++++++");
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
 	//$values = serialize($values);
