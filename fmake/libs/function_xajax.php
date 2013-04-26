@@ -33,20 +33,24 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 function formFoto($values){
 	$objResponse = new xajaxResponse();
 	if($values['action'] != "comments")
-		return false;
+		return $objResponse;
 
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
 
-	if (md5($code) == $_SESSION['code_foto']) $objResponse->alert("+++++++++++++++++++");
+	if (md5($code) != $_SESSION['code_foto']){
+		$script = "$(\"#form_foto_for_comments .error\").append(\"Вы ввели капчу не правильно. <br />\")";
+		$objResponse->script($script);
+		return $objResponse;
+	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
 	//$values = serialize($values);
 	//json_decode($values);
-	$objResponse->alert($text);
-	$objResponse->alert($name);
-	$objResponse->alert($code);
+	//$objResponse->alert($text);
+	//$objResponse->alert($name);
+	//$objResponse->alert($code);
 	return $objResponse;
 }
 function htmlforcolorbox(){
