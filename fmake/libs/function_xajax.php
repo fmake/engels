@@ -8,8 +8,7 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-//if($_GET['debug']==1 && $_GET['key']=='5523887') 
-$xajax->configure('debug',true);
+//if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 
 /* регистрация функции */
@@ -50,7 +49,6 @@ function formFoto($values){
 		$script = "$(\"#form_foto_for_comments .error\").html(\"\")";
 		$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
-		$objResponse->script($script);
 
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
@@ -60,6 +58,11 @@ function formFoto($values){
 		$fmakeComments->addParam("date",time());
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
+
+		$script += "$(\"#form_foto_for_comments .sucsess\").html(\"Ваше сообщение отправлено.\")";
+		$script += "$(\"#form_foto_for_comments .error\").html(\"\")";
+
+		$objResponse->script($script);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
