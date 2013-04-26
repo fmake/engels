@@ -3,10 +3,10 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        //onLoad: function(){xajax_htmlforcolorbox();}, 
-        html:"<p>Hello</p>",
+        onLoad: function(){xajax_htmlforcolorbox();}, 
         onOpen: function(){onGoGo();},
-        onClosed: function(){onEndEnd()}
+        onClosed: function(){onEndEnd()},
+        //html:"<p>Hello</p>",
     });
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
