@@ -16,7 +16,7 @@ $(document).ready(function(){
     	else{
     		var __tt;
     		__tt = "Пожалуйста введите код с картинки. <br />";
-    		$("#form_foto_for_comments .error").append(__tt);
+    		$("#form_foto_for_comments .error").html(__tt);
     	}
     });
     /*фото форма*/
