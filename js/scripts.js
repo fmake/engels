@@ -20,6 +20,7 @@ $(document).ready(function(){
     	}
     });
     /*фото форма*/
+    
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
