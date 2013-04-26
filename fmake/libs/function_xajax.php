@@ -10,7 +10,6 @@ $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
 if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
-$id_foto = "";
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
 $xajax->register(XAJAX_FUNCTION, "clickBaner");
@@ -30,7 +29,7 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* написание функции */
 
 /* загружает коменты для колорбокса */
-function formFoto($values){
+function formFoto($values, $id){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
 	require_once ROOT.'/fmake/libs/login.php';
@@ -57,7 +56,7 @@ function formFoto($values){
 
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
-		$fmakeComments->addParam("id_content", $id_foto);
+		$fmakeComments->addParam("id_content", $id);
 		$fmakeComments->addParam("id_user",$user->id);
 		$fmakeComments->addParam("text",$text);
 		$fmakeComments->addParam("date",time());
