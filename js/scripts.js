@@ -11,8 +11,10 @@ $(document).ready(function(){
 
     /*фото форма*/
     $("#button_for_form_foto_for_comments").live('click', function(){
-    	if($("#form_foto_for_comments .captcha").val() != "")
+    	if($("#form_foto_for_comments .captcha").val() != ""){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'));
+    		$("#form_foto_for_comments .error").html("");
+    	}
     	else{
     		var __tt;
     		__tt = "Пожалуйста введите код с картинки. <br />";
