@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 	$(".show").colorbox({
         rel:'show',
-        onLoad: function(){xajax_htmlforcolorbox();}, 
+        //onLoad: function(){xajax_htmlforcolorbox();}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
@@ -20,7 +20,7 @@ $(document).ready(function(){
     	}
     });
     /*фото форма*/
-    
+
 	/*всплывающяя подписка на новости*/
 	$('#current').live('click',function(){
 		$('#current,#popup_subscribe_news').hide();
