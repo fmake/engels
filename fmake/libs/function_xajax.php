@@ -47,7 +47,7 @@ function formFoto($values){
 		$objResponse->script($script);
 	}
 	else{
-		$script = "$('#form_foto_for_comments .error').html('');$('#form_foto_for_comments .captcha').val('');$('#form_foto_for_comments .name').val('');$('#form_foto_for_comments .sucless').html('Ваше сообщение отправлено.<br />');$('#form_foto_for_comments .error').html('');";
+		$script = "$('#form_foto_for_comments .textarea').html('');$('#form_foto_for_comments .error').html('');$('#form_foto_for_comments .captcha').val('');$('#form_foto_for_comments .name').val('');$('#form_foto_for_comments .sucless').html('Ваше сообщение отправлено.<br />');$('#form_foto_for_comments .error').html('');";
 		//$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		//$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
 		//$script += "$(\"#form_foto_for_comments .sucless\").html('Ваше сообщение отправлено.'');";
