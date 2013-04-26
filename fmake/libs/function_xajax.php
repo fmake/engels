@@ -29,8 +29,8 @@ $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 /* написание функции */
 function htmlforcolorbox(){
 	$objResponse = new xajaxResponse();
-	include ROOT.'/fmake/FController.php';
-	include ROOT.'/fmake/libs/login.php';
+	$user = new fmakeSiteUser();
+	$user -> load();
 	include ROOT.'/calculating/helpModules/comments.php';
 	global $twig,$globalTemplateParam;
 	$text = $twig->loadTemplate("comments/main.tpl")->render($globalTemplateParam->get());
