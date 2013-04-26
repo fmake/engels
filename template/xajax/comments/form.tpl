@@ -8,7 +8,7 @@
 		</div>
 	[[endif]]
 	
-	<form method="post" action="#form_comments" onsubmit="xajax_formFoto(); return false;" name="form_foto">
+	<form method="post" onsubmit="xajax_formFoto(); return false;" name="form_foto">
 				<input type="hidden" name="action" value="comments">
 		<div class="i-n">
 			<input type="text" name="name_comment" class="fieldfocus" title="Имя"/>
