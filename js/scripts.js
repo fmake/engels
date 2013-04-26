@@ -11,8 +11,13 @@ $(document).ready(function(){
 
     /*фото форма*/
     $("#button_for_form_foto_for_comments").live('click', function(){
-    	xajax_formFoto(xajax.getFormValues('form_foto_for_comments'));
-    	alert("123");
+    	if($("#form_foto_for_comments .captcha").val != "")
+    		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'));
+    	else{
+    		var __tt;
+    		_tt = "Пожалуйста введите код с картинки. <br />";
+    		$("#form_foto_for_comments .error").html(__tt);
+    	}
     });
     /*фото форма*/
 	/*всплывающяя подписка на новости*/
