@@ -32,7 +32,7 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 /* загружает коменты для колорбокса */
 function formFoto($values){
 	$objResponse = new xajaxResponse();
-	global $twig,$globalTemplateParam;
+	global $twig,$globalTemplateParam, $id_foto;
 	require_once ROOT.'/fmake/libs/login.php';
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
@@ -53,10 +53,11 @@ function formFoto($values){
 		//$script += "$(\"#form_foto_for_comments .error\").html('');";
 		//$objResponse->alert($script);
 		$objResponse->script($script);
+		$objResponse->alert($id_foto);
 
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
-		$fmakeComments->addParam("id_content", 1);
+		$fmakeComments->addParam("id_content", $id_foto);
 		$fmakeComments->addParam("id_user",$user->id);
 		$fmakeComments->addParam("text",$text);
 		$fmakeComments->addParam("date",time());
@@ -76,7 +77,7 @@ function htmlforcolorbox($id){
 	$objResponse = new xajaxResponse();
 	global $twig, $globalTemplateParam, $id_foto;
 	$id_foto = $id;
-	$objResponse->alert($id);
+	//$objResponse->alert($id);
 	include_once ROOT.'/fmake/libs/login.php';
 	include_once ROOT.'/calculating/helpModules/comments.php';
 	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
