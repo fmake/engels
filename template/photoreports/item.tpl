@@ -15,10 +15,10 @@
 			[[for photo in photos]]
 				[[if loop.index0>=gap.to and loop.index0<=gap.from]]
 					<a href="/images/galleries/{photo.id_catalog}/1024_{photo.image}" class="show" title="{photo.title}">
-						<img src="/images/galleries/{photo.id_catalog}/thumbs/{photo.image}" alt="" />
+						<img src="/images/galleries/{photo.id_catalog}/thumbs/{photo.image}" alt="" idrel="{photo.id}" />
 					</a>
 				[[else]]
-					<a href="/images/galleries/{photo.id_catalog}/1024_{photo.image}" class="show" title="{photo.title}"></a>
+					<a href="/images/galleries/{photo.id_catalog}/1024_{photo.image}" class="show" title="{photo.title}" idrel="{photo.id}" ></a>
 				[[endif]]
 			[[endfor]]
 			<div style="clear:both;"></div>
