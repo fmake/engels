@@ -35,10 +35,10 @@ function formFoto($values){
 	if($values['action'] != "comments")
 		return false;
 
-	$name = $values['name_comment'];
-	$text = $values['text'];
-	$code = $values['picode'];
-	
+	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
+	$text = htmlspecialchars(substr($values['text'], 0, 3000));
+	$code = htmlspecialchars(substr($values['picode'], 0, 5));
+
 	if ($code == $_SESSION['code_foto'])
 		alert("+++++++++++++++++++");
 	//$values = serialize($values);
