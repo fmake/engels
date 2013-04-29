@@ -127,7 +127,7 @@ function htmlforcolorbox($id){
 	// как можно было использовать это? просто как ???
 	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->script("resize_cbox();");
-	$objResponse->script("setTimeout('$.colorbox.resize()', 1)");
+	$objResponse->script("setTimeout('$.colorbox.resize()', 2)");
 	$objResponse->call("setLocation", "?id_foto=$id");
 	return $objResponse;
 }
