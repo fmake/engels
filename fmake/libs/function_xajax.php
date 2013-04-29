@@ -60,7 +60,7 @@ function formFoto($values, $id, $last_id){
 		$fmakeComments->addParam("date",time());
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
-
+		$objResponse->assign("c_n", "src", "/getpicture_foto.php");
 		$comments = $fmakeComments->getByPage($id,5,1,true);
 
 		if ($comments) foreach($comments as $k=>$c) {
