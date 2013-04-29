@@ -32,6 +32,13 @@
 			<div style="clear:both;"></div>
 		</div>
 	</div>
+	[[if dojs_foto]]
+		<script type="text/javascript">
+			[[raw]]
+				$(".show[idrel={dojs_foto}]").click()
+			[[endraw]]
+		</script>
+	[[endif]]
 [[endblock]]
 
 [[block right]]
