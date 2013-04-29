@@ -51,7 +51,7 @@ function formFoto($values, $id, $last_id){
 		//$script += "$(\"#form_foto_for_comments .error\").html('');";
 		//$objResponse->alert($script);
 		$objResponse->script($script);
-
+		$objResponse->alert($last_id);
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
 		$fmakeComments->addParam("id_content", $id);
@@ -61,7 +61,6 @@ function formFoto($values, $id, $last_id){
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
 
-		$fmakeComments = new fmakeComments_foto();
 		$comments = $fmakeComments->getByPage($id,5,1,true);
 
 		if ($comments) foreach($comments as $k=>$c) {
@@ -79,7 +78,7 @@ function formFoto($values, $id, $last_id){
 		$globalTemplateParam->set('comments',$comments);
 		$globalTemplateParam->set('include_param_id_comment',$id);
 		$last = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
-		$objResponse->append("newcomments", "innerHTML", $last);
+		$objResponse->prepend("newcomments", "innerHTML", $last);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
