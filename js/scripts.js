@@ -1,10 +1,10 @@
 $(document).ready(function(){
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
-    
+   
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
-        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));setLocation("?id_foto =" $(this).attr('idrel'))}, 
+        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));__id_ff = $(this).attr('idrel');setLocation("?id_foto = __id_ff"), 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
