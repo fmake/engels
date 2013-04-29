@@ -104,6 +104,7 @@ function htmlforcolorbox($id){
 
 	//$objResponse->call("showhtml", $text);
 	//$objResponse->script("__code = $text;");
+	$objResponse->append("cboxContent", "innerHTML", $text);
 	return $objResponse;
 }
 function gogoMail($values){
