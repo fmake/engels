@@ -12,10 +12,10 @@
 		<input type="hidden" name="action" value="comments">
 		<div class="error"></div>
 		<div class="i-n">
-			<input type="text" name="name_comment" class="fieldfocus name" title="Имя"/>
+			<input type="text" name="name_comment" class="fieldfocus name" title="Имя" placeholder="Имя"/>
 		</div>
 		<div class="i-t">
-			<textarea name="text" class="fieldfocus textarea" title="Комментарий"></textarea>
+			<textarea name="text" class="fieldfocus textarea" title="Комментарий" placeholder="Комментарий"></textarea>
 		</div>
 		<div class="public">
 			<span>Защита от роботов:</span>
