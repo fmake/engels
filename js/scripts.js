@@ -334,10 +334,9 @@ function resize_cbox(){
 	$("#cboxMiddleLeft").height(parseInt(__wc));
 	$("#cboxMiddleRight").height(parseInt(__wc));
 	$("#colorbox").height(parseInt(__wc));
-	$("#cboxWrapper").height((parseInt(__wc)+parseInt(__owc)));
-
-
+	$("#cboxWrapper").height("auto");
 }
+
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }
