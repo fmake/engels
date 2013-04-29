@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
-        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel')); getWidt()}, 
+        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
@@ -327,13 +327,13 @@ function resize_cbox(){
 	var __wc,
 		__owc;
 	__owc = $("#cboxLoadedContent").height();
-	$("#cboxLoadedContent").height("auto");
 	__wc = $("#cboxLoadedContent").height();
+	__owc = parseInt($("#cboxWrapper").height()) - parseInt(__owc);
+	$("#cboxLoadedContent").height("auto");
 	$("#cboxContent").height(parseInt(__wc));
 	$("#cboxMiddleLeft").height(parseInt(__wc));
 	$("#cboxMiddleRight").height(parseInt(__wc));
 	$("#colorbox").height(parseInt(__wc));
-	__owc = parseInt($("#cboxWrapper").height()) - parseInt(__owc);
 	$("#cboxWrapper").height((parseInt(__wc)+parseInt(_owc)));
 
 
