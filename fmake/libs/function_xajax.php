@@ -128,6 +128,7 @@ function htmlforcolorbox($id){
 	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->script("resize_cbox();");
 	$objResponse->script("setTimeout('$.colorbox.resize()', 1)");
+	$objResponse->call("setLocation", "?id_foto = $id");
 	return $objResponse;
 }
 function gogoMail($values){
