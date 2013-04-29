@@ -8,7 +8,8 @@
 <div class="cl"></div>
 <div class="all-c">
 	[[if comments]]
-		<div id="comments newcomments" class="all-c">
+		<div id="comments" class="all-c">
+			<div id="newcomments">
 			[[for item in comments]]
 				[[ include TEMPLATE_PATH ~ "xajax/comments/item.tpl"]]
 			[[endfor]]
@@ -21,7 +22,8 @@
 				</div>
 			</div>
 		[[endif]]
-	[[endif]]	
+	[[endif]]
+	</div>	
 </div>	
 	
 	/*
