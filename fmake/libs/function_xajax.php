@@ -79,6 +79,7 @@ function htmlforcolorbox($id){
 	//$objResponse->alert($id);
 	include_once ROOT.'/fmake/libs/login.php';
 	include_once ROOT.'/calculating/helpModules/comments.php';
+	$globalTemplateParam->set('id_foto', $id);
 	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
 
