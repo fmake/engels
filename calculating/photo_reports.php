@@ -41,7 +41,7 @@
 			$url_arr = explode('/', $request -> getEscape('url'));
 			
 			list($main_cat, $cat, $item) = $url_arr;
-			PrintAr($item);
+			PrintAr($url_arr);
 			if(is_string($item)){;
 				$reports_obj->setRedir($request->modul);
 				$item = $reports_obj->getInfo();
