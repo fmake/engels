@@ -347,8 +347,8 @@ function resize_cbox(){
 	$("#cboxWrapper").height("auto");
 }
 function coms_ops(){
-	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious").css({'bottom': 'auto';})
-	$("#cboxLoadedContent").css({'margin-top': '20px'; 'margin-bottom': '0px';})
+	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious").css({'bottom': 'auto'})
+	$("#cboxLoadedContent").css({'margin-top': '20px', 'margin-bottom': '0px'})
 }
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
