@@ -322,7 +322,6 @@
 			$overlay = $tag(div, "Overlay", isIE6 ? 'position:absolute' : '').hide();
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
-				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
 				$myHtmlCode = $tag(div, "myHtmlCode"),
 				$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic")),
 				$title = $tag(div, "Title"),
@@ -330,7 +329,8 @@
 				$next = $tag(div, "Next"),
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
-				$close = $tag(div, "Close")
+				$close = $tag(div, "Close"),
+				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
