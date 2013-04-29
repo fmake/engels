@@ -76,7 +76,7 @@
 		$comments[$k]['user_params'] = $user_params;
 		$comments[$k]['text'] = stripslashes($c['text']);
 	}
-	
+	printAr($comments);
 	$globalTemplateParam->set('comments',$comments);
 	$globalTemplateParam->set('limit_comment',$limit_comment);
 	$globalTemplateParam->set('include_param_id_comment',$include_param_id_comment);
