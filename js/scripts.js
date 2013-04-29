@@ -334,7 +334,7 @@ function resize_cbox(){
 	$("#cboxMiddleLeft").height(parseInt(__wc));
 	$("#cboxMiddleRight").height(parseInt(__wc));
 	$("#colorbox").height(parseInt(__wc));
-	$("#cboxWrapper").height((parseInt(__wc)+parseInt(_owc)));
+	$("#cboxWrapper").height((parseInt(__wc)+parseInt(__owc)));
 
 
 }
