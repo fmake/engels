@@ -18,13 +18,13 @@ $(document).ready(function(){
     		if ($("#form_foto_for_comments .sucless").html() != ""){
     			$("#form_foto_for_comments .sucless").html("");
     		}
-    		setTimeout('$.colorbox.resize()', 1)
+    		setTimeout('$.colorbox.resize()', 1);
     	}
     	else{
     		var __tt;
     		__tt = "Пожалуйста введите код с картинки. <br />";
     		$("#form_foto_for_comments .error").html(__tt);
-    		setTimeout('$.colorbox.resize()', 1)
+    		setTimeout('$.colorbox.resize()', 1);
     	}
     });
     /*фото форма*/
