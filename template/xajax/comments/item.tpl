@@ -9,7 +9,7 @@
 			[[endif]]
 		[[endif]]
 	</div>
-	<div class="comment">
+	<div class="comment" style="margin: 10px 0;">
 		<div class="title">
 			<span class="name">
 				[[if item.user_params.post_create]]
