@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
-        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
+        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel')); getWidt()}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
@@ -323,6 +323,17 @@ $(document).ready(function(){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
 });
+function resize_cbox(){
+	var __wc;
+	$("#cboxLoadedContent").height("auto");
+	__wc = $("#cboxLoadedContent").height();
+	$("#cboxContent").height(parseInt(__wc));
+	$("#cboxMiddleLeft").height(parseInt(__wc));
+	$("#cboxMiddleRight").height(parseInt(__wc));
+	
+
+
+}
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }

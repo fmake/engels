@@ -105,8 +105,9 @@ function htmlforcolorbox($id){
 	//$objResponse->call("showhtml", $text);
 	//$objResponse->script("__code = $text;");
 	// как можно было использовать это? просто как ???
-	
+
 	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+	$objResponse->call("resize_cbox");
 	return $objResponse;
 }
 function gogoMail($values){
