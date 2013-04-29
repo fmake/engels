@@ -330,7 +330,7 @@
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
 				$close = $tag(div, "Close"),
-				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
+				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden')
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
