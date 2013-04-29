@@ -13,7 +13,6 @@ $(document).ready(function(){
     $("#button_for_form_foto_for_comments").live('click', function(){
     	if($("#form_foto_for_comments .captcha").val() != ""){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
-    		alert($(this).attr('idfoto'));
     		$("#form_foto_for_comments .error").html("");
     	}
     	else{

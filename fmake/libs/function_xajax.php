@@ -52,8 +52,7 @@ function formFoto($values, $id){
 		//$script += "$(\"#form_foto_for_comments .error\").html('');";
 		//$objResponse->alert($script);
 		$objResponse->script($script);
-		$objResponse->alert($id_foto);
-
+		
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
 		$fmakeComments->addParam("id_content", $id);
