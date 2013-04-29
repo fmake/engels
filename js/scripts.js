@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
-        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));setLocation("?id_foto = $(this).attr('idrel')")}, 
+        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel'));setLocation("?id_foto =" $(this).attr('idrel'))}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
