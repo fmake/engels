@@ -324,13 +324,17 @@ $(document).ready(function(){
 	});
 });
 function resize_cbox(){
-	var __wc;
+	var __wc,
+		__owc;
+	__owc = $("#cboxLoadedContent").height();
 	$("#cboxLoadedContent").height("auto");
 	__wc = $("#cboxLoadedContent").height();
 	$("#cboxContent").height(parseInt(__wc));
 	$("#cboxMiddleLeft").height(parseInt(__wc));
 	$("#cboxMiddleRight").height(parseInt(__wc));
-	
+	$("#colorbox").height(parseInt(__wc));
+	__owc = parseInt($("#cboxWrapper").height()) - parseInt(__owc);
+	$("#cboxWrapper").height((parseInt(__wc)+parseInt(_owc)));
 
 
 }
