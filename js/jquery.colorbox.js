@@ -604,7 +604,7 @@
 		//xajax_htmlforcolorbox();
 		//__form = "<div class='form_news' style='margin-left: 15px'><form method='post' action='#form_comments' onsubmit='javascript: document.form_comments.submit(); return false;' name='form_comments'><input type='hidden' name='action' value='comments'><div class='i-n'><input type='text' name='name_comment' class='fieldfocus' title='Имя'></div><div class='i-t'><textarea name='text' class='fieldfocus' title='Комментарий'></textarea></div><div class='public'><span>Защита от роботов:</span><img width='60' height='18' src='/getpicture.php' alt='Защита от роботов' title='Защита от роботов'><input type='text' id='faq_captcha' class='text' name='picode' style='width: 55px;'></div><button class='float-right'><span><span><span>Отправить</span></span></span></button><div class='cl'></div></form><div class='cl'></div></div>";
 		//showhtml("141234");
-		$loaded = $tag(div, 'LoadedContent').append(object).append(__code);/*.append(__form);*/
+		__code ? $loaded = $tag(div, 'LoadedContent').append(object).append(__code) : $loaded = $tag(div, 'LoadedContent').append(object);/*.append(__form);*/
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
