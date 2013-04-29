@@ -22,6 +22,9 @@
 				</div>
 			</div>
 		[[endif]]
+	[[else]]
+	<div id="comments" class="all-c">
+			<div id="newcomments">
 	[[endif]]
 	</div>	
 </div>	
