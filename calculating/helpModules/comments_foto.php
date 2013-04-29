@@ -16,7 +16,7 @@
 	}
 	
 	$globalTemplateParam->set('comments',$comments);
-	$globalTemplateParam->set('limit_comment',$limit_comment);
+	//$globalTemplateParam->set('limit_comment',$limit_comment);
 	$globalTemplateParam->set('include_param_id_comment',$id);
 	$globalTemplateParam->set('is_more_link',$is_more_link);
 

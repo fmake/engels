@@ -60,6 +60,25 @@ function formFoto($values, $id){
 		$fmakeComments->addParam("date",time());
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
+
+		$fmakeComments = new fmakeComments_foto();
+		$comments = $fmakeComments->getByPage($id,1,1,true);
+		$count = $fmakeComments->getByPageCount($id,true);
+		
+		if ($comments) foreach($comments as $k=>$c) {
+			$fmakeSiteUser = new fmakeSiteUser();
+			$fmakeSiteUser->setId($c['id_user']);
+			$user_params = $fmakeSiteUser->getInfo();
+			$comments[$k]['user_params'] = $user_params;
+			$comments[$k]['text'] = stripslashes($c['text']);
+		}
+		
+		$globalTemplateParam->set('comments',$comments);
+		$globalTemplateParam->set('limit_comment',$limit_comment);
+		$globalTemplateParam->set('include_param_id_comment',$id);
+		$globalTemplateParam->set('is_more_link',$is_more_link);
+		$last = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
+		PrintAr($comments);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
