@@ -34,4 +34,5 @@
 			{item.text|raw}
 		</div>
 	</div>
+	<div class="cl"></div>
 </div>
