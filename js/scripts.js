@@ -14,10 +14,12 @@ $(document).ready(function(){
     $("#button_for_form_foto_for_comments").live('click', function(){
     	if($("#form_foto_for_comments .captcha").val() != ""){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
+    		setTimeout('$.colorbox.resize()', 1)
     		$("#form_foto_for_comments .error").html("");
     		if ($("#form_foto_for_comments .sucless").html() != ""){
     			$("#form_foto_for_comments .sucless").html("");
     		}
+    		setTimeout('$.colorbox.resize()', 1)
     	}
     	else{
     		var __tt;
