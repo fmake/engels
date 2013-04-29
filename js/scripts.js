@@ -15,7 +15,7 @@ $(document).ready(function(){
     	if($("#form_foto_for_comments .captcha").val() != ""){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
     		$("#form_foto_for_comments .error").html("");
-    		if ($("#form_foto_for_comments .sucless").html() != "");
+    		if ($("#form_foto_for_comments .sucless").html() != "")
     			($("#form_foto_for_comments .sucless").html("");
     	}
     	else{
