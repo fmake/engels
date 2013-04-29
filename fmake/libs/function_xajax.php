@@ -78,7 +78,7 @@ function formFoto($values, $id){
 		$globalTemplateParam->set('include_param_id_comment',$id);
 		$globalTemplateParam->set('is_more_link',$is_more_link);
 		$last = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
-		PrintAr($comments);
+		var_dump($comments);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
