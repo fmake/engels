@@ -28,7 +28,6 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 
 /* написание функции */
 
-/* загружает коменты для колорбокса */
 function formFoto($values, $id){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
@@ -52,7 +51,7 @@ function formFoto($values, $id){
 		//$script += "$(\"#form_foto_for_comments .error\").html('');";
 		//$objResponse->alert($script);
 		$objResponse->script($script);
-		
+
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
 		$fmakeComments->addParam("id_content", $id);
@@ -71,13 +70,14 @@ function formFoto($values, $id){
 	//$objResponse->alert($code);
 	return $objResponse;
 }
+/* загружает коменты для колорбокса */
 function htmlforcolorbox($id){
 	$objResponse = new xajaxResponse();
 	global $twig, $globalTemplateParam, $id_foto;
 	$id_foto = $id;
 	//$objResponse->alert($id);
 	include_once ROOT.'/fmake/libs/login.php';
-	include_once ROOT.'/calculating/helpModules/comments.php';
+	include_once ROOT.'/calculating/helpModules/comments_foto.php';
 	$globalTemplateParam->set('id_foto', $id);
 	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
 	json_encode($text);
