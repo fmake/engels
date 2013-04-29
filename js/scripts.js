@@ -16,7 +16,7 @@ $(document).ready(function(){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
     		$("#form_foto_for_comments .error").html("");
     		if ($("#form_foto_for_comments .sucless").html() != ""){
-    			($("#form_foto_for_comments .sucless").html("");
+    			$("#form_foto_for_comments .sucless").html("");
     		}
     	}
     	else{
