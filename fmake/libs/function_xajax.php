@@ -108,7 +108,7 @@ function htmlforcolorbox($id){
 
 	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->script("resize_cbox();");
-	$objResponse->script("setTimeout('$.colorbox.resize()', 1000)");
+	$objResponse->script("setTimeout('$.colorbox.resize()', 1)");
 	return $objResponse;
 }
 function gogoMail($values){
