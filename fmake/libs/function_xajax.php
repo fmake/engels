@@ -40,11 +40,11 @@ function formFoto($values, $id){
 		//$temp_argument = md5($code);
 		//$objResponse->alert($temp_argument);
 		//$objResponse->alert($_SESSION['code_foto']);
-		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\");";
+		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\");setTimeout('$.colorbox.resize()', 1);";
 		$objResponse->script($script);
 	}
 	else{
-		$script = "$('#form_foto_for_comments .textarea').val('');$('#form_foto_for_comments .error').html('');$('#form_foto_for_comments .captcha').val('');$('#form_foto_for_comments .name').val('');$('#form_foto_for_comments .sucless').html('Ваше сообщение отправлено.<br />');$('#form_foto_for_comments .error').html('');";
+		$script = "$('#form_foto_for_comments .textarea').val('');$('#form_foto_for_comments .error').html('');$('#form_foto_for_comments .captcha').val('');$('#form_foto_for_comments .name').val('');$('#form_foto_for_comments .sucless').html('Ваше сообщение отправлено.<br />');$('#form_foto_for_comments .error').html('');setTimeout('$.colorbox.resize()', 1);";
 		//$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
 		//$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
 		//$script += "$(\"#form_foto_for_comments .sucless\").html('Ваше сообщение отправлено.'');";
