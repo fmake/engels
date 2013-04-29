@@ -336,7 +336,6 @@ function resize_cbox(){
 	$("#colorbox").height(parseInt(__wc));
 	$("#cboxWrapper").height("auto");
 }
-
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
 }
