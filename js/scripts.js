@@ -15,8 +15,13 @@ $(document).ready(function(){
     	$.colorbox.next();
     });
     $("#button_for_form_foto_for_comments").live('click', function(){
+    	var __last = 0;
     	if($("#form_foto_for_comments .captcha").val() != ""){
-    		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
+    		$("#cboxLoadedContent #comments .last").each(function(index){
+    			if (parseInt($(this).attr('name')) > __last)
+    				__last = parseInt($(this).attr('name'));
+    		});
+    		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'), __last);
     		$("#form_foto_for_comments .error").html("");
     		if ($("#form_foto_for_comments .sucless").html() != ""){
     			$("#form_foto_for_comments .sucless").html("");

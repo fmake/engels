@@ -1,4 +1,4 @@
-<a name="comment{item.id}"></a>
+<a name="{item.id}comment" class="last"></a>
 <div class="comments_item">
 	<div class="img">
 		[[if item.user_params.picture_social_link]]

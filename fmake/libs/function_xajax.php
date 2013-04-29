@@ -28,7 +28,7 @@ $xajax->register(XAJAX_FUNCTION, "formFoto");
 
 /* написание функции */
 
-function formFoto($values, $id){
+function formFoto($values, $id, $last_id){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
 	require_once ROOT.'/fmake/libs/login.php';
@@ -61,6 +61,24 @@ function formFoto($values, $id){
 		$fmakeComments->addParam("active",1);
 		$fmakeComments->newItem();
 
+		$fmakeComments = new fmakeComments_foto();
+		$comments = $fmakeComments->getByPage($id,5,1,true);
+
+		if ($comments) foreach($comments as $k=>$c) {
+			if ($comments[$k]['id'] > $last_id){
+				$fmakeSiteUser = new fmakeSiteUser();
+				$fmakeSiteUser->setId($c['id_user']);
+				$user_params = $fmakeSiteUser->getInfo();
+				$comments[$k]['user_params'] = $user_params;
+				$comments[$k]['text'] = stripslashes($c['text']);
+			}else{
+				unset($comments[$k]);
+			}
+		}
+		
+		$globalTemplateParam->set('comments',$comments);
+		$globalTemplateParam->set('include_param_id_comment',$id);
+		$last = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
