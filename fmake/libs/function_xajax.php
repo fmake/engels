@@ -51,7 +51,7 @@ function formFoto($values, $id, $last_id){
 		//$script += "$(\"#form_foto_for_comments .error\").html('');";
 		//$objResponse->alert($script);
 		$objResponse->script($script);
-		$objResponse->alert($last_id);
+		//$objResponse->alert($last_id);
 		$fmakeComments = new fmakeComments_foto();
 		$fmakeComments->addParam("name",$name);
 		$fmakeComments->addParam("id_content", $id);
@@ -79,7 +79,7 @@ function formFoto($values, $id, $last_id){
 		$globalTemplateParam->set('include_param_id_comment',$id);
 		$last = $twig->loadTemplate("xajax/comments/item_add.tpl")->render($globalTemplateParam->get());
 		$objResponse->prepend("newcomments", "innerHTML", $last);
-		$objResponse->alert($last);
+		//$objResponse->alert($last);
 	}
 	//$objResponse->alert($_SESSION['code_foto']);
 	//$objResponse->alert($_SESSION['code']);
@@ -125,7 +125,6 @@ function htmlforcolorbox($id){
 	//$objResponse->call("showhtml", $text);
 	//$objResponse->script("__code = $text;");
 	// как можно было использовать это? просто как ???
-
 	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
 	//$objResponse->script("resize_cbox();");
 	$objResponse->script("setTimeout('$.colorbox.resize()', 1)");
