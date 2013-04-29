@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".show").colorbox({
         rel:'show',
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
-        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel')); setTimeout('$.colorbox.resize()', 2);$('input.fieldfocus,textarea.fieldfocus').fieldFocus();}, 
+        onComplete: function(){xajax_htmlforcolorbox($(this).attr('idrel')); setTimeout('$.colorbox.resize()', 2);setTimeout("$('input.fieldfocus,textarea.fieldfocus').fieldFocus();", 4)}, 
         onOpen: function(){onGoGo();},
         onClosed: function(){onEndEnd()},
         //html:"<p>Hello</p>",
