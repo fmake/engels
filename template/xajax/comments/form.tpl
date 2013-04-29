@@ -22,7 +22,7 @@
 			<img width="60" height="18" src="/getpicture_foto.php" alt="Защита от роботов" title="Защита от роботов" />
 			<input type="text" id="faq_captcha" class="captcha" name="picode" style="width: 55px;" />
 		</div>
-		<button class="float-right" id="button_for_form_foto_for_comments">
+		<button class="float-right" id="button_for_form_foto_for_comments" idfoto="{id_foto}">
 			<span>
 				<span>
 					<span>Отправить</span>
