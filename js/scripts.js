@@ -347,7 +347,7 @@ function resize_cbox(){
 	$("#cboxWrapper").height("auto");
 }
 function coms_ops(){
-	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious").css({'bottom': 'auto'})
+	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious, #cboxTitle").css({'bottom': '98%'})
 	$("#cboxLoadedContent").css({'margin-top': '20px', 'margin-bottom': '0px'})
 }
 function onGoGo(){
