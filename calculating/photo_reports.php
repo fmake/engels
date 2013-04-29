@@ -43,7 +43,7 @@
 			list($main_cat, $cat, $item) = $url_arr;
 			
 			if(is_string($item)){
-				PrintAr($_GET);
+				//PrintAr($_GET);
 				$reports_obj->setRedir($request->modul);
 				$item = $reports_obj->getInfo();
 				
@@ -60,7 +60,7 @@
 				$photos = $fmakeGallery->getFullPhoto($item[$reports_obj->idField]);
 				$count = $fmakeGallery->getByPageCount($item[$reports_obj->idField]);
 				$pages = ceil($count/$limit_photo);
-				
+				PrintAr($photos);
 				//PrintAr($photos);
 				
 				$gap['to'] = ($page-1)*$limit_photo;
