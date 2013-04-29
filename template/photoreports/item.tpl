@@ -35,7 +35,7 @@
 	[[if dojs_foto]]
 		<script type="text/javascript">
 			[[raw]]
-				$(".show[idrel={dojs_foto}]").click()
+				$(".show[idrel=[[endraw]]{dojs_foto}][[raw]]").click()
 			[[endraw]]
 		</script>
 	[[endif]]
