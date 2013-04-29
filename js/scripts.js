@@ -11,6 +11,9 @@ $(document).ready(function(){
     });
 
     /*фото форма*/
+    $("#cboxLoadedContent img.cboxPhoto").live('click', function(){
+    	$.colorbox.next();
+    });
     $("#button_for_form_foto_for_comments").live('click', function(){
     	if($("#form_foto_for_comments .captcha").val() != ""){
     		xajax_formFoto(xajax.getFormValues('form_foto_for_comments'), $(this).attr('idfoto'));
