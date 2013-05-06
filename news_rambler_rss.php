@@ -40,7 +40,7 @@ if ($rssnews) foreach($rssnews as $key=>$item) {
 $globalTemplateParam->set('rssnews', $rssnews);
 $globalTemplateParam->set('news_obj', $news_obj);
 
-$template = "widgetya/news_yandex.tpl";
+$template = "rambler/news_rss.tpl";
 
 $template = $twig->loadTemplate($template);
 $template->display($globalTemplateParam->get());
