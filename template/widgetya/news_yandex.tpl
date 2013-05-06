@@ -17,7 +17,7 @@
 			<pubDate>{df('date','r',item.date)}</pubDate>
 			<title>{item.caption}</title>
 			<yandex:full-text>{item.text|raw}</yandex:full-text>
-			<author>{item.autor}</author>
+			[[if item.autor]]<author>{item.autor}</author>[[endif]]
 			<category>{item.name_category}</category>
 		</item>
 	[[endfor]]
