@@ -73,6 +73,7 @@
 	event_cleanup = prefix + '_cleanup',
 	event_closed = prefix + '_closed',
 	event_purge = prefix + '_purge',
+	event_html = prefix +'_html',
 	
 	// Special Handling for IE
 	isIE = !$.support.opacity && !$.support.style, // IE7 & IE8
@@ -321,7 +322,6 @@
 			$overlay = $tag(div, "Overlay", isIE6 ? 'position:absolute' : '').hide();
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
-				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
 				$myHtmlCode = $tag(div, "myHtmlCode"),
 				$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic")),
 				$title = $tag(div, "Title"),
@@ -329,7 +329,8 @@
 				$next = $tag(div, "Next"),
 				$prev = $tag(div, "Previous"),
 				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
-				$close = $tag(div, "Close")
+				$close = $tag(div, "Close"),
+				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden')
 			);
 			
 			$wrap.append( // The 3x3 Grid that makes up ColorBox
@@ -597,9 +598,14 @@
 		var callback, speed = settings.transition === "none" ? 0 : settings.speed;
 		
 		$loaded.remove();
-		__code = "<div id='comments' class='all-c' style='margin-left: 15px'><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
-		__form = "<div class='form_news' style='margin-left: 15px'><form method='post' action='#form_comments' onsubmit='javascript: document.form_comments.submit(); return false;' name='form_comments'><input type='hidden' name='action' value='comments'><div class='i-n'><input type='text' name='name_comment' class='fieldfocus' title='Имя'></div><div class='i-t'><textarea name='text' class='fieldfocus' title='Комментарий'></textarea></div><div class='public'><span>Защита от роботов:</span><img width='60' height='18' src='/getpicture.php' alt='Защита от роботов' title='Защита от роботов'><input type='text' id='faq_captcha' class='text' name='picode' style='width: 55px;'></div><button class='float-right'><span><span><span>Отправить</span></span></span></button><div class='cl'></div></form><div class='cl'></div></div>";
-		$loaded = $tag(div, 'LoadedContent').append(object).append(__code).append(__form);
+		//__code = "";
+		//trigger(event_html, xajax_htmlforcolorbox());
+		//__code = "<div id='comments' class='all-c' style='margin-left: 15px'><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div><a name='comment333'></a><div class='comments_item'><div class='img'><img src='http://cs323929.vk.me/v323929782/6922/vHtKAnVfGsQ.jpg' style='float:left'></div><div class='comment'><div class='title'><span class='name'>Роман Петухов</span><span class='date'>10:07 26.03.2013</span></div><div class='comment'>Печально</div><div class='cl'></div></div></div></div>";
+		//xajax_htmlforcolorbox();
+		//__form = "<div class='form_news' style='margin-left: 15px'><form method='post' action='#form_comments' onsubmit='javascript: document.form_comments.submit(); return false;' name='form_comments'><input type='hidden' name='action' value='comments'><div class='i-n'><input type='text' name='name_comment' class='fieldfocus' title='Имя'></div><div class='i-t'><textarea name='text' class='fieldfocus' title='Комментарий'></textarea></div><div class='public'><span>Защита от роботов:</span><img width='60' height='18' src='/getpicture.php' alt='Защита от роботов' title='Защита от роботов'><input type='text' id='faq_captcha' class='text' name='picode' style='width: 55px;'></div><button class='float-right'><span><span><span>Отправить</span></span></span></button><div class='cl'></div></form><div class='cl'></div></div>";
+		//showhtml("141234");
+		//__code ? $loaded = $tag(div, 'LoadedContent').append(object).append(__code) : $loaded = $tag(div, 'LoadedContent').append(object);/*.append(__form);*/
+		$loaded = $tag(div, 'LoadedContent').append(object);
 		function getWidth() {
 			settings.w = settings.w || $loaded.width();
 			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
@@ -608,7 +614,8 @@
 		function getHeight() {
 			//settings.h = settings.h || $loaded.height();
 			//settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
-			settings.h = settings.h || $loaded.height() + 100;
+			//settings.h = settings.h || $loaded.height() + 100;
+			settings.h = settings.h || $loaded.height() + 40;
 			settings.h = settings.mh && settings.mh  < settings.h ? settings.h : settings.mh;
 			return settings.h;
 		}
@@ -774,7 +781,7 @@
 		trigger(event_purge);
 		
 		trigger(event_load, settings.onLoad);
-		
+		//if(__code)$tag(div, 'LoadedContent').append(object).append(__code);
 		settings.h = settings.height ?
 				setSize(settings.height, 'y') - loadedHeight - interfaceHeight :
 				settings.innerHeight && setSize(settings.innerHeight, 'y');

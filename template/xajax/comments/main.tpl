@@ -3,14 +3,15 @@
 	<a name="comments"></a>
 	<h1>Комментарии</h1>
 	<a name="form_comments"></a>
-	[[ include TEMPLATE_PATH ~ "comments/form.tpl"]]
+	[[ include TEMPLATE_PATH ~ "xajax/comments/form.tpl"]]
 </div>	
 <div class="cl"></div>
 <div class="all-c">
 	[[if comments]]
 		<div id="comments" class="all-c">
+			<div id="newcomments">
 			[[for item in comments]]
-				[[ include TEMPLATE_PATH ~ "comments/item.tpl"]]
+				[[ include TEMPLATE_PATH ~ "xajax/comments/item.tpl"]]
 			[[endfor]]
 		</div>
 		[[if is_more_link]]
@@ -21,7 +22,11 @@
 				</div>
 			</div>
 		[[endif]]
-	[[endif]]	
+	[[else]]
+	<div id="comments" class="all-c">
+			<div id="newcomments">
+	[[endif]]
+	</div>	
 </div>	
 	
 	/*
@@ -50,3 +55,4 @@
 	[[endraw]]
 	<br/>
 	*/
+
