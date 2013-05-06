@@ -6,7 +6,7 @@
 <description>Энгельс bz - городской портал. Новости города, афиша, кафе, бары, рестораны, объявления, погода, фоторепортажи всех событий города.</description>
 	[[for item in rssnews]]
 		<item>
-			[[if item.picture]]<enclosure type="image/jpeg" url="http://{hostname}/{news_obj.fileDirectory}{item.id}/406__{item.picture}" />[[endif]]
+			[[if item.picture]]<enclosure type="image/jpeg" length="{item.picture_length}" url="http://{hostname}/{news_obj.fileDirectory}{item.id}/406__{item.picture}" />[[endif]]
 			<description>{item.description}</description>
 			<link>http://{hostname}{item.full_url}</link>
 			<pubDate>{df('date','r',item.date)}</pubDate>
