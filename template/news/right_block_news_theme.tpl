@@ -1,26 +1,3 @@
-/*<div id="right_news">
-	<div class="right_item_news">
-		<h1>Новости по теме</h1>
-		<div class="news">
-			[[for item in news_right_block]]	
-				
-					<div class="item">
-						<div class="time">{df('date','H:i',item.date)}</div>
-						<div class="icons"></div>
-						<div class="cl"></div>
-						<div class="note">
-							[[if item.name_category]]<span class="title">{item.name_category}:</span>[[endif]]
-							<a href="{item.full_url}">{item.caption}</a>
-							[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
-						</div>
-					</div>
-				[[endif]]
-			[[endfor]]
-		 </div>
-	</div>
-</div>
-<div class="cl"></div>
-*/
 <div id="right_news">
 	<div class="right_item_news">
 		<h1>Новости по теме</h1>
