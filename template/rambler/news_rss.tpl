@@ -11,7 +11,7 @@
 			<link>http://{hostname}{item.full_url}</link>
 			<pubDate>{df('date','r',item.date)}</pubDate>
 			<title>{item.caption}</title>
-			<fulltext>{item.text|raw}</fulltext>
+			<fulltext><![CDATA[{item.text|raw}]]</fulltext>
 			<author>{item.autor}</author>
 			<category>{item.name_category}</category>
 		</item>
