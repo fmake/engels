@@ -35,7 +35,7 @@ if ($rssnews) foreach($rssnews as $key=>$item) {
 	//$rssnews[$key]['name_categor'] = str_replace($to,$from,$item['name_categor']);
 	//$rssnews[$key]['description'] = str_replace($to,$from,$item['description']);
 	
-	$rssnews[$key]['picture_length'] = filesize(ROOT.$item['picture']);
+	$rssnews[$key]['picture_length'] = filesize(ROOT."/".$news_obj->fileDirectory."/".$item['id']."/406__".$item['picture']);
 }
 
 $globalTemplateParam->set('rssnews', $rssnews);
