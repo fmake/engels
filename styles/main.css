@@ -70,10 +70,11 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     z-index: 2;
 }
 #menu_top{
-    background: #555;
+    /*background: #555;*/
     height: 40px;
-    color: #fff;
+    /*color: #fff;*/
     font-size: 11px;
+    border-bottom: 1px solid #ddd;
 }
 #version, #time, #sky, #money_rate{
     float: left;
@@ -87,7 +88,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
      margin-right: 8px;
  }
 #version a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     border-bottom: 1px dotted #fff;
 }
