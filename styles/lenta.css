@@ -10,4 +10,16 @@
 	top: 0px;
 	background: #555555;
 	z-index: 9999;
+	font-size: 13px;
+	line-height: 16px;
+	color: #ffffff;
+}
+#lenta .list{
+	padding: 15px 20px;
+}
+#lenta .block_1 ul li{
+	float: left;
+	font-weight: bold;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #6e6e6e;
 }
