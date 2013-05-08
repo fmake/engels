@@ -519,7 +519,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 .caption_down{
     color: #fff;
-    background: url("/images/bg/bg_slider.png") 0 -49px;
+    background: url("/images/bg/bg_slider.png");
     position: absolute;
     padding: 10px 10px 16px 10px;
     bottom: 0;
@@ -961,7 +961,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .vote-res .butt{ padding-right: 0; padding-top: 28px;}
 #forms .shadow_img{top: 25px;}
 #down{
-    background: url("/images/bg/bg_footer.png") repeat-x #555;
+    background: url("/images/bg/bg_footer.png") repeat-x 0 -49px #555 ;
     padding-top: 20px;
 }
 #down .menu .logo{ float: left;}
