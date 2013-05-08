@@ -18,8 +18,13 @@
 	padding: 15px 20px;
 }
 #lenta .block_1 ul li{
-	float: left;
 	font-weight: bold;
+}
+#lenta .block_1 ul li a, #lenta .block_1 ul li a:visited, #lenta .block_1 ul li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+#lenta .block_1{
 	padding-bottom: 15px;
 	border-bottom: 1px solid #6e6e6e;
 }
