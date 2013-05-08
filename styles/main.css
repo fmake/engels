@@ -853,7 +853,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .map img{vertical-align: -100%; margin-right: 5px;}
 .map {padding-left: 19px; padding-top: 5px;}
 #journal .top {top: 0 !important;}
-#journal .shadow_img {top: 16px;}
+#journal .shadow_img {top: 6px;}
 /*asks*/
 #forms{padding-top: 20px; padding-bottom: 20px;}
 .asks, .asks2{padding-top: 20px;}
@@ -959,7 +959,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .vote .number {float: left; color: #464646}
 .var{padding-bottom: 5px;}
 .vote-res .butt{ padding-right: 0; padding-top: 28px;}
-#forms .shadow_img{top: 38px;}
+#forms .shadow_img{top: 25px;}
 #down{
     background: url("/images/bg/bg_footer.png") repeat-x #555;
     padding-top: 20px;
