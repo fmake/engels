@@ -14,7 +14,24 @@
 [[endraw]]
 /*facebook like*/
 	<!-- PAGE START-->
-	<div id="lenta"></div>
+	<div id="lenta">
+		<div class="list">
+			<div class="block_1">
+				<ul>
+					<li><a href="#">Главное</a></li>
+					<li><a href="#">Россия</a></li>
+					<li><a href="#">Мир</a></li>
+					<li><a href="#">Бывший СССР</a></li>
+					<li><a href="#">Экономика</a></li>
+					<li><a href="#">Наука и техника</a></li>
+					<li><a href="#">Спорт</a></li>
+					<li><a href="#">Культура</a></li>
+					<li><a href="#">Интернет и СМИ</a></li>
+					<li><a href="#">Из жизни</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div id="page">
 		<!-- HEADER START -->
 		[[ include TEMPLATE_PATH ~ "blocks/site_header.tpl"]]
