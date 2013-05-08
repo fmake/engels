@@ -31,7 +31,7 @@ q q:after { content: '\201C'; }
 .cl{clear: both; overflow: hidden; height: 0;}
 .page-container{
     width: 980px;
-    margin: 0 auto;
+    margin-left: 214px;
     position: relative;
 }
 a, .a{color:#0d44a0;text-decoration:underline;}

@@ -6,8 +6,9 @@
 	<meta name="description" content="[[if modul.description]]{modul.description}[[else]]{modul.title}[[endif]]" />
 	<meta name="keywords" content="[[if modul.keywords]]{modul.keywords}[[else]]{modul.title}[[endif]]" />
 	<link rel="stylesheet" type="text/css" href="/styles/main.css?ver=0.3" />
-        <link rel="stylesheet" type="text/css" href="/styles/south-street/jquery-ui-1.8.22.custom.css?ver=0.1" />
-        <link rel="stylesheet" type="text/css" href="/styles/colorbox.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/south-street/jquery-ui-1.8.22.custom.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/colorbox.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/lenta.css?ver=0.1">
 	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">	
         <!--[if lte IE 7]>
         	<link rel="stylesheet" type="text/css" href="/css/iehack6.css?ver=0.1">
