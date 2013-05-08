@@ -274,10 +274,8 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     position: relative;
     background-image: url("/images/bg/bg_header_shadow.png");
     background-repeat: no-repeat;
-    background-position: center -10px;
-    height: 18px;
-    width: 1050px;
-    margin: 0 auto;
+    background-position: 0 -29px;
+    height: 6px;
     top: 72px; 
     *top: 10px;
 
