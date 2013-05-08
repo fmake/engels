@@ -520,7 +520,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 }
 .caption_down{
     color: #fff;
-    background: url("/images/bg/bg_slider.png");
+    background: url("/images/bg/bg_slider.png") 0 -49px;
     position: absolute;
     padding: 10px 10px 16px 10px;
     bottom: 0;
