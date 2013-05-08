@@ -30,6 +30,20 @@
 					<li><a href="#">Из жизни</a></li>
 				</ul>
 			</div>
+			<div class="random_block">
+				<ul>
+					<li><a href="#">Культура</a></li>
+					<li><a href="#">Интернет и СМИ</a></li>
+					<li><a href="#">Из жизни</a></li>
+				</ul>
+			</div>
+			<div class="random_block">
+				<ul>
+					<li><a href="#">Культура</a></li>
+					<li><a href="#">Интернет и СМИ</a></li>
+					<li><a href="#">Из жизни</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div id="page">
