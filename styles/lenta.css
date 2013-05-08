@@ -20,11 +20,18 @@
 #lenta .block_1 ul li{
 	font-weight: bold;
 }
-#lenta .block_1 ul li a, #lenta .block_1 ul li a:visited, #lenta .block_1 ul li a:hover{
+#lenta ul li a, #lenta ul li a:visited, #lenta ul li a:hover{
 	color: #fff;
 	text-decoration: none;
 }
+#lenta ul li a:hover{
+	color: #ccc;
+}
 #lenta .block_1{
 	padding-bottom: 15px;
+	border-bottom: 1px solid #6e6e6e;
+}
+#lenta .random_block{
+	padding: 15px;
 	border-bottom: 1px solid #6e6e6e;
 }
