@@ -1,0 +1,13 @@
+#lenta:before{
+	content:"";
+}
+#lenta{
+	position: fixed;
+	clear: both;
+	z-index: 9999px;
+	height: 100%;
+	width: 204px;
+	margin-right: 10px;
+	top: 0px;
+	background: #555555;
+}

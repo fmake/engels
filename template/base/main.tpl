@@ -14,6 +14,7 @@
 [[endraw]]
 /*facebook like*/
 	<!-- PAGE START-->
+	<div id="lenta"></div>
 	<div id="page">
 		<!-- HEADER START -->
 		[[ include TEMPLATE_PATH ~ "blocks/site_header.tpl"]]
