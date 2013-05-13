@@ -22,7 +22,7 @@
 				<div class="block_1">
 					<ul>
 					[[for item in lenta_cat]]
-						<li><a [[if item.id == pageid]]class="active"[[endif]] href="{item.full_url}">{item.id}</a></li>
+						<li><a [[if item.status]]class="active"[[endif]] href="{item.full_url}">{item.caption}</a></li>
 					[[endfor]]
 					</ul>
 				</div>
