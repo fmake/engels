@@ -703,8 +703,7 @@
 						</div>
 					[[endif]]
 				[[endblock]]
-				[[block pattern]]
-				[[endblock]]
+
 			</div>
 		</div>
 	[[endif]]
