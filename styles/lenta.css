@@ -74,20 +74,20 @@
 	font-size: 12px;
 	line-height: 14px;
 }
-.partner_block ul li{
+.recomend ul li{
 	float: left;
 	width: 220px;
 	margin-left: 25px;
 }
-.partner_block ul li:first-child{
+.recomend ul li:first-child{
 	margin-left: 0px;
 }
-.partner_block ul li .caption a{
+.recomend ul li .caption a{
 	text-decoration: none;
 	color: #0d44a0;
 	font-size: 14px;
 }
-.partner_block ul li .text{
+.recomend ul li .text{
 	font-size: 12px;
 	line-height: 14px;
 }
