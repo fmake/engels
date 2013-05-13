@@ -35,3 +35,21 @@
 	padding: 15px 0;
 	border-bottom: 1px solid #6e6e6e;
 }
+#lenta .i_am_alone{
+	background: url("/images/bg/alone.png") no-repeat;
+	width: 25px;
+	height: 100%;
+	float: left;
+	display: none;
+}
+@media all and (max-width:1024px){
+	#lenta{
+		width: 25px;
+	}
+	#lenta .list{
+		display: none;
+	}
+	#lenta .i_am_alone{
+		display: block;
+	}
+}

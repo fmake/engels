@@ -14,7 +14,9 @@
 [[endraw]]
 /*facebook like*/
 	<!-- PAGE START-->
+	<!--LENTA-->
 	<div id="lenta">
+		<div class="i_am_alone"></div>
 		<div class="list">
 			<div class="block_1">
 				<ul>
@@ -46,6 +48,7 @@
 			</div>
 		</div>
 	</div>
+	<!--LENTA END-->
 	<div id="page">
 		<!-- HEADER START -->
 		[[ include TEMPLATE_PATH ~ "blocks/site_header.tpl"]]
