@@ -74,6 +74,9 @@
 	font-size: 12px;
 	line-height: 14px;
 }
+.recomend{
+	margin-top: 25px;
+}
 .recomend ul li{
 	float: left;
 	width: 220px;
