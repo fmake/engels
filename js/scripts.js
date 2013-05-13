@@ -347,7 +347,7 @@ $(document).ready(function(){
 	});
 	$(window).resize(function(){
 		var w = $(window).width();
-		if(w > 1024) {
+		if(w > 1210) {
 			$('#lenta .i_am_alone').css({'display':'none'});
 			$("#lenta .list").css({'display':'block'});
 			$("#lenta").css({'width':'204px'});
