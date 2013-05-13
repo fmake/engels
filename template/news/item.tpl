@@ -87,19 +87,13 @@
 			
 		</div>
 	</div>
-[[endblock]]
 
-[[block right]]
-	
-	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
-	
-[[endblock]]
 <div class="cl"></div>
 <div class="smarty_block">
 	<div class="partner_block">
 		<ul>
 			<li>
-				<img src="/images/bg/tmp/1.png" alt="" />
+				<img src="/images/tmp/1.png" alt="" />
 				<div class="cl"></div>
 				<div class="caption"></div>
 				<div class="cl"></div>
@@ -108,6 +102,14 @@
 		</ul>
 	</div>
 </div>
+[[endblock]]
+
+[[block right]]
+	
+	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
+	
+[[endblock]]
+
 
 [[block include_block]]
 	/*[[ include TEMPLATE_PATH ~ "blocks/nnn_block_include.tpl"]]*/
