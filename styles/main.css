@@ -138,7 +138,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .login .user_logined a{
     color: #000;
     text-decoration: none;
-    border-bottom: 1px dotted #fff;
+    border-bottom: 1px dotted #000;
 }
 .login .user_logined {padding-top: 9px;}
 .login .user_logined a:last-child{margin-right: 20px;}
@@ -891,14 +891,14 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     behavior: url(/PIE/PIE.php); /*Подправить заголовок передачи PIE.htc*/
 }
 /*PIE*/
-.asks .desk .page-container{
+.asks .desk .page-container-2{
     width: 210px;
     padding-left: 16px;
     float: left;
     margin: 0;
     word-wrap:  break-word ;
 }
-.asks  .desk .page-container:last-child{
+.asks  .desk .page-container-2:last-child{
     width: 214px;
     padding-left: 21px;
     padding-right: 16px;
@@ -938,7 +938,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     border: 1px solid #bababa;
     padding: 5px 6px 5px 10px;
 }
-.asks2 .desk .page-container{
+.asks2 .desk .page-container-2{
     width: 226px;
     float: left;
     word-wrap: break-word;
@@ -1436,7 +1436,7 @@ a:hover h1{
     border: 1px solid #bababa;
     padding: 5px 6px 5px 10px;
 }
-#right_news .desk .page-container{
+#right_news .desk .page-container-2{
     width: 210px;
     float: left;
     word-wrap: break-word;

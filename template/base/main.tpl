@@ -457,7 +457,7 @@
 				</button>
 				<div class="cl"></div>
 				<div class="desk">
-					<div class="page-container">
+					<div class="page-container-2">
 					[[set baner_manual = baner_obj.showBanerType(5,request_uri)]]
 					[[for item in items_manual_main]]
 						[[if baner_manual]]
@@ -490,7 +490,7 @@
 								</div>
 							[[elseif loop.index == 3]]
 								</div>
-								<div class="page-container">
+								<div class="page-container-2">
 									<div class="item">
 										<div class="title">
 											<a href="{item.full_url}">{item.caption}</a>
@@ -508,7 +508,7 @@
 								</div>
 							[[elseif loop.index == 4]]
 								</div>
-								<div class="page-container">
+								<div class="page-container-2">
 									<div class="item">
 										<div class="title">
 											<a href="{item.full_url}">{item.caption}</a>
@@ -533,11 +533,11 @@
 					</button>
 					<div class="cl"></div>
 					<div class="desk">
-						<div class="page-container">
+						<div class="page-container-2">
 							[[for item in items_immovable_main]]
 								[[if loop.index%4==0]]
 									</div>
-									<div class="page-container">
+									<div class="page-container-2">
 								[[endif]]
 							<div class="item">
 								<a href="{item.full_url}">{item.addres} , комнат : {item.count_room}</a>[[if item.price]]<span>{item.price} руб.</span>[[endif]]
@@ -563,11 +563,11 @@
 					</button>
 					<div class="cl"></div>
 					<div class="desk">
-						<div class="page-container">
+						<div class="page-container-2">
 							[[for item in items_advert_main]]
 								[[if loop.index%4==0]]
 								</div>
-								<div class="page-container">
+								<div class="page-container-2">
 								[[endif]]
 							<div class="item">
 								<div class="title">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
