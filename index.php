@@ -126,7 +126,7 @@ $url = $url[0];
 $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
-
+PrintAr($menu);
 $request_uri = $_SERVER['REQUEST_URI'];
 
 /*--------правый блок с последними новостями--------*/
