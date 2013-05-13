@@ -54,12 +54,6 @@ if ($configs->site_on_off == '1' ){
 	}
 }
 
-//echo "1111";
-
-$news_obj_lenta = new fmakeNews();
-$lenta_cat = $news_obj_lenta->getCatForMenu(2, true);
-$globalTemplateParam->set('lenta_cat',$lenta_cat);
-//PrintAr($lenta_cat);
 
 /*---------курс валют----------*/
 
@@ -126,7 +120,9 @@ $url = $url[0];
 $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
-PrintAr($menu);
+//PrintAr($menu);
+$lenta_cat = $menu[2];
+$globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
 /*--------правый блок с последними новостями--------*/
