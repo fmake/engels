@@ -379,6 +379,7 @@ function coms_ops(){
 	$("#cboxContent").css({'overflow':'none'});
 	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious, #cboxTitle").css({'bottom': '100%', 'top':'1px'})
 	$("#cboxLoadedContent").css({'margin-top': '20px', 'margin-bottom': '0px'})
+	$.colorbox.resize();
 }
 function onGoGo(){
 	$("#all_content_for_noscroll").css({'position':'fixed','width':'100%'});
