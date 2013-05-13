@@ -10,7 +10,6 @@ $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
 if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
-
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
 $xajax->register(XAJAX_FUNCTION, "clickBaner");
@@ -23,12 +22,117 @@ $xajax->register(XAJAX_FUNCTION, "SiteCount");
 $xajax->register(XAJAX_FUNCTION, "TapeWave");
 $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
+$xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
+$xajax->register(XAJAX_FUNCTION, "formFoto");
 /* регистрация функции */
 
 /* написание функции */
+
+function formFoto($values, $id, $last_id){
+	$objResponse = new xajaxResponse();
+	global $twig,$globalTemplateParam, $id_foto;
+	require_once ROOT.'/fmake/libs/login.php';
+	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
+	$text = htmlspecialchars(substr($values['text'], 0, 3000));
+	$code = htmlspecialchars(substr($values['picode'], 0, 5));
+
+	if (md5($code) != $_SESSION['code_foto']){
+		//$temp_argument = md5($code);
+		//$objResponse->alert($temp_argument);
+		//$objResponse->alert($_SESSION['code_foto']);
+		$script = "$(\"#form_foto_for_comments .error\").html(\"Вы ввели капчу не правильно. <br />\");setTimeout('$.colorbox.resize()', 1);";
+		$objResponse->script($script);
+	}
+	else{
+		$script = "$('#form_foto_for_comments .textarea').val('');$('#form_foto_for_comments .error').html('');$('#form_foto_for_comments .captcha').val('');$('#form_foto_for_comments .name').val('');$('#form_foto_for_comments .sucless').html('Ваше сообщение отправлено.<br />');$('#form_foto_for_comments .error').html('');setTimeout('$.colorbox.resize()', 1);";
+		//$script += "$(\"#form_foto_for_comments .captcha\").val(\"\");";
+		//$script += "$(\"#form_foto_for_comments .name\").val(\"\");";
+		//$script += "$(\"#form_foto_for_comments .sucless\").html('Ваше сообщение отправлено.'');";
+		//$script += "$(\"#form_foto_for_comments .error\").html('');";
+		//$objResponse->alert($script);
+		$objResponse->script($script);
+		//$objResponse->alert($last_id);
+		$fmakeComments = new fmakeComments_foto();
+		$fmakeComments->addParam("name",$name);
+		$fmakeComments->addParam("id_content", $id);
+		$fmakeComments->addParam("id_user",$user->id);
+		$fmakeComments->addParam("text",$text);
+		$fmakeComments->addParam("date",time());
+		$fmakeComments->addParam("active",1);
+		$fmakeComments->newItem();
+		$objResponse->assign("c_n", "src", "/getpicture_foto.php");
+		$comments = $fmakeComments->getByPage($id,5,1,true);
+
+		if ($comments) foreach($comments as $k=>$c) {
+			if ($comments[$k]['id'] > $last_id){
+				$fmakeSiteUser = new fmakeSiteUser();
+				$fmakeSiteUser->setId($c['id_user']);
+				$user_params = $fmakeSiteUser->getInfo();
+				$comments[$k]['user_params'] = $user_params;
+				$comments[$k]['text'] = stripslashes($c['text']);
+			}else{
+				unset($comments[$k]);
+			}
+		}
+		$objResponse->script("$.colorbox.resize();");
+		$globalTemplateParam->set('comments',$comments);
+		$globalTemplateParam->set('include_param_id_comment',$id);
+		$last = $twig->loadTemplate("xajax/comments/item_add.tpl")->render($globalTemplateParam->get());
+		$objResponse->prepend("newcomments", "innerHTML", $last);
+		//$objResponse->alert($last);
+	}
+	//$objResponse->alert($_SESSION['code_foto']);
+	//$objResponse->alert($_SESSION['code']);
+	//$values = serialize($values);
+	//json_decode($values);
+	//$objResponse->alert($text);
+	//$objResponse->alert($name);
+	//$objResponse->alert($code);
+	return $objResponse;
+}
+/* загружает коменты для колорбокса */
+function htmlforcolorbox($id){
+	$objResponse = new xajaxResponse();
+	global $twig, $globalTemplateParam, $id_foto;
+	$id_foto = $id;
+	//$objResponse->alert($id);
+	include_once ROOT.'/fmake/libs/login.php';
+	include_once ROOT.'/calculating/helpModules/comments_foto.php';
+	$globalTemplateParam->set('id_foto', $id);
+	$text = $twig->loadTemplate("xajax/comments/main.tpl")->render($globalTemplateParam->get());
+	json_encode($text);
+
+	/*такой бред*/
+
+	//str_replace(" ","",$text);
+	//str_replace("\"", "'", $text);
+	//str_replace("\r", "", $text);
+	//str_replace("\n", "", $text);
+	///str_replace("\t", "", $text);
+	//str_replace('#\#', "#\\#", $text);
+	//$text =  htmlspecialchars($text);
+	//$text = "12341234";
+	//$text = is_string($text);
+	//$script = "__code = $text;";
+	//$script = "showhtml($text);";
+	//$script = "__code = \"qrwq\"; ";
+	//$objResponse->alert($text);
+	//$objResponse->script($script);
+	//$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+
+	/*конец такого бреда*/
+
+	//$objResponse->call("showhtml", $text);
+	//$objResponse->script("__code = $text;");
+	// как можно было использовать это? просто как ???
+	$objResponse->append("cboxLoadedContent", "innerHTML", $text);
+	//$objResponse->script("resize_cbox();");
+	$objResponse->script("setTimeout('$.colorbox.resize()', 2)");
+	$objResponse->call("setLocation", "?id_foto=$id");
+	return $objResponse;
+}
 function gogoMail($values){
 	$objResponse = new xajaxResponse();
-	
 	$type_form = $values['type_form'];
 	if($type_form) $id_form = "mailed_popup_subscribe_news";
 	else $id_form = "mailed";

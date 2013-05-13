@@ -41,8 +41,8 @@
 			$url_arr = explode('/', $request -> getEscape('url'));
 			
 			list($main_cat, $cat, $item) = $url_arr;
-	
-			if(is_string($item)){;
+			
+			if(is_string($item)){
 				$reports_obj->setRedir($request->modul);
 				$item = $reports_obj->getInfo();
 				
@@ -59,6 +59,13 @@
 				$photos = $fmakeGallery->getFullPhoto($item[$reports_obj->idField]);
 				$count = $fmakeGallery->getByPageCount($item[$reports_obj->idField]);
 				$pages = ceil($count/$limit_photo);
+				$id_foto = intval($_GET['id_foto']);
+				foreach ($photos as $key => $value) {
+					if($photos[$key]['id'] == $id_foto)
+						$globalTemplateParam->set("dojs_foto", $id_foto);
+				}
+				//PrintAr($photos);
+				//PrintAr($photos);
 				
 				$gap['to'] = ($page-1)*$limit_photo;
 				$gap['from'] = ($page-1)*$limit_photo+$limit_photo-1;
@@ -85,7 +92,7 @@
 				
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);
-				
+				//PrintAr($item);
 				$modul->template = "photoreports/item.tpl";
 			}elseif(is_string($cat)){
 				$cat = $reports_obj->getChilds($modul->id,true);
@@ -113,7 +120,7 @@
 				}*/
 				
 				$breadcrubs = $modul->getBreadCrumbs($item[$reports_obj->idField]);
-				
+				//PrintAr($fmakeGallery);
 				$globalTemplateParam->set('gallery_obj', $fmakeGallery);
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				$globalTemplateParam->set('item', $item);

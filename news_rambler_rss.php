@@ -1,5 +1,5 @@
 <?php
-header('Content-type: text/html; charset=utf-8'); 
+header('Content-type: application/rss+xml; charset=utf-8'); 
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 ini_set('display_errors',1);
@@ -24,6 +24,7 @@ if ($rssnews) foreach($rssnews as $key=>$item) {
 	//$rssnews[$key]['text'] = str_replace($to,$from,$rssnews[$key]['text']);
 	$rssnews[$key]['text'] = html_entity_decode($rssnews[$key]['text'],ENT_QUOTES,'UTF-8');
 	$rssnews[$key]['text'] = htmlspecialchars($rssnews[$key]['text'], ENT_QUOTES,'UTF-8');
+	//$rssnews[$key]['text'] = "<![CDATA[".$rssnews[$key]['text']."]]>";
 	$rssnews[$key]['full_url'] = htmlspecialchars($item['full_url'], ENT_QUOTES,'UTF-8');
 	$rssnews[$key]['caption'] = htmlspecialchars($item['caption'], ENT_QUOTES,'UTF-8');
 	$rssnews[$key]['autor'] = htmlspecialchars($item['autor'], ENT_QUOTES,'UTF-8');
@@ -35,12 +36,13 @@ if ($rssnews) foreach($rssnews as $key=>$item) {
 	//$rssnews[$key]['name_categor'] = str_replace($to,$from,$item['name_categor']);
 	//$rssnews[$key]['description'] = str_replace($to,$from,$item['description']);
 	
+	$rssnews[$key]['picture_length'] = filesize(ROOT."/".$news_obj->fileDirectory."/".$item['id']."/406__".$item['picture']);
 }
 
 $globalTemplateParam->set('rssnews', $rssnews);
 $globalTemplateParam->set('news_obj', $news_obj);
 
-$template = "widgetya/news_yandex.tpl";
+$template = "rambler/news_rss.tpl";
 
 $template = $twig->loadTemplate($template);
 $template->display($globalTemplateParam->get());

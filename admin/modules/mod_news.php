@@ -56,6 +56,11 @@ if($older)foreach ($older as $key => $value) {
 #----------------------------мнения 
 $news_categories = $absitem->getCatAsTree($id_page_modul,0,true);
 
+/*список администраторов сайта*/
+$fmakeSiteAdministrator = new fmakeSiteAdministrator();
+$all_users = $fmakeSiteAdministrator->getAll();
+/*список администраторов сайта*/
+
 //printAr($news_categories);
 
 $actions = array('active',
@@ -77,6 +82,7 @@ $filters_left = "admin/blocks/filter_news.tpl";
 $globalTemplateParam->set('filters_left', $filters_left);
 
 $globalTemplateParam->set('categories', $news_categories);
+$globalTemplateParam->set('all_users', $all_users);
 
 $filters = $_REQUEST['filter'];
 $globalTemplateParam->set('filters', $filters);
@@ -158,6 +164,11 @@ switch ($request->action) {
 				else
 					$_POST['rss_yandex_news'] = 0;
 				
+				if($_POST['recommend'])
+					$_POST['recommend'] = 1;
+				else
+					$_POST['recommend'] = 0;
+					
 				$_POST['file'] = 'item_news';
 				/*-------------------выставление параметров----------------------------*/
 				
@@ -235,6 +246,12 @@ switch ($request->action) {
 					$_POST['rss_yandex_news'] = 1;
 				else
 					$_POST['rss_yandex_news'] = 0;
+					
+				if($_POST['recommend'])
+					$_POST['recommend'] = 1;
+				else
+					$_POST['recommend'] = 0;
+					
 				/*-------------------выставление параметров----------------------------*/	
 					
                 foreach ($_POST as $key => $value){
@@ -314,7 +331,6 @@ switch ($request->action) {
 		}
 		$pages = ceil($count/$limit);
 
-		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
 		$fmakeCount = new fmakeCount();
 		if($items)foreach($items as $key=>$item){
 			if($item['create_user']){
@@ -388,6 +404,8 @@ switch ($request->action) {
 
         $form->addTextArea("Анонс", "anons", $items_dop["anons"], 50, 50);
         
+		$form->addCheckBox("Рекомендуем", "recommend", 1, ($items_dop["recommend"]==='0') ? false : true);
+		
 		$form->addCheckBox("Включить/Выключить", "active", 1, ($items["active"]==='0') ? false : true);
 		
         $form->addCheckBox("Главная новость", "main", 1, ($items_dop["main"]==='0') ? false : true);

@@ -11,6 +11,14 @@
 					[[endfor]]
 				<select>
 			</li>
+			<li>
+				<select name="filter[create_user]">
+					<option value="0">Выберите пользователя</option>
+					[[for item in all_users]]
+						<option value="{item.id}" [[if filters.create_user == item.id]]selected[[endif]]>{item.name} ({item.login})</option>
+					[[endfor]]
+				<select>
+			</li>
 			<li>Дата добавления <br/>
 				с
 				<input id="filter-date1" type="text" name="filter[date][to]" value="{filters['date']['to']}"><img src="/images/vcard_delete.png" onclick="$('#filter-date1').val('');"  />

@@ -31,7 +31,7 @@ q q:after { content: '\201C'; }
 .cl{clear: both; overflow: hidden; height: 0;}
 .page-container{
     width: 980px;
-    margin: 0 auto;
+    margin-left: 214px;
     position: relative;
 }
 a, .a{color:#0d44a0;text-decoration:underline;}
@@ -70,10 +70,11 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     z-index: 2;
 }
 #menu_top{
-    background: #555;
+    /*background: #555;*/
     height: 40px;
-    color: #fff;
+    /*color: #fff;*/
     font-size: 11px;
+    border-bottom: 1px solid #ddd;
 }
 #version, #time, #sky, #money_rate{
     float: left;
@@ -87,7 +88,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
      margin-right: 8px;
  }
 #version a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     border-bottom: 1px dotted #fff;
 }
@@ -135,9 +136,9 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     padding-right: 5px;
 }
 .login .user_logined a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    border-bottom: 1px dotted #fff;
+    border-bottom: 1px dotted #000;
 }
 .login .user_logined {padding-top: 9px;}
 .login .user_logined a:last-child{margin-right: 20px;}
@@ -272,11 +273,8 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .shadow_img{
     position: relative;
     background-image: url("/images/bg/bg_header_shadow.png");
-    background-repeat: no-repeat;
-    background-position: center -10px;
-    height: 18px;
-    width: 1050px;
-    margin: 0 auto;
+    background-position: 0 -29px;
+    height: 6px;
     top: 72px; 
     *top: 10px;
 
@@ -855,7 +853,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .map img{vertical-align: -100%; margin-right: 5px;}
 .map {padding-left: 19px; padding-top: 5px;}
 #journal .top {top: 0 !important;}
-#journal .shadow_img {top: 16px;}
+#journal .shadow_img {top: 6px;}
 /*asks*/
 #forms{padding-top: 20px; padding-bottom: 20px;}
 .asks, .asks2{padding-top: 20px;}
@@ -893,14 +891,14 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     behavior: url(/PIE/PIE.php); /*Подправить заголовок передачи PIE.htc*/
 }
 /*PIE*/
-.asks .desk .page-container{
+.asks .desk .page-container-2{
     width: 210px;
     padding-left: 16px;
     float: left;
     margin: 0;
     word-wrap:  break-word ;
 }
-.asks  .desk .page-container:last-child{
+.asks  .desk .page-container-2:last-child{
     width: 214px;
     padding-left: 21px;
     padding-right: 16px;
@@ -940,7 +938,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     border: 1px solid #bababa;
     padding: 5px 6px 5px 10px;
 }
-.asks2 .desk .page-container{
+.asks2 .desk .page-container-2{
     width: 226px;
     float: left;
     word-wrap: break-word;
@@ -961,9 +959,9 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .vote .number {float: left; color: #464646}
 .var{padding-bottom: 5px;}
 .vote-res .butt{ padding-right: 0; padding-top: 28px;}
-#forms .shadow_img{top: 38px;}
+#forms .shadow_img{top: 25px;}
 #down{
-    background: url("/images/bg/bg_footer.png") repeat-x #555;
+    background: url("/images/bg/bg_footer.png") repeat-x 0 -49px #555 ;
     padding-top: 20px;
 }
 #down .menu .logo{ float: left;}
@@ -981,13 +979,13 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     border-radius: 3px;
     text-decoration: none;
 }
-#down .d-n .ll{background: url("/images/bg/foore_bg_menu_ll_active.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 30px;}
-#down .d-n .rr{background: url("/images/bg/foore_bg_menu_rr_active.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 30px;}
-#down .d-n .cc{background: url("/images/bg/foore_bg_menu_cc_active.png") repeat-x 0 0; line-height: 30px; text-align: center;}
+#down .d-n .ll{background: url("/images/bg/foore_bg_menu_ll_active.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 32px;}
+#down .d-n .rr{background: url("/images/bg/foore_bg_menu_rr_active.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 32px;}
+#down .d-n .cc{background: url("/images/bg/foore_bg_menu_cc_active.png") repeat-x 0 0; line-height: 30px; text-align: center;height: 32px;}
 
-#down .active .ll, #down .d-n:hover .ll{background: url("/images/bg/foore_bg_menu_ll.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 30px;}
-#down .active .rr, #down .d-n:hover .rr{background: url("/images/bg/foore_bg_menu_rr.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 30px;}
-#down .active .cc, #down .d-n:hover .cc{background: url("/images/bg/foore_bg_menu_cc.png") repeat-x 0 0; line-height: 30px; text-align: center;}
+#down .active .ll, #down .d-n:hover .ll{background: url("/images/bg/foore_bg_menu_ll.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 32px;}
+#down .active .rr, #down .d-n:hover .rr{background: url("/images/bg/foore_bg_menu_rr.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 32px;}
+#down .active .cc, #down .d-n:hover .cc{background: url("/images/bg/foore_bg_menu_cc.png") repeat-x 0 0; line-height: 30px; text-align: center;height: 32px;}
 #down .menu .nav a[class="d-n"]{text-decoration: none;}
 #down .info {
     float: none;
@@ -1075,6 +1073,16 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
 .tab-item.active {
     display: block;
     position: relative;
+}
+.close{
+    background: url("/images/icons/exit2.png") no-repeat;
+    height: 36px;
+    position: absolute;
+    width: 36px;
+    cursor: pointer;
+    z-index: 600;
+    right: -11px;
+    top: -12px;
 }
 .task1, .task2 {float: left; text-align: center;  padding: 7px 15px 0 0;}
 .company, .ques{float: left; padding-left: 20px; padding-top: 15px;}
@@ -1292,7 +1300,7 @@ a:hover h1{
     margin-bottom: 5px;
     overflow: hidden;
 }
-#item_news .form_news form input[type="text"], .form_expert form input[type="text"]{
+.form_news form input[type="text"], .form_expert form input[type="text"]{
     background: #fff;
     border: 0 none;
     height: 24px;
@@ -1304,7 +1312,7 @@ a:hover h1{
     position: relative;
 }
 
-#item_news .form_news form textarea, .form_expert form textarea{
+.form_news form textarea, .form_expert form textarea{
     position: relative;
     color: #868686;
     padding: 5px 10px;
@@ -1316,20 +1324,20 @@ a:hover h1{
     border: 0 none;
     resize: none;
 }
-#item_news .form_news form .public, .form_expert form .public{ 
+.form_news form .public, .form_expert form .public{ 
     background: #ededed;
     color: #8f8f8f;
     line-height: 25px;
     width: 460px;
 }
-#item_news .form_news form .public span , .form_expert form .public span {
+.form_news form .public span , .form_expert form .public span {
     padding-left: 10px;
 }
-#item_news .form_news form .public img, .form_expert form .public img{
+.form_news form .public img, .form_expert form .public img{
     vertical-align: middle;
      margin-left: 10px;
 }
-#item_news .form_news form .float-right, .form_expert form .float-right{
+.form_news form .float-right, .form_expert form .float-right{
     float: left; 
     margin: 10px 0 10px 377px;
 }
@@ -1428,7 +1436,7 @@ a:hover h1{
     border: 1px solid #bababa;
     padding: 5px 6px 5px 10px;
 }
-#right_news .desk .page-container{
+#right_news .desk .page-container-2{
     width: 210px;
     float: left;
     word-wrap: break-word;

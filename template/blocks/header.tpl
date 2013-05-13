@@ -3,11 +3,25 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{modul.title}</title>
+
+
+	<title></title>
+    <meta charset="UTF-8" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <META NAME="AUTHOR" CONTENT="future-group.ru" />
+
+    <!-- тут значиться мета теги адаптивной верстки -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+
+
 	<meta name="description" content="[[if modul.description]]{modul.description}[[else]]{modul.title}[[endif]]" />
 	<meta name="keywords" content="[[if modul.keywords]]{modul.keywords}[[else]]{modul.title}[[endif]]" />
 	<link rel="stylesheet" type="text/css" href="/styles/main.css?ver=0.3" />
-        <link rel="stylesheet" type="text/css" href="/styles/south-street/jquery-ui-1.8.22.custom.css?ver=0.1" />
-        <link rel="stylesheet" type="text/css" href="/styles/colorbox.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/south-street/jquery-ui-1.8.22.custom.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/colorbox.css?ver=0.1" />
+    <link rel="stylesheet" type="text/css" href="/styles/lenta.css?ver=0.1">
 	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">	
         <!--[if lte IE 7]>
         	<link rel="stylesheet" type="text/css" href="/css/iehack6.css?ver=0.1">
