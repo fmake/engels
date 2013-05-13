@@ -122,7 +122,8 @@ $modul->getPage($request -> getEscape('modul') , $twig, $url);
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 
 $new_modul = new fmakeSiteModule;
-$new_modul->getPage($request -> getEscape('modul'));
+$new_modul->setRedir($request->modul);
+PrintAr($request->id);
 PrintAr($new_modul->id);
 $lenta_cat = $new_modul->getAllForMenuSite(2, true,$q=true,$flag=true, false);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
