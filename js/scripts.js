@@ -332,6 +332,15 @@ $(document).ready(function(){
 	$('.answer_comment').each(function(index){
 		$(this).attr('id', 'answer_comment_item'+index);
 	});
+	$('#lenta .i_am_alone').click(function(){
+		if($("#lenta .list").css('display') == "none"){
+			$("#lenta .list").css({'display':'block'});
+			$("#lenta .i_am_alone").css({'background-image':'url("/images/bg/alone_2.png");'})
+		}else{
+			$("#lenta .list").css({'display':'none'});
+			$("#lenta .i_am_alone").css({'background-image':'url("/images/bg/alone.png");'})
+		}
+	});
 });
 function resize_cbox(){
 	var __wc,
