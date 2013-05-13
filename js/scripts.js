@@ -338,6 +338,7 @@ $(document).ready(function(){
 			$("#lenta").css({'width':'204px'});
 			$("#lenta .i_am_alone").css({'background-image':'url("/images/bg/alone_2.png");'})
 		}else{
+			$("#lenta").css({'width':'25px'});
 			$("#lenta .list").css({'display':'none'});
 			$("#lenta .i_am_alone").css({'background-image':'url("/images/bg/alone.png");'})
 		}
