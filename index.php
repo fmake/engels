@@ -57,7 +57,7 @@ if ($configs->site_on_off == '1' ){
 //echo "1111";
 
 $news_obj_lenta = new fmakeNews();
-$lenta_cat = $news_obj_lenta->getCatForMenu(2);
+$lenta_cat = $news_obj_lenta->getCatForMenu(2, true);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 //PrintAr($lenta_cat);
 
