@@ -337,12 +337,22 @@ $(document).ready(function(){
 			$("#lenta .list").css({'display':'block'});
 			$("#lenta").css({'width':'204px'});
 			$(".page-container").css({'margin-left':'214px'});
-			$("#lenta .i_am_alone").css({'background':'url("/images/bg/alone_2.png") no-repeat 6px 48%'})
+			$("#lenta .i_am_alone").css({'background':'url("/images/bg/alone_2.png") no-repeat 6px 48%'});
 		}else{
 			$(".page-container").css({'margin-left':'40px'});
 			$("#lenta").css({'width':'25px'});
 			$("#lenta .list").css({'display':'none'});
-			$("#lenta .i_am_alone").css({'background':'url("/images/bg/alone.png") no-repeat 3px 48%'})
+			$("#lenta .i_am_alone").css({'background':'url("/images/bg/alone.png") no-repeat 3px 48%'});
+		}
+	});
+	$(window).resize(function(){
+		var w = $(window).width();
+		if(w > 1024) {
+			$('#lenta .i_am_alone').css({'display':'none'});
+			$("#lenta .list").css({'display':'block'});
+			$("#lenta").css({'width':'204px'});
+			$(".page-container").css({'margin-left':'214px'});
+			$("#lenta .i_am_alone").css({'background':'url("/images/bg/alone_2.png") no-repeat 6px 48%'});
 		}
 	});
 });
