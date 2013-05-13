@@ -376,7 +376,7 @@ function resize_cbox(){
 	$("#cboxWrapper").height("auto");
 }
 function coms_ops(){
-	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious, #cboxTitle").css({'top': '1px'})
+	$("#cboxClose, #cboxNext, #cboxCurrent, #cboxPrevious, #cboxTitle").css({'bottom': '98%'})
 	$("#cboxLoadedContent").css({'margin-top': '20px', 'margin-bottom': '0px'})
 }
 function onGoGo(){
