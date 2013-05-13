@@ -121,7 +121,7 @@ $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 //PrintAr($menu);
-$lenta_cat = $menu[1];
+$lenta_cat = $menu[1]['child'];
 PrintAr($lenta_cat);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
