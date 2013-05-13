@@ -74,7 +74,7 @@ function formFoto($values, $id, $last_id){
 				unset($comments[$k]);
 			}
 		}
-		
+		$objResponse->script("$.colorbox.resize();");
 		$globalTemplateParam->set('comments',$comments);
 		$globalTemplateParam->set('include_param_id_comment',$id);
 		$last = $twig->loadTemplate("xajax/comments/item_add.tpl")->render($globalTemplateParam->get());
