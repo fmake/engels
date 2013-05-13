@@ -57,8 +57,8 @@ if ($configs->site_on_off == '1' ){
 //echo "1111";
 
 $news_obj = new fmakeNews();
-$cat = $news_obj->getCatForMenu($item[$news_obj->idField],true);
-$item = $news_obj->getInfo();
+$items = $news_obj->getInfo();
+$cat = $news_obj->getCatForMenu($items[$news_obj->idField],true);
 PrintAr($cat);
 
 /*---------курс валют----------*/
