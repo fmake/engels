@@ -105,6 +105,34 @@
 				<div class="cl"></div>
 				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
 			</li>
+			<li>
+				<img src="/images/tmp/1.png" alt="" />
+				<div class="cl"></div>
+				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
+				<div class="cl"></div>
+				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
+			</li>
+			<li>
+				<img src="/images/tmp/1.png" alt="" />
+				<div class="cl"></div>
+				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
+				<div class="cl"></div>
+				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
+			</li>
+			<li>
+				<img src="/images/tmp/1.png" alt="" />
+				<div class="cl"></div>
+				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
+				<div class="cl"></div>
+				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
+			</li>
+			<li>
+				<img src="/images/tmp/1.png" alt="" />
+				<div class="cl"></div>
+				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
+				<div class="cl"></div>
+				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
+			</li>
 		</ul>
 	</div>
 </div>
