@@ -335,6 +335,7 @@ $(document).ready(function(){
 	$('#lenta .i_am_alone').click(function(){
 		if($("#lenta .list").css('display') == "none"){
 			$("#lenta .list").css({'display':'block'});
+			$("#lenta").css({'width':'204px'});
 			$("#lenta .i_am_alone").css({'background-image':'url("/images/bg/alone_2.png");'})
 		}else{
 			$("#lenta .list").css({'display':'none'});
