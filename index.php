@@ -58,7 +58,8 @@ if ($configs->site_on_off == '1' ){
 
 $news_obj_lenta = new fmakeNews();
 $lenta_cat = $news_obj_lenta->getCatForMenu(2);
-PrintAr($lenta_cat);
+$globalTemplateParam->set('lenta_cat',$lenta_cat);
+//PrintAr($lenta_cat);
 
 /*---------курс валют----------*/
 

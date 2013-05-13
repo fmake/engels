@@ -18,6 +18,7 @@
 	<div id="lenta">
 		<div class="i_am_alone"></div>
 		<div class="list">
+		<!--
 			<div class="block_1">
 				<ul>
 					<li><a href="#">Главное</a></li>
@@ -32,6 +33,16 @@
 					<li><a href="#">Из жизни</a></li>
 				</ul>
 			</div>
+		-->
+			[[if lenta_cat]]
+				<div class="block_1">
+					<ul>
+					[[for item in lenta_cat]]
+						<li><a href="{item.full_url}">{item.caption}</a></li>
+					[[endfor]]
+					</ul>
+				</div>
+			[[endif]] 
 			<div class="random_block">
 				<ul>
 					<li><a href="#">Культура</a></li>
