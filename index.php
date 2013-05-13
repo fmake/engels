@@ -56,7 +56,12 @@ if ($configs->site_on_off == '1' ){
 
 //echo "1111";
 
+$news_obj = new fmakeNews();
+$cat = $news_obj->getCatForMenu($item[$news_obj->idField],true);
+PrintAr($cat);
+
 /*---------курс валют----------*/
+
 $cache = new cacheValue();
 if (!$cache->isCache("usd_valuta")) {
 	$date = date("d/m/Y",time());
