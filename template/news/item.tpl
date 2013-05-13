@@ -95,7 +95,25 @@
 	
 [[endblock]]
 
+<div class="cl"></div>
+<div class="smarty_block">
+	<div class="partner_block">
+		<ul>
+			<li>
+				<img src="" alt="" />
+				<div class="cl"></div>
+				<div class="caption"></div>
+				<div class="cl"></div>
+				<div class="text"></div>
+			</li>
+		</ul>
+	</div>
+</div>
+
 [[block include_block]]
 	/*[[ include TEMPLATE_PATH ~ "blocks/nnn_block_include.tpl"]]*/
 	[[ include TEMPLATE_PATH ~ "blocks/marketgid_block_include.tpl"]]
 [[endblock]]
+
+распечатьь интстрикциб пр жкспуоатации нассокной станции грунт косс 
+базик JP 9615003
