@@ -43,7 +43,7 @@
 	float: left;
 	display: none;
 }
-@media all and (max-width:1024px){
+@media all and (max-width:1210px){
 	#lenta{
 		width: 25px;
 	}
