@@ -78,7 +78,7 @@
 		</a>
 		<div class="tasks">
 			<div class="desk">
-				<div class="page-container">
+				<div class="">
 					[[for item in items_advert_main]]
 						<div class="item">
 							<div class="title">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
