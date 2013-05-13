@@ -94,10 +94,7 @@
 	
 	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
 	
-[[endblock]]
-
-[[block pattern]]
-<div class="cl"></div>
+	<div class="cl"></div>
 <div class="smarty_block">
 	<div class="partner_block">
 		<ul>
@@ -140,6 +137,7 @@
 	</div>
 </div>
 [[endblock]]
+
 [[block include_block]]
 	/*[[ include TEMPLATE_PATH ~ "blocks/nnn_block_include.tpl"]]*/
 	[[ include TEMPLATE_PATH ~ "blocks/marketgid_block_include.tpl"]]
