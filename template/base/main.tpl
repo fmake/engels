@@ -662,7 +662,7 @@
 							<h1>Объявления</h1>
 							<div class="tasks">
 								<div class="desk">
-									<div class="page-container">
+									<div class="page-container-2">
 										<div class="item">
 											<div class="title">Услуги</div>
 											<a href="#">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.</a><span></span>
