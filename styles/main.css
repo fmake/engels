@@ -979,9 +979,9 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     border-radius: 3px;
     text-decoration: none;
 }
-#down .d-n .ll{background: url("/images/bg/foore_bg_menu_ll_active.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 30px;}
-#down .d-n .rr{background: url("/images/bg/foore_bg_menu_rr_active.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 30px;}
-#down .d-n .cc{background: url("/images/bg/foore_bg_menu_cc_active.png") repeat-x 0 0; line-height: 30px; text-align: center;}
+#down .d-n .ll{background: url("/images/bg/foore_bg_menu_ll_active.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 32px;}
+#down .d-n .rr{background: url("/images/bg/foore_bg_menu_rr_active.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 32px;}
+#down .d-n .cc{background: url("/images/bg/foore_bg_menu_cc_active.png") repeat-x 0 0; line-height: 30px; text-align: center;height: 32px;}
 
 #down .active .ll, #down .d-n:hover .ll{background: url("/images/bg/foore_bg_menu_ll.png") no-repeat 0 0; padding: 0px 0 0 7px; height: 30px;}
 #down .active .rr, #down .d-n:hover .rr{background: url("/images/bg/foore_bg_menu_rr.png") no-repeat 100% 0; padding: 0px 6px 0 0; height: 30px;}
