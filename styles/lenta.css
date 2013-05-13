@@ -15,7 +15,7 @@
 	color: #ffffff;
 }
 #lenta .list{
-	padding: 15px 20px;
+	padding: 15px 30px;
 }
 #lenta .block_1 ul li{
 	font-weight: bold;
@@ -36,7 +36,7 @@
 	border-bottom: 1px solid #6e6e6e;
 }
 #lenta .i_am_alone{
-	background: url("/images/bg/alone.png") no-repeat 3px 48% #3d2b1f;
+	background: url("/images/bg/alone.png") no-repeat 3px 48%;
 	cursor: pointer;
 	width: 25px;
 	height: 100%;
