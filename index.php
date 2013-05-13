@@ -120,7 +120,7 @@ $url = $url[0];
 $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
-$lenta_cat = $modul->getAllForMenuSite(2, true,$q=true,$flag=true,true);
+$lenta_cat = $modul->getAllForMenuSite(2, true);
 //PrintAr($menu);
 //$lenta_cat = $menu[1]['child'];
 //PrintAr($lenta_cat);
