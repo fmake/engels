@@ -94,13 +94,12 @@
 	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
 	
 [[endblock]]
-
 <div class="cl"></div>
 <div class="smarty_block">
 	<div class="partner_block">
 		<ul>
 			<li>
-				<img src="" alt="" />
+				<img src="/images/bg/tmp/1.png" alt="" />
 				<div class="cl"></div>
 				<div class="caption"></div>
 				<div class="cl"></div>
