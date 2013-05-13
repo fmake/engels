@@ -36,7 +36,8 @@
 	border-bottom: 1px solid #6e6e6e;
 }
 #lenta .i_am_alone{
-	background: url("/images/bg/alone.png") no-repeat;
+	background: url("/images/bg/alone.png") no-repeat 3px 48%;
+	cursor: pointer;
 	width: 25px;
 	height: 100%;
 	float: left;
