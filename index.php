@@ -123,7 +123,7 @@ $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 $lenta_cat = $modul->getAllForMenuSite(2, true, $q ,$flag,false);
 //PrintAr($menu);
 //$lenta_cat = $menu[1]['child'];
-PrintAr($lenta_cat);
+PrintAr($menu);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
