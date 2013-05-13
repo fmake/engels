@@ -136,7 +136,7 @@ button span span span {background:url("/images/bg/bg_button-c.png") repeat-x 0 0
     padding-right: 5px;
 }
 .login .user_logined a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     border-bottom: 1px dotted #fff;
 }
