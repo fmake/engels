@@ -97,6 +97,7 @@
 	<div class="cl"></div>
 <div class="smarty_block">
 	<div class="partner_block">
+		<h1>Новости партнеров</h1>
 		<ul>
 			<li>
 				<img src="/images/tmp/1.png" alt="" />
