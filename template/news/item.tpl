@@ -29,7 +29,8 @@
 									<td class="t3">Читают сейчас 10</td>
 								</tr>
 							</table>
-							<div class="line"></div>	
+							<div class="line">
+								<img src="/images/tmp/tria.png" alt="" /></div>	
 							<div class="cl"></div>
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
