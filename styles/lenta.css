@@ -350,6 +350,7 @@
 	left: -68px;
 	border: 1px solid #bababa;
 	box-shadow: 0 0 5px #bababa;
+	display: none;
 }
 .load_content_news img{
 	float: left;
