@@ -240,7 +240,11 @@
 	float: left;
 	margin-left: 22px;
 }
+#item_news .psevdo .arrow_new{
+	float: left;
+}
 #item_news .psevdo h1{
+	float: left;
 	padding: 0;
 	margin: 0;
 	margin-bottom: 5px;
@@ -270,7 +274,6 @@
 	margin-right: 301px;
 }
 #item_news .caption_top_new h1{
-	float: left;
 	padding: 0;
 	margin: 0;
 	margin-bottom: 15px;
