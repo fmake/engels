@@ -19,6 +19,16 @@
 								<div>{item.dop_params.anons|raw}</div>
 							</div>
 							<div class="cl"></div>
+							<table class="table1">
+								<tr>
+									<td class="t1">ТЕКС</td>
+									<td class="t2">
+										<a href="#">Коментарии(12)</a>
+									</td>
+									<td class="t3">Всего читали 1</td>
+									<td class="t3">Читают сейчас 10</td>
+								</tr>
+							</table>
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
 					</div>
