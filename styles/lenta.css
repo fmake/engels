@@ -146,7 +146,7 @@
 	width: 195px;
 	height: 270px;
 }
-.kenta .item{
+.kenta .item .hidden_item{
 	float:left;
 	margin-left: 20px;
 }
