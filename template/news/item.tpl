@@ -174,47 +174,48 @@
 </div>
 <div class="say_out">
 	<h1>Что говорят</h1>
-	<div class="block_1">
-		<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
-		<div class="cl">
+	<div class="item">
+		<div class="block_1">
+			<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
+			<div class="cl"></div>
 			<div class="img">
-				<img src="" alt="" />
+				<img src="/images/tmp/3.png" alt="" />
 				<div class="title">
 					<a href="#">Задай вопрос психологу</a>
 				</div>				
 			</div>
 			<div class="img">
-				<img src="" alt="" />
+				<img src="/images/tmp/3.png" alt="" />
 				<div class="title">
 					<a href="#">Задай вопрос психологу</a>
 				</div>				
 			</div>
+		</div>	
+		<div class="block_2">
+			<div class="link">Еще мнения</div>
+			<ul>
+				<li>
+					<a href="#">
+						"Тренерская работа - мне хобби"
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						"Тренерская работа - мне хобби"
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						"Тренерская работа - мне хобби"
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						"Тренерская работа - мне хобби"
+					</a>
+				</li>
+			</ul>
 		</div>
-	</div>	
-	<div class="block_2">
-		<div class="link">Еще мнения</div>
-		<ul>
-			<li>
-				<a href="#">
-					"Тренерская работа - мне хобби"
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					"Тренерская работа - мне хобби"
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					"Тренерская работа - мне хобби"
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					"Тренерская работа - мне хобби"
-				</a>
-			</li>
-		</ul>
 	</div>	
 </div>
 [[endblock]]
