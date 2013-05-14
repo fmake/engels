@@ -431,7 +431,7 @@
 				<div class="item">
 					<h1>Справочник</h1>
 					<div class="cl"></div>
-					<div class="block">
+					<div class="block lt">
 						<div class="caption"><a href="">Кафель Никовъ</a></div>
 						<div class="cl"></div>
 						<div class="text">Керамическая плитка, керамогранит ,мозайка, искуствеый камень, тротуарная</div>
@@ -446,7 +446,7 @@
 						<div class="cl"></div>
 						<div class="text">Керамическая плитка, керамогранит ,мозайка, искуствеый камень, тротуарная</div>
 					</div>
-					<div class="block">
+					<div class="block lt">
 						<div class="caption"><a href="">Кафель Никовъ</a></div>
 						<div class="cl"></div>
 						<div class="text">Керамическая плитка, керамогранит ,мозайка, искуствеый камень, тротуарная</div>
