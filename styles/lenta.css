@@ -377,7 +377,7 @@ a.al_bt{
 a.al_bt:first-child{
 	margin-left: 0px;
 }
-.mest5show{
+#mest5show{
 	padding: 10px;
 	position: absolute;
 	width: 380px;
@@ -389,11 +389,11 @@ a.al_bt:first-child{
 	box-shadow: 0 0 5px #bababa;
 	display: none;
 }
-.mest5show img{
+#mest5show img{
 	float: left;
 	margin-right: 10px;
 }
-.mest5show .caption{
+#mest5show .caption{
 	font-weight: bold;
 	color: #555555;
 	font-size: 16px;
