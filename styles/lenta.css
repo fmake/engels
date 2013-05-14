@@ -302,7 +302,8 @@
 	text-align: right;
 }
 .s_b_n{
-	background: url("/images/temp/sb.png") no-repeat;
+	background: url("/images/tmp/sb.png") no-repeat;
 	height: 26px;
 	width: 136px;
+	margin-bottom: 14px;
 }
