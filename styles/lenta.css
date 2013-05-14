@@ -125,3 +125,6 @@
 .my_new_afish .img1, .my_new_afish .img2, .my_new_afish .ap{
 	float: left;
 }
+.my_new_afish .img2{
+	margin-left: 25px;
+}
