@@ -374,6 +374,22 @@
 		</div>
 		<div class="shadow">
 			<div class="shadow_img"></div>
+		</div>
+	</div>
+<div class="kenta">
+	<div class="page-container">
+			<div class="item">
+				<div class="hidden_item" style="width: 200px;">
+					<div class="hidden_link">
+						<div class="time">22.03.2013</div>
+						<div class="icons"><a href=""><img src="" alt="" title="Фото">20</a></div>
+						<div class="cl"></div>
+						<a href="" class="d-l">ПЧ-27 приняла участие в пожарно-тактических учениях</a>
+					</div>
+					<a href=""><img src="" alt="" width="200px" height="154px"></a>
+				</div>
+			</div>
+
 [[endblock]]
 
 [[block include_block]]
