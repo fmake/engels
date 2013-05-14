@@ -146,3 +146,44 @@
 	width: 195px;
 	height: 270px;
 }
+.kenta .hidden_item {
+    position: relative;
+    display: block;
+    border: 1px solid #000;
+}
+.kenta .hidden_link{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    display: block;
+    height: 50px;
+    z-index: 100;
+}
+.kenta .hidden_link .time, .kenta .hidden_link .icons{
+    color: #555;
+    font-size: 10px;
+    padding: 5px 10px 0 10px ;
+    float: left;
+}
+.kenta .hidden_link .icons img{vertical-align: middle}
+.kenta .hidden_link .icons {float: right}
+.kenta .hidden_link .icons a{text-decoration: none; color: #555; font-size: 10px;}
+.kenta .hidden_link .icons img{padding-right: 5px;padding-bottom: 2px}
+.kenta .hidden_link .icons a:hover{text-decoration: none; color: #555}
+.kenta .hidden_link .d-l{
+    font-size: 11px;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    bottom: 0;
+    padding: 0 10px 5px 10px;
+    width: 181px;
+    display: block;
+    height: 25px;
+    overflow: hidden;
+}
+.kenta .hidden_link a:hover{
+    text-decoration: underline;
+    color: #ff0000;
+}
