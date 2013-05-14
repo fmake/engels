@@ -240,7 +240,7 @@
 	float: left;
 	margin-left: 22px;
 }
-.psevdo h1{
+#item_news .psevdo h1{
 	padding-left: 0px;
 }
 .psevdo .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
