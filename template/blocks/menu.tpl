@@ -1,7 +1,7 @@
 <ul>
 	[[for item in menu]]
 		<li class="[[if loop.last]]lc[[endif]]">
-			[[if item.id==5]]
+			[[if item.id == 5]]
 				<div id="mest5show">
 					<div class="caption">Пропал Парк Джи СУнг</div>
 					<div class="cl"></div>
