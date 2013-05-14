@@ -271,23 +271,29 @@
 <div id="journal">
 		<div class="shadow_img top"></div>
 		<div class="page-container">
-			<h1>
-				Афиша
-			</h1>
-			<div class="img1">
-				<img src="/images/tmp/4.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption">Отрицание пространства</div>
-			</div>
-			<div class="img2">
-				<div class="grid">
-
+			<div class="my_new_afish">
+				<h1>
+					Афиша
+				</h1>
+				<div class="img1">
+					<img src="/images/tmp/4.png" alt="#" />
+					<div class="cl"></div>
+					<div class="caption"><a href="#">Отрицание пространства</a></div>
 				</div>
+				<div class="img2">
+					<div class="grid">
+						<div class="item_block">
+							<img src="/images/tmp/5.png" alt="" />
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="ap">
+					<!--РЕКЛАМА -->
+				</div>
+				<div class="cl"></div>	
 			</div>
-			<div class="ap">
-				<!--РЕКЛАМА -->
-			</div>
-			<div class="cl"></div>	
 		</div>
 		<div class="shadow">
 			<div class="shadow_img"></div>
