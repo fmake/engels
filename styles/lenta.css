@@ -303,7 +303,8 @@
 }
 .s_b_n{
 	background: url("/images/tmp/sb.png") no-repeat;
-	height: 26px;
+	height: 28px;
 	width: 136px;
+	margin-top: 17px;
 	margin-bottom: 14px;
 }
