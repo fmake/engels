@@ -190,3 +190,20 @@
     text-decoration: underline;
     color: #ff0000;
 }
+.block_all_bew{
+	float: left;
+	width: 700px;
+	margin-right: 10px;
+}
+.block_all_bew .block{
+	width: 200px;
+	margin-left: 25px;
+}
+.block_all_bew .block.lt{
+	margin-left: 0px;
+}
+.ap_bl{
+	width: 250px;
+	height: 360px;
+	background: white;
+}

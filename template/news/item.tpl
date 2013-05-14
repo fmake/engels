@@ -427,6 +427,48 @@
 				</div>
 			</div>
 			<div class="cl"></div>
+			<div class="block_all_bew">
+				<div class="item">
+					<h1>Справочник</h1>
+					<div class="cl"></div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="block">
+						<div class="caption"><a href="">Кафель Никовъ</a></div>
+						<div class="cl"></div>
+						<div class="text">Керамическая плитка,керамогранит,мозайка,искуствеый камень,тротуарная</div>
+					</div>
+					<div class="cl"></div>
+				</div>
+				<div class="item">
+					<h1>Объявления</h1>
+					<div class="cl"></div>
+				</div>
+			</div>
+
 
 [[endblock]]
 
