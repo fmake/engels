@@ -274,12 +274,23 @@
 			<h1>
 				Афиша
 			</h1>
-			<div class="img1"></div>
-			<div class="img2"></div>	
+			<div class="img1">
+				<img src="/images/tmp/4.png" alt="" />
+				<div class="cl"></div>
+				<div class="caption">Отрицание пространства</div>
+			</div>
+			<div class="img2">
+				<div class="grid">
+
+				</div>
+			</div>
+			<div class="ap">
+				<!--РЕКЛАМА -->
+			</div>
+			<div class="cl"></div>	
 		</div>
 		<div class="shadow">
 			<div class="shadow_img"></div>
-
 [[endblock]]
 
 [[block include_block]]
