@@ -301,3 +301,8 @@
 	color: #878787;
 	text-align: right;
 }
+.s_b_n{
+	background: url("/images/temp/sb.png") no-repeat;
+	height: 26px;
+	width: 136px;
+}

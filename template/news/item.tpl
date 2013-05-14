@@ -37,6 +37,7 @@
 				[[endif]]
 				<!-- NEW FUNCTIONAL -->
 				<div class="psevdo">
+					<div class="s_b_n"></div>
 					<h1>Лента</h1>
 					<div class="pre_item">
 						<div class="item">
