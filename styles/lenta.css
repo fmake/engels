@@ -241,7 +241,15 @@
 	margin-left: 22px;
 }
 #item_news .psevdo .arrow_new{
-	float: left;
+	position: relative;
+	float: right;
+	top: 4px;
+}
+#item_news .psevdo .arrow_new a{
+	color: #bababa;
+	font-size: 11px;
+	text-decoration: none;
+	border-bottom: 1px dotted #bababa;
 }
 #item_news .psevdo h1{
 	float: left;
@@ -323,4 +331,3 @@
 	position: relative;
 	left: 15px;
 }
-.
