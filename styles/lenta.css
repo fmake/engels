@@ -341,6 +341,7 @@
 	position: relative;
 }
 .load_content_news{
+	padding: 10px;
 	position: absolute;
 	width: 380px;
 	background: white;
