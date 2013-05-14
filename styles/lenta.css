@@ -99,4 +99,11 @@
 }
 #say_otu .block_1 .img{
 	float: left;
+	margin-left: 10px;
+}
+#say_otu .block_1 .img:first-child{
+	margin-left: 0px;
+}
+#say_otu .block_1, #say_otu .block_2{
+	float: left;
 }
