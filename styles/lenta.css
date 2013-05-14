@@ -204,6 +204,10 @@
 .block_all_bew .block .caption{
 	margin-bottom: 8px;
 }
+.block_all_bew .block .category{
+	margin-bottom: 8px;
+	color: #878787;
+}
 .block_all_bew .block.lt{
 	margin-left: 0px;
 }

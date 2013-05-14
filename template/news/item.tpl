@@ -466,8 +466,16 @@
 				<div class="item">
 					<h1>Объявления</h1>
 					<div class="cl"></div>
+					<div class="block">
+						<div class="category">Услуги</div>
+						<div class="cl"></div>
+						<div class="text">
+							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="ap"></div>
 
 
 [[endblock]]
