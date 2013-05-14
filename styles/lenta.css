@@ -128,3 +128,6 @@
 .my_new_afish .img2{
 	margin-left: 25px;
 }
+.grid .item_block{
+	float: left;
+}
