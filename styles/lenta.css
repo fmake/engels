@@ -239,8 +239,8 @@
 	width: 257px;
 	float: left;
 }
-.psevdo .news .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
-.psevdo .news .item:hover {border: 1px solid #bababa; box-shadow: 0 0 5px #bababa}
+.psevdo .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
+.psevdo .item:hover {border: 1px solid #bababa; box-shadow: 0 0 5px #bababa}
 .psevdo .time, .psevdo .comments, .psevdo .title{color: #878787;}
 .psevdo .item a{text-decoration: none}
 .psevdo .item .note a:hover{text-decoration: underline}
