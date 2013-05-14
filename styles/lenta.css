@@ -377,6 +377,18 @@ a.al_bt{
 a.al_bt:first-child{
 	margin-left: 0px;
 }
+.mest5show{
+	padding: 10px;
+	position: absolute;
+	width: 380px;
+	background: white;
+	z-index: 1000;
+	top: 61px;
+	left: -68px;
+	border: 1px solid #bababa;
+	box-shadow: 0 0 5px #bababa;
+	display: none;
+}
 .mest5show img{
 	float: left;
 	margin-right: 10px;
