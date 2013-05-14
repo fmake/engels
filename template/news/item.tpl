@@ -282,7 +282,7 @@
 				</div>
 				<div class="img2">
 					<div class="grid">
-						<div class="item_block">
+						<div class="item_block lt">
 							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
 							<div class="cl"></div>
 							<div class="caption"><a href="">Отрицание пространства</a></div>
@@ -298,7 +298,7 @@
 							<div class="caption"><a href="">Отрицание пространства</a></div>
 						</div>
 						<div class="cl"></div>
-						<div class="item_block">
+						<div class="item_block lt">
 							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
 							<div class="cl"></div>
 							<div class="caption"><a href="">Отрицание пространства</a></div>
