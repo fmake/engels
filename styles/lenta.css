@@ -343,7 +343,6 @@
 .load_content_news{
 	position: absolute;
 	width: 380px;
-	height: 144px;
 	background: white;
 	z-index: 1000;
 	top: 61px;
