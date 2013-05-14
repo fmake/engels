@@ -20,7 +20,7 @@
 								<div>{item.dop_params.anons|raw}</div>
 							</div>
 						[[endif]]
-						<img src="/{site_obj.isFile(item.id, 744)}" alt="" />
+						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
 					</div>
 					[[else]]
 						<h1>{item.caption}</h1>
