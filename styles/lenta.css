@@ -377,3 +377,14 @@ a.al_bt{
 a.al_bt:first-child{
 	margin-left: 0px;
 }
+.mest5show img{
+	float: left;
+	margin-right: 10px;
+}
+.mest5show .caption{
+	font-weight: bold;
+	color: #555555;
+	font-size: 16px;
+	line-height: 18px;
+	margin-bottom: 13px;
+}
