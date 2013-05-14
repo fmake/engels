@@ -262,6 +262,7 @@
 
 #item_new .img {
 	float: left;
+	width: 444px;
 }
 #item_new .text .date{
 	margin-right: 301px;
