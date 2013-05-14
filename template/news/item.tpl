@@ -1,8 +1,6 @@
 [[ extends  TEMPLATE_PATH ~ "base/main.tpl" ]]
 [[block center]]
 	
-	[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
-	
 	<div class="new_news">
 		<div id="item_news">
 			<div id="item_new">
@@ -177,9 +175,10 @@
 				</p>
 			/*БАНЕР new*/
 			<div class="cl"></div>
-			<div class="socbutt">
+			/*<div class="socbutt">
 				[[ include TEMPLATE_PATH ~ "blocks/block_social_like.tpl"]]
-			</div><br/>
+			</div><br/>*/
+			[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
 			<div class="cl"></div>
 			
 			[[ include TEMPLATE_PATH ~ "comments/main.tpl"]]
