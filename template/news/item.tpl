@@ -178,7 +178,7 @@
 		<div class="block_1">
 			<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
 			<div class="cl"></div>
-			<div class="img">
+			<div class="img ml0">
 				<img src="/images/tmp/3.png" alt="" />
 				<div class="title">
 					<a href="#">Задай вопрос психологу</a>
