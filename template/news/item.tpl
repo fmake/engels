@@ -261,6 +261,14 @@
 		</div>
 	</div>	
 </div>
+<div id="journal">
+			<div class="shadow_img top"></div>
+		<div class="page-container" ></div>
+		<div class="shadow">
+			<div class="shadow_img"></div>
+		</div>
+	</div>
+
 [[endblock]]
 
 [[block include_block]]
