@@ -47,6 +47,63 @@
 						</div>
 					</div>
 					<div class="cl"></div>
+					<div class="pre_item">
+						<div class="item">
+							<div class="time">
+								14:15
+							</div>
+							<div class="icons">
+								<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+								<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+								<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+							</div>
+							<div class="cl"></div>
+							<div class="note">
+								<a href=""><span class="title">Здоровье</span></a>
+								<a href="">В Энгельсе 17% супружеских пар не могут иметь детей</a>
+								<span class="comments">[2]</span>
+							</div>
+						</div>
+					</div>
+					<div class="cl"></div>
+					<div class="pre_item">
+						<div class="item">
+							<div class="time">
+								14:15
+							</div>
+							<div class="icons">
+								<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+								<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+								<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+							</div>
+							<div class="cl"></div>
+							<div class="note">
+								<a href=""><span class="title">Здоровье</span></a>
+								<a href="">В Энгельсе 17% супружеских пар не могут иметь детей</a>
+								<span class="comments">[2]</span>
+							</div>
+						</div>
+					</div>
+					<div class="cl"></div>
+					<div class="pre_item">
+						<div class="item">
+							<div class="time">
+								14:15
+							</div>
+							<div class="icons">
+								<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+								<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+								<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+							</div>
+							<div class="cl"></div>
+							<div class="note">
+								<a href=""><span class="title">Здоровье</span></a>
+								<a href="">В Энгельсе 17% супружеских пар не могут иметь детей</a>
+								<span class="comments">[2]</span>
+							</div>
+						</div>
+					</div>
+					<div class="cl"></div>
 				</div>			
 				<!-- NEW FUNCTIONAL -->
 				<div class="cl"></div>
