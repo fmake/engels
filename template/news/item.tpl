@@ -283,11 +283,48 @@
 				<div class="img2">
 					<div class="grid">
 						<div class="item_block">
-							<img src="/images/tmp/5.png" alt="" />
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
 							<div class="cl"></div>
 							<div class="caption"><a href="">Отрицание пространства</a></div>
 						</div>
 					</div>
+					<div class="grid">
+						<div class="item_block">
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+					<div class="grid">
+						<div class="item_block">
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+					<div class="cl"></div>
+					<div class="grid">
+						<div class="item_block">
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+					<div class="grid">
+						<div class="item_block">
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+					<div class="grid">
+						<div class="item_block">
+							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<div class="cl"></div>
+							<div class="caption"><a href="">Отрицание пространства</a></div>
+						</div>
+					</div>
+					<div class="cl"></div>
 				</div>
 				<div class="ap">
 					<!--РЕКЛАМА -->
