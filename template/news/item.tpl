@@ -140,6 +140,7 @@
 
 	<div class="recomend">
 		<h1>Рекомендуем</h1>
+		<div class="cl"></div>
 		<ul>
 			<li>
 				<img src="/images/tmp/2.png" alt="" />
@@ -170,10 +171,13 @@
 				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
 			</li>
 		</ul>
+		<div class="cl"></div>
 	</div>
 </div>
+<div class="cl"></div>
 <div class="say_out">
 	<h1>Что говорят</h1>
+	<div class="cl"></div>
 	<div class="item">
 		<div class="block_1">
 			<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
@@ -259,7 +263,10 @@
 				</li>
 			</ul>
 		</div>
-	</div>	
+	</div>
+	<div class="cl"></div>
+</div>
+</div>
 </div>
 <div id="journal">
 		<div class="shadow_img top"></div>
@@ -272,8 +279,7 @@
 		</div>
 		<div class="shadow">
 			<div class="shadow_img"></div>
-		</div>
-</div>
+
 [[endblock]]
 
 [[block include_block]]
