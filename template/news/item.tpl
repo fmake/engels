@@ -219,7 +219,7 @@
 	</div>
 	<div class="item">
 		<div class="block_1">
-			<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
+			<button class="say_out_button"><span><span><span>Гости</span></span></span></button>
 			<div class="cl"></div>
 			<div class="img ml0">
 				<img src="/images/tmp/3.png" alt="" />
@@ -235,7 +235,7 @@
 			</div>
 		</div>	
 		<div class="block_2">
-			<div class="link"><a href="">Еще мнения</a></div>
+			<div class="link"><a href="">Другие гости</a></div>
 			<ul>
 				<li>
 					<a href="#">
