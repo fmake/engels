@@ -196,6 +196,7 @@
 	margin-right: 10px;
 }
 .block_all_bew .block{
+	float: left;
 	width: 200px;
 	margin-left: 25px;
 }
