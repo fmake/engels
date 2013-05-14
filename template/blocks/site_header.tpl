@@ -24,7 +24,7 @@
 				<div id="sky" onclick="location.href='#';">
 					<span>За окном</span>
 					<img src="/images/icons/sky_header.png" alt="Погода"/>
-					<span class="temp"><a style="color: white;" href="{site_obj.getLinkPage(2325)}">{weather}</a></span>
+					<span class="temp"><a style="" href="{site_obj.getLinkPage(2325)}">{weather}</a></span>
 				</div>
 				<div id="money_rate">
 					<span>Курс валют:</span>
