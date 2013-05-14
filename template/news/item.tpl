@@ -38,8 +38,8 @@
 						</div>
 						<div class="cl"></div>
 						<div class="note">
-							<a href="{news_obj.getLinkPage(item.parent)}"><span class="title">Здоровье</span></a>
-							<a href="{news_obj.getLinkPage(item.id)}">В Энгельсе 17% супружеских пар не могут иметь детей</a>
+							<a href=""><span class="title">Здоровье</span></a>
+							<a href="">В Энгельсе 17% супружеских пар не могут иметь детей</a>
 							<span class="comments">2</span>
 						</div>
 					</div>
