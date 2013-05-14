@@ -46,6 +46,7 @@
 						<img src="/images/icons/right_nav_bar.png" alt="" />
 						<a href="#">Все новости</a>
 					</div>
+					<div class="cl"></div>
 					<div class="pre_item">
 						<div class="item">
 							<div class="time">
