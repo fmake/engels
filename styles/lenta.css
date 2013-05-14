@@ -190,7 +190,7 @@
     text-decoration: underline;
     color: #ff0000;
 }
-.block_all_bew .item: first-child{
+.block_all_bew .item:first-child{
 	margin-top: 25px;
 }
 .block_all_bew{
@@ -215,7 +215,7 @@
 	margin-left: 0px;
 }
 .ap_bl{
-	margin-bottom: 45px;
+	margin-top: 45px;
 	width: 250px;
 	height: 360px;
 	background: #bababa;
