@@ -168,6 +168,8 @@
 					</div>
 				</div>
 			</div>
+						[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
+						<br />
 			/*БАНЕР new*/
 				<div class="cl"></div>
 				<p style="width: 740px;">
@@ -178,7 +180,6 @@
 			/*<div class="socbutt">
 				[[ include TEMPLATE_PATH ~ "blocks/block_social_like.tpl"]]
 			</div><br/>*/
-			[[ include TEMPLATE_PATH ~ "breadcrumbs/main.tpl"]]
 			<div class="cl"></div>
 			
 			[[ include TEMPLATE_PATH ~ "comments/main.tpl"]]
