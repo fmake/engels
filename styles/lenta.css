@@ -383,7 +383,7 @@ a.al_bt:first-child{
 	width: 380px;
 	background: white;
 	z-index: 1000;
-	top: 61px;
+	top: 45px;
 	left: -68px;
 	border: 1px solid #bababa;
 	box-shadow: 0 0 5px #bababa;
@@ -399,4 +399,7 @@ a.al_bt:first-child{
 	font-size: 16px;
 	line-height: 18px;
 	margin-bottom: 13px;
+}
+#menu_center .nav ul li{
+	position: relative;
 }
