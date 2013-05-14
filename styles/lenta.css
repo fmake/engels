@@ -122,3 +122,6 @@
 .say_out .img{
 	margin-top: 20px;
 }
+.my_new_afish .img1, .my_new_afish .img2, .my_new_afish .ap{
+	float: left;
+}
