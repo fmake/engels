@@ -133,11 +133,16 @@
 	margin-bottom: 10px;
 	margin-left: 25px;
 }
+.grid .item_block .caption{
+	height: 30px;
+	overflow: hidden;
+}
 .grid .item_block.lt{
 	margin-left: 0px;
 }
 .my_new_afish .ap{
+	margin-left: 25px;
 	background: white;
-	width: 195;
-	height: 270;
+	width: 195px;
+	height: 270px;
 }
