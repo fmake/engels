@@ -270,6 +270,7 @@
 	margin-right: 301px;
 }
 #item_news .caption_top_new h1{
+	float: left;
 	padding: 0;
 	margin: 0;
 	margin-bottom: 15px;
@@ -319,3 +320,4 @@
 	position: relative;
 	left: 15px;
 }
+.
