@@ -1,4 +1,27 @@
 $(document).ready(function(){
+	$(".show_this_news").each(function(index){
+		$(this).attr('id',index + 'show_this_news');
+		$(this).hover(
+			function(){
+				$("#"+index+"load_content_news").show();
+			},
+			function(){
+				$("#"+index+"load_content_news").hide();
+			}
+		);
+	});
+	$("#mest5").hover(
+		function(){
+			$("#mest5show").show();
+		},
+		function(){
+			$("#mest5show").hide();
+		}
+	);
+	$(".load_content_news").each(function(index){
+		$(this).attr('id',index + 'load_content_news');
+	});
+
     $('input.fieldfocus,textarea.fieldfocus').fieldFocus();
    
 	$(".show").colorbox({
