@@ -30,6 +30,7 @@
 								</tr>
 							</table>
 							<div class="line"></div>	
+							<div class="cl"></div>
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
 					</div>
