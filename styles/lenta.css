@@ -283,4 +283,9 @@
 }
 .table1{
 	width: 444px;
+	color: #000;
+	font-size: 11px;
+}
+.table1 .t3{
+	color: #878787;
 }
