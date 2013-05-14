@@ -199,6 +199,10 @@
 	float: left;
 	width: 200px;
 	margin-left: 25px;
+	margin-bottom: 20px;
+}
+.block_all_bew .block .caption{
+	margin-bottom: 8px;
 }
 .block_all_bew .block.lt{
 	margin-left: 0px;
