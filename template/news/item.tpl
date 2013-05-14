@@ -27,6 +27,7 @@
 				[[endif]]
 				<!-- NEW FUNCTIONAL -->
 				<div class="psevdo">
+					<h1>Лента</h1>
 					<div class="pre_item">
 						<div class="item">
 							<div class="time">
