@@ -43,7 +43,6 @@
 					<div class="s_b_n"></div>
 					<h1>Лента</h1>
 					<div class="arrow_new">
-						<img src="/images/icons/right_nav_bar.png" alt="" />
 						<a href="#">Все новости</a>
 					</div>
 					<div class="cl"></div>
