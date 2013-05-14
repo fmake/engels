@@ -84,6 +84,9 @@
 .recomend ul li:first-child{
 	margin-left: 0px;
 }
+.recomend ul li .caption, .partner_block ul li .caption{
+	margin-top: 5px;
+}
 .recomend ul li .caption a{
 	text-decoration: none;
 	color: #0d44a0;
