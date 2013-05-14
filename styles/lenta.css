@@ -98,6 +98,7 @@
 }
 .say_out{
 	margin-top: 20px;
+	margin-bottom: 25px;
 }
 .say_out .item{
 	width: 490px;
@@ -128,9 +129,7 @@
 .say_out .img{
 	margin-top: 20px;
 }
-.my_new_afish {
-	margin-top: 25px;
-}
+.my_new_afish {}
 .my_new_afish .img1, .my_new_afish .img2, .my_new_afish .ap{
 	float: left;
 }
