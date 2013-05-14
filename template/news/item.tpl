@@ -29,6 +29,7 @@
 									<td class="t3">Читают сейчас 10</td>
 								</tr>
 							</table>
+							<div class="line"></div>	
 						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
 					</div>

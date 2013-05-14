@@ -308,3 +308,9 @@
 	margin-top: 17px;
 	margin-bottom: 14px;
 }
+.line{
+	width: 100%;
+	height: 2px;
+	border-bottom: 1px solid #d5d5d5;
+	background: url("/images/tmp/tria.png")no-repeat;
+}
