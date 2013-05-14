@@ -74,7 +74,7 @@
 	line-height: 14px;
 }
 .recomend{
-	margin-top: 25px;
+	margin-top: 30px;
 }
 .recomend ul li{
 	float: left;
@@ -95,6 +95,9 @@
 .recomend ul li .text{
 	font-size: 12px;
 	line-height: 14px;
+}
+.say_out{
+	margin-top: 20px;
 }
 .say_out .item{
 	width: 475px;
