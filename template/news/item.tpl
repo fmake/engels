@@ -25,7 +25,26 @@
 					[[else]]
 						<h1>{item.caption}</h1>
 				[[endif]]
-
+				<!-- NEW FUNCTIONAL -->
+				<div class="pre_item">
+					<div class="item">
+						<div class="time">
+							14:15
+						</div>
+						<div class="icons">
+							<a href="{item.full_url}#item_news"><img src="/images/bg/fotocamera.png" alt="" title="У этой статьи есть Фото"/></a>
+							<a href="{item.full_url}#video"><img src="/images/bg/camera.png" alt="" title="У этой статьи есть Видео"/></a>
+							<a href="{item.full_url}#quot"><img src="/images/bg/mp.png" alt="{item.mnenie}" title="У этой статьи есть Мнения" class="fix_img" /></a>
+						</div>
+						<div class="cl"></div>
+						<div class="note">
+							<a href="{news_obj.getLinkPage(item.parent)}"><span class="title">Здоровье</span></a>
+							<a href="{news_obj.getLinkPage(item.id)}">В Энгельсе 17% супружеских пар не могут иметь детей</a>
+							<span class="comments">2</span>
+						</div>
+					</div>
+				</div>			
+				<!-- NEW FUNCTIONAL -->
 				<div class="cl"></div>
 				<div class="text">
 					[[if item.dop_params.autor]]<span class="avtor">Автор: {item.dop_params.autor}</span>[[endif]]
