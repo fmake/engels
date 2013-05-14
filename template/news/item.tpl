@@ -192,7 +192,7 @@
 			</div>
 		</div>	
 		<div class="block_2">
-			<div class="link">Еще мнения</div>
+			<div class="link"><a href="">Еще мнения</a></div>
 			<ul>
 				<li>
 					<a href="#">
