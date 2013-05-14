@@ -286,6 +286,13 @@
 	color: #000;
 	font-size: 11px;
 }
+.table1 .t1{
+	margin-left: 5px;
+}
+.table1 .t2{
+	width: 200px;
+}
 .table1 .t3{
 	color: #878787;
+	text-align: right;
 }
