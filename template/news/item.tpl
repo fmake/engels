@@ -49,6 +49,7 @@
 					<div class="cl"></div>
 					<div class="pre_item">
 						<div class="item">
+							<div class="load_content_news"></div>
 							<div class="time">
 								14:15
 							</div>
