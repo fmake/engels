@@ -41,7 +41,7 @@
 							<div class="note">
 								<a href=""><span class="title">Здоровье</span></a>
 								<a href="">В Энгельсе 17% супружеских пар не могут иметь детей</a>
-								<span class="comments">2</span>
+								<span class="comments">[2]</span>
 							</div>
 						</div>
 					</div>
