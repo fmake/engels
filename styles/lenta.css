@@ -130,6 +130,7 @@
 }
 .grid .item_block{
 	float: left;
+	margin-bottom: 10px;
 }
 .my_new_afish .ap{
 	background: white;
