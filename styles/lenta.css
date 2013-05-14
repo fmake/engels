@@ -293,6 +293,10 @@
 .table1 .t2{
 	width: 200px;
 }
+.table1 .t2 a{
+	text-decoration: none;
+	border-bottom: 1px dotted #0d44a0;
+}
 .table1 .t3{
 	color: #878787;
 	text-align: right;
