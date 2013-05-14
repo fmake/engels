@@ -10,6 +10,14 @@ $(document).ready(function(){
 			}
 		);
 	});
+	$("#mest5").hover(
+		function(){
+			$("#mest5show").show();
+		},
+		function(){
+			$("#mest5show").hide();
+		}
+	);
 	$(".load_content_news").each(function(index){
 		$(this).attr('id',index + 'load_content_news');
 	});
