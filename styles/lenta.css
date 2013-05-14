@@ -114,7 +114,8 @@
 }
 .say_out ul{
 	margin-top: 20px;
+	padding-left: 10px;
 }
-.say_out .say_out_button{
+.say_out .img{
 	margin-top: 20px;
 }
