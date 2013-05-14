@@ -146,6 +146,10 @@
 	width: 195px;
 	height: 270px;
 }
+.kenta .item{
+	float:left;
+	margin-left: 20px;
+}
 .kenta .hidden_item {
     position: relative;
     display: block;
@@ -178,7 +182,6 @@
     position: relative;
     bottom: 0;
     padding: 0 10px 5px 10px;
-    width: 181px;
     display: block;
     height: 25px;
     overflow: hidden;
