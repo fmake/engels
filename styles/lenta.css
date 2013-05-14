@@ -235,3 +235,20 @@
 .ttl{
 	margin-bottom: 200px;
 }
+.psevdo .news .item {padding: 6px 0px 6px 10px;border: 1px solid transparent; margin-left: -10px;}
+.psevdo .news .item:hover {border: 1px solid #bababa; box-shadow: 0 0 5px #bababa}
+.psevdo .time, .psevdo .comments, .psevdo .title{color: #878787;}
+.psevdo .news .item a{text-decoration: none}
+.psevdo .news .item .note a:hover{text-decoration: underline}
+.psevdo .news .item .note a{color: #000;}
+.psevdo .title {padding-right:5px;}
+.psevdo .comments {padding-left:5px;}
+.psevdo .time{padding-bottom: 4px;}
+.psevdo .icons {float: left;  float: none !ie;}
+.psevdo .time {float: left; zoom: 1;}
+.psevdo .icons {padding-top: 4px;}
+.psevdo .icons img{padding: 0 3px;}
+
+#item_new .img {
+	float: left;
+}
