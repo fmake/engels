@@ -40,7 +40,12 @@
 				[[endif]]
 				<!-- NEW FUNCTIONAL -->
 				<div class="psevdo">
-					<div class="s_b_n"></div>
+					<div class="s_b_n">
+						<a class="al_bt"></a>
+						<a class="al_bt"></a>
+						<a class="al_bt"></a>
+						<a class="al_bt"></a>
+					</div>
 					<h1>Лента</h1>
 					<div class="arrow_new">
 						<a href="#">Все новости</a>
