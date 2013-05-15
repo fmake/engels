@@ -101,7 +101,16 @@
 				$globalTemplateParam->set('advert_obj', $advert_obj);
 				$globalTemplateParam->set('items_advert_main', $items_advert_main);
 				/*объявления*/
-				
+
+				/*Справочник*/
+				$manual_obj = new fmakeSiteModule();
+				$limit_manual = 6; 
+				$manual_obj->order = "b.date DESC, a.id";
+				$items_manual_main = $manual_obj->getByPageAdmin(1238, $limit_manual,1,"a.`file` = 'item_manual'",true);
+				$globalTemplateParam->set('manual_obj', $manual_obj);
+				$globalTemplateParam->set('items_manual_main', $items_manual_main);
+				/*Справочник*/
+
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
