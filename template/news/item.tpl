@@ -377,7 +377,7 @@
 				<div class="img [[if loop.index == 1]]ml0[[endif]]">
 					<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
 						[[if ekspert.expert_picture]]
-							<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
+							<img width = "133" alt="{ekspert.caption}" src="/{site_obj.isFile(ekspert.id, 136, 149)" />
 						[[endif]]
 					</a>						
 					<div class="title">
@@ -388,7 +388,7 @@
 				[[if loop.index == 2]]
 			</div>	
 		<div class="block_2">
-			*/<div class="link"><a href="">Еще мнения</a></div>*/
+			/*<div class="link"><a href="">Еще мнения</a></div>*/
 			<ul>
 				[[endif]]
 				[[if loop.index > 2]]
