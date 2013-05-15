@@ -4,19 +4,22 @@
 		case 'comments':
 			//if($user->id){
 				$text = $request->getEscape('text');
-				//printAr($user_params);
+				$users_nn = $request->getEscape('name');
+				printAr($request);
 				
 				if ($user_params['name']) {
 					$name = $user_params['name'];
 				} elseif($user_params['name_social']) {
 					$name = $user_params['name_social'];
-				} else {
+				} elseif ($user->id){
 					$name = $user_params['login'];
+				}else{
+					$name = $users_nn;	
 				}
 				
 				//if($_SESSION['code'][$include_param_id_comment]!=md5($request->getEscape('picode'))) $error['comment']['code'] = 'Неправильно введен код';
 				if($_SESSION['code']!=md5($_REQUEST['picode'])) $error['comment']['code'] = 'Неправильно введен код';
-				//if(!$name) $error['comment']['name'] = 'Введите имя';
+				if(!$name) $error['comment']['name'] = 'Введите имя';
 				//if(!$request->getEscape('email') || !ereg("^([-a-zA-Z0-9._]+@[-a-zA-Z0-9.]+(\.[-a-zA-Z0-9]+)+)*$", $request ->getEscape('email'))) $error['email'] = 'Некорректный  email';
 				if(!$text) $error['comment']['text'] = 'Введите сообщение';
 				
