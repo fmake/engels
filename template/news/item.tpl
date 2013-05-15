@@ -658,7 +658,7 @@
 							<div class="category">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
 							<div class="cl"></div>
 							<div class="text">
-								<a href="{item.full_url}">{item.caption}</a>[[if item.price]]<span>{item.price}</span>[[endif]]
+								<a href="{item.full_url}">{item.caption}</a>[[if item.price]]<span> {item.price}</span>[[endif]]
 							</div>
 						</div>
 						[[if loop.index == 3]]
