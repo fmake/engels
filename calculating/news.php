@@ -64,11 +64,12 @@
 				$include_param_id_comment = $item[$news_obj->idField];
 				//$include_param_modul = $news_obj->mod;
 				include 'helpModules/comments.php';
-				$news_obj->order = "RAND()";
-				$news_for_recomend = $news_obj->getByPageAdmin(2, 4, 1 ,"`recommend` = 1 AND a.`file` = 'item_news'",true);
+				$news_obj2 = new fmakeSiteModule();
+				$limit_news = 4;
+				$news_obj2->order = "RAND()";
+				$items_news_main = $news_obj2->getByPageAdmin(2, $limit_news,1,"a.`file` = 'item_news' and `recommend` = '1'",true);
 				
 				PrintAr($news_for_recomend);
-				PrintAr("adsfasdf");
 
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
