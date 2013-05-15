@@ -84,7 +84,7 @@
 									<div class="cl"></div>
 									<div class="note">
 										<a href="{news_obj.getLinkPage(item.parent)}"><span class="title">{item.name_category}</span></a>
-										<a href="{news_obj.getLinkPage(item.id)}">{item.caption}</a>
+										<a href="{news_obj.getLinkPage(item.id)}" class="show_this_news">{item.caption}</a>
 										[[if item.comment]]<span class="comments">[{item.comment}]</span>[[endif]]
 									</div>
 								</div>
