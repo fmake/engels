@@ -402,44 +402,35 @@
 	</div>
 	<div class="item">
 		<div class="block_1">
-			<button class="say_out_button"><span><span><span>Гости</span></span></span></button>
+			<button class="say_out_button">
+				<span>
+					<span>
+						<span>Гости</span>
+					</span>
+				</span>
+			</button>
 			<div class="cl"></div>
-			<div class="img ml0">
-				<img src="/images/tmp/3.png" alt="" />
-				<div class="title">
-					<a href="#">Задай вопрос психологу</a>
-				</div>				
-			</div>
-			<div class="img">
-				<img src="/images/tmp/3.png" alt="" />
-				<div class="title">
-					<a href="#">Задай вопрос психологу</a>
-				</div>				
-			</div>
+			[[for interv in items_interv]]
+				[[if loop.index == 1 or loop.index == 2]]
+					<div class="img [[if loop.index == 1]]ml0[[endif]]">
+						<img src="/images/tmp/3.png" alt="" />
+						<div class="title">
+							<a href="#">Задай вопрос психологу</a>
+						</div>				
+					</div>
+				[[endif]]
+			[[if loop.index == 2]]
 		</div>	
 		<div class="block_2">
 			<div class="link"><a href="">Другие гости</a></div>
 			<ul>
+			[[endif]]
+			[[if loop.index > 2]]
 				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
+					<a href="{interv.full_url}">{interv.caption}</a>
 				</li>
-				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
-				<li>
-					<a href="#">  
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
+			[[endif]]
+		[[endfor]]
 			</ul>
 		</div>
 	</div>

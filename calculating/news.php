@@ -131,12 +131,20 @@
 				$globalTemplateParam->set('items_place_main2', $items_place_main);
 				/*места*/
 
+				/*интервью*/
+				$limit_interv = 7;
+				$interv_obj = new fmakeSiteModule();
+				$interv_obj->order = "b.date DESC, a.id";
+				$items_interv = $interv_obj->getByPage(12, $limit_interv,1,"`main` = '1' and a.picture!=''",12,true);
+				$globalTemplateParam->set('interv_obj', $interv_obj);
+				$globalTemplateParam->set('items_interv', $items_interv);
+				/*интервью*/
+
 				/*афиша*/
 				$meets_obj = new fmakeMeets();
 				$limit_meets = 7;
 				$date = strtotime("today"/*,$tmp_date*/);
 				$globalTemplateParam->set("to_day", $date);
-
 				$date_array = $meets_obj->dateFilter(date('d.m.Y',$date));
 				$date_to = $date_array["to"];
 				/*отминмаем одну милисекунду чтобы использовать <= к правой границе даты*/
@@ -146,7 +154,6 @@
 				$meets_obj->order = "RAND()";
 				$items_meets_main = $meets_obj->getByPageAdmin(4, false,false,"a.`file` = 'item_meets' and {$filter_date} ",true);
 				$items_meets_main = $meets_obj->uniqParent($items_meets_main,$limit_meets);
-
 				$globalTemplateParam->set('meets_obj', $meets_obj);
 				$globalTemplateParam->set('items_meets_main', $items_meets_main);
 				/*афиша*/
