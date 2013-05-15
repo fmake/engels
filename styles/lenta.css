@@ -422,4 +422,8 @@ a.al_bt:first-child{
 	float: right;
 	height: 20px;
 	width: 15px;
+	position: relative;
+	top: -11px;
+	left: -29px;
+	margin-right: 5px;
 }
