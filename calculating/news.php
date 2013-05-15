@@ -119,6 +119,26 @@
 				$globalTemplateParam->set('items_place_main2', $items_place_main);
 				/*места*/
 
+				/*афиша*/
+				$meets_obj = new fmakeMeets();
+				$limit_meets = 7;
+				$date = strtotime("today"/*,$tmp_date*/);
+				$globalTemplateParam->set("to_day", $date);
+
+				$date_array = $meets_obj->dateFilter(date('d.m.Y',$date));
+				$date_to = $date_array["to"];
+				/*отминмаем одну милисекунду чтобы использовать <= к правой границе даты*/
+				$date_from = $date_array["from"]-1;
+				$filter_date = "( ( ( '{$date_to}'<= b.date AND b.date <= '{$date_from}') OR ( '{$date_to}'<= b.date_from AND b.date_from <= '{$date_from}' ) ) OR 
+							              ( b.date <= '{$date_to}' AND '{$date_from}' <= b.date_from ) )";
+				$meets_obj->order = "RAND()";
+				$items_meets_main = $meets_obj->getByPageAdmin(4, false,false,"a.`file` = 'item_meets' and {$filter_date} ",true);
+				$items_meets_main = $meets_obj->uniqParent($items_meets_main,$limit_meets);
+
+				$globalTemplateParam->set('meets_obj', $meets_obj);
+				$globalTemplateParam->set('items_meets_main', $items_meets_main);
+				/*афиша*/
+
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
