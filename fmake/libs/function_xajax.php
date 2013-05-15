@@ -38,7 +38,7 @@ function mainMeets(){
 	$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
 	$globalTemplateParam->set('place_obj2', $place_obj);
 	$globalTemplateParam->set('item', $items_place_main);
-	$last = $twig->loadTemplate("xajax/blocks/menu_show.tpl")->render($globalTemplateParam->get());
+	$last = $twig->loadTemplate("blocks/menu_show.tpl")->render($globalTemplateParam->get());
 	$objResponse -> alert($last);
 	$objResponse->assign("mest5show", "innerHTML", $last);
 	return $objResponse;
