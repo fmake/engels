@@ -189,8 +189,10 @@
 				
 				$news_obj->order = "RAND()";
 				$news_for_recomend = $news_obj->getByPageAdmin($modul->id, $limit, $page,"b.`recommend` = 1  AND a.`file` = 'item_news'",true);
+				
 				PrintAr($news_for_recomend);
 				PrintAr("adsfasdf");
+
 				$pages = ceil($count/$limit);
 				
 				if ($page < 1) {
