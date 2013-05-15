@@ -5,6 +5,6 @@
 	</div>
 </div>
 <div class="cl"></div>
-	<img src="/{place_obj.isFile(item.id, 100, 100)}" width="100" height="100" /></a>
+	<a href="{item.full_url}"><img src="/{place_obj.isFile(item.id, 100, 100)}" width="100" height="100" /></a>
 <div class="text">{item.anons}</div>
 [[endfor]]
