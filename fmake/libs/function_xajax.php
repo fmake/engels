@@ -8,7 +8,8 @@ require_once (ROOT . "/fmake/libs/xajax/xajax_core/xajax.inc.php");
 //$xajax = new xajax();
 $xajax = new xajax("/index.php");
 $xajax->configure('decodeUTF8Input', true);
-if($_GET['debug']==1 && $_GET['key']=='5523887') $xajax->configure('debug',true);
+//if($_GET['debug']==1 && $_GET['key']=='5523887') 
+	$xajax->configure('debug',true);
 $xajax->configure('javascript URI', '/fmake/libs/xajax/');
 /* регистрация функции */
 $xajax->register(XAJAX_FUNCTION, "viewBaner");
@@ -31,7 +32,13 @@ $xajax->register(XAJAX_FUNCTION, "mainMeets");
 function mainMeets(){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
-	$fmakeNews = new fmakeNews();
+	$place_obj = new fmakeSiteModule();
+	$limit_place = 1; 
+	$place_obj->order = "b.date DESC";
+	$items_place_main = $place_obj->getByPageAdmin(1, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
+	$globalTemplateParam->set('place_obj2', $place_obj);
+	$globalTemplateParam->set('item', $items_place_main);
+	$last = $twig->loadTemplate("xajax/comments/item_add.tpl")->render($globalTemplateParam->get());
 	return $objResponse;
 }
 function formFoto($values, $id, $last_id){
