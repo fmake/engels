@@ -103,18 +103,18 @@
 					<div class="full_text">
 						<p>{item.text|raw}</p>
 						<div id="quot">
-							[[for item in exp]]
-								[[if item.text_expert]]
-									<div class="quot" id="quot{item.id}">
-										[[if item.expert_picture]]
-											<img src="/{site_obj.fileDirectory}{item.id_news}/expert/{item.id}/133_201{item.expert_picture}" alt="{item.expert}" height="150" />
+							[[for soso in exp]]
+								[[if soso.text_expert]]
+									<div class="quot" id="quot{soso.id}">
+										[[if soso.expert_picture]]
+											<img src="/{site_obj.fileDirectory}{soso.id_news}/expert/{soso.id}/133_201{soso.expert_picture}" alt="{soso.expert}" height="150" />
 										[[endif]]
 										<img src="/images/icons/apostrof.png" alt="" />
-										[[if item.expert]]
-											<div class="n-c">{item.expert}</div>
+										[[if soso.expert]]
+											<div class="n-c">{soso.expert}</div>
 										[[endif]]
-										[[if item.text_expert]]
-											<p>{item.text_expert|raw}</p>
+										[[if soso.text_expert]]
+											<p>{soso.text_expert|raw}</p>
 										[[endif]]
 										<div class="cl"></div>
 									</div>
