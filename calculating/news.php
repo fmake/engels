@@ -74,7 +74,7 @@
 
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
-
+				$k_mneniy = $item['id'];
 				$count_newses = new fmakeCount();
 				$count_newses->setId($item['id']);
 				$count_newses = $count_newses->getInfo();
@@ -128,9 +128,9 @@
 				#---------------------------------------------------------------мнения
 				$exp = new fmakeMneniya();
 				$exp = $exp -> getAll();
-				PrintAr($exp);
+				//PrintAr($exp);
 				foreach ($exp as $key => $value) {
-					if ($exp[$key]['id_news'] == $item['id'])
+					if ($exp[$key]['id_news'] == $k_mneniy)
 						$total_exp[] = $value;
 				}
 				$exp = $total_exp;
