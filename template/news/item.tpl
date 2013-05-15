@@ -514,6 +514,8 @@
 	<div class="page-container">
 		<h1>Фоторепортажи</h1>
 			<div class="item">
+				<button class="prev"></button>
+				<button class="next"></button>
 				<div id="carusel">
 					<ul>
 						<li>
