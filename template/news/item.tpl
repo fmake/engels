@@ -41,10 +41,10 @@
 				<!-- NEW FUNCTIONAL -->
 				<div class="psevdo">
 					<div class="s_b_n">
-						<a class="al_bt"></a>
-						<a class="al_bt"></a>
-						<a class="al_bt"></a>
-						<a class="al_bt"></a>
+					<script type="text/javascript" src="//yandex.st/share/share.js"
+					charset="utf-8"></script>
+					<div class="yashare-auto-init" data-yashareL10n="ru"
+					 data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki"></div> 
 					</div>
 					[[if items_news_lent]]
 						<h1>Лента</h1>
