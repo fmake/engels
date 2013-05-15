@@ -75,6 +75,10 @@
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
 
+				$count_newses = new fmakeCount();
+				$count_newses->setId($item['id']);
+				$count_newses = $count_newses->getInfo();
+				PrintAr($count_newses); 
 
 				$modul->title = $item['title'];
 				$modul->description = $item['description'];
@@ -87,7 +91,7 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
-				PrintAr($item);
+				//PrintAr($item);
 
 				#------------- новости ленты ----------- 
 				$fmakeNews = new fmakeNews();
