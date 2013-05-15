@@ -55,8 +55,8 @@
 		$(function() {
 			$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
 			$("#carusel").jCarouselLite({
-                btnNext: ".block_5 .next",
-                btnPrev: ".block_5 .prev",
+                btnNext: ".item button.next",
+                btnPrev: ".item button.prev",
                 visible: 1,
                 circular: true
             });
