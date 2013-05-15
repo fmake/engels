@@ -455,10 +455,11 @@
 <div id="journal">
 		<div class="shadow_img top"></div>
 		<div class="page-container">
+			<!--АФИША-->
 			<div class="my_new_afish">
-				<h1>
-					Афиша
-				</h1>
+				<a href="{site_obj.getLinkPage(4)}" class="h1">
+					<h1>Афиша</h1>
+				</a>
 				[[for item in items_meets_main]]
 					[[if loop.index == 1]]
 						<div class="img1">
@@ -485,6 +486,7 @@
 				</div>
 				<div class="cl"></div>	
 			</div>
+			<!--АФИША-->
 			<!--МЕСТА-->
 			<div class="my_new_afish">
 				<a href="{site_obj.getLinkPage(5)}" class="h1">
