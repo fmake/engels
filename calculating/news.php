@@ -132,7 +132,7 @@
 				/*места*/
 
 				/*интервью*/
-				$limit_interv = 7;
+				$limit_interv = 5;
 				$interv_obj = new fmakeSiteModule();
 				$interv_obj->order = "b.date DESC, a.id";
 				$items_interv = $interv_obj->getByPage(12, $limit_interv,1,"`main` = '1' and a.picture!=''",12,true);
