@@ -5,8 +5,7 @@
 			//if($user->id){
 				$text = $request->getEscape('text');
 				$users_nn = mysql_real_escape_string($_POST['name_comment']);
-				PrintAr($users_nn);
-				exit;
+
 				if ($user_params['name']) {
 					$name = $user_params['name'];
 				} elseif($user_params['name_social']) {
@@ -76,6 +75,7 @@
 		$fmakeSiteUser = new fmakeSiteUser();
 		$fmakeSiteUser->setId($c['id_user']);
 		$user_params = $fmakeSiteUser->getInfo();
+		if(!$user_params){$user_params['name'] = $comments['name'];}
 		$comments[$k]['user_params'] = $user_params;
 		$comments[$k]['text'] = stripslashes($c['text']);
 	}
