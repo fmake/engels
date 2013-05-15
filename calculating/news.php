@@ -90,7 +90,6 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
-				//PrintAr($exp);
 				#---------------------------------------------------------------мнения
 
 				/*объявления*/				
@@ -110,6 +109,15 @@
 				$globalTemplateParam->set('manual_obj', $manual_obj);
 				$globalTemplateParam->set('items_manual_main', $items_manual_main);
 				/*Справочник*/
+
+				/*места*/
+				$place_obj = new fmakeSiteModule();
+				$limit_place = 7; 
+				$place_obj->order = "RAND()";
+				$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
+				$globalTemplateParam->set('place_obj', $place_obj);
+				$globalTemplateParam->set('items_place_main', $items_place_main);
+				/*места*/
 
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
