@@ -280,7 +280,7 @@
 	
 	<div class="cl"></div>
 <div class="smarty_block">
-	<div class="partner_block">
+	/*<div class="partner_block">
 		<h1>Новости партнеров</h1>
 		<ul>
 			<li>
@@ -319,7 +319,7 @@
 				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
 			</li>
 		</ul>
-	</div>
+	</div>*/
 	<div class="cl"></div>
 
 	<div class="recomend">
@@ -516,30 +516,22 @@
 			<div class="item">
 				<button class="prev"></button>
 				<button class="next"></button>
+
 				<div id="carusel">
 					<ul>
+						[[for report in items_photo]]
 						<li>
 							<div class="hidden_item" style="width: 171px;">
 								<div class="hidden_link">
-									<div class="time">22.03.2013</div>
-									<div class="icons"><a href=""><img src="/images/bg/fotocamera.png" alt="" title="Фото">20</a></div>
+									<div class="time">{df('date','d.m.Y',report.date)}</div>
+									<div class="icons"><a href="{report.full_url}"><img src="/images/bg/fotocamera.png" alt="" title="Фото" />{gallery_obj.getCountPhoto(report.id)}</a></div>
 									<div class="cl"></div>
-									<a href="" class="d-l">ПЧ-27 приняла участие в пожарно-тактических учениях</a>
+									<a href="{report.full_url}" class="d-l">{report.caption}</a>
 								</div>
-								<a href=""><img src="/images/tmp/1.gif" alt="" width="171px" height="154px"></a>
+								<a href=""><img src="/{photo_obj.fileDirectory}{report.id}/200_160_{report.picture}" alt="" width="171px" height="154px"></a>
 							</div>
 						</li>
-						<li>
-							<div class="hidden_item" style="width: 171px;">
-								<div class="hidden_link">
-									<div class="time">22.03.2013</div>
-									<div class="icons"><a href=""><img src="/images/bg/fotocamera.png" alt="" title="Фото">20</a></div>
-									<div class="cl"></div>
-									<a href="" class="d-l">ПЧ-27 приняла участие в пожарно-тактических учениях</a>
-								</div>
-								<a href=""><img src="/images/tmp/1.gif" alt="" width="171px" height="154px"></a>
-							</div>
-						</li>
+						[[endfor]]
 					</ul>
 				</div>
 				

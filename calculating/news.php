@@ -158,6 +158,17 @@
 				$globalTemplateParam->set('items_meets_main', $items_meets_main);
 				/*афиша*/
 
+				/*фоторепортаж*/
+				$limit_photo = 12;
+				$photo_obj = new fmakeSiteModule();
+				$photo_obj->order = "b.date DESC, a.id";
+				$items_photo = $photo_obj->getByPageAdmin(9, $limit_photo,1,"a.`file` = 'item_photo_reports' and `main` = '1' and a.picture!=''",true);
+				$fmakeGallery = new fmakeGallery_Image();
+				$globalTemplateParam->set('photo_obj', $photo_obj);
+				$globalTemplateParam->set('items_photo', $items_photo);
+				$globalTemplateParam->set('gallery_obj', $fmakeGallery);
+				/*фоторепортаж*/
+
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
