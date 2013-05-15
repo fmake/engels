@@ -36,10 +36,10 @@ function mainMeets(){
 	$limit_place = 1; 
 	$place_obj->order = "b.date DESC, a.id";
 	$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
-	$globalTemplateParam->set('place_obj2', $place_obj);
-	$globalTemplateParam->set('item', $items_place_main);
+	$globalTemplateParam->set('place_obj', $place_obj);
+	$globalTemplateParam->set('items_place_main', $items_place_main);
 	$last = $twig->loadTemplate("blocks/menu_show.tpl")->render($globalTemplateParam->get());
-	$objResponse -> alert(json_encode($items_place_main));
+	//$objResponse -> alert(json_encode($items_place_main));
 	$objResponse->assign("mest5show", "innerHTML", $last);
 	return $objResponse;
 }
