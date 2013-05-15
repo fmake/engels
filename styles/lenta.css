@@ -416,3 +416,8 @@ a.al_bt:first-child{
 .item .next{
 	background: url("/images/bg/alone.png") no-repeat;
 }
+.item .next, .item .prev{
+	float: right;
+	height: 20px;
+	width: 15px;
+}
