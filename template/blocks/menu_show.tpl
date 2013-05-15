@@ -1,6 +1,6 @@
 [[for item in items_place_main]]
 <div class="caption">
-	<div onClick="window.location='item.full_url'">
+	<div onClick="window.location='{item.full_url}'" style="cursor='pointer'">
 		{item.caption}
 	</div>
 </div>
