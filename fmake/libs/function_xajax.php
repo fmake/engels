@@ -39,6 +39,7 @@ function mainMeets(){
 	$globalTemplateParam->set('place_obj2', $place_obj);
 	$globalTemplateParam->set('item', $items_place_main);
 	$last = $twig->loadTemplate("xajax/comments/item_add.tpl")->render($globalTemplateParam->get());
+	$objResponse->assign("mest5show", "innerHTML", $last);
 	return $objResponse;
 }
 function formFoto($values, $id, $last_id){
