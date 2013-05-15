@@ -513,7 +513,7 @@
     			[[for item in items_place_main2]]
     			[[if loop.index == 1]]
 					<div class="img1">
-						<img src="{site_obj.isFile(item.id, 244, 249)}" alt="#" />
+						<img src="/{site_obj.isFile(item.id, 244, 249)}" alt="#" />
 						<div class="cl"></div>
 						<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 					</div>
