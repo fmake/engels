@@ -23,10 +23,10 @@
 								<tr>
 									<td class="t1">ТЕКС</td>
 									<td class="t2">
-										<a href="#">Коментарии(12)</a>
+										<a href="#">Коментарии</a>
 									</td>
-									<td class="t3">Всего читали 1</td>
-									<td class="t3">Читают сейчас 10</td>
+									<td class="t3">Всего читали {item.counter}</td>
+									<td class="t3"></td>
 								</tr>
 							</table>
 							<div class="line">
