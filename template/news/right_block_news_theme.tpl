@@ -1,5 +1,5 @@
 <div id="right_news">
-	<div class="right_item_news">
+	/*<div class="right_item_news">
 		<h1>Новости по теме</h1>
 		<div class="news">
 			[[for item in news_right_block]]
@@ -17,7 +17,7 @@
 				[[endif]]
 			[[endfor]]
 		 </div>
-	</div>
+	</div>*/
 	<div id="yandex_ad"></div>
 	[[raw]]
 	<!-- Яндекс.Директ -->
@@ -50,7 +50,7 @@
 		    t.insertBefore(s, t.firstChild);
 		})(window, document, "yandex_context_callbacks");
 		</script>
-	[[endraw]]
+	[[endraw]]/*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(9)}" class = "h1">
 			<h1>Фоторепортажи</h1>
@@ -69,7 +69,7 @@
 			</div>
 		[[endfor]]
 		
-	</div>
+	</div>*/
 	
 	/*БАНЕР new*/
 		[[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
@@ -104,7 +104,7 @@
 			</div>
 		[[endif]]
 	/*БАНЕР new*/
-	
+	/*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(796)}" class = "h1">
 			<h1>Объявления</h1>
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>*//*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(5)}" class = "h1">
 			<h1>Места</h1>
@@ -138,6 +138,6 @@
 				</div>
 			[[endfor]]
 		</div>
-	</div>
+	</div>*/
 </div>
 <div class="cl"></div>
