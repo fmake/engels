@@ -39,7 +39,7 @@ function mainMeets(){
 	$globalTemplateParam->set('place_obj2', $place_obj);
 	$globalTemplateParam->set('item', $items_place_main);
 	$last = $twig->loadTemplate("blocks/menu_show.tpl")->render($globalTemplateParam->get());
-	$objResponse -> alert($last);
+	$objResponse -> alert($items_place_main);
 	$objResponse->assign("mest5show", "innerHTML", $last);
 	return $objResponse;
 }
