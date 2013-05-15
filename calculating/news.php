@@ -92,6 +92,28 @@
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
 				//PrintAr($item);
+				/*---------опрос-----------*/
+				$fmakeInterview = new fmakeInterview();
+				$limit_int = 1;
+				$interview = $fmakeInterview->getInterview($limit_int,true); 
+				
+				$iscookie = array();
+				$vopros = array();
+				if ($interview) foreach ($interview as $key=>$interview_item) {
+					
+					$fmakeInterview->table = $fmakeInterview->table_vopros;
+					$vopros[$key] = $fmakeInterview->getVoproses($interview_item['id'],true);
+					if($request->interview_id != $interview_item['id']) {
+						$iscookie[$key] = $fmakeInterview->isCookies($interview_item['id']);
+					} else {
+						if($iscookie_no_error) $iscookie[$key] = true;
+						else $iscookie[$key] = false;
+					}
+				}
+				$globalTemplateParam->set('vopros',$vopros);
+				$globalTemplateParam->set('interview',$interview);
+				$globalTemplateParam->set('iscookie',$iscookie);
+				/*---------опрос-----------*/
 
 				#------------- новости ленты ----------- 
 				$fmakeNews = new fmakeNews();
