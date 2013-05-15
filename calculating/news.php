@@ -87,6 +87,17 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
+
+				#------------- новости ленты ----------- 
+				$fmakeNews = new fmakeNews();
+				$limit_news_lent = 7;
+				$items_news_lent = $news_obj->getByPageAdmin(2, $limit_news_lent,1,"a.`file` = 'item_news'",true);
+				if ($items_news_lent) foreach ($items_news_lent as $key=>$item) {
+					$items_news_lent[$key]['comment'] = $fmakeComments->getByPageCount($item[$news_obj->idField],true);
+					$fmakeNews->setId($items_news_lent[$key]['id']);
+					$items_news_lent[$key]['mnenie'] = sizeof($fmakeNews->is_mnenie());
+				}
+				$globalTemplateParam->set('items_news_lent', $items_news_lent);
 				#---------------------------------------------------------------мнения
 				$exp = new fmakeMneniya();
 				$exp = $exp -> getAll();
