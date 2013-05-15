@@ -510,7 +510,7 @@
 					Места
 				</h1>
 
-    			[[for item in items_place_main]]
+    			[[for item in items_place_main2]]
     			[[if loop.index == 1]]
 					<div class="img1">
 						<img src="/images/tmp/4.png" alt="#" />
@@ -599,7 +599,7 @@
 						<h1>Справочник</h1>
 					</a>
 					<div class="cl"></div>
-					[[for item in items_manual_main]]
+					[[for item in items_manual_main2]]
 						<div class="block [[if loop.index == 4 or loop.index == 1]]lt[[endif]]">
 							<div class="caption">
 								<a href="{item.full_url}">{item.caption}</a>
@@ -618,9 +618,9 @@
 						<h1>Объявления</h1>
 					</a>
 					<div class="cl"></div>
-					[[for item in items_advert_main]]
+					[[for item in items_advert_main2]]
 						<div class="block [[if loop.index == 4 or loop.index == 1]]lt[[endif]]">
-							<div class="category">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
+							<div class="category">[[if item.type_advert2==0]]Продажа[[elseif item.type_advert2 == 1]]Покупаю[[elseif item.type_advert2 == 2]]Аренда[[else]]Услуги[[endif]]</div>
 							<div class="cl"></div>
 							<div class="text">
 								<a href="{item.full_url}">{item.caption}</a>[[if item.price]]<span> {item.price}</span>[[endif]]
