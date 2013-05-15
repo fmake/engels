@@ -647,54 +647,27 @@
 					</div>
 					<div class="cl"></div>
 				</div>
+				<!--ОБЬЯВЛЕНИЯ-->
 				<div class="item">
-					<h1>Объявления</h1>
+					<a href = "{site_obj.getLinkPage(796)}" class = "h1">
+						<h1>Объявления</h1>
+					</a>
 					<div class="cl"></div>
-					<div class="block lt">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
+					[[for item in items_advert_main]]
+						<div class="block">
+							<div class="category">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
+							<div class="cl"></div>
+							<div class="text">
+								<a href="{item.full_url}">{item.caption}</a>[[if item.price]]<span>{item.price}</span>[[endif]]
+							</div>
 						</div>
-					</div>
-					<div class="block">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
-						</div>
-					</div>
-					<div class="block">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
-						</div>
-					</div>
-					<div class="cl"></div>
-					<div class="block lt">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
-						</div>
-					</div>
-					<div class="block">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
-						</div>
-					</div>
-					<div class="block">
-						<div class="category">Услуги</div>
-						<div class="cl"></div>
-						<div class="text">
-							<a href="">ТЭО, бизнес-план для получения кредита в банке, гранта и т.п.s</a>
-						</div>
-					</div>
+						[[if loop.index == 3]]
+							<div class="cl"></div>
+						[[endif]]
+					[[endfor]]
 					<div class="cl"></div>
 				</div>
+				<!--ОБЬЯВЛЕНИЯ-->
 			</div>
 			<div class="ap_bl"></div>
 			<div class="cl"></div>
