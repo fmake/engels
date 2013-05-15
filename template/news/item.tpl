@@ -654,7 +654,7 @@
 					</a>
 					<div class="cl"></div>
 					[[for item in items_advert_main]]
-						<div class="block [[if loop.index == 3 ]]lt[[endif]]">
+						<div class="block [[if loop.index == 3 or loop.index == 1]]lt[[endif]]">
 							<div class="category">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
 							<div class="cl"></div>
 							<div class="text">
