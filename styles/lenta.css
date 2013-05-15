@@ -103,7 +103,6 @@
 .say_out .item{
 	width: 490px;
 	float: left;
-	padding-top: 31px;
 }
 .say_out .block_1 .img{
 	width: 136px;
@@ -115,6 +114,7 @@
 }
 .say_out .block_1, .say_out .block_2{
 	float: left;
+	padding-top: 31px;
 }
 .say_out .link a{
 	color: #878787;
