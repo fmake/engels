@@ -413,9 +413,9 @@
 			[[for interv in items_interv]]
 				[[if loop.index == 1 or loop.index == 2]]
 					<div class="img [[if loop.index == 1]]ml0[[endif]]">
-						<img src="/images/tmp/3.png" alt="" />
+						<img src="/{site_obj.isFile(interv.id, 136, 149)}" alt="{interv.title}" /></a>
 						<div class="title">
-							<a href="#">Задай вопрос психологу</a>
+							<a href="{interv.full_url}">{interv.caption}</a>
 						</div>				
 					</div>
 				[[endif]]
