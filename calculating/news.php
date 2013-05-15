@@ -137,7 +137,7 @@
 				PrintAr($exp);
 				#Другие мнения
 
-				$news_obj_exp = new fmakeMneniya;
+				$news_obj_exp = new fmakeMneniya();
 				$limit_news_exp = 6;
 				$news_obj_exp->order="id_news DESC"; 
 				$items_news_exp = $news_obj_exp->getByPageAdmin($limit_news_exp, 1 ,"`text_expert` != '' " , true);
