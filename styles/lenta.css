@@ -160,6 +160,7 @@
 	background: white;
 	width: 195px;
 	height: 270px;
+	display: none;
 }
 .kenta{
 	margin-top: 15px;
@@ -238,6 +239,7 @@
 	height: 360px;
 	background: #bababa;
 	float: left;
+	display: none;
 }
 .ttl{
 	margin-bottom: 200px;
