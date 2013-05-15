@@ -135,7 +135,7 @@
 				}
 				$exp = $total_exp;
 				$globalTemplateParam->set('exp', $exp);
-				PrintAr($exp);
+				//PrintAr($exp);
 				#Другие мнения
 
 				$news_obj_exp = new fmakeMneniya();
