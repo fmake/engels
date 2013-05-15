@@ -385,7 +385,7 @@
 			<div class="item">
 				<button class="next"></button>
 				<button class="prev"></button>
-
+				<div class="cl"></div>
 				<div id="carusel">
 					<ul>
 						[[for report in items_photo]]
