@@ -2,7 +2,7 @@
 	//printAr($_SESSION['code']); 
 	switch ($request->action){
 		case 'comments':
-			if($user->id){
+			//if($user->id){
 				$text = $request->getEscape('text');
 				//printAr($user_params);
 				
@@ -53,7 +53,7 @@
 					$mail->Send();*/
 				}
 				$globalTemplateParam->set('error',$error);
-			}
+			//}
 		break;
 	}
 	
