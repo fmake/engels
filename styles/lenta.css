@@ -103,6 +103,7 @@
 .say_out .item{
 	width: 490px;
 	float: left;
+	margin-top: 31px;
 }
 .say_out .block_1 .img{
 	width: 136px;
