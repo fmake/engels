@@ -23,7 +23,7 @@
 								<tr>
 									<td class="t1">ТЕКС</td>
 									<td class="t2">
-										<a href="#">Коментарии</a>
+										<a href="#comments">Коментарии</a>
 									</td>
 									<td class="t3">Всего читали {item.counter}</td>
 									<td class="t3"></td>
