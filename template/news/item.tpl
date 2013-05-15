@@ -364,13 +364,13 @@
 	<div class="cl"></div>
 	<div class="item">
 		<div class="block_1">
-			<button class="say_out_button">
+			/*<button class="say_out_button">
 				<span>
 					<span>
 						<span>Мнения</span>
 					</span>
 				</span>
-			</button>
+			</button>*/
 			<div class="cl"></div>
 			[[for ekspert in items_news_exp]]
 				[[if loop.index == 1 or loop.index == 2]]
