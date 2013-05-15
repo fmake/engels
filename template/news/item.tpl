@@ -363,31 +363,6 @@
 	<h1>Что говорят</h1>
 	<div class="cl"></div>
 	<div class="item">
-
-
-					<div class="interview">
-						<h1>Мнение</h1>
-						[[for ekspert in items_news_exp]]
-						<div class="item [[if loop.index == 2]]lc[[endif]]">
-							<div class="img_h">
-								[[if ekspert.expert]]
-									<div class="hidden_title">
-										<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot" class="bell">{ekspert.expert}</a>
-									</div>
-								[[endif]]
-									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
-										[[if ekspert.expert_picture]]
-											<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
-										[[endif]]
-									</a>
-							</div>
-							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
-						</div>
-						[[endfor]]
-						<div class="cl"></div>
-					</div>
-
-
 		<div class="block_1">
 			<button class="say_out_button">
 				<span>
