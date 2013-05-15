@@ -459,47 +459,27 @@
 				<h1>
 					Афиша
 				</h1>
-				<div class="img1">
-					<img src="/images/tmp/4.png" alt="#" />
-					<div class="cl"></div>
-					<div class="caption"><a href="#">Отрицание пространства</a></div>
-				</div>
-				<div class="img2">
-					<div class="grid">
-						<div class="item_block lt">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+				[[for item in items_meets_main]]
+					[[if loop.index == 1]]
+						<div class="img1">
+							<a href="{item.full_url}"><img src="/{site_obj.isFile(item.id, 244, 249)}" alt="{item.title}" /></a>
 							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
+							<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 						</div>
-						<div class="item_block">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
-							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
+						<div class="img2">
+							<div class="grid">
+					[[else]]
+								<div class="item_block  [[if loop.index == 2 or loop.index == 5]]lt[[endif]]">
+									<a href="{item.full_url}"><img src="/{site_obj.fileDirectory}{item.id}/140_100_{item.picture}" width="140" height="100" alt="{item.title}"/></a>
+									<div class="cl"></div>
+									<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
+								</div>
+								[[if loop.index == 4]]<div class="cl"></div>[[endif]]
+					[[endif]]
+				[[endfor]]
+								<div class="cl"></div>
+							</div>
 						</div>
-						<div class="item_block">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
-							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
-						</div>
-						<div class="cl"></div>
-						<div class="item_block lt">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
-							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
-						</div>
-						<div class="item_block">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
-							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
-						</div>
-						<div class="item_block">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
-							<div class="cl"></div>
-							<div class="caption"><a href="">Отрицание пространства</a></div>
-						</div>
-						<div class="cl"></div>
-					</div>
-				</div>
 				<div class="ap">
 					<!--РЕКЛАМА -->
 				</div>
