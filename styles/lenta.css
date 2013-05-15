@@ -126,6 +126,9 @@
 	width: 148px;
 	word-wrap: break-word;
 }
+.say_out ul li{
+	margin-bottom: 5px;
+}
 .say_out .img{
 	margin-top: 20px;
 }
