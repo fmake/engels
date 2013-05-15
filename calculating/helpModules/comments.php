@@ -5,7 +5,8 @@
 			//if($user->id){
 				$text = $request->getEscape('text');
 				$users_nn = mysql_real_escape_string($_POST['name_comment']);
-				
+				PrintAr($users_nn);
+				exit;
 				if ($user_params['name']) {
 					$name = $user_params['name'];
 				} elseif($user_params['name_social']) {
