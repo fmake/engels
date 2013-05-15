@@ -97,8 +97,8 @@
 				$limit_advert = 6; 
 				$manual_obj->order = "b.date DESC, a.id";
 				$items_advert_main = $advert_obj->getByPageAdmin(796, $limit_advert,1,"a.`file` = 'item_advert'",true);
-				$globalTemplateParam->set('advert_obj', $advert_obj);
-				$globalTemplateParam->set('items_advert_main', $items_advert_main);
+				$globalTemplateParam->set('advert_obj2', $advert_obj);
+				$globalTemplateParam->set('items_advert_main2', $items_advert_main);
 				/*объявления*/
 
 				/*Справочник*/
@@ -106,8 +106,8 @@
 				$limit_manual = 6; 
 				$manual_obj->order = "b.date DESC, a.id";
 				$items_manual_main = $manual_obj->getByPageAdmin(1238, $limit_manual,1,"a.`file` = 'item_manual'",true);
-				$globalTemplateParam->set('manual_obj', $manual_obj);
-				$globalTemplateParam->set('items_manual_main', $items_manual_main);
+				$globalTemplateParam->set('manual_obj2', $manual_obj);
+				$globalTemplateParam->set('items_manual_main2', $items_manual_main);
 				/*Справочник*/
 
 				/*места*/
@@ -115,8 +115,8 @@
 				$limit_place = 7; 
 				$place_obj->order = "RAND()";
 				$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
-				$globalTemplateParam->set('place_obj', $place_obj);
-				$globalTemplateParam->set('items_place_main', $items_place_main);
+				$globalTemplateParam->set('place_obj2', $place_obj);
+				$globalTemplateParam->set('items_place_main2', $items_place_main);
 				/*места*/
 
 				if ($item['dop_params']['templ'] == 1)				
