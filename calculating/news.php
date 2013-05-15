@@ -72,8 +72,6 @@
 				$globalTemplateParam->set('news_for_recomend', $news_for_recomend);
 
 
-				PrintAr($news_for_recomend);
-				PrintAr("adfasdfadsf");
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
 
