@@ -78,7 +78,7 @@
 				$count_newses = new fmakeCount();
 				$count_newses->setId($item['id']);
 				$count_newses = $count_newses->getInfo();
-				PrintAr($count_newses); 
+				$globalTemplateParam->set('count_newses', $count_newses);
 
 				$modul->title = $item['title'];
 				$modul->description = $item['description'];
