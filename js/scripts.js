@@ -3,6 +3,7 @@ $(document).ready(function(){
 		$(this).attr('id',index + 'show_this_news');
 		$(this).hover(
 			function(){
+				xajax_mainMeets();
 				$("#"+index+"load_content_news").show();
 			},
 			function(){
