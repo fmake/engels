@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	xajax_mainMeets();
 	$(".show_this_news").each(function(index){
 		$(this).attr('id',index + 'show_this_news');
 		$(this).hover(
@@ -13,7 +14,6 @@ $(document).ready(function(){
 	var _b = false;
 	$("#mest5 , #mest5show").hover(
 		function(){
-			xajax_mainMeets();
 			$("#mest5show").show();
 		},
 		function(){
