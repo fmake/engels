@@ -1,5 +1,4 @@
-[[if user.id]]
-	[[if error.comment]]
+[[if error.comment]]
 		<div class="error">
 			Ошибки:
 			[[for er in error.comment]]
@@ -38,8 +37,3 @@
 			</span>
 		</button>
 	</form>
-[[else]]
-	<div class="textarea">
-		<center>Для возможности отправки коментариев <a href="/vhod-na-sajt/">войдите</a> или <a href="/registracija/">зарегистрируйтесь</a>.</center><br/>
-	</div>
-[[endif]]
