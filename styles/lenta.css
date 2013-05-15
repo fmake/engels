@@ -410,3 +410,9 @@ a.al_bt:first-child{
 #menu_center .nav ul li{
 	position: relative;
 }
+.item .prev{
+	background: url("/images/bg/alone_2.png") no-repeat;
+}
+.item .next{
+	background: url("/images/bg/alone.png") no-repeat;
+}
