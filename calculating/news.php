@@ -64,7 +64,11 @@
 				$include_param_id_comment = $item[$news_obj->idField];
 				//$include_param_modul = $news_obj->mod;
 				include 'helpModules/comments.php';
-
+				$news_obj->order = "RAND()";
+				$news_for_recomend = $news_obj->getByPageAdmin($modul->id, $limit, $page,"b.`recommend` = 1 AND a.`file` = 'item_news'",true);
+				
+				PrintAr($news_for_recomend);
+				PrintAr("adsfasdf");
 
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
@@ -102,11 +106,6 @@
 			  	}
 				$globalTemplateParam->set('items_news_exp', $items_news_exp);
 
-				$news_obj->order = "RAND()";
-				$news_for_recomend = $news_obj->getByPageAdmin($modul->id, $limit, $page,"b.`recommend` = 1  AND a.`file` = 'item_news'",true);
-				
-				PrintAr($news_for_recomend);
-				PrintAr("adsfasdf");
 				#---------------------------------------------------------------мнения
 
 				/*объявления*/				
