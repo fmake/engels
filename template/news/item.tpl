@@ -232,7 +232,7 @@
 	<h1>Что говорят</h1>
 	<div class="cl"></div>
 	<div class="item">
-		<div class="block_1">
+		<div class="block_1" style="padding-top: 31px">
 			/*<button class="say_out_button">
 				<span>
 					<span>
@@ -256,7 +256,7 @@
 				[[endif]]
 				[[if loop.index == 2]]
 			</div>	
-		<div class="block_2">
+		<div class="block_2" style="padding-top: 31px">
 			/*<div class="link"><a href="">Еще мнения</a></div>*/
 			<ul>
 				[[endif]]
