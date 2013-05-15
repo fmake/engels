@@ -92,6 +92,16 @@
 				$globalTemplateParam->set('exp', $exp);
 				//PrintAr($exp);
 				#---------------------------------------------------------------мнения
+
+				/*объявления*/				
+				$advert_obj = new fmakeSiteModule();
+				$limit_advert = 6; 
+				$manual_obj->order = "b.date DESC, a.id";
+				$items_advert_main = $advert_obj->getByPageAdmin(796, $limit_advert,1,"a.`file` = 'item_advert'",true);
+				$globalTemplateParam->set('advert_obj', $advert_obj);
+				$globalTemplateParam->set('items_advert_main', $items_advert_main);
+				/*объявления*/
+				
 				if ($item['dop_params']['templ'] == 1)				
 					$modul->template = "news/item_old.tpl"; //exit;
 				else 
