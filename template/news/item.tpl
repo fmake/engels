@@ -53,7 +53,7 @@
 						</div>
 						<div class="cl"></div>
 						[[for item in items_news_lent]]
-							<div class="pre_item">
+							<div class="pre_item" rel= "item.id" >
 								<div class="item">
 									<div class="load_content_news">
 										<div class="caption">Пропал Парк Джи СУнг</div>
@@ -89,7 +89,6 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="cl"></div>
 						[[endfor]]
 					[[endif]]	

@@ -24,10 +24,15 @@ $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
 $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 $xajax->register(XAJAX_FUNCTION, "formFoto");
+$xajax->register(XAJAX_FUNCTION, "mainMeets");
 /* регистрация функции */
 
 /* написание функции */
-
+function mainMeets(){
+	$objResponse = new xajaxResponse();
+	global $twig,$globalTemplateParam, $id_foto;
+	return $objResponse;
+}
 function formFoto($values, $id, $last_id){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
