@@ -321,42 +321,24 @@
 		</ul>
 	</div>*/
 	<div class="cl"></div>
-
+[[if news_for_recomend]]
 	<div class="recomend">
 		<h1>Рекомендуем</h1>
 		<div class="cl"></div>
 		<ul>
+			[[for item in news_for_recomend]]
 			<li>
-				<img src="/images/tmp/2.png" alt="" />
+				<a href="{item.full_url}"><img src="/{photo_obj.isFile(item.id, 222, 127)}" alt="{item.title}" /></a>
 				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
+				<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
+				<div class="text">{item.anons | raw}</div>
 			</li>
-			<li>
-				<img src="/images/tmp/2.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/2.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/2.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
+			[[endif]]
 		</ul>
 		<div class="cl"></div>
 	</div>
+[[endif]]
 </div>
 <div class="cl"></div>
 <div class="say_out">

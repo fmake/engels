@@ -69,6 +69,9 @@
 				$news_obj2->order = "RAND()";
 				$news_for_recomend = $news_obj2->getByPageAdmin(2, $limit_news,1,"a.`file` = 'item_news' and `recommend` = '1'",true);
 				
+				$globalTemplateParam->set('news_for_recomend', $news_for_recomend);
+
+
 				PrintAr($news_for_recomend);
 				PrintAr("adfasdfadsf");
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
