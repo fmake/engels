@@ -53,13 +53,13 @@
 						</div>
 						<div class="cl"></div>
 						[[for item in items_news_lent]]
-							<div class="pre_item" rel= "item.id" >
+							<div class="pre_item">
 								<div class="item">
 									<div class="load_content_news">
-										<div class="caption">Пропал Парк Джи СУнг</div>
+										<div class="caption">{item.caption}</div>
 										<div class="cl"></div>
-										<img src="/images/tmp/1.gif" width="100" height="100" />
-										<div class="text"></div>
+										<img src="/site_obj.isFile(item.id, 100, 100)" width="100" height="100" />
+										<div class="text">{item.anons}</div>
 									</div>
 									<div class="time">
 										[[if item.date > to_day]]
