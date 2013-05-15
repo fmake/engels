@@ -38,6 +38,7 @@
     <script type="text/javascript" src="/js/jquery.ui.datepicker-ru.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/jquery.colorbox.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/slides.min.jquery.js"></script>
+	<script type="text/javascript" src="/js/jquery.jcarousel.min.js?ver=0.2"></script>
 
 	[[if item.picture]]
 		<link rel="image_src" href="/{site_obj.fileDirectory}{item.id}/406__{item.picture}" />
