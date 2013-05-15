@@ -513,7 +513,7 @@
     			[[for item in items_place_main2]]
     			[[if loop.index == 1]]
 					<div class="img1">
-						<img src="/images/tmp/4.png" alt="#" />
+						<img src="{site_obj.isFile(item.id, 244, 249)}" alt="#" />
 						<div class="cl"></div>
 						<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 					</div>
@@ -521,7 +521,7 @@
 						<div class="grid">
 				[[else]]
 						<div class="item_block [[if loop.index == 2 or loop.index == 5]]lt[[endif]]">
-							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
+							<a href="{item.full_url}"><img src="/{site_obj.fileDirectory}{item.id}/140_100_{item.picture}" width="140" height="100" alt="{item.title}"/></a>
 							<div class="cl"></div>
 							<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 						</div>
