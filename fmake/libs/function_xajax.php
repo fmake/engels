@@ -31,6 +31,7 @@ $xajax->register(XAJAX_FUNCTION, "mainMeets");
 function mainMeets(){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
+	$fmakeNews = new fmakeNews();
 	return $objResponse;
 }
 function formFoto($values, $id, $last_id){
