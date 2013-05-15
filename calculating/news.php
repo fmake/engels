@@ -187,6 +187,9 @@
 				$news = $news_obj->getByPageAdmin($modul->id, $limit, $page,"a.parent in ({$parents}) AND a.`file` = 'item_news'",true);
 				$count = $news_obj->getByPageCountAdmin($modul->id,$modul->id,"a.parent in ({$parents}) AND a.`file` = 'item_news'",true);
 				
+				$news_obj->order = "RAND()";
+				$news_for_recomend = $news_obj->getByPageAdmin($modul->id, $limit, $page,"b.`recommend` = 1  AND a.`file` = 'item_news'",true);
+				PrintAr($news_for_recomend);
 				$pages = ceil($count/$limit);
 				
 				if ($page < 1) {
