@@ -1,5 +1,5 @@
 <div id="right_news">
-	<div class="right_item_news">
+	/*<div class="right_item_news">
 		<h1>Новости по теме</h1>
 		<div class="news">
 			[[for item in news_right_block]]
@@ -17,7 +17,7 @@
 				[[endif]]
 			[[endfor]]
 		 </div>
-	</div>
+	</div>*/
 	<div id="yandex_ad"></div>
 	[[raw]]
 	<!-- Яндекс.Директ -->
@@ -50,7 +50,7 @@
 		    t.insertBefore(s, t.firstChild);
 		})(window, document, "yandex_context_callbacks");
 		</script>
-	[[endraw]]
+	[[endraw]]/*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(9)}" class = "h1">
 			<h1>Фоторепортажи</h1>
@@ -69,7 +69,7 @@
 			</div>
 		[[endfor]]
 		
-	</div>
+	</div>*/
 	
 	/*БАНЕР new*/
 		[[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
@@ -104,14 +104,14 @@
 			</div>
 		[[endif]]
 	/*БАНЕР new*/
-	
+	/*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(796)}" class = "h1">
 			<h1>Объявления</h1>
 		</a>
 		<div class="tasks">
 			<div class="desk">
-				<div class="page-container">
+				<div class="">
 					[[for item in items_advert_main]]
 						<div class="item">
 							<div class="title">[[if item.type_advert==0]]Продажа[[elseif item.type_advert == 1]]Покупаю[[elseif item.type_advert == 2]]Аренда[[else]]Услуги[[endif]]</div>
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>*//*
 	<div class="right_item_news">
 		<a href = "{site_obj.getLinkPage(5)}" class = "h1">
 			<h1>Места</h1>
@@ -138,6 +138,33 @@
 				</div>
 			[[endfor]]
 		</div>
-	</div>
+	</div>*/
+
+		<!-- ГОЛОСОВАНИЕ START -->
+		<div id="votes">
+			<a href = "{site_obj.getLinkPage(7030)}" class = "h1">
+				<h1>Голосование</h1>
+			</a>
+			<a name="golosovanie"></a>
+			[[for key,interv_item in interview]]
+				<div class="vote">
+					<div class="title">{interv_item.caption}</div>
+					[[if vopros[key] ]]
+						<form action="#questionform" method="post" id="QuestionFormRight{interv_item.id}" onsubmit="SubmitFormVote({interv_item.id}); return false;" style="position: relative;"> 
+							<img src="/images/pre.gif" style="display: none; position: absolute; left: 95px; top: 21px;" alt="" /> 
+							[[set Quest = vopros[key] ]]
+							[[set Cook = iscookie[key] ]]
+							[[set interview_id = interv_item.id ]]
+							[[set Do = 0]]
+							[[ include TEMPLATE_PATH ~ "xajax/vote_main.tpl"]]
+						</form>
+					[[else]]
+						нет вопросов
+					[[endif]]
+				</div>
+			[[endfor]]
+			<div class="cl"></div>
+		</div>
+	<!-- ГОЛОСОВАНИЕ END -->
 </div>
 <div class="cl"></div>

@@ -38,6 +38,7 @@
     <script type="text/javascript" src="/js/jquery.ui.datepicker-ru.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/jquery.colorbox.js?ver=0.1"></script>
 	<script type="text/javascript" src="/js/slides.min.jquery.js"></script>
+	<script type="text/javascript" src="/js/jquery.jcarousel.js?ver=0.2"></script>
 
 	[[if item.picture]]
 		<link rel="image_src" href="/{site_obj.fileDirectory}{item.id}/406__{item.picture}" />
@@ -53,6 +54,12 @@
 		<script>
 		$(function() {
 			$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+			$("#carusel").jCarouselLite({
+                btnNext: ".item button.next",
+                btnPrev: ".item button.prev",
+                visible: 5,
+                circular: true
+            });
 		});
 		</script>
 	[[endraw]]

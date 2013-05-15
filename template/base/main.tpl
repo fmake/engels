@@ -703,6 +703,7 @@
 						</div>
 					[[endif]]
 				[[endblock]]
+
 			</div>
 		</div>
 	[[endif]]

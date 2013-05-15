@@ -24,10 +24,24 @@ $xajax->register(XAJAX_FUNCTION, "TapeWaveTab");
 $xajax->register(XAJAX_FUNCTION, "gogoMail");
 $xajax->register(XAJAX_FUNCTION, "htmlforcolorbox");
 $xajax->register(XAJAX_FUNCTION, "formFoto");
+$xajax->register(XAJAX_FUNCTION, "mainMeets");
 /* регистрация функции */
 
 /* написание функции */
-
+function mainMeets(){
+	$objResponse = new xajaxResponse();
+	global $twig, $globalTemplateParam;
+	$place_obj = new fmakeSiteModule();
+	$limit_place = 1; 
+	$place_obj->order = "b.date DESC, a.id";
+	$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
+	$globalTemplateParam->set('place_obj', $place_obj);
+	$globalTemplateParam->set('items_place_main', $items_place_main);
+	$last = $twig->loadTemplate("blocks/menu_show.tpl")->render($globalTemplateParam->get());
+	//$objResponse -> alert(json_encode($items_place_main));
+	$objResponse->assign("mest5show", "innerHTML", $last);
+	return $objResponse;
+}
 function formFoto($values, $id, $last_id){
 	$objResponse = new xajaxResponse();
 	global $twig,$globalTemplateParam, $id_foto;
