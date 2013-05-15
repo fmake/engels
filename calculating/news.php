@@ -67,7 +67,7 @@
 				$news_obj2 = new fmakeSiteModule();
 				$limit_news = 4;
 				$news_obj2->order = "RAND()";
-				$items_news_main = $news_obj2->getByPageAdmin(2, $limit_news,1,"a.`file` = 'item_news' and `recommend` = '1'",true);
+				$news_for_recomend = $news_obj2->getByPageAdmin(2, $limit_news,1,"a.`file` = 'item_news' and `recommend` = '1'",true);
 				
 				PrintAr($news_for_recomend);
 
