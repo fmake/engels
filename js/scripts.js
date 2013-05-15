@@ -11,15 +11,13 @@ $(document).ready(function(){
 		);
 	});
 	var _b = false;
-	$("#mest5show").hover(function(){ _b = true}, function(){ _b = false;});
-	$("#mest5").hover(
+	$("#mest5 , #mest5show").hover(
 		function(){
 			xajax_mainMeets();
 			$("#mest5show").show();
 		},
 		function(){
-			if (!_b)
-				$("#mest5show").hide();
+			$("#mest5show").hide();
 		}
 	);
 	$(".load_content_news").each(function(index){
