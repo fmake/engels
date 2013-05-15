@@ -35,7 +35,7 @@ function mainMeets(){
 	$place_obj = new fmakeSiteModule();
 	$limit_place = 1; 
 	$place_obj->order = "b.date DESC";
-	$items_place_main = $place_obj->getByPageAdmin(1, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
+	$items_place_main = $place_obj->getByPageAdmin(1, $limit_place,1,"a.`file` = 'item_place'",true);
 	$globalTemplateParam->set('place_obj2', $place_obj);
 	$globalTemplateParam->set('item', $items_place_main);
 	$last = $twig->loadTemplate("xajax/blocks/menu_show.tpl")->render($globalTemplateParam->get());
