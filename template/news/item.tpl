@@ -422,7 +422,7 @@
 			[[if loop.index == 2]]
 		</div>	
 		<div class="block_2">
-			<div class="link"><a href="">Другие гости</a></div>
+			<div class="link"><a href="{site_obj.getLinkPage(12)}">Другие гости</a></div>
 			<ul>
 			[[endif]]
 			[[if loop.index > 2]]
