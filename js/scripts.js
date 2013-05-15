@@ -3,7 +3,6 @@ $(document).ready(function(){
 		$(this).attr('id',index + 'show_this_news');
 		$(this).hover(
 			function(){
-				xajax_mainMeets();
 				$("#"+index+"load_content_news").show();
 			},
 			function(){
@@ -11,12 +10,16 @@ $(document).ready(function(){
 			}
 		);
 	});
+	var _b = false;
+	$("#mest5show").hover(function(){ _b = true}, function(){ _b = false;});
 	$("#mest5").hover(
 		function(){
+			xajax_mainMeets();
 			$("#mest5show").show();
 		},
 		function(){
-			$("#mest5show").hide();
+			if (!_b)
+				$("#mest5show").hide();
 		}
 	);
 	$(".load_content_news").each(function(index){
