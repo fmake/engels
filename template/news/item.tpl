@@ -525,7 +525,7 @@
 							<div class="cl"></div>
 							<div class="caption"><a href="{item.full_url}">{item.caption}</a></div>
 						</div>
-					[[if loop.index == 3]]<div class="cl"></div>[[endif]]
+					[[if loop.index == 4]]<div class="cl"></div>[[endif]]
 				[[endif]]
 				[[endfor]]
 						<div class="cl"></div>
