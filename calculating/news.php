@@ -70,7 +70,7 @@
 				$news_for_recomend = $news_obj2->getByPageAdmin(2, $limit_news,1,"a.`file` = 'item_news' and `recommend` = '1'",true);
 				
 				PrintAr($news_for_recomend);
-
+				PrintAr("adfasdfadsf");
 				$tags = $fmakeTag->getTags($item[$news_obj->idField]);
 				$item['tags'] = $tags;
 
