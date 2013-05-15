@@ -519,7 +519,7 @@
 					</div>
 					<div class="img2">
 						<div class="grid">
-				[[endif]]
+				[[else]]
 						<div class="item_block [[if loop.index == 2 or loop.index == 5]]lt[[endif]]">
 							<a href=""><img src="/images/tmp/5.png" alt="" /></a>
 							<div class="cl"></div>
@@ -527,6 +527,7 @@
 						</div>
 					[[if loop.index == 3]]<div class="cl"></div>[[endif]]
 						<div class="cl"></div>
+				[[endif]]
 				[[endfor]]
 					</div>
 				</div>
