@@ -87,6 +87,7 @@
 				$globalTemplateParam->set('breadcrubs', $breadcrubs);
 				//$globalTemplateParam->set('user_expert', $user_expert);
 				$globalTemplateParam->set('item', $item);
+				PrintAr($item);
 
 				#------------- новости ленты ----------- 
 				$fmakeNews = new fmakeNews();
