@@ -49,7 +49,7 @@
 					[[if items_news_lent]]
 						<h1>Лента</h1>
 						<div class="arrow_new">
-							<a href="#">Все новости</a>
+							<a href="{site_obj.getLinkPage(2)}">Все новости</a>
 						</div>
 						<div class="cl"></div>
 						[[for item in items_news_lent]]
