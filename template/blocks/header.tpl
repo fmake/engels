@@ -57,7 +57,7 @@
 			$("#carusel").jCarouselLite({
                 btnNext: ".item button.next",
                 btnPrev: ".item button.prev",
-                visible: 1,
+                visible: 5,
                 circular: true
             });
 		});
