@@ -65,7 +65,7 @@
 				//$include_param_modul = $news_obj->mod;
 				include 'helpModules/comments.php';
 				$news_obj->order = "RAND()";
-				$news_for_recomend = $news_obj->getByPageAdmin(2, 4, false ,"`recommend` = 1 AND a.`file` = 'item_news'",true);
+				$news_for_recomend = $news_obj->getByPageAdmin(2, 4, 1 ,"`recommend` = 1 AND a.`file` = 'item_news'",true);
 				
 				PrintAr($news_for_recomend);
 				PrintAr("adsfasdf");
