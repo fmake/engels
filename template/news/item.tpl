@@ -25,7 +25,7 @@
 									<td class="t2">
 										<a href="#comments">Коментарии</a>
 									</td>
-									<td class="t3">Всего читали {item.counter}</td>
+									<td class="t3">Всего читали {count_newses.conter}</td>
 									<td class="t3"></td>
 								</tr>
 							</table>
