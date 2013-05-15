@@ -402,7 +402,7 @@
 	</div>
 	<div class="item">
 		<div class="block_1">
-			<button class="say_out_button">
+			<button class="say_out_button" onClick="window.location='{site_obj.getLinkPage(12)}'">
 				<span>
 					<span>
 						<span>Гости</span>
