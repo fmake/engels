@@ -4,8 +4,8 @@
 		case 'comments':
 			//if($user->id){
 				$text = $request->getEscape('text');
-				//$users_nn = $_POST('name_coment');
-				printAr($_POST);
+				$users_nn = $_POST('name_coment')+"";
+				printAr($users_nn);
 				exit;
 				
 				if ($user_params['name']) {
