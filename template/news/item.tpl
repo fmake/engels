@@ -363,45 +363,65 @@
 	<h1>Что говорят</h1>
 	<div class="cl"></div>
 	<div class="item">
+
+
+					<div class="interview">
+						<h1>Мнение</h1>
+						[[for ekspert in items_news_exp]]
+						<div class="item [[if loop.index == 2]]lc[[endif]]">
+							<div class="img_h">
+								[[if ekspert.expert]]
+									<div class="hidden_title">
+										<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot" class="bell">{ekspert.expert}</a>
+									</div>
+								[[endif]]
+									<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
+										[[if ekspert.expert_picture]]
+											<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
+										[[endif]]
+									</a>
+							</div>
+							<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
+						</div>
+						[[endfor]]
+						<div class="cl"></div>
+					</div>
+
+
 		<div class="block_1">
-			<button class="say_out_button"><span><span><span>Мнения</span></span></span></button>
+			<button class="say_out_button">
+				<span>
+					<span>
+						<span>Мнения</span>
+					</span>
+				</span>
+			</button>
 			<div class="cl"></div>
-			<div class="img ml0">
-				<img src="/images/tmp/3.png" alt="" />
-				<div class="title">
-					<a href="#">Задай вопрос психологу</a>
-				</div>				
-			</div>
-			<div class="img">
-				<img src="/images/tmp/3.png" alt="" />
-				<div class="title">
-					<a href="#">Задай вопрос психологу</a>
-				</div>				
-			</div>
-		</div>	
+			[[for ekspert in items_news_exp]]
+				[[if loop.index == 1 or loop.index == 2]]
+				<div class="img [[if loop.index == 1]]ml0[[endif]]">
+					<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">
+						[[if ekspert.expert_picture]]
+							<img width = "133" alt="{ekspert.caption}" src="/{site_obj.fileDirectory}{ekspert.id_news}/expert/{ekspert.id}/133_201{ekspert.expert_picture}" />
+						[[endif]]
+					</a>						
+					<div class="title">
+						<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
+					</div>				
+				</div>
+				[[endif]]
+				[[if loop.index == 2]]
+			</div>	
 		<div class="block_2">
-			<div class="link"><a href="">Еще мнения</a></div>
+			*/<div class="link"><a href="">Еще мнения</a></div>*/
 			<ul>
+				[[endif]]
+				[[if loop.index > 2]]
 				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
+					<a href="{site_obj.getLinkPage(ekspert.id_news)}#quot{ekspert.id}">{ekspert.caption}</a>
 				</li>
-				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
-				<li>
-					<a href="#">  
-						"Тренерская работа - мне хобби"
-					</a>
-				</li>
+				[[endif]]
+			[[endfor]]
 			</ul>
 		</div>
 	</div>
