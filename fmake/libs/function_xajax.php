@@ -49,6 +49,8 @@ function formFoto($values, $id, $last_id){
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
+	$name = trim($name);
+	$text = trim($text);
 	if(!$name){
 		$objResponse->script("$(\"#form_foto_for_comments .error\").html(\"Вы не ввели имя. <br />\");setTimeout('$.colorbox.resize()', 1);");
 		return $objResponse;
