@@ -21,7 +21,7 @@
 							<div class="cl"></div>
 							<table class="table1">
 								<tr>
-									<td class="t1">ТЕКС</td>
+									<td class="t1">ТЕКСТ</td>
 									<td class="t2">
 										<a href="#comments">Коментарии</a>
 									</td>
