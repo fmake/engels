@@ -578,3 +578,10 @@ function setLocation(curLoc){
   } catch(e) {}
   location.hash = '#' + curLoc;
  }
+ function removeLocation(){
+ 	try{
+ 		history.replaceState(null, null, "");
+ 		return;
+ 	} catch(e){}
+ 	location.hash = '';	
+ }
