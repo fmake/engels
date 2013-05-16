@@ -34,6 +34,8 @@
 					$fmakeComments->addParam("active",1);
 					$fmakeComments->newItem();
 					$send_comment = true;
+					$globalTemplateParam->set('go_name', $name);
+					$globalTemplateParam->set('go_text', $text);
 					$globalTemplateParam->set('send_comment',$send_comment);
 					$request->name = $request->text = false;
 									
@@ -55,6 +57,8 @@
 					$mail->Send();*/
 				}
 				$globalTemplateParam->set('error',$error);
+				 header("HTTP/1.1 301 Moved Permanently");
+				 header("Location: $_SERVER['PHP_SELF']");
 			//}
 		break;
 	}
