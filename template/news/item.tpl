@@ -397,7 +397,7 @@
 									<div class="cl"></div>
 									<a href="{report.full_url}" class="d-l">{report.caption}</a>
 								</div>
-								<a href=""><img src="/{photo_obj.fileDirectory}{report.id}/200_160_{report.picture}" alt="" width="171px" height="154px"></a>
+								<a href="{report.full_url}"><img src="/{photo_obj.fileDirectory}{report.id}/200_160_{report.picture}" alt="" width="171px" height="154px"></a>
 							</div>
 						</li>
 						[[endfor]]
