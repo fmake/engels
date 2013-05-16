@@ -10,7 +10,7 @@
 	<form method="post" action="#form_comments" onsubmit="javascript: document.form_comments.submit(); return false;" name="form_comments">
 		<input type="hidden" name="action" value="comments">
 		<div class="i-n">
-			<input type="text" name="name_comment" class="fieldfocus" title="Имя" value="{request.name_comment}" />
+			<input type="text" name="name_comment" class="fieldfocus" title="Имя" value="{go_name}" />
 		</div>
 		<div class="i-t">
 			<textarea name="text" class="fieldfocus" title="Комментарий">{request.text}</textarea>
