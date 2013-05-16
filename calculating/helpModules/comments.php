@@ -21,7 +21,8 @@
 				if(!$name) $error['comment']['name'] = 'Введите имя';
 				//if(!$request->getEscape('email') || !ereg("^([-a-zA-Z0-9._]+@[-a-zA-Z0-9.]+(\.[-a-zA-Z0-9]+)+)*$", $request ->getEscape('email'))) $error['email'] = 'Некорректный  email';
 				if(!$text) $error['comment']['text'] = 'Введите сообщение';
-				
+				$globalTemplateParam->set('go_name', $name);
+				$globalTemplateParam->set('go_text', $text);
 				if(!$error){
 					$post_id = $request->getEscape('id');
 					$fmakeComments = new fmakeComments();
@@ -34,8 +35,6 @@
 					$fmakeComments->addParam("active",1);
 					$fmakeComments->newItem();
 					$send_comment = true;
-					$globalTemplateParam->set('go_name', $name);
-					$globalTemplateParam->set('go_text', $text);
 					$globalTemplateParam->set('send_comment',$send_comment);
 					$request->name = $request->text = false;
 									
