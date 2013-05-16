@@ -430,3 +430,6 @@ a.al_bt:first-child{
 	left: -29px;
 	margin-right: 5px;
 }
+#popup_lenta .line{
+	border: none;
+}
