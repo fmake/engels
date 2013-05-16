@@ -31,7 +31,7 @@ $(document).ready(function(){
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
         onComplete: function(){coms_ops();xajax_htmlforcolorbox($(this).attr('idrel')); setTimeout('$.colorbox.resize()', 100);setTimeout("$('input.fieldfocus,textarea.fieldfocus').fieldFocus();", 400)}, 
         onOpen: function(){onGoGo();},
-        onClosed: function(){onEndEnd()},
+        onClosed: function(){onEndEnd();removeLocation();},
         //html:"<p>Hello</p>",
     });
 
@@ -580,8 +580,7 @@ function setLocation(curLoc){
  }
  function removeLocation(){
  	try{
- 		history.replaceState(null, null, "");
+ 		history.replaceState(null, null, "./");
  		return;
  	} catch(e){}
- 	location.hash = '';	
  }
