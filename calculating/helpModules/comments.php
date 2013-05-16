@@ -55,10 +55,10 @@
 					$mail->Body    = $text;
 					$mail->AltBody = $text;
 					$mail->Send();*/
+					header("HTTP/1.1 301 Moved Permanently");
+
 				}
 				$globalTemplateParam->set('error',$error);
-				 header("HTTP/1.1 301 Moved Permanently");
-				 header("Location: $_SERVER[PHP_SELF]");
 			//}
 		break;
 	}
