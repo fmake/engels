@@ -83,6 +83,7 @@ function formFoto($values, $id, $last_id){
 				$fmakeSiteUser->setId($c['id_user']);
 				$user_params = $fmakeSiteUser->getInfo();
 				$comments[$k]['user_params'] = $user_params;
+				if(!$user_params){$user_params['name_social'] = $comments[$k]['name'];}
 				$comments[$k]['text'] = stripslashes($c['text']);
 			}else{
 				unset($comments[$k]);
