@@ -38,6 +38,10 @@
 	padding: 15px 0;
 	border-bottom: 1px solid #6e6e6e;
 }
+.page-container{
+	*position: relative !important;
+	*left: 214px !important;
+}
 #lenta .i_am_alone{
 	background: url("/images/bg/alone.png") no-repeat 3px 48%;
 	cursor: pointer;
