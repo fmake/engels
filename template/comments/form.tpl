@@ -10,10 +10,10 @@
 	<form method="post" action="#form_comments" onsubmit="javascript: document.form_comments.submit(); return false;" name="form_comments">
 		<input type="hidden" name="action" value="comments">
 		<div class="i-n">
-			<input type="text" name="name_comment" class="fieldfocus" title="Имя"/>
+			<input type="text" name="name_comment" class="fieldfocus" [[if go_name]]value="{go_name}"[[else]]title="Имя"[[endif]] />
 		</div>
 		<div class="i-t">
-			<textarea name="text" class="fieldfocus" title="Комментарий">{request.text}</textarea>
+			<textarea name="text" class="fieldfocus" [[if go_text]]value="{go_name}"[[else]]title="Комментарий"[[endif]]>{request.text}</textarea>
 		</div>
 		/*
 		<div class="public">
