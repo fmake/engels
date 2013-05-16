@@ -55,6 +55,7 @@
 					$mail->AltBody = $text;
 					$mail->Send();*/
 					header("HTTP/1.1 301 Moved Permanently");
+					header("Location: $_SERVER[HTTP_REFERER]");
 
 				}
 				$globalTemplateParam->set('error',$error);
