@@ -343,7 +343,6 @@
 						[[set baner_afisha = baner_obj.showBanerType(7,'/afisha/')]]
 						[[if baner_afisha]]
 							<div>
-								<br/>
 								<p>
 									{baner_afisha|raw}
 								</p>
@@ -386,7 +385,6 @@
 						[[set baner_mesta = baner_obj.showBanerType(7,'/mesta/')]]
 						[[if baner_mesta]]
 							<div>
-								<br/>
 								<p>
 									{baner_mesta|raw}
 								</p>
@@ -476,7 +474,6 @@
 					[[set baner_spravochnik = baner_obj.showBanerType(7,'/spravochnik/')]]
 					[[if baner_spravochnik]]
 						<div>
-							<br/>
 							<p>
 								{baner_spravochnik|raw}
 							</p>
