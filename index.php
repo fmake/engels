@@ -5,8 +5,6 @@ mb_internal_encoding('UTF-8');
 ini_set('display_errors',1);
 error_reporting(7);
 date_default_timezone_set('Europe/Moscow');
-phpinfo();
-exit;
 //error_reporting(E_ALL);
 //echo "Сайт временно не работает. Техническое обслуживание.";
 //exit();
