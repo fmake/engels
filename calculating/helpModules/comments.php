@@ -2,24 +2,27 @@
 	//printAr($_SESSION['code']); 
 	switch ($request->action){
 		case 'comments':
-			if($user->id){
+			//if($user->id){
 				$text = $request->getEscape('text');
-				//printAr($user_params);
-				
+				$users_nn = mysql_real_escape_string($_POST['name_comment']);
+
 				if ($user_params['name']) {
 					$name = $user_params['name'];
 				} elseif($user_params['name_social']) {
 					$name = $user_params['name_social'];
-				} else {
+				} elseif ($user->id){
 					$name = $user_params['login'];
+				}else{
+					$name = $users_nn;	
 				}
 				
 				//if($_SESSION['code'][$include_param_id_comment]!=md5($request->getEscape('picode'))) $error['comment']['code'] = 'Неправильно введен код';
 				if($_SESSION['code']!=md5($_REQUEST['picode'])) $error['comment']['code'] = 'Неправильно введен код';
-				//if(!$name) $error['comment']['name'] = 'Введите имя';
+				if(!$name) $error['comment']['name'] = 'Введите имя';
 				//if(!$request->getEscape('email') || !ereg("^([-a-zA-Z0-9._]+@[-a-zA-Z0-9.]+(\.[-a-zA-Z0-9]+)+)*$", $request ->getEscape('email'))) $error['email'] = 'Некорректный  email';
 				if(!$text) $error['comment']['text'] = 'Введите сообщение';
-				
+				$globalTemplateParam->set('go_name', $name);
+				$globalTemplateParam->set('go_text', $text);
 				if(!$error){
 					$post_id = $request->getEscape('id');
 					$fmakeComments = new fmakeComments();
@@ -51,9 +54,12 @@
 					$mail->Body    = $text;
 					$mail->AltBody = $text;
 					$mail->Send();*/
+					header("HTTP/1.1 301 Moved Permanently");
+					header("Location: $_SERVER[HTTP_REFERER]");
+
 				}
 				$globalTemplateParam->set('error',$error);
-			}
+			//}
 		break;
 	}
 	
@@ -73,7 +79,9 @@
 		$fmakeSiteUser = new fmakeSiteUser();
 		$fmakeSiteUser->setId($c['id_user']);
 		$user_params = $fmakeSiteUser->getInfo();
+		if(!$user_params){$user_params['name_social'] = $comments[$k]['name'];}
 		$comments[$k]['user_params'] = $user_params;
+		//PrintAr($user_params);
 		$comments[$k]['text'] = stripslashes($c['text']);
 	}
 	//printAr($comments);

@@ -18,6 +18,7 @@
 							<div class="annotation_new">
 								<div>{item.dop_params.anons|raw}</div>
 							</div>
+						[[endif]]
 							<div class="cl"></div>
 							<table class="table1">
 								<tr>
@@ -32,7 +33,6 @@
 							<div class="line">
 								<img src="/images/tmp/tria.png" alt="" /></div>	
 							<div class="cl"></div>
-						[[endif]]
 						<img src="/{site_obj.isFile(item.id, 744)}" alt="" width="444"/>
 					</div>
 					[[else]]
@@ -91,7 +91,8 @@
 							</div>
 							<div class="cl"></div>
 						[[endfor]]
-					[[endif]]	
+					[[endif]]
+					<div id="psevdo_news_tape_close"></div>	
 					<div class="cl"></div>
 				</div>	
 				<!-- NEW FUNCTIONAL -->

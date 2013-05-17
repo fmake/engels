@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	xajax_mainMeets();
+	if ($("#item_new .img").height() > $(".psevdo").height()){
+		
+	}
 	$(".show_this_news").each(function(index){
 		$(this).attr('id',index + 'show_this_news');
 		$(this).hover(
@@ -31,7 +34,7 @@ $(document).ready(function(){
         //onLoad: function(){xajax_htmlforcolorbox($(this).attr('idrel'));}, 
         onComplete: function(){coms_ops();xajax_htmlforcolorbox($(this).attr('idrel')); setTimeout('$.colorbox.resize()', 100);setTimeout("$('input.fieldfocus,textarea.fieldfocus').fieldFocus();", 400)}, 
         onOpen: function(){onGoGo();},
-        onClosed: function(){onEndEnd()},
+        onClosed: function(){onEndEnd();removeLocation();},
         //html:"<p>Hello</p>",
     });
 
@@ -577,4 +580,10 @@ function setLocation(curLoc){
     return;
   } catch(e) {}
   location.hash = '#' + curLoc;
+ }
+ function removeLocation(){
+ 	try{
+ 		history.replaceState(null, null, "./");
+ 		return;
+ 	} catch(e){}
  }

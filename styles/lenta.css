@@ -433,3 +433,13 @@ a.al_bt:first-child{
 #popup_lenta .line{
 	border: none;
 }
+#psevdo_news_tape_close{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAoCAQAAACVv1j8AAAAMklEQVQIW53JuQkAIBTA0JDG+9h/2W8hLiC8JoRIUqRKky5DpkxZz355V5cmVTIRwp8DU48EQk+TYYwAAAAASUVORK5CYII=) repeat-x 0 0;
+	width: 100%;
+	height: 30px;
+	bottom: 0;
+	position: absolute;
+	pointer-events: none;
+	margin-left: -10px;
+	padding-left: 10px;
+}

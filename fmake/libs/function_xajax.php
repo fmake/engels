@@ -49,6 +49,16 @@ function formFoto($values, $id, $last_id){
 	$name = htmlspecialchars(substr($values['name_comment'], 0, 100));
 	$text = htmlspecialchars(substr($values['text'], 0, 3000));
 	$code = htmlspecialchars(substr($values['picode'], 0, 5));
+	$name = trim($name);
+	$text = trim($text);
+	if(!$name){
+		$objResponse->script("$(\"#form_foto_for_comments .error\").html(\"Вы не ввели имя. <br />\");setTimeout('$.colorbox.resize()', 1);");
+		return $objResponse;
+	}
+	if(!$text){
+		$objResponse->script("$(\"#form_foto_for_comments .error\").html(\"Вы не ввели текст. <br />\");setTimeout('$.colorbox.resize()', 1);");
+		return $objResponse;
+	}
 
 	if (md5($code) != $_SESSION['code_foto']){
 		//$temp_argument = md5($code);
@@ -82,6 +92,7 @@ function formFoto($values, $id, $last_id){
 				$fmakeSiteUser = new fmakeSiteUser();
 				$fmakeSiteUser->setId($c['id_user']);
 				$user_params = $fmakeSiteUser->getInfo();
+				if(!$user_params){$user_params['name_social'] = $comments[$k]['name'];}
 				$comments[$k]['user_params'] = $user_params;
 				$comments[$k]['text'] = stripslashes($c['text']);
 			}else{

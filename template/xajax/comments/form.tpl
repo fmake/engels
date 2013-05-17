@@ -1,4 +1,3 @@
-[[if user.id]]
 	[[if error.comment]]
 		<div class="error">
 			Ошибки:
@@ -32,8 +31,3 @@
 		<div class="cl"></div>
 		<div class="sucless" style="color: green;"></div>
 	</form>
-[[else]]
-	<div class="textarea">
-		<center>Для возможности отправки коментариев <a href="/vhod-na-sajt/">войдите</a> или <a href="/registracija/">зарегистрируйтесь</a>.</center><br/>
-	</div>
-[[endif]]

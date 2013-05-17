@@ -1,5 +1,4 @@
-[[if user.id]]
-	[[if error.comment]]
+[[if error.comment]]
 		<div class="error">
 			Ошибки:
 			[[for er in error.comment]]
@@ -11,7 +10,7 @@
 	<form method="post" action="#form_comments" onsubmit="javascript: document.form_comments.submit(); return false;" name="form_comments">
 		<input type="hidden" name="action" value="comments">
 		<div class="i-n">
-			<input type="text" name="name_comment" class="fieldfocus" title="Имя"/>
+			<input type="text" name="name_comment" class="fieldfocus" title="Имя" value="{go_name}" />
 		</div>
 		<div class="i-t">
 			<textarea name="text" class="fieldfocus" title="Комментарий">{request.text}</textarea>
@@ -38,8 +37,3 @@
 			</span>
 		</button>
 	</form>
-[[else]]
-	<div class="textarea">
-		<center>Для возможности отправки коментариев <a href="/vhod-na-sajt/">войдите</a> или <a href="/registracija/">зарегистрируйтесь</a>.</center><br/>
-	</div>
-[[endif]]
