@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	xajax_mainMeets();
+	if ($("#item_new .img").height() > $(".psevdo").height()){
+		
+	}
 	$(".show_this_news").each(function(index){
 		$(this).attr('id',index + 'show_this_news');
 		$(this).hover(

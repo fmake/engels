@@ -87,6 +87,7 @@
 		$fmakeSiteUser = new fmakeSiteUser();
 		$fmakeSiteUser->setId($item['id_user']);
 		$user_params = $fmakeSiteUser->getInfo();
+		if(!$user_params){$user_params['name_social'] = $name;}
 		$main_comments[$key]['user_params'] = $user_params;
 		$main_comments[$key]['text'] = stripslashes($item['text']);
 	}
