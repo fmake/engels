@@ -1,3 +1,0 @@
-js/respond.min.js
-styles/lenta.css
-template/blocks/header.tpl
