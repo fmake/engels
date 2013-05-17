@@ -1,4 +1,4 @@
-<div align="center" style="background: none repeat scroll 0 0 #FFFFFF;">
+<div align="center" style="background: none repeat scroll 0 0 #FFFFFF;margin-right: 402px;">
 	
 	/*БАНЕР new*/
 		[[set baner_top_1 = baner_obj.showBanerType(1,request_uri)]]

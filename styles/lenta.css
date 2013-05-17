@@ -161,10 +161,13 @@
 }
 .my_new_afish .ap{
 	margin-left: 25px;
-	background: white;
-	width: 195px;
+	/*background: white;*/
+	/width: 195px;
 	height: 270px;
-	display: none;
+	/*display: none;*/
+}
+.my_new_afish .ap img{
+	height: 270px;
 }
 .kenta{
 	margin-top: 15px;
@@ -241,9 +244,12 @@
 	margin-top: 45px;
 	width: 250px;
 	height: 360px;
-	background: #bababa;
+	/*background: #bababa;*/
 	float: left;
-	display: none;
+	/*display: none;*/
+}
+.ap_bl img{
+	height: 360px;
 }
 .ttl{
 	margin-bottom: 200px;

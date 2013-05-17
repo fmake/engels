@@ -339,6 +339,16 @@
 						</div>
 				<div class="ap">
 					<!--РЕКЛАМА -->
+					/*БАНЕР new*/
+						[[set baner_afisha = baner_obj.showBanerType(7,'/afisha/')]]
+						[[if baner_afisha]]
+							<div>
+								<p>
+									{baner_afisha|raw}
+								</p>
+							</div>
+						[[endif]]
+					/*БАНЕР new*/
 				</div>
 				<div class="cl"></div>	
 			</div>
@@ -371,6 +381,16 @@
 				</div>
 				<div class="ap">
 					<!--РЕКЛАМА -->
+					/*БАНЕР new*/
+						[[set baner_mesta = baner_obj.showBanerType(7,'/mesta/')]]
+						[[if baner_mesta]]
+							<div>
+								<p>
+									{baner_mesta|raw}
+								</p>
+							</div>
+						[[endif]]
+					/*БАНЕР new*/
 				</div>
 				<div class="cl"></div>	
 			</div>
@@ -449,7 +469,18 @@
 				</div>
 				<!--ОБЬЯВЛЕНИЯ-->
 			</div>
-			<div class="ap_bl"></div>
+			<div class="ap_bl">
+				/*БАНЕР new*/
+					[[set baner_spravochnik = baner_obj.showBanerType(7,'/spravochnik/')]]
+					[[if baner_spravochnik]]
+						<div>
+							<p>
+								{baner_spravochnik|raw}
+							</p>
+						</div>
+					[[endif]]
+				/*БАНЕР new*/
+			</div>
 			<div class="cl"></div>
 			<div class="ttl"></div>
 
