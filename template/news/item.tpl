@@ -91,7 +91,8 @@
 							</div>
 							<div class="cl"></div>
 						[[endfor]]
-					[[endif]]	
+					[[endif]]
+					<div id="psevdo_news_tape_close"></div>	
 					<div class="cl"></div>
 				</div>	
 				<!-- NEW FUNCTIONAL -->

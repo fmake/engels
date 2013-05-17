@@ -440,4 +440,6 @@ a.al_bt:first-child{
 	bottom: 0;
 	position: absolute;
 	pointer-events: none;
+	margin-left: -10px;
+	padding-left: 10px;
 }
