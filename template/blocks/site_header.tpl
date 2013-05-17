@@ -4,7 +4,7 @@
 		[[set baner_top_1 = baner_obj.showBanerType(1,request_uri)]]
 		[[if baner_top_1]]
 			<p class="floatright">
-				<div class="page-container" style="eight: 95px;">{baner_top_1|raw}</div>
+				<div class="page-container" style="height: 95px;">{baner_top_1|raw}</div>
 			</p>
 		[[endif]]
 	/*БАНЕР new*/
