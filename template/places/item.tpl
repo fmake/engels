@@ -72,7 +72,7 @@
 					<ul id="carouse-gallery" class="jcarousel-skin-tango" >
 						[[for photo in photos]]
 							<li>
-								<a href="/images/galleries/{photo.id_catalog}/1024_{photo.image}" class="show" title="{photo.title}">
+								<a href="/images/galleries/{photo.id_catalog}/1024_{photo.image}" idrel="{photo.id}" class="show" title="{photo.title}">
 									<img src="/images/galleries/{photo.id_catalog}/thumbs/{photo.image}" alt="" />
 								</a>
 							</li>
