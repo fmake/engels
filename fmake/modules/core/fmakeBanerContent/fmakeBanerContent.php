@@ -106,7 +106,8 @@ class fmakeBanerContent extends fmakeSiteModule {
 		if($baners[$key_baner]){
 			$b = $this->showBanerId($baners[$key_baner]['id'],$baners[$key_baner]['picture'],$baners[$key_baner]['format'],$baners[$key_baner]['width'],$baners[$key_baner]['height']);
 			if($baners[$key_baner]['url']){
-				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[$key_baner]['url'].'">'.$b.'</a></noindex>';
+				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[$key_baner]['url'].'" style="display:block;" onmousedown="window.location.href=\''.$baners[$key_baner]['url'].'\'">'.$b.'<div class="cl"></div></a></noindex>';
+				
 				return $b_url;
 			} else {
 				return $b;
@@ -148,7 +149,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 						  onclick=\"xajax_clickBaner({$id})\"
 						  {$width} {$height}>
 							<param name=\"movie\" value=\"/{$this->fileDirectory}{$id}/{$name}\">
-							<param name=\"wmode\" value=\"transparent\">
+							<param name=\"wmode\" value=\"opaque\">
 							<param name=\"allowScriptAccess\" value=\"sameDomain\" />
 						</object>";
 				//$str = "<embed src='/{$this->fileDirectory}{$id}/{$name}' quality='high' type='application/x-shockwave-flash' wmode='opaque' width='100%' height='100%' pluginspage='http://www.macromedia.com/go/getflashplayer' allowScriptAccess='always'></embed>";
