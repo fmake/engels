@@ -1,10 +1,10 @@
-<div align="center" style="background: none repeat scroll 0 0 #FFFFFF;margin-right: 402px;">
+<div style="background: none repeat scroll 0 0 #FFFFFF;">
 	
 	/*БАНЕР new*/
 		[[set baner_top_1 = baner_obj.showBanerType(1,request_uri)]]
 		[[if baner_top_1]]
-			<p class="floatright" style="height: 95px;">
-				{baner_top_1|raw}
+			<p class="floatright">
+				<div class="page-container" style="height: 95px;">{baner_top_1|raw}</div>
 			</p>
 		[[endif]]
 	/*БАНЕР new*/
