@@ -1,0 +1,1 @@
+cd /var/www/vhosts/engels.bz/subdomains/dev/ && git pull
