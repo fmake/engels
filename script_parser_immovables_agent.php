@@ -1,15 +1,15 @@
 <?php 
-
+/*
 header('Content-type: text/html; charset=utf-8'); 
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 ini_set('display_errors',1);
 error_reporting(7);
 date_default_timezone_set('Europe/Moscow');
-
+*/
 require('./fmake/FController.php');
 
-//if ($_GET['key'] == '1029384756') {
+if ($_GET['key'] == '1029384756') {
 
 	$modul_id = 1291;
 	$site = "http://www.s-mls.ru";
@@ -39,7 +39,7 @@ require('./fmake/FController.php');
 	} else {
 		$items = $fmakeImmovables->getByPageAdmin($modul_id, $limit,$page,"a.`file` = 'item_immovables' and b.`link_site` != '' and b.`date_parser_update` < {$time_update} ");
 	}
-/*
+
 	if($items) foreach ($items as $key=>$item) {
 		$data = $fmakeImmovables->parserVnutr($item['link_site']);
 		//printAr($data);
@@ -64,8 +64,8 @@ require('./fmake/FController.php');
 			$fmakeImmovables_dop->update();
 		}
 	}
-*/
-	printAr($items);
+
+	//printAr($items);
 
 	echo "Ok";
-//}
+}
