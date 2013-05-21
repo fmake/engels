@@ -106,7 +106,7 @@ class fmakeBanerContent extends fmakeSiteModule {
 		if($baners[$key_baner]){
 			$b = $this->showBanerId($baners[$key_baner]['id'],$baners[$key_baner]['picture'],$baners[$key_baner]['format'],$baners[$key_baner]['width'],$baners[$key_baner]['height']);
 			if($baners[$key_baner]['url']){
-				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[$key_baner]['url'].'" style="display:block;" onmousedown="window.location.href=\''.$baners[$key_baner]['url'].'\'">'.$b.'<div class="cl"></div></a></noindex>';
+				$b_url = '<noindex><a rel="nofollow" target="_blank" href="'.$baners[$key_baner]['url'].'" style="display:block;" onmousedown="window.open(\''.$baners[$key_baner]['url'].'\');">'.$b.'<div class="cl"></div></a></noindex>';
 				
 				return $b_url;
 			} else {
