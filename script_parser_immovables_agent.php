@@ -1,15 +1,15 @@
 <?php 
-/*
+
 header('Content-type: text/html; charset=utf-8'); 
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 mb_internal_encoding('UTF-8');
 ini_set('display_errors',1);
 error_reporting(7);
 date_default_timezone_set('Europe/Moscow');
-*/
+
 require('./fmake/FController.php');
 
-if ($_GET['key'] == '1029384756') {
+//if ($_GET['key'] == '1029384756') {
 
 	$modul_id = 1291;
 	$site = "http://www.s-mls.ru";
@@ -68,4 +68,4 @@ if ($_GET['key'] == '1029384756') {
 	printAr($items);
 
 	echo "Ok";
-}
+//}
