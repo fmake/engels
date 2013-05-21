@@ -98,5 +98,5 @@ if ($_GET['key'] == '1029384756') {
 		else $fmakeImmovables_dop->newItem();
 	}
 	echo "Ok";
-	//printAr($data);
+	printAr($data);
 }
