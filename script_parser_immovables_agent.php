@@ -13,7 +13,7 @@ require('./fmake/FController.php');
 
 	$modul_id = 1291;
 	$site = "http://www.s-mls.ru";
-	$page = $_GET['page'];
+	$page = ($_GET['page']) ? $_GET['page']: 1;
 	$limit = ($_GET['limit'])? $_GET['limit'] : 100;
 	$update = $_GET['update'];
 	
