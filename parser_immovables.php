@@ -49,7 +49,7 @@ if ($_GET['key'] == '1029384756') {
 
 	$fmakeImmovables->updateActiveParseItem();
 
-	/*if ($data) foreach ($data as $key=>$item) {
+	if ($data) foreach ($data as $key=>$item) {
 		$fmakeSiteModulRelation = new fmakeSiteModule_relation();
 		$fmakeImmovables = new fmakeImmovables();
 		
@@ -96,7 +96,7 @@ if ($_GET['key'] == '1029384756') {
 		
 		if ($info_item) $fmakeImmovables_dop->update();
 		else $fmakeImmovables_dop->newItem();
-	}*/
+	}
 	echo "Ok";
-	printAr($data);
+	//printAr($data);
 }
