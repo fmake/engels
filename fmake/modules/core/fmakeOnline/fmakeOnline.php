@@ -1,4 +1,4 @@
 <?php
 class fmakeOnline extends fmakeSiteModule{
-    public $table = "`online_user`";
+    public $table = "online_user";
 }
