@@ -251,7 +251,9 @@
 				$modul->description = $item['description'];
 				$modul->keywords = $item['keywords'];
 
-				
+				#--- сколько онлайн на сайте
+                PrintAr($page_id);
+                #--- сколько онлайн на сейте
 				
 				$breadcrubs = $modul->getBreadCrumbs($item[$news_obj->idField]);
 				$globalTemplateParam->set('item', $item);
