@@ -27,7 +27,7 @@
 										<a href="#comments">Коментарии</a>
 									</td>
 									<td class="t3">Всего читали {count_newses.count}</td>
-									<td class="t3"></td>
+									[[if who_is_online]]<td class="t3">Читают {who_is_online}</td>[[endif]]
 								</tr>
 							</table>
 							<div class="line">

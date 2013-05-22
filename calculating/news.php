@@ -217,7 +217,7 @@
                 $fmakeOnline->addParam('page_id', $page_id);
                 $fmakeOnline->newItem();
                 $who_is_online = $fmakeOnline->getOnlineUser($page_id, $user_time);
-                PrintAr($who_is_online);
+                //PrintAr($who_is_online);
                 $globalTemplateParam->set('who_is_online', $who_is_online);
                 #--- сколько онлайн на сейте
 
