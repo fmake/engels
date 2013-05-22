@@ -74,16 +74,20 @@
 	$pages = ceil($count/$limit_comment);
 	if($pages>1) $is_more_link = true;
 	else $is_more_link = false;
-	
-	if ($comments) foreach($comments as $k=>$c) {
-		$fmakeSiteUser = new fmakeSiteUser();
-		$fmakeSiteUser->setId($c['id_user']);
-		$user_params = $fmakeSiteUser->getInfo();
-		if(!$user_params){$user_params['name_social'] = $comments[$k]['name'];}
-		$comments[$k]['user_params'] = $user_params;
-		//PrintAr($user_params);
-		$comments[$k]['text'] = stripslashes($c['text']);
-	}
+
+	if ($comments){
+        $all_user_com = count($comments);
+        $globalTemplateParam->set('all_user_com',$all_user_com);
+        foreach($comments as $k=>$c) {
+            $fmakeSiteUser = new fmakeSiteUser();
+            $fmakeSiteUser->setId($c['id_user']);
+            $user_params = $fmakeSiteUser->getInfo();
+            if(!$user_params){$user_params['name_social'] = $comments[$k]['name'];}
+            $comments[$k]['user_params'] = $user_params;
+            //PrintAr($user_params);
+            $comments[$k]['text'] = stripslashes($c['text']);
+	    }
+    }
 	//printAr($comments);
 	$globalTemplateParam->set('comments',$comments);
 	$globalTemplateParam->set('limit_comment',$limit_comment);
