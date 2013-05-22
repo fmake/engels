@@ -24,7 +24,7 @@
 								<tr>
 									<td class="t1">ТЕКСТ</td>
 									<td class="t2">
-										<a href="#comments">Коментарии[[if all_user_com]]{all_user_com}[[endif]]</a>
+										<a href="#comments">Коментарии ([[if all_user_com]]{all_user_com}[[endif]])</a>
 									</td>
 									<td class="t3">Всего читали {count_newses.count}</td>
 									[[if who_is_online]]<td class="t3">Читают {who_is_online}</td>[[endif]]
