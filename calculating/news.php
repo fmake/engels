@@ -208,7 +208,13 @@
                 $modul->setRedir($request->modul);
                 $page_id = $modul->getInfo();
                 $page_id = "{$page_id['id']}";
-                PrintAr($page_id);
+                //PrintAr($page_id);
+                $fmakeOnline = new fmakeOnline();
+                $ip_evil_user = $_SERVER['REMOTE_ADDR'];
+                $fmakeOnline->addParam('ip', $ip_evil_user);
+                $fmakeOnline->addParam('date', time());
+                $fmakeOnline->addParam('page_id', $page_id);
+                $fmakeOnline->newItem();
                 #--- сколько онлайн на сейте
 
 				/*фоторепортаж*/
