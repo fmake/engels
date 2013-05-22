@@ -252,6 +252,9 @@
 				$modul->keywords = $item['keywords'];
 
 				#--- сколько онлайн на сайте
+                $modul->setRedir($request->modul);
+                $page_id = $modul->getInfo();
+                $page_id = "{$page_id['id']}";
                 PrintAr($page_id);
                 #--- сколько онлайн на сейте
 				
