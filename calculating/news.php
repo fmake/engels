@@ -204,6 +204,13 @@
 				$globalTemplateParam->set('items_meets_main', $items_meets_main);
 				/*афиша*/
 
+                #--- сколько онлайн на сайте
+                //$modul->setRedir($request->modul);
+                //$page_id = $modul->getInfo();
+                //$page_id = "{$page_id['id']}";
+                PrintAr($page_id);
+                #--- сколько онлайн на сейте
+
 				/*фоторепортаж*/
 				$limit_photo = 12;
 				$photo_obj = new fmakeSiteModule();
@@ -251,12 +258,6 @@
 				$modul->description = $item['description'];
 				$modul->keywords = $item['keywords'];
 
-				#--- сколько онлайн на сайте
-                $modul->setRedir($request->modul);
-                $page_id = $modul->getInfo();
-                $page_id = "{$page_id['id']}";
-                PrintAr($page_id);
-                #--- сколько онлайн на сейте
 				
 				$breadcrubs = $modul->getBreadCrumbs($item[$news_obj->idField]);
 				$globalTemplateParam->set('item', $item);
