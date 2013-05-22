@@ -208,13 +208,17 @@
                 $modul->setRedir($request->modul);
                 $page_id = $modul->getInfo();
                 $page_id = "{$page_id['id']}";
+                $user_time = time();
                 //PrintAr($page_id);
                 $fmakeOnline = new fmakeOnline();
                 $ip_evil_user = $_SERVER['REMOTE_ADDR'];
                 $fmakeOnline->addParam('ip', $ip_evil_user);
-                $fmakeOnline->addParam('date', time());
+                $fmakeOnline->addParam('date', $user_time);
                 $fmakeOnline->addParam('page_id', $page_id);
                 $fmakeOnline->newItem();
+                $who_is_online = $fmakeOnline->getOnlineUser($page_id, $user_time);
+                PrintAr($who_is_online);
+                $globalTemplateParam->set('who_is_online', $who_is_online);
                 #--- сколько онлайн на сейте
 
 				/*фоторепортаж*/
