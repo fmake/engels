@@ -8,6 +8,6 @@ class fmakeOnline extends fmakeSiteModule{
         if($where)
             $select->addWhere($where);
         $result = $select->addFild("DISTINCT `ip` ")->addFrom($this->table)->queryDB();
-        return $result;
+        return counter($result);
     }
 }
