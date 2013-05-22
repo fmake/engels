@@ -7,7 +7,7 @@ class fmakeOnline extends fmakeSiteModule{
         $where = "page_id = {$page_id} and `date` >= ({$user_time}-60) and `date` <= {$user_time}";
         if($where)
             $select->addWhere($where);
-        $result = $select->addFild("COUNT(*)")->addFrom($this->table)->queryDB();
+        $result = $select->addFild("DISTINCT")->addFrom($this->table)->queryDB();
         return $result[0]["COUNT(*)"];
     }
 }
