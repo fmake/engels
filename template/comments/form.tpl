@@ -8,7 +8,7 @@
 	[[endif]]
 	
 	<form method="post" action="#form_comments" onsubmit="javascript: document.form_comments.submit(); return false;" name="form_comments">
-		<input type="hidden" name="action" value="comments">
+		<input type="hidden" name="action" value="comments" maxlength="20">
 		<div class="i-n">
 			<input type="text" name="name_comment" class="fieldfocus" title="Имя" value="{go_name}" />
 		</div>
