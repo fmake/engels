@@ -124,7 +124,7 @@ $new_modul->setRedir($request->modul);
 $lenta_cat = $new_modul->getCatForMenu(2 ,true, true);
 $all_new_modul = $new_modul->getInfo();
 PrintAr($all_new_modul);
-$new_modul = $new_modul->getParents($new_modul['id']);
+$new_modul = $new_modul->getParents($all_new_modul['id']);
 PrintAr($new_modul);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
