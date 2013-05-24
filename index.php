@@ -97,8 +97,6 @@ $globalTemplateParam->set('eur_valuta',$eur_valuta);
 $globalTemplateParam->set('weather',$weather);
 /*---------курс валют----------*/
 
-
-
 $fmakeBanerContent = new fmakeBanerContent();
 $globalTemplateParam->set('baner_obj',$fmakeBanerContent);
 $array_baner = $fmakeBanerContent->getBanersShow(true);
