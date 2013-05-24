@@ -121,8 +121,8 @@ $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 
 $new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
-$item_cat = $new_modul->getInfo();
-$lenta_cat = $new_modul->getCatForMenu($item_cat[$new_modul->idField],true);
+$lenta_cat = $new_modul->getCatForMenu(2,true);
+PrintAr($lenta_cat);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
