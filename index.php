@@ -124,8 +124,13 @@ $new_modul->setRedir($request->modul);
 $lenta_cat = $new_modul->getCatForMenu(2 ,true, true);
 $all_new_modul = $new_modul->getInfo();
 $parent_new_modul = $new_modul->getParents($all_new_modul['parent']);
-$clear_parent = array_intersect($lenta_cat, $parent_new_modul);
-PrintAr($clear_parent);
+foreach ($parent_new_modul as $key => $value) {
+	foreach ($lenta_cat as $key2 => $value2) {
+		if($lenta_cat[$key2]['id'] == $parent_new_modul[$key]['id']){
+			$lenta_cat[$key2]['status'] = 1;
+		}
+	}
+}
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
