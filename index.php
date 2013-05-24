@@ -121,11 +121,10 @@ $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 
-$new_modul = new fmakeSiteModule;
+$new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
-//PrintAr($request->id);
-//PrintAr($new_modul->id);
-$lenta_cat = $new_modul->getAllForMenuSite(2, true,$q=true,$flag=true, false);
+$item_cat = $new_modul->getInfo();
+$lenta_cat = $new_modul->getCatForMenu($item_cat[$new_modul->idField],true);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
@@ -161,13 +160,13 @@ if ($news_right_block) foreach ($news_right_block as $key=>$item) {
 $modul->order = $tmp_order;
 $globalTemplateParam->set('news_right_block',$news_right_block);
 
-if($_GET['debug']==1){
+//if($_GET['debug']==1){
 	//$static = new fmakeCount();
 	//$short_news = $static->getShortNameNews(7);
 	//printAr($short_news);
 	//printAr($modul->id);
 	//echo($request->modul);
-}
+//}
 
 /*--------правый блок с последними новостями--------*/
 
