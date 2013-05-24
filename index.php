@@ -123,7 +123,7 @@ $new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
 $lenta_cat = $new_modul->getCatForMenu(2 ,true, true);
 $all_new_modul = $new_modul->getInfo();
-$parent_new_modul = $new_modul->getParents($all_new_modul['parent']);
+$parent_new_modul = $new_modul->getParents($all_new_modul['id']);
 foreach ($parent_new_modul as $key => $value) {
 	foreach ($lenta_cat as $key2 => $value2) {
 		if($lenta_cat[$key2]['id'] == $parent_new_modul[$key]['id']){
