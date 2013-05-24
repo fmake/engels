@@ -119,18 +119,21 @@ $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 
+#проставляем статус у левого меню новостей
 $new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
-$lenta_cat = $new_modul->getCatForMenu(2 ,true, true);
+$lenta_cat = $new_modul->getCatForMenu(2 ,true);
 $all_new_modul = $new_modul->getInfo();
 $parent_new_modul = $new_modul->getParents($all_new_modul['id']);
-foreach ($parent_new_modul as $key => $value) {
-	foreach ($lenta_cat as $key2 => $value2) {
+if($parent_new_modul)foreach ($parent_new_modul as $key => $value) {
+	if($lenta_cat)foreach ($lenta_cat as $key2 => $value2) {
 		if($lenta_cat[$key2]['id'] == $parent_new_modul[$key]['id']){
 			$lenta_cat[$key2]['status'] = 1;
 		}
 	}
 }
+#проставляем статус у левого меню новостей, конец
+
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
