@@ -123,9 +123,9 @@ $new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
 $lenta_cat = $new_modul->getCatForMenu(2 ,true, true);
 $all_new_modul = $new_modul->getInfo();
-PrintAr($all_new_modul);
-$new_modul = $new_modul->getParents($all_new_modul['parent']);
-PrintAr($new_modul);
+$parent_new_modul = $new_modul->getParents($all_new_modul['parent']);
+$clear_parent = array_intersect($lenta_cat, $parent_new_modul);
+PrintAr($clear_parent);
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
