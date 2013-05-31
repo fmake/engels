@@ -90,9 +90,8 @@
 					$absitem_dop->setId($item[$manual_obj->idField]);
 					$item['dop_params'] = $absitem_dop->getInfo();
 					
-					
 					#Другие мнения
-
+					$news_obj = new fmakeNews();
 					$news_obj_exp = new fmakeMneniya();
 					$limit_news_exp = 6;
 					$news_obj_exp->order="id_news DESC"; 
