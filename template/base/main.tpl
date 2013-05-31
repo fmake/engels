@@ -529,7 +529,7 @@
 						<h1>Недвижимость</h1>
 					</a>
 					<button onclick="location.href ='{site_obj.getLinkPage(1291)}?form=add_immovable';">
-						<span><span><span>Добавлить недвижимость</span></span></span>
+						<span><span><span>Добавить недвижимость</span></span></span>
 					</button>
 					<div class="cl"></div>
 					<div class="desk">
@@ -559,7 +559,7 @@
 						<h1>Объявления</h1>
 					</a>
 					<button onclick="location.href ='{site_obj.getLinkPage(796)}?form=add_advert';">
-						<span><span><span>Добавлить Объявления</span></span></span>
+						<span><span><span>Добавить Объявления</span></span></span>
 					</button>
 					<div class="cl"></div>
 					<div class="desk">
