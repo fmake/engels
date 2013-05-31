@@ -101,7 +101,9 @@
 				    	$items_news_exp[$key]['caption'] = $templ[0]['caption'];
 				  	}
 					$globalTemplateParam->set('items_news_exp', $items_news_exp);
-
+					
+					$place_script = $manual_obj->getScriptItemAdmin($item['id']);
+					$globalTemplateParam->set('item', $item);
 					#---------------------------------------------------------------мнения
 
 					/*объявления*/				
@@ -205,12 +207,8 @@
 					$tags = $fmakeTag->getTags($item[$manual_obj->idField]);
 					$items['tags'] = $tags;
 					/*теги*/
-					
-					$place_script = $manual_obj->getScriptItemAdmin($item['id']);
-					
 					$breadcrubs = $modul->getBreadCrumbs($item[$manual_obj->idField]);
 					$globalTemplateParam->set('breadcrubs', $breadcrubs);
-					$globalTemplateParam->set('item', $item);
 					$globalTemplateParam->set('place_script', $place_script);
 					$modul->template = "manual/item.tpl"; //exit;
 				} else {
