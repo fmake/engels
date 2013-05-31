@@ -168,46 +168,6 @@
 	
 	<div class="cl"></div>
 <div class="smarty_block">
-	/*<div class="partner_block">
-		<h1>Новости партнеров</h1>
-		<ul>
-			<li>
-				<img src="/images/tmp/1.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/1.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/1.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/1.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-			<li>
-				<img src="/images/tmp/1.png" alt="" />
-				<div class="cl"></div>
-				<div class="caption"><a href="#">Выставка живописи Сергея Сакова</a></div>
-				<div class="cl"></div>
-				<div class="text">И хотя ученые уверяют, что он не заденет планету и пролетит на безопасном </div>
-			</li>
-		</ul>
-	</div>*/
 	<div class="cl"></div>
 [[if news_for_recomend]]
 	<div class="recomend">
@@ -234,13 +194,6 @@
 	<div class="cl"></div>
 	<div class="item">
 		<div class="block_1" style="padding-top: 31px">
-			/*<button class="say_out_button">
-				<span>
-					<span>
-						<span>Мнения</span>
-					</span>
-				</span>
-			</button>*/
 			<div class="cl"></div>
 			[[for ekspert in items_news_exp]]
 				[[if loop.index == 1 or loop.index == 2]]
@@ -258,7 +211,6 @@
 				[[if loop.index == 2]]
 			</div>	
 		<div class="block_2" style="padding-top: 31px">
-			/*<div class="link"><a href="">Еще мнения</a></div>*/
 			<ul>
 				[[endif]]
 				[[if loop.index > 2]]
