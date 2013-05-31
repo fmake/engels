@@ -82,7 +82,7 @@
 			if($request -> getEscape('url')) {
 				$manual_obj->setRedir($request->modul);
 				$item = $manual_obj->getInfo();
-				
+				PrintAr($items);
 				if($item['file']=='item_manual') {
 					$fmakeTypeTable = new fmakeTypeTable();
 					$absitem_dop = new fmakeSiteModule();
