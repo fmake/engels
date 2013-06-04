@@ -90,7 +90,8 @@
 					$absitem_dop->setId($item[$manual_obj->idField]);
 					$item['dop_params'] = $absitem_dop->getInfo();
 					
-					#Другие мнения
+					#---------------------------------------------------------------новый функционал
+					#Другие мнения или что говорят.
 					$news_obj = new fmakeNews();
 					$news_obj_exp = new fmakeMneniya();
 					$limit_news_exp = 6;
@@ -104,7 +105,6 @@
 					
 					$place_script = $manual_obj->getScriptItemAdmin($item['id']);
 					$globalTemplateParam->set('item', $item);
-					#---------------------------------------------------------------мнения
 
 					/*объявления*/				
 					$advert_obj = new fmakeSiteModule();
@@ -170,7 +170,8 @@
 					$globalTemplateParam->set('items_photo', $items_photo);
 					$globalTemplateParam->set('gallery_obj', $fmakeGallery);
 					/*фоторепортаж*/
-	
+					#---------------------------------------------------------------новый функционал
+
 					$include_param_id_comment = $item[$manual_obj->idField];
 					//$include_param_modul = $news_obj->mod;
 					include 'helpModules/comments.php';
