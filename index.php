@@ -97,8 +97,6 @@ $globalTemplateParam->set('eur_valuta',$eur_valuta);
 $globalTemplateParam->set('weather',$weather);
 /*---------курс валют----------*/
 
-
-
 $fmakeBanerContent = new fmakeBanerContent();
 $globalTemplateParam->set('baner_obj',$fmakeBanerContent);
 $array_baner = $fmakeBanerContent->getBanersShow(true);
@@ -121,11 +119,21 @@ $modul->getPage($request -> getEscape('modul') , $twig, $url);
 //добавляем каталог к основным модулям
 $menu = $modul->getAllForMenuSite(0, true,$q=true,$flag=true,true);
 
-$new_modul = new fmakeSiteModule;
+#проставляем статус у левого меню новостей
+$new_modul = new fmakeNews;
 $new_modul->setRedir($request->modul);
-//PrintAr($request->id);
-//PrintAr($new_modul->id);
-$lenta_cat = $new_modul->getAllForMenuSite(2, true,$q=true,$flag=true, false);
+$lenta_cat = $new_modul->getCatForMenu(2 ,true);
+$all_new_modul = $new_modul->getInfo();
+$parent_new_modul = $new_modul->getParents($all_new_modul['id']);
+if($parent_new_modul)foreach ($parent_new_modul as $key => $value) {
+	if($lenta_cat)foreach ($lenta_cat as $key2 => $value2) {
+		if($lenta_cat[$key2]['id'] == $parent_new_modul[$key]['id']){
+			$lenta_cat[$key2]['status'] = 1;
+		}
+	}
+}
+#проставляем статус у левого меню новостей, конец
+
 $globalTemplateParam->set('lenta_cat',$lenta_cat);
 $request_uri = $_SERVER['REQUEST_URI'];
 
@@ -161,13 +169,13 @@ if ($news_right_block) foreach ($news_right_block as $key=>$item) {
 $modul->order = $tmp_order;
 $globalTemplateParam->set('news_right_block',$news_right_block);
 
-if($_GET['debug']==1){
+//if($_GET['debug']==1){
 	//$static = new fmakeCount();
 	//$short_news = $static->getShortNameNews(7);
 	//printAr($short_news);
 	//printAr($modul->id);
 	//echo($request->modul);
-}
+//}
 
 /*--------правый блок с последними новостями--------*/
 

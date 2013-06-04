@@ -209,7 +209,7 @@ class fmakeImmovables extends fmakeSiteModule {
 		$curl -> get("http://www.s-mls.ru/find-realty/search.php?searchtype=distr&operations=sale&realty_type_id=2&realty_subtype_list=&chkDistrictsList=12;8&chkMicroDistrictsList=&floor_cond=0&floor_limit_NFF=false&floor_limit_NLF=false&floor_limit_ONF=false&price_from=&price_to=&square_from=&square_to=&rpp=0&p=1&sortby=");
 		//echo $curl -> data;
 
-		$pattern2 = "#<table id=\"results_table\"[^>]+>(.+?)</table>#is";
+		$pattern2 = "#<table[^>]+>(.*)</table>#is";
 		preg_match_all($pattern2, $curl -> data, $out);
 		$pattern2 = "#<tr[^>]+>(.+?)</tr>#is";
 		preg_match_all($pattern2, $out[1][0], $out);

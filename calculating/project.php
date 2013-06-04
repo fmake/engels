@@ -32,7 +32,6 @@
 				//$include_param_modul = $project_obj->mod;
 				include 'helpModules/comments.php';
 
-
 				$tags = $fmakeTag->getTags($item[$project_obj->idField]);
 				$item['tags'] = $tags;
 

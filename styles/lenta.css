@@ -233,6 +233,10 @@
 .block_all_bew .block .caption{
 	margin-bottom: 8px;
 }
+.block_all_bew .block .text{
+	height: 63px;
+	overflow: hidden;
+}
 .block_all_bew .block .category{
 	margin-bottom: 8px;
 	color: #878787;
