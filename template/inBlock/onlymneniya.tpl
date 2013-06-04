@@ -2,7 +2,7 @@
 	<h1>Что говорят</h1>
 	<div class="cl"></div>
 	<div class="item" style="widht:auto;">
-		<div class="block_1" style="padding-top: 31px">
+		<div class="block_1">
 			<div class="cl"></div>
 			[[for ekspert in items_news_exp]]
 				<div class="img [[if loop.index == 1]]ml0[[endif]]">
