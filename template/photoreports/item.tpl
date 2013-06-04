@@ -46,35 +46,11 @@
 [[block right]]
 	/*[[ include TEMPLATE_PATH ~ "photoreports/right_block_baner.tpl"]]*/
 	[[ include TEMPLATE_PATH ~ "photoreports/new.tpl"]]
-[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
+	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/what_say.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl"]]
 <div class="kenta">
 	<div class="page-container">
-		<h1>Фоторепортажи</h1>
-			<div class="item">
-				<button class="next"></button>
-				<button class="prev"></button>
-				<div class="cl"></div>
-				<div id="carusel">
-					<ul>
-						[[for report in items_photo]]
-						<li>
-							<div class="hidden_item" style="width: 171px;">
-								<div class="hidden_link">
-									<div class="time">{df('date','d.m.Y',report.date)}</div>
-									<div class="icons"><a href="{report.full_url}"><img src="/images/bg/fotocamera.png" alt="" title="Фото" />{gallery_obj.getCountPhoto(report.id)}</a></div>
-									<div class="cl"></div>
-									<a href="{report.full_url}" class="d-l">{report.caption}</a>
-								</div>
-								<a href="{report.full_url}"><img src="/{photo_obj.fileDirectory}{report.id}/200_160_{report.picture}" alt="" width="171px" height="154px"></a>
-							</div>
-						</li>
-						[[endfor]]
-					</ul>
-				</div>
-				
-			</div>
 			<div class="cl"></div>
 			<div class="block_all_bew">
 				<!--СПРАВОЧНИК-->
