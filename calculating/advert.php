@@ -98,6 +98,65 @@
 						$breadcrubs = $advert_obj->getBreadCrumbs($item[$advert_obj->idField]);
 						
 						$globalTemplateParam->set('breadcrubs', $breadcrubs);
+
+						#---------------------------------------------------------------новый функционал
+						/*Справочник*/
+						$manual_obj = new fmakeSiteModule();
+						$limit_manual = 6; 
+						$manual_obj->order = "b.date DESC, a.id";
+						$items_manual_main = $manual_obj->getByPageAdmin(1238, $limit_manual,1,"a.`file` = 'item_manual'",true);
+						$globalTemplateParam->set('manual_obj2', $manual_obj);
+						$globalTemplateParam->set('items_manual_main2', $items_manual_main);
+						/*Справочник*/
+
+						/*места*/
+						$place_obj = new fmakeSiteModule();
+						$limit_place = 7; 
+						$place_obj->order = "RAND()";
+						$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
+						$globalTemplateParam->set('place_obj2', $place_obj);
+						$globalTemplateParam->set('items_place_main2', $items_place_main);
+						/*места*/
+
+						/*интервью*/
+						$limit_interv = 6;
+						$interv_obj = new fmakeSiteModule();
+						$interv_obj->order = "b.date DESC, a.id";
+						$items_interv = $interv_obj->getByPage(12, $limit_interv,1,"`main` = '1' and a.picture!=''",12,true);
+						$globalTemplateParam->set('interv_obj', $interv_obj);
+						$globalTemplateParam->set('items_interv', $items_interv);
+						/*интервью*/
+
+						/*афиша*/
+						$meets_obj = new fmakeMeets();
+						$limit_meets = 7;
+						$date = strtotime("today"/*,$tmp_date*/);
+						$globalTemplateParam->set("to_day", $date);
+						$date_array = $meets_obj->dateFilter(date('d.m.Y',$date));
+						$date_to = $date_array["to"];
+						/*отминмаем одну милисекунду чтобы использовать <= к правой границе даты*/
+						$date_from = $date_array["from"]-1;
+						$filter_date = "( ( ( '{$date_to}'<= b.date AND b.date <= '{$date_from}') OR ( '{$date_to}'<= b.date_from AND b.date_from <= '{$date_from}' ) ) OR 
+									              ( b.date <= '{$date_to}' AND '{$date_from}' <= b.date_from ) )";
+						$meets_obj->order = "RAND()";
+						$items_meets_main = $meets_obj->getByPageAdmin(4, false,false,"a.`file` = 'item_meets' and {$filter_date} ",true);
+						$items_meets_main = $meets_obj->uniqParent($items_meets_main,$limit_meets);
+						$globalTemplateParam->set('meets_obj', $meets_obj);
+						$globalTemplateParam->set('items_meets_main', $items_meets_main);
+						/*афиша*/
+
+						/*фоторепортаж*/
+						$limit_photo = 12;
+						$photo_obj = new fmakeSiteModule();
+						$photo_obj->order = "b.date DESC, a.id";
+						$items_photo = $photo_obj->getByPageAdmin(9, $limit_photo,1,"a.`file` = 'item_photo_reports' and `main` = '1' and a.picture!=''",true);
+						$fmakeGallery = new fmakeGallery_Image();
+						$globalTemplateParam->set('photo_obj', $photo_obj);
+						$globalTemplateParam->set('items_photo', $items_photo);
+						$globalTemplateParam->set('gallery_obj', $fmakeGallery);
+						/*фоторепортаж*/
+						#---------------------------------------------------------------новый функционал
+
 						$modul->template = "advert/item.tpl"; //exit;
 					}else{
 												
