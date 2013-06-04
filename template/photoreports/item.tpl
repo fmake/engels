@@ -44,5 +44,6 @@
 [[endblock]]
 
 [[block right]]
-	[[ include TEMPLATE_PATH ~ "photoreports/right_block_baner.tpl"]]
+	/*[[ include TEMPLATE_PATH ~ "photoreports/right_block_baner.tpl"]]*/
+	[[ include TEMPLATE_PATH ~ "photoreports/new.tpl"]]
 [[endblock]]
