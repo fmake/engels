@@ -103,7 +103,7 @@
 			[[endif]]
 			
 			
-			[[if items_photo_report == 343434]]
+			[[if items_photo_report]]
 				<h3>Фоторепортажи:</h3>
 				<div class="place_photo_report">
 				[[for report in items_photo_report]]
@@ -117,9 +117,10 @@
 						<a href="{report.full_url}" class="fotolink">{report.caption}</a>
 					</div>
 				[[endfor]]
+				<div class="cl"></div>
 				</div>
 			[[endif]]
-			
+			<div class="cl"></div>
 			[[ include TEMPLATE_PATH ~ "comments/main.tpl"]]
 			<a name="adress"></a>
 			<div class="map-places">
