@@ -8,37 +8,6 @@
 	$page = !empty($_GET['page']) ? abs((int)$_GET['page']) : 1;
 	$limit = $configs->news_count ? $configs->news_count : 10;
 
-	
-	/*фоторепортаж*/
-		$limit_photo = 1;
-		$photo_obj = new fmakeSiteModule();
-		$photo_obj->order = "b.date DESC, a.id";
-		$items_photo = $photo_obj->getByPageAdmin(9, $limit_photo,1,"a.`file` = 'item_photo_reports' and a.picture!=''",true);
-		$fmakeGallery = new fmakeGallery_Image();
-		$globalTemplateParam->set('photo_obj', $photo_obj);
-		$globalTemplateParam->set('items_photo', $items_photo);
-		$globalTemplateParam->set('gallery_obj', $fmakeGallery);
-		/*фоторепортаж*/
-		
-		/*объявления*/
-		$advert_obj = new fmakeSiteModule();
-		$limit_advert = 3; 
-		//$advert_obj->order = "RAND()";
-		$manual_obj->order = "b.date DESC, a.id";
-		$items_advert_main = $advert_obj->getByPageAdmin(796, $limit_advert,1,"a.`file` = 'item_advert'",true);
-		$globalTemplateParam->set('advert_obj', $advert_obj);
-		$globalTemplateParam->set('items_advert_main', $items_advert_main);
-		/*объявления*/
-		
-		/*места*/
-		$place_obj = new fmakeSiteModule();
-		$limit_place = 1; 
-		//$place_obj->order = "b.date DESC, a.id";
-		$place_obj->order = "RAND()";
-		$items_place_main = $place_obj->getByPageAdmin(5, $limit_place,1,"a.`file` = 'item_place' and `main` = '1'",true);
-		$globalTemplateParam->set('place_obj', $place_obj);
-		$globalTemplateParam->set('items_place_main', $items_place_main);
-		/*места*/
 
 		/*---------опрос-----------*/
 		$fmakeInterview = new fmakeInterview();
@@ -162,7 +131,7 @@
 		$globalTemplateParam->set('items_meets_main', $items_meets_main);
 		/*афиша*/
 
-		
+
 		$modul->template = "expert/item.tpl"; //exit;
 	} else {
 		//$expert_obj->order = "b.date DESC, a.id";
