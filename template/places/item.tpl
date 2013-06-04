@@ -103,7 +103,7 @@
 			[[endif]]
 			
 			
-			[[if items_photo_report]]
+			[[if items_photo_report == 343434]]
 				<h3>Фоторепортажи:</h3>
 				<div class="place_photo_report">
 				[[for report in items_photo_report]]
