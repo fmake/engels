@@ -13,7 +13,7 @@
         
         $globalTemplateParam->set('categories', $cat);
         
-		/*фоторепортаж
+		/*фоторепортаж*/
 		$limit_photo = 1;
 		$photo_obj = new fmakeSiteModule();
 		$photo_obj->order = "b.date DESC, a.id";
@@ -24,7 +24,7 @@
 		$globalTemplateParam->set('gallery_obj', $fmakeGallery);
 		/*фоторепортаж*/
 		
-		/*объявления
+		/*объявления*/
 		$advert_obj = new fmakeSiteModule();
 		$limit_advert = 3; 
 		//$advert_obj->order = "RAND()";
@@ -34,7 +34,7 @@
 		$globalTemplateParam->set('items_advert_main', $items_advert_main);
 		/*объявления*/
 		
-		/*места
+		/*места*/
 		$place_obj = new fmakeSiteModule();
 		$limit_place = 1; 
 		//$place_obj->order = "b.date DESC, a.id";
