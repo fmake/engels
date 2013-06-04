@@ -48,7 +48,6 @@
 			
 			$globalTemplateParam->set('breadcrubs', $breadcrubs);
             $globalTemplateParam->set('item', $item);
-            
             $modul->template = "interv/item.tpl";
 
         }else{
