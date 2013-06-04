@@ -55,8 +55,30 @@
 						[[endfor]]
 					</ul>
 				</div>
+				
 			</div>
 			<div class="cl"></div>
+			<div class="block_all_bew">
+				<!--СПРАВОЧНИК-->
+				<div class="item">
+					<a href="{site_obj.getLinkPage(1238)}" class="h1">
+						<h1>Справочник</h1>
+					</a>
+					<div class="cl"></div>
+					[[for item in items_manual_main2]]
+						<div class="block [[if loop.index == 4 or loop.index == 1]]lt[[endif]]">
+							<div class="caption">
+								<a href="{item.full_url}">{item.caption}</a>
+							</div>
+							<div class="cl"></div>
+							<div class="text">{item.info | raw}</div>
+						</div>
+						[[if loop.index == 3]]<div class="cl"></div>[[endif]]
+					[[endfor]]
+					<div class="cl"></div>
+				</div>
+				<!--СПРАВОЧНИК-->
+			</div>
 			<div class="ap_bl">
 				/*БАНЕР new*/
 					[[set baner_spravochnik = baner_obj.showBanerType(7,'/spravochnik/')]]
