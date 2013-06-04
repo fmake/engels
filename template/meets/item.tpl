@@ -43,7 +43,7 @@
 [[endblock]]
 
 [[block right]]
-	[[ include TEMPLATE_PATH ~ "meets/right_block_categor.tpl"]]
+	[[ include TEMPLATE_PATH ~ "meets/new_right.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/what_say.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl"]]
