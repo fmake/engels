@@ -1,7 +1,7 @@
 <div class="say_out">
 	<h1>Что говорят</h1>
 	<div class="cl"></div>
-	<div class="item" style="widht:auto;">
+	<div class="item" style="width:auto;">
 		<div class="block_1">
 			<div class="cl"></div>
 			[[for ekspert in items_news_exp]]
