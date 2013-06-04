@@ -29,10 +29,10 @@
 [[endblock]]
 
 [[block right]]
-	[[ include TEMPLATE_PATH ~ "interv/right_block_baner.tpl"]]
-[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
-	[[ include TEMPLATE_PATH ~ "inBlock/onlymneniya.tpl"]]
-	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl"]]
+	[[ include TEMPLATE_PATH ~ "interv/right_block_baner.tpl" ]]
+	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl" ]]
+	[[ include TEMPLATE_PATH ~ "inBlock/onlymneniya.tpl" ]]
+	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl" ]]
 <div class="kenta">
 	<div class="page-container">
 		<h1>Фоторепортажи</h1>
