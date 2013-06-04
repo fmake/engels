@@ -75,8 +75,8 @@
 						</div>
 						[[if loop.index == 3]]<div class="cl"></div>[[endif]]
 					[[endfor]]
-					<div class="cl"></div>
 				</div>
+				<div class="cl"></div>
 				<!--СПРАВОЧНИК-->
 			</div>
 			<div class="ap_bl">
@@ -92,5 +92,4 @@
 				/*БАНЕР new*/
 			</div>
 			<div class="cl"></div>
-			<div class="ttl"></div>
 [[endblock]]
