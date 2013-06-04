@@ -112,9 +112,6 @@
 					  	}
 						$globalTemplateParam->set('items_news_exp', $items_news_exp);
 						
-						$place_script = $manual_obj->getScriptItemAdmin($item['id']);
-						$globalTemplateParam->set('item', $item);
-						
 						/*Справочник*/
 						$manual_obj = new fmakeSiteModule();
 						$limit_manual = 6; 
