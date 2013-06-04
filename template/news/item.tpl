@@ -165,7 +165,6 @@
 [[block right]]
 	
 	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
-	[[ include TEMPLATE_PATH ~ "manual/right_block_baner.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/what_say.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl"]]
