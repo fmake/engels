@@ -155,7 +155,6 @@
 			
 			[[ include TEMPLATE_PATH ~ "comments/main.tpl"]]
 			
-			[[ include TEMPLATE_PATH ~ "blocks/marketgid_block.tpl"]]
 			
 		</div>
 	</div>
@@ -165,6 +164,8 @@
 [[block right]]
 	
 	[[ include TEMPLATE_PATH ~ "news/right_block_baner.tpl"]]
+	<h1>Наши партнеры</h1>
+	[[ include TEMPLATE_PATH ~ "blocks/marketgid_block.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/what_say.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/journal.tpl"]]

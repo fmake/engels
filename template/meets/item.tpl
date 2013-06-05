@@ -44,6 +44,9 @@
 
 [[block right]]
 	[[ include TEMPLATE_PATH ~ "meets/new_right.tpl"]]
+		<div class="cl"></div>
+						<h1>Новости партнеров</h1>
+	[[ include TEMPLATE_PATH ~ "blocks/m-new-partnerka.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/recommend_news.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/what_say.tpl"]]
 	[[ include TEMPLATE_PATH ~ "inBlock/places.tpl"]]

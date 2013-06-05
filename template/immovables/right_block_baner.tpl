@@ -1,3 +1,4 @@
+
 [[set baner_right_7 = baner_obj.showBanerType(7,request_uri)]]
 [[set baner_right_8 = baner_obj.showBanerType(8,request_uri)]]
 [[set baner_right_9 = baner_obj.showBanerType(9,request_uri)]]
