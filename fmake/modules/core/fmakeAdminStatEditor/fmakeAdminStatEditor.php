@@ -8,7 +8,7 @@ class fmakeAdminStatEditor extends fmakeSiteModule {
 		$all_users = $fmakeSiteAdministrator->getAll();
 		if($all_users)foreach($all_users as $key=>$item){
 			$result[$key]['editor'] = $item['name'];
-			$result[$key]['kol_vo_news'] = $fmakeNews->countNewsEditor($item[$fmakeSiteAdministrator->idField]);
+			$result[$key]['kol_vo_news'] = $fmakeNews->countNewsEditor($item['id']);
 		}
 		return $result;
 	}
