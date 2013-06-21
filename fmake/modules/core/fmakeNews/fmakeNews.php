@@ -195,7 +195,7 @@ class fmakeNews extends fmakeSiteModule {
 	}
 	function countNewsEditor($id_user){
 		$result = $this->getByPageAdmin(2, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
-		printAr($result);exit();
+		//printAr($result);exit();
 		return count($result);
 	}
 }
