@@ -59,7 +59,7 @@ switch ($request->action) {
 			//$items = $absitem->getByPageAdminFilter($filters,$id_page_modul, $limit, $page,"a.`file` = 'item_meets'");
 			//$count = $absitem->getByPageCountAdminFilter($filters,$id_page_modul,$id_page_modul,"a.`file` = 'item_meets'");
 		}else{
-			//$items = $absitem->getByPageAdmin($id_page_modul, $limit, $page,"a.`file` = 'item_meets'");
+			$items = $absitem->getStats();
 			//$count = $absitem->getByPageCountAdmin($id_page_modul,$id_page_modul,"a.`file` = 'item_meets'");
 		}
 		
