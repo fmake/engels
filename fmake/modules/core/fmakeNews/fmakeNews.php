@@ -198,5 +198,16 @@ class fmakeNews extends fmakeSiteModule {
 		//printAr($result);exit();
 		return count($result);
 	}
+	function countNewsViewEditor($id_user){
+		$fmakeCount = new fmakeCount();
+		$result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		$count_view = 0;
+		if($result)foreach($result as $key=>$item){	
+			$fmakeCount->setId($item[$this->idField]);
+			$info_page = $fmakeCount->getInfo();
+			$count_view += (int)$info_page['count'];
+		}
+		return $count_view;
+	}
 }
 
