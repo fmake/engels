@@ -209,5 +209,14 @@ class fmakeNews extends fmakeSiteModule {
 		}
 		return $count_view;
 	}
+	function averageNewsSymvolEditor($id_user){
+		$result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		$count_simvols = 0;
+		if($result)foreach($result as $key=>$item){
+			$count_simvols += strlen(strip_tags($item['anons']));
+			$count_simvols += strlen(strip_tags($item['text']));
+		}
+		return $count_simvols/count($result);
+	}
 }
 
