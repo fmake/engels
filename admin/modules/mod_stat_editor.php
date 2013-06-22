@@ -11,7 +11,7 @@ $filds = array(
 	'kol_vo_news' => 'кол-во новостей',
 	'sr_kol_vo_simvolov_news' => 'ср. кол-во символов новости',
 	'sr_kol_vo_uniq_prosm' => 'кол-во уникальных просмотров',
-	'sr_kol_vo_prosm_day_news' => 'ср. кол-во просмотров за день/новость',
+	'sr_kol_vo_prosm_day_news' => 'ср. кол-во просмотров/новость',
 );
 
 $globalTemplateParam->set('filds', $filds);
