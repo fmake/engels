@@ -216,7 +216,7 @@ class fmakeNews extends fmakeSiteModule {
 			$count_simvols += strlen(strip_tags($item['anons']));
 			$count_simvols += strlen(strip_tags($item['text']));
 		}
-		return $count_simvols/count($result);
+		return round($count_simvols/count($result));
 	}
 }
 
