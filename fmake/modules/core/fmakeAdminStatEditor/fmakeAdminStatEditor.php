@@ -11,7 +11,7 @@ class fmakeAdminStatEditor extends fmakeSiteModule {
 			$result[$key]['kol_vo_news'] = $fmakeNews->countNewsEditor($item['id']);
 			$result[$key]['sr_kol_vo_simvolov_news'] = $fmakeNews->averageNewsSymvolEditor($item['id']);
 			$result[$key]['sr_kol_vo_uniq_prosm'] = $fmakeNews->countNewsViewEditor($item['id']);
-			$result[$key]['sr_kol_vo_prosm_day_news'] = 0;
+			$result[$key]['sr_kol_vo_prosm_day_news'] = ($result[$key]['kol_vo_news']) ? round($result[$key]['sr_kol_vo_uniq_prosm']/$result[$key]['kol_vo_news']) : 0;
 		}
 		return $result;
 	}
