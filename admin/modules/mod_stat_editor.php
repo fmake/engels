@@ -56,7 +56,7 @@ switch ($request->action) {
     default:
         
 		if($filters){
-			//$items = $absitem->getByPageAdminFilter($filters,$id_page_modul, $limit, $page,"a.`file` = 'item_meets'");
+			$items = $absitem->getStats($filters);
 			//$count = $absitem->getByPageCountAdminFilter($filters,$id_page_modul,$id_page_modul,"a.`file` = 'item_meets'");
 		}else{
 			$items = $absitem->getStats();
