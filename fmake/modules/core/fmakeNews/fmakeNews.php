@@ -193,14 +193,16 @@ class fmakeNews extends fmakeSiteModule {
 		$result = $mnenie->getByPageAdmin(false, false, "id_news = {$this->id}", true);
 		return $result;
 	}
-	function countNewsEditor($id_user){
-		$result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+	function countNewsEditor($id_user,$filter = false){
+		if($filter) $result = $this->getByPageAdminFilter($filter, 2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		else $result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
 		//printAr($result);exit();
 		return count($result);
 	}
-	function countNewsViewEditor($id_user){
+	function countNewsViewEditor($id_user,$filter = false){
 		$fmakeCount = new fmakeCount();
-		$result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		if($filter) $result = $this->getByPageAdminFilter($filter, 2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		else $result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
 		$count_view = 0;
 		if($result)foreach($result as $key=>$item){	
 			$fmakeCount->setId($item[$this->idField]);
@@ -209,8 +211,9 @@ class fmakeNews extends fmakeSiteModule {
 		}
 		return $count_view;
 	}
-	function averageNewsSymvolEditor($id_user){
-		$result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+	function averageNewsSymvolEditor($id_user,$filter = false){
+		if($filter) $result = $this->getByPageAdminFilter($filter, 2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
+		else $result = $this->getByPageAdmin(2, false, false, "a.`file` = 'item_news' and a.`create_user` = {$id_user}", false);
 		$count_simvols = 0;
 		if($result)foreach($result as $key=>$item){
 			$count_simvols += strlen(strip_tags($item['anons']));
