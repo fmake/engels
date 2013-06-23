@@ -7,7 +7,7 @@ class fmakeAdminStatEditor extends fmakeSiteModule {
 		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
 		
 		if($filters['create_user']){
-			$fmakeSiteAdministrator->setId($filters['create_user'])
+			$fmakeSiteAdministrator->setId($filters['create_user']);
 			$all_users[] = $fmakeSiteAdministrator->getInfo();
 		} else {
 			$all_users = $fmakeSiteAdministrator->getAll();
