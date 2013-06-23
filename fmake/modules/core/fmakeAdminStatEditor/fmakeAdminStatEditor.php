@@ -2,10 +2,17 @@
 
 class fmakeAdminStatEditor extends fmakeSiteModule {
 
-	function getStats() {
+	function getStats($filters = false) {
 		$fmakeNews = new fmakeNews();
 		$fmakeSiteAdministrator = new fmakeSiteAdministrator();
-		$all_users = $fmakeSiteAdministrator->getAll();
+		
+		if($filters['create_user']){
+			$fmakeSiteAdministrator->setId($filters['create_user'])
+			$all_users[] = $fmakeSiteAdministrator->getInfo();
+		} else {
+			$all_users = $fmakeSiteAdministrator->getAll();
+		}
+		
 		if($all_users)foreach($all_users as $key=>$item){
 			$result[$key]['editor'] = "{$item['name']} ({$item['login']})";
 			$result[$key]['kol_vo_news'] = $fmakeNews->countNewsEditor($item['id']);
